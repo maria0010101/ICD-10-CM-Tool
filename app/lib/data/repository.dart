@@ -162,9 +162,9 @@ class DictionaryRepository {
         .toList();
   }
 
-  List<DataRow> children(int? parent) => rows(
-    'SELECT * FROM code_nodes WHERE parent_id IS ? ORDER BY sort_order,id',
-    [parent],
+  List<DataRow> children(int? parent, {int? limit, int offset = 0}) => rows(
+    'SELECT * FROM code_nodes WHERE parent_id IS ? ORDER BY sort_order,id LIMIT ? OFFSET ?',
+    [parent, limit ?? -1, offset],
   );
   List<DataRow> indexChildren(
     int? parent,

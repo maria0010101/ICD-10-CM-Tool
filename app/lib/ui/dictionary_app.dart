@@ -466,9 +466,7 @@ class _DictionaryHomeState extends State<DictionaryHome> {
               title: Text('${r['column_label']} → ${r['target_code']}'),
               onTap: () => guard(() async {
                 final target = r['target_code'] as String;
-                final nodes = await c.read(
-                  (repo) => repo.resolveTarget(target),
-                );
+                final nodes = await c.resolveTarget(target);
                 if (nodes.isEmpty) {
                   error('範圍 / 未完成碼 $target：需人工確認');
                 } else {
@@ -695,6 +693,43 @@ class _DictionaryHomeState extends State<DictionaryHome> {
     }
   }
 
+  Widget installedPackageTile(DataRow row) {
+    final hash = row['hash'] as String,
+        m = c.store.manifest(row['hash'] as String);
+    final canAttach =
+        c.active != null &&
+        m.classification == c.classification &&
+        m.bases.contains(c.store.manifest(c.active!).id);
+    final selected = m.isOverlay ? c.store.overlay == hash : c.active == hash;
+    final action = !m.isOverlay
+        ? '啟用此版本'
+        : canAttach
+        ? '啟用附加中譯參考'
+        : '附加中譯不可獨立啟用：先選相容主版本';
+    return Card(
+      child: ListTile(
+        title: Text(m.label),
+        subtitle: SelectableText(
+          '${m.isOverlay ? '附加中譯包：沒有獨立代碼主表；中文獨立查詢請用NHI CM同版中英App包。\n跨版未確認只供參考，不會加入合格中文搜尋。\n' : '獨立查詢版本\n'}SHA256: $hash\n${m.counts}',
+        ),
+        trailing: IconButton(
+          tooltip: action,
+          icon: Icon(selected ? Icons.check_circle : Icons.play_circle_outline),
+          onPressed: m.isOverlay && !canAttach
+              ? null
+              : () => guard(() async {
+                  await c.choose(hash, translation: m.isOverlay);
+                  if (m.isOverlay && m.json['mapping_policy'] == 'unresolved') {
+                    error(
+                      '已啟用附加中譯參考；跨版相容未確認，不作合格中文搜尋。獨立中文查詢請改匯入NHI CM同版中英App包。',
+                    );
+                  }
+                }),
+        ),
+      ),
+    );
+  }
+
   Widget managePanel() => ListView(
     padding: const EdgeInsets.all(20),
     children: [
@@ -721,29 +756,7 @@ class _DictionaryHomeState extends State<DictionaryHome> {
         icon: const Icon(Icons.restore),
         label: const Text('回復上一版'),
       ),
-      for (final r in c.store.installed)
-        Card(
-          child: ListTile(
-            title: Text(c.store.manifest(r['hash'] as String).label),
-            subtitle: SelectableText(
-              'SHA256: ${r['hash']}\n${c.store.manifest(r['hash'] as String).counts}',
-            ),
-            trailing: IconButton(
-              tooltip: '啟用此版本',
-              icon: Icon(
-                r['hash'] == c.active
-                    ? Icons.check_circle
-                    : Icons.play_circle_outline,
-              ),
-              onPressed: () => guard(
-                () => c.choose(
-                  r['hash'] as String,
-                  translation: c.store.manifest(r['hash'] as String).isOverlay,
-                ),
-              ),
-            ),
-          ),
-        ),
+      for (final r in c.store.installed) installedPackageTile(r),
       if (c.store.installed
               .where(
                 (r) =>
@@ -794,9 +807,7 @@ class _DictionaryHomeState extends State<DictionaryHome> {
               error('此收藏屬於另一版本；請先切換版本');
               return;
             }
-            final result = await c.read(
-              (r) => r.resolveTarget(f['code'] as String),
-            );
+            final result = await c.resolveTarget(f['code'] as String);
             if (result.isEmpty) {
               error('此版本無此代碼，可能已停用');
             } else {
@@ -1117,21 +1128,32 @@ class HierarchyTile extends StatefulWidget {
 
 class _HierarchyTileState extends State<HierarchyTile> {
   List<DataRow>? children;
-  bool loading = false;
+  bool loading = false, more = true;
   Future<void> load(bool expanded) async {
     if (!expanded || children != null || loading) {
       return;
     }
+    await loadNextPage();
+  }
+
+  Future<void> loadNextPage() async {
+    if (loading || !more) return;
     setState(() => loading = true);
     try {
       final id = widget.row['id'] as int,
           type = widget.row['entry_type'] as String?,
           isIndex = widget.index;
-      final data = await widget.controller.read(
-        (r) => isIndex ? r.indexChildren(id, type!) : r.children(id),
+      final data = await widget.controller.loadChildren(
+        id,
+        indexType: isIndex ? type! : null,
+        limit: 100,
+        offset: children?.length ?? 0,
       );
       if (mounted) {
-        setState(() => children = data);
+        setState(() {
+          children = [...?children, ...data];
+          more = data.length == 100;
+        });
       }
     } catch (e) {
       if (mounted) {
@@ -1162,20 +1184,27 @@ class _HierarchyTileState extends State<HierarchyTile> {
         onPressed: () => widget.onOpen(r),
       ),
       onExpansionChanged: load,
-      children: loading
-          ? [const LinearProgressIndicator()]
-          : [
-              for (final child in children ?? [])
-                Padding(
-                  padding: const EdgeInsets.only(left: 12),
-                  child: HierarchyTile(
-                    row: child,
-                    controller: widget.controller,
-                    onOpen: widget.onOpen,
-                    index: widget.index,
-                  ),
-                ),
-            ],
+      children: [
+        for (final child in children ?? [])
+          Padding(
+            padding: const EdgeInsets.only(left: 12),
+            child: HierarchyTile(
+              key: ValueKey(
+                '${widget.controller.active}:${widget.index}:${child['id']}',
+              ),
+              row: child,
+              controller: widget.controller,
+              onOpen: widget.onOpen,
+              index: widget.index,
+            ),
+          ),
+        if (loading) const LinearProgressIndicator(),
+        if (children != null && more && !loading)
+          TextButton(
+            onPressed: loadNextPage,
+            child: const Text('載入接下來100個子節點'),
+          ),
+      ],
     );
   }
 }
@@ -1211,8 +1240,11 @@ class _IndexRootsState extends State<IndexRoots> {
     setState(() => loading = true);
     final type = widget.type, offset = entries.length;
     try {
-      final rows = await widget.controller.read(
-        (r) => r.indexChildren(null, type, limit: 100, offset: offset),
+      final rows = await widget.controller.loadChildren(
+        null,
+        indexType: type,
+        limit: 100,
+        offset: offset,
       );
       if (mounted) {
         setState(() {

@@ -6,6 +6,22 @@ import 'package:flutter/foundation.dart';
 import '../data/package_store.dart';
 import '../data/repository.dart';
 
+// Factories live outside widget State methods: Dart closures may capture the
+// entire lexical context, including Element/RenderObject/Completer, when a UI
+// callback and setState closures share a scope. Only scalar query data crosses.
+List<DataRow> Function(DictionaryRepository) _childrenQuery(
+  int? parent,
+  String? indexType,
+  int? limit,
+  int offset,
+) =>
+    (r) => indexType == null
+    ? r.children(parent, limit: limit, offset: offset)
+    : r.indexChildren(parent, indexType, limit: limit, offset: offset);
+
+List<DataRow> Function(DictionaryRepository) _targetQuery(String target) =>
+    (r) => r.resolveTarget(target);
+
 class DictionaryController extends ChangeNotifier {
   final PackageStore store;
   List<DataRow> results = [], roots = [];
@@ -66,6 +82,16 @@ class DictionaryController extends ChangeNotifier {
       }
     });
   }
+
+  Future<List<DataRow>> loadChildren(
+    int? parent, {
+    String? indexType,
+    int? limit,
+    int offset = 0,
+  }) => read(_childrenQuery(parent, indexType, limit, offset));
+
+  Future<List<DataRow>> resolveTarget(String target) =>
+      read(_targetQuery(target));
 
   Future<void> refresh() async {
     _generation++;

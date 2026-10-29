@@ -18,6 +18,21 @@ def builder_command(arguments: list[str]) -> list[str]:
     return [sys.executable, '-E', '-s', '-X', 'utf8', '-m', 'tools.data_builder', *arguments]
 
 
+def profile_purpose(path):
+    try:
+        profile = json.loads(Path(path).read_text(encoding='utf-8'))
+        mode = profile.get('output_type', 'icdpack')
+        if profile['metadata']['kind'].endswith('_zh_tw'):
+            return '附加中譯包：不能作為獨立查詢版本；跨版未確認時只供參考。要獨立中文查詢請選「CM 健保署2023同版中英獨立版」。'
+        if mode in ('nhi_cm_app','nhi_pcs_app'):
+            return '獨立中英App資料包：可單獨啟用，只查健保署該版本。未含美國官方完整Index／Tabular註記，不是FY2027中譯。'
+        if mode in ('icdpack','pcs_app'):
+            return '獨立App資料包：.icdpack，可選定該版查詢；譯名與版本相容性另行核對。'
+        return '來源資料表：輸出.sqlite，供離線稽核，不能直接匯入App。'
+    except (OSError, ValueError, KeyError):
+        return '請核對profile用途、來源版次與輸出格式。'
+
+
 def main():
     import tkinter as tk
     from tkinter import filedialog, messagebox, ttk
@@ -25,7 +40,7 @@ def main():
         import ctypes
         ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('tw.offline.icd.builder')
     root = tk.Tk()
-    root.title('ICD 離線資料包製作工具 · 0.2.0')
+    root.title('ICD 離線資料包製作工具 · 0.2.1')
     root.geometry('900x720')
     root.minsize(650, 540)
     icon = ROOT / 'branding' / 'app_icon.ico'
@@ -48,7 +63,7 @@ def main():
     output = tk.StringVar()
     package = tk.StringVar()
     status = tk.StringVar(value=f'Python {sys.version.split()[0]} · SQLite {sqlite3.sqlite_version} · FTS5 可用 · 完全離線')
-    ttk.Label(root, text='ICD-10-CM 離線資料包製作工具', font=('', 18, 'bold')).pack(anchor='w', padx=18, pady=(16, 4))
+    ttk.Label(root, text='ICD-10-CM／PCS 離線資料包製作工具', font=('', 18, 'bold')).pack(anchor='w', padx=18, pady=(16, 4))
     ttk.Label(root, text='正式字典僅使用管理者取得的官方原檔；未知中譯對應不得改成相容。').pack(anchor='w', padx=18)
     tabs = ttk.Notebook(root)
     tabs.pack(fill='x', padx=16, pady=12)
@@ -71,6 +86,7 @@ def main():
             value = filedialog.askopenfilename(filetypes=[('JSON profile', '*.json')] if kind == 'profile' else [('ICD data package', '*.icdpack')])
         if value:
             variable.set(value)
+            if kind == 'profile': purpose.set(profile_purpose(Path(value)))
 
     def field(frame, row, label, variable, kind):
         ttk.Label(frame, text=label).grid(row=row, column=0, sticky='w', padx=(0, 8), pady=5)
@@ -96,7 +112,7 @@ def main():
         if tabs.select() != str(build): return 'icdpack'
         try:
             mode = json.loads(Path(profile.get()).read_text(encoding='utf-8')).get('output_type', 'icdpack')
-            return 'icdpack' if mode in ('pcs_app', 'nhi_pcs_app') else mode
+            return 'icdpack' if mode in ('pcs_app', 'nhi_pcs_app', 'nhi_cm_app') else mode
         except (OSError, ValueError):
             return 'icdpack'
 
@@ -115,7 +131,7 @@ def main():
             arguments = ['verify', '--package', package.get()]
         else:
             if not output.get() or Path(output.get()).exists():
-                messagebox.showerror('輸出檔案', '請選擇尚不存在的新輸出檔名；CM 用 .icdpack，PCS／原始表用 .sqlite。')
+                messagebox.showerror('輸出檔案', '請選擇尚不存在的新輸出檔名；CM／PCS App包用 .icdpack，來源資料表用 .sqlite。')
                 return
             arguments = ['sample', '--output', output.get()]
             if kind == 'build':
@@ -130,6 +146,7 @@ def main():
         status.set('處理中…所有檔案僅在本機使用，視窗保持可操作。')
         threading.Thread(target=worker, args=(arguments,), daemon=True).start()
 
+    purpose = tk.StringVar()
     presets = {}
     for path in sorted((ROOT / 'docs/source_profiles').glob('*.json')):
         presets[json.loads(path.read_text(encoding='utf-8'))['label']] = path
@@ -139,14 +156,16 @@ def main():
     def select_preset(event=None):
         profile.set(str(presets[preset.get()]))
         output.set('')
+        purpose.set(profile_purpose(presets[preset.get()]))
     preset.bind('<<ComboboxSelected>>', select_preset)
     if presets:
-        preferred = next((label for label, path in presets.items() if path.stem == 'cm-fy2027-oct'), next(iter(presets)))
+        preferred = next((label for label, path in presets.items() if path.stem == 'nhi2023-cm-app'), next(iter(presets)))
         preset.set(preferred); select_preset()
     field(build, 1, '官方原檔總資料夾', source, 'dir')
     field(build, 2, '自訂／目前 profile', profile, 'profile')
     field(build, 3, '新輸出 .icdpack／.sqlite', output, 'output')
-    ttk.Label(build, text='選含 cms／健保署的總資料夾；CM 可匯入 App，PCS／原始表僅供獨立 SQLite 查閱。').grid(row=4, column=0, columnspan=3, sticky='w', pady=6)
+    ttk.Label(build, text='獨立CM／PCS App包可單獨啟用；附加中譯包需英文主版本，來源表SQLite不能匯入App。').grid(row=4, column=0, columnspan=3, sticky='w', pady=6)
+    ttk.Label(build, textvariable=purpose, wraplength=760).grid(row=6, column=0, columnspan=3, sticky='w', pady=8)
     buttons.append(ttk.Button(build, text='離線建立資料包', command=lambda: run('build')))
     buttons[-1].grid(row=5, column=1, sticky='w')
     buttons.append(ttk.Button(build, text='檢查總資料夾／可用設定', command=lambda: run('catalog')))

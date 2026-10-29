@@ -1,0 +1,44 @@
+{
+  "label": "CM 健保署2023同版中英獨立版（可單獨啟用／中文搜尋）",
+  "metadata": {
+    "package_id": "icd10cm-tw-nhi2023-1150827-bilingual",
+    "package_version": "1.0.0",
+    "kind": "icd10cm_combined",
+    "classification": "ICD-10-CM",
+    "jurisdiction": "TW",
+    "edition": "NHI-2023-CM",
+    "release_id": "1150827",
+    "effective_from": "2025-01-01",
+    "effective_to": "9999-12-31",
+    "language": "en+zh-TW",
+    "source_organization": "衛生福利部中央健康保險署",
+    "source_urls": [
+      "https://data.gov.tw/dataset/177507"
+    ],
+    "created_at": "2026-10-29T00:00:00Z",
+    "is_sample": false,
+    "translation_edition": "NHI-2023",
+    "translation_revision": "1150827",
+    "mapping_policy": "exact_edition",
+    "compatible_base_package_ids": [
+      "icd10cm-tw-nhi2023-1150827-bilingual"
+    ]
+  },
+  "inputs": [
+    "健保署/1.2023年中文版ICD-10-CM_PCS_1150827.ods"
+  ],
+  "input_sha256": {
+    "健保署/1.2023年中文版ICD-10-CM_PCS_1150827.ods": "b6108ab1dccdfe18faf9640b9a340a2d8ac655bfa4bd66169d64cb5874706846"
+  },
+  "translation": {
+    "file": "健保署/1.2023年中文版ICD-10-CM_PCS_1150827.ods",
+    "columns": {
+      "sheet": "ICD-10-CM",
+      "code": "2023年版\nICD-10-CM",
+      "title_en": "2023 CM英文名稱",
+      "title_zh_tw": "2023 CM中文名稱",
+      "use": "USE"
+    }
+  },
+  "output_type": "nhi_cm_app"
+}

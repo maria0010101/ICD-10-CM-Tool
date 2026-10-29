@@ -2,20 +2,24 @@
 import argparse,hashlib,json,os,re,subprocess,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];PACKAGE='tw.offline.icd.icd_dictionary.debug'
-p=argparse.ArgumentParser();p.add_argument('--device',required=True);p.add_argument('--build-dir',type=Path,required=True);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--suite',choices=['large','nhi-cm'],default='large');p.add_argument('--device',required=True);p.add_argument('--build-dir',type=Path,required=True);a=p.parse_args()
 inputs={'cm':ROOT/'manual-test-0.1.2/data/cm-fy2027-oct.icdpack','nhi':ROOT/'manual-test-0.1.2/data/nhi2023-cm-ods-unresolved.icdpack','pcs':ROOT/'manual-test-0.2.0/data/pcs-fy2027-oct-app.icdpack','twpcs':ROOT/'manual-test-0.2.0/data/nhi2023-pcs-app.icdpack'}
+if a.suite=='nhi-cm': inputs={'nhi_cm':ROOT/'manual-test-0.2.1/data/nhi2023-cm-app.icdpack'}
+release='021' if a.suite=='nhi-cm' else '020'
+marker='ICD'+release
+evidence=ROOT/('evidence/release-0.2.1' if a.suite=='nhi-cm' else 'evidence/release-0.2.0')
 expected={name:hashlib.sha256(path.read_bytes()).hexdigest() for name,path in inputs.items()}
 adb=['/home/hpd/Android/Sdk/platform-tools/adb','-s',a.device]
-cmd=['/home/hpd/development/flutter/bin/flutter','test','-d',a.device,'integration_test/large_pack_test.dart','--no-uninstall','--reporter','expanded']
+cmd=['/home/hpd/development/flutter/bin/flutter','test','-d',a.device,'integration_test/nhi_cm_test.dart' if a.suite=='nhi-cm' else 'integration_test/large_pack_test.dart','--no-uninstall','--reporter','expanded']
 env=os.environ.copy();env['JAVA_HOME']='/home/hpd/development/jdk-17';env['ANDROID_HOME']='/home/hpd/Android/Sdk'
-with (ROOT/'evidence/release-0.2.0/android-large-import.log').open('x') as log:
+with (evidence/('android-nhi-cm-import.log' if a.suite=='nhi-cm' else 'android-large-import.log')).open('x') as log:
  process=subprocess.Popen(cmd,cwd=a.build_dir,env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,bufsize=1)
  sent=False
  try:
   for line in process.stdout:
    log.write(line);log.flush()
-   if 'ICD020_INPUT_READY:' in line and not sent:
-    path=line.split('ICD020_INPUT_READY:',1)[1].strip()
+   if (marker+'_INPUT_READY:') in line and not sent:
+    path=line.split((marker+'_INPUT_READY:'),1)[1].strip()
     prefix='/data/user/0/'+PACKAGE+'/files/'
     if not path.startswith(prefix) or not re.fullmatch(r'[A-Za-z0-9_./-]+',path):raise RuntimeError('Unexpected private test input path')
     relative=path[len(prefix):]
@@ -27,11 +31,11 @@ with (ROOT/'evidence/release-0.2.0/android-large-import.log').open('x') as log:
     ready=json.dumps(expected).encode()
     subprocess.run(adb+['shell','-T',"run-as "+PACKAGE+" sh -c 'cat > files/"+relative+"/ready'"],input=ready,check=True,timeout=10)
     sent=True
-   if 'ICD020_' in line or '[E]' in line or 'Built ' in line:print(line.rstrip(),flush=True)
+   if marker+'_' in line or '[E]' in line or 'Built ' in line:print(line.rstrip(),flush=True)
   result=process.wait();log.write('EXIT='+str(result)+'\n')
  except BaseException:
   process.terminate();process.wait(timeout=20);raise
 if result==0:
- report=subprocess.check_output(adb+['exec-out','run-as',PACKAGE,'cat','files/release020-report.json'])
- (ROOT/'evidence/release-0.2.0/android-large-import.json').write_bytes(report)
+ report=subprocess.check_output(adb+['exec-out','run-as',PACKAGE,'cat','files/release'+release+'-report.json'])
+ (evidence/('android-nhi-cm-import.json' if a.suite=='nhi-cm' else 'android-large-import.json')).write_bytes(report)
 sys.exit(result)

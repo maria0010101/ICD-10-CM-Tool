@@ -196,10 +196,12 @@ class PackageStore {
           active == null ||
           (!m.bases.contains(manifest(active!).id) ||
               m.classification != manifest(active!).classification)) {
-        throw PackException('中譯不相容目前英文 base');
+        throw PackException(
+          '這是附加中譯包，不能單獨啟用。請先選相容主版本；若需獨立中文查詢，請用製作工具的「CM 健保署2023同版中英獨立版」。',
+        );
       }
     } else if (m.isOverlay) {
-      throw PackException('中譯 overlay 不能當英文 base');
+      throw PackException('附加中譯包沒有獨立代碼主表，不能作為查詢版本；請先選相容主版本或製作NHI CM同版中英App包。');
     }
     if (await fileHash(File(contentPath(hash))) != m.json['content_sha256']) {
       throw PackException('已安裝資料內容已損壞；未切換');

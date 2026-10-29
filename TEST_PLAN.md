@@ -52,3 +52,8 @@
 - T23：以原始70MiB級NHI包驗證Android native64KiB串流、原包SHA不變、完整驗證與舊資料保留；SAF UI與私有file URI的native實作測試分列。
 - T24：PCS精確碼／FTS／Index明確目標／七軸同row與分類切換；同年度與不同年度分開，heading不可當完整碼。
 - T25：健保署2023 PCS同一原始列的中英文可搜尋，但不冒稱FY2027中譯；原CM unresolved overlay政策不變。
+
+## 0.2.1新增回歸
+
+- T26：NHI CM獨立combined包在沒有英文包時可啟用，精確碼／英文FTS／中文n-gram結果及來源正確，USE與前綴導覽逐值稽核；不接受US base相容宣告。原使用者overlay SHA不變，不改policy繞過限制。
+- T27：真實SQLite與isolate的widget測試展開分類樹、Index主／子詞、窄桌面欄，無不可傳送Widget／Future例外；等待查詢Future結束後才關閉資料庫。Windows原生測試截圖與使用者實際EXE操作分列。

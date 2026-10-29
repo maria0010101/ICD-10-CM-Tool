@@ -1,0 +1,14 @@
+{
+  "profile_sha256": "0f45a28c6dcdc8790f33f234c1fcd7d34566a1a9fa09e64b29ff01c0e875909e",
+  "projection": {
+    "hierarchy": "code-prefix navigation only",
+    "same_edition_bilingual_rows": 2,
+    "us_cross_release_compatibility_claim": false
+  },
+  "source_files": [
+    {
+      "name": "SAMPLE.ods",
+      "sha256": "f46f22e910ba503362c06c8ff15d8ce4df8d62dbc2249227b89647b6304a5dd3"
+    }
+  ]
+}
