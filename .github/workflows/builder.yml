@@ -1,0 +1,68 @@
+name: Offline database builder for Windows
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/data_builder/**'
+      - 'scripts/package_builder.py'
+      - 'scripts/smoke_builder_gui.py'
+      - '.github/workflows/builder.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  builder-windows-x64:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Pinned standalone Python 3.13.18 (security-release runtime)
+        shell: pwsh
+        run: |
+          $Archive = Join-Path $env:RUNNER_TEMP 'cpython-3.13.18-windows-x64.tar.gz'
+          $Target = Join-Path $env:RUNNER_TEMP 'icd-python313'
+          Invoke-WebRequest -Uri 'https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.13.18%2B20261026-x86_64-pc-windows-msvc-install_only_stripped.tar.gz' -OutFile $Archive
+          if ((Get-FileHash $Archive -Algorithm SHA256).Hash.ToLowerInvariant() -ne '7369f7a35f261222a6ac8b3a87c1c88eeebee8af945d85346202591a64038dd3') { throw 'Python runtime SHA256 mismatch' }
+          New-Item -ItemType Directory -Force $Target | Out-Null
+          tar -xzf $Archive -C $Target
+          if ($LASTEXITCODE -ne 0) { throw 'Python runtime extraction failed' }
+          $PythonDir = Join-Path $Target 'python'
+          $PythonDir | Out-File -FilePath $env:GITHUB_PATH -Append -Encoding utf8
+          & (Join-Path $PythonDir 'python.exe') --version
+      - name: Create portable tool from locked runtime and wheels
+        shell: pwsh
+        run: |
+          $Root = Join-Path $env:RUNNER_TEMP 'icd-builder-native-test'
+          python scripts/package_builder.py --output dist/icd-data-builder-0.1.1-windows-x64-portable.zip --unpacked $Root
+          if ($LASTEXITCODE -ne 0) { throw 'Builder packaging failed' }
+          "BUILDER_TEST_ROOT=$Root" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+      - name: Verify bundled interpreter, ETL tests and real Tk GUI construction
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force evidence | Out-Null
+          $Evidence = (Resolve-Path evidence).Path
+          Push-Location $env:BUILDER_TEST_ROOT
+          try {
+            & ./runtime/python.exe -E -s -X utf8 -m pytest tools/data_builder/tests -q 2>&1 | Tee-Object "$Evidence/builder-windows-tests.log"
+            if ($LASTEXITCODE -ne 0) { throw 'Bundled Python tests failed' }
+            & ./runtime/python.exe -E -s -X utf8 smoke_gui.py | Tee-Object "$Evidence/builder-windows-gui.json"
+            if ($LASTEXITCODE -ne 0) { throw 'Bundled Tk GUI construction failed' }
+            & ./runtime/python.exe -E -s -X utf8 -c "import json,sys,sqlite3,platform; print(json.dumps(dict(python=sys.version,sqlite=sqlite3.sqlite_version,platform=platform.platform(),windows_native=True)))" | Set-Content "$Evidence/builder-windows-runtime.json"
+            if ($LASTEXITCODE -ne 0) { throw 'Bundled runtime check failed' }
+          } finally { Pop-Location }
+          $Zip = Get-Item dist/icd-data-builder-0.1.1-windows-x64-portable.zip
+          "$((Get-FileHash $Zip -Algorithm SHA256).Hash.ToLowerInvariant())  $($Zip.Name)" | Set-Content -Encoding ascii "$($Zip.FullName).sha256"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: data-builder-windows-x64-0.1.1
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            dist/icd-data-builder-0.1.1-windows-x64-portable.zip
+            dist/icd-data-builder-0.1.1-windows-x64-portable.zip.sha256
+            evidence/builder-windows-tests.log
+            evidence/builder-windows-gui.json
+            evidence/builder-windows-runtime.json
