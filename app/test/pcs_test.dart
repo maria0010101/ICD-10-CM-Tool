@@ -46,6 +46,12 @@ void main() {
           expect((detail['pcs_rows'] as List).length, 1);
           final main = repo.indexChildren(null, 'alphabetic').first;
           expect(repo.indexDetail(main['id'] as int)['target_code'], '001');
+          expect(
+            (repo.indexDetail(main['id'] as int)['pcs_prefix_candidates']
+                    as List)
+                .length,
+            2,
+          );
           expect(repo.resolveTarget('0016070'), isNotEmpty);
           expect(repo.resolveTarget('0UT9'), isEmpty);
         } finally {

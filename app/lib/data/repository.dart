@@ -237,6 +237,15 @@ class DictionaryRepository {
         [id],
       ),
       'target_nodes': target == null ? <DataRow>[] : resolveTarget(target),
+      'pcs_prefix_candidates':
+          manifest.isPcs &&
+              target != null &&
+              RegExp(r'^[0-9A-HJ-NP-Z]{3,6}$').hasMatch(normalizeCode(target))
+          ? rows(
+              "SELECT * FROM code_nodes WHERE billable=1 AND code_normalized GLOB ? ORDER BY code_normalized LIMIT 100",
+              ['${normalizeCode(target)}*'],
+            )
+          : <DataRow>[],
     };
   }
 

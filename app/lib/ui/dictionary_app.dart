@@ -432,14 +432,33 @@ class _DictionaryHomeState extends State<DictionaryHome> {
               trailing: const Icon(Icons.arrow_forward),
               onTap: () => guard(() => c.open(Map<String, Object?>.from(r))),
             ),
+          if (m.isPcs && (d['pcs_prefix_candidates'] as List).isNotEmpty) ...[
+            const Text('PCS Index 前綴候選（最多100筆）：部分碼本身不是完整可申報碼，需逐碼核對七軸。'),
+            for (final r in d['pcs_prefix_candidates'] as List)
+              ListTile(
+                title: Text('${r['code']} · ${r['title_en']}'),
+                onTap: () => guard(() => c.open(Map<String, Object?>.from(r))),
+              ),
+          ],
           for (final r in d['crossrefs'] as List)
             ListTile(
               title: Text('${r['ref_type']}: ${r['target_term']}'),
               onTap: () {
-                input.text = r['target_term'] as String;
+                input.text = m.isPcs && d['target_code'] != null
+                    ? d['target_code'] as String
+                    : r['target_term'] as String;
                 c.query = input.text;
-                c.scope = 'all';
-                guard(c.search);
+                c.scope = m.isPcs && d['target_code'] != null
+                    ? 'tabular'
+                    : 'all';
+                guard(() async {
+                  await c.search();
+                  if (mounted &&
+                      paneCount(MediaQuery.sizeOf(context).width) == 1 &&
+                      Navigator.of(context).canPop()) {
+                    Navigator.of(context).pop();
+                  }
+                });
               },
             ),
           for (final r in d['cells'] as List)
