@@ -55,10 +55,15 @@ jobs:
         run: |
           $Bundle = Resolve-Path app/build/windows/x64/runner/Release
           $Process = Start-Process -FilePath (Join-Path $Bundle 'icd_dictionary.exe') -WorkingDirectory $Bundle -PassThru
-          Start-Sleep -Seconds 8
-          if ($Process.HasExited) { throw "Bundled app exited early: $($Process.ExitCode)" }
-          @{ process_alive=$true; environment='GitHub hosted Windows runner, not a clean workstation'; timestamp=(Get-Date).ToUniversalTime().ToString('o'); commit=$env:GITHUB_SHA } | ConvertTo-Json | Set-Content evidence/windows-bundle-launch.json
-          Stop-Process -Id $Process.Id
+          try {
+            Start-Sleep -Seconds 8
+            if ($Process.HasExited) { throw "Bundled app exited early: $($Process.ExitCode)" }
+            $State = Join-Path $Bundle 'portable-data/user.sqlite'
+            if (!(Test-Path $State)) { throw 'App failed to create its separate user database' }
+            $Check = python -c "import json,sqlite3,pathlib,sys; c=sqlite3.connect(pathlib.Path(sys.argv[1]).resolve().as_uri()+'?mode=ro',uri=True); tables=[r[0] for r in c.execute('SELECT name FROM sqlite_master WHERE type=char(116,97,98,108,101)')]; assert {'installed_packages','favorites','personal_notes','preferences'} <= set(tables); assert c.execute('PRAGMA integrity_check').fetchone()[0]=='ok'; print(json.dumps(dict(tables=tables))); c.close()" $State
+            if ($LASTEXITCODE -ne 0) { throw 'App-local SQLite startup validation failed' }
+            @{ process_alive=$true; app_user_sqlite_verified=$true; app_user_tables=($Check | ConvertFrom-Json).tables; environment='GitHub hosted Windows runner, not a clean workstation'; timestamp=(Get-Date).ToUniversalTime().ToString('o'); commit=$env:GITHUB_SHA } | ConvertTo-Json | Set-Content evidence/windows-bundle-launch.json
+          } finally { Stop-Process -Id $Process.Id -ErrorAction SilentlyContinue }
       - name: Preserve portable ZIP and native FTS5 query evidence
         if: always()
         uses: actions/upload-artifact@v4

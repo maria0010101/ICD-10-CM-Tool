@@ -31,7 +31,7 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'Static analysis failed' }
     flutter test
     if ($LASTEXITCODE -ne 0) { throw 'Flutter tests failed' }
-    flutter build windows --release --target-platform windows-x64
+    flutter build windows --release
     if ($LASTEXITCODE -ne 0) { throw 'Windows build failed' }
     $Bundle = Join-Path $PWD 'build/windows/x64/runner/Release'
     foreach ($Required in @('icd_dictionary.exe','flutter_windows.dll','data/icudtl.dat','data/flutter_assets')) {
