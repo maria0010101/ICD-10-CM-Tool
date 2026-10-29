@@ -25,7 +25,7 @@ def main():
         import ctypes
         ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('tw.offline.icd.builder')
     root = tk.Tk()
-    root.title('ICD 離線資料包製作工具 · 0.1.2')
+    root.title('ICD 離線資料包製作工具 · 0.2.0')
     root.geometry('900x720')
     root.minsize(650, 540)
     icon = ROOT / 'branding' / 'app_icon.ico'
@@ -95,7 +95,8 @@ def main():
     def selected_output_type():
         if tabs.select() != str(build): return 'icdpack'
         try:
-            return json.loads(Path(profile.get()).read_text(encoding='utf-8')).get('output_type', 'icdpack')
+            mode = json.loads(Path(profile.get()).read_text(encoding='utf-8')).get('output_type', 'icdpack')
+            return 'icdpack' if mode in ('pcs_app', 'nhi_pcs_app') else mode
         except (OSError, ValueError):
             return 'icdpack'
 

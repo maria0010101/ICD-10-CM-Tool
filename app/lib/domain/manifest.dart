@@ -23,8 +23,12 @@ class PackManifest {
   String get id => json['package_id'] as String;
   String get edition => json['edition'] as String;
   String get kind => json['kind'] as String;
+  String get classification => json['classification'] as String;
+  bool get isPcs => classification == 'ICD-10-PCS';
+  bool get isOverlay => kind.endsWith('_zh_tw');
   bool get sample => json['is_sample'] as bool;
-  String get label => '$edition · $id${sample ? ' · SAMPLE' : ''}';
+  String get label =>
+      '${isPcs ? 'PCS' : 'CM'} · $edition · $id${sample ? ' · SAMPLE' : ''}';
   Map<String, dynamic> get counts => json['row_counts'] as Map<String, dynamic>;
   List<String> get bases =>
       List<String>.from(json['compatible_base_package_ids'] as List? ?? [id]);
@@ -70,21 +74,30 @@ class PackManifest {
       }
     }
     if (m['format'] != 'icdpack' ||
-        m['classification'] != 'ICD-10-CM' ||
+        !['ICD-10-CM', 'ICD-10-PCS'].contains(m['classification']) ||
         m['content_filename'] != 'content.sqlite') {
-      throw PackException('非 ICD-10-CM 資料包');
+      throw PackException('非 ICD-10-CM／PCS 資料包');
     }
     if (m['schema_version'] != '1.0.0' ||
-        m['required_app_schema_min'] != '1.0.0') {
+        m['required_app_schema_min'] !=
+            (m['classification'] == 'ICD-10-PCS' ? '1.1.0' : '1.0.0')) {
       throw PackException('不相容 schema，請升級 App；原資料未更動');
     }
     if (![
           'icd10cm_en',
           'icd10cm_zh_tw',
           'icd10cm_combined',
+          'icd10pcs_en',
+          'icd10pcs_zh_tw',
+          'icd10pcs_combined',
         ].contains(m['kind']) ||
         m['is_sample'] is! bool) {
       throw PackException('資料種類或 SAMPLE 標示錯誤');
+    }
+    if (!(m['kind'] as String).startsWith(
+      m['classification'] == 'ICD-10-PCS' ? 'icd10pcs_' : 'icd10cm_',
+    )) {
+      throw PackException('分類與資料種類不一致');
     }
     if (!RegExp(r'^[a-z0-9][a-z0-9._-]{0,127}$').hasMatch(m['package_id']) ||
         !RegExp(r'^\d+\.\d+\.\d+$').hasMatch(m['package_version']) ||
@@ -146,7 +159,7 @@ class PackManifest {
             ))) {
       throw PackException('中譯 base 清單錯誤');
     }
-    if (m['kind'] == 'icd10cm_zh_tw' &&
+    if ((m['kind'] as String).endsWith('_zh_tw') &&
         ((m['compatible_base_package_ids'] as List? ?? []).isEmpty ||
             optional.take(3).any((k) => !m.containsKey(k)))) {
       throw PackException('中譯包必須宣告版別與 base 相容清單');

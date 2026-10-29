@@ -192,12 +192,13 @@ class PackageStore {
   Future<void> activate(String hash, {bool translation = false}) async {
     final m = manifest(hash);
     if (translation) {
-      if (m.kind != 'icd10cm_zh_tw' ||
+      if (!m.isOverlay ||
           active == null ||
-          !m.bases.contains(manifest(active!).id)) {
+          (!m.bases.contains(manifest(active!).id) ||
+              m.classification != manifest(active!).classification)) {
         throw PackException('中譯不相容目前英文 base');
       }
-    } else if (m.kind == 'icd10cm_zh_tw') {
+    } else if (m.isOverlay) {
       throw PackException('中譯 overlay 不能當英文 base');
     }
     if (await fileHash(File(contentPath(hash))) != m.json['content_sha256']) {
@@ -210,6 +211,8 @@ class PackageStore {
         setPreference('previous', old);
       }
       setPreference(translation ? 'overlay' : 'active', hash);
+      if (!translation) setPreference('active:${m.classification}', hash);
+      if (translation) setPreference('overlay:${m.classification}', hash);
       if (!translation &&
           overlay != null &&
           !manifest(overlay!).bases.contains(m.id)) {

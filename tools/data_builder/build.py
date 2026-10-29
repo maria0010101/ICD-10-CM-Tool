@@ -28,7 +28,10 @@ def build(source_dir: Path, profile_path: Path, output: Path):
     meta = dict(profile['metadata'])
     meta['source_files'] = [{'name':p.name, 'sha256':digest(p.read_bytes())} for p in paths]
     mode = profile.get('output_type', 'icdpack')
-    if mode != 'icdpack':
+    if mode in ('pcs_app','nhi_pcs_app'):
+        from .pcs_pack import build_pcs_pack
+        result, report = build_pcs_pack(paths,meta,output,mode,profile)
+    elif mode != 'icdpack':
         from .source_tables import build_source_tables
         result, report = build_source_tables(paths, meta, output, mode)
     else:

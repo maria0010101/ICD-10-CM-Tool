@@ -53,9 +53,12 @@ def check_manifest(m):
         raise PackageError('manifest: ' + errors[0].message)
     if m['effective_to'] < m['effective_from']:
         raise PackageError('invalid effective date interval')
-    if m['schema_version'] != '1.0.0' or m['required_app_schema_min'] != '1.0.0':
+    family = 'icd10pcs_' if m['classification'] == 'ICD-10-PCS' else 'icd10cm_'
+    if not m['kind'].startswith(family): raise PackageError('Classification/kind mismatch')
+    expected_min = '1.1.0' if family == 'icd10pcs_' else '1.0.0'
+    if m['schema_version'] != '1.0.0' or m['required_app_schema_min'] != expected_min:
         raise PackageError('Unsupported schema: upgrade App/builder')
-    if m['kind'] == 'icd10cm_zh_tw' and not m.get('compatible_base_package_ids'):
+    if m['kind'].endswith('_zh_tw') and not m.get('compatible_base_package_ids'):
         raise PackageError('overlay needs explicit base package IDs')
     if m['is_sample'] and 'SAMPLE' not in m['source_organization']:
         raise PackageError('sample must be visibly labelled')
@@ -100,13 +103,17 @@ def validate_db(path: Path, m: dict):
             right = db.execute(f'SELECT id,{",".join(cols)} FROM {table} ORDER BY id').fetchall()
             if left != right:
                 raise PackageError('FTS content mismatch')
-        expected = {(g,c,i) for i,c,text in db.execute('SELECT id,code_normalized,search_normalized FROM translations') for g in grams(text)}
-        if expected != set(db.execute('SELECT * FROM zh_ngrams')):
-            raise PackageError('Chinese ngram mismatch')
+        # Verify one translation's postings at a time; avoid two multi-million
+        # Python tuple sets for real NHI data.
+        for ident,code,title in db.execute('SELECT id,code_normalized,search_normalized FROM translations'):
+            if len(title)>10000: raise PackageError('Translation text resource limit')
+            expected={(g,code,ident) for g in grams(title)}
+            if expected!=set(db.execute('SELECT * FROM zh_ngrams WHERE source_translation_id=?',(ident,))):
+                raise PackageError('Chinese ngram mismatch')
         for c,title,search,status,base in db.execute('SELECT code_normalized,title_zh_tw,search_normalized,mapping_status,base_package_id FROM translations'):
             if search != normalized(title) or (status != 'unresolved' and base not in m.get('compatible_base_package_ids',[m['package_id']])):
                 raise PackageError('Translation lineage/normalization mismatch')
-        if m['kind'] != 'icd10cm_zh_tw' and not m['row_counts']['code_nodes']:
+        if not m['kind'].endswith('_zh_tw') and not m['row_counts']['code_nodes']:
             raise PackageError('Empty English dictionary')
     finally:
         db.close()
@@ -184,7 +191,7 @@ def write_package(db_path: Path, metadata: dict, output: Path):
     db.commit()
     db.execute('VACUUM')
     db.close()
-    m.update(format='icdpack',schema_version='1.0.0',required_app_schema_min='1.0.0',content_filename='content.sqlite',content_sha256=digest(db_path.read_bytes()))
+    m.update(format='icdpack',schema_version='1.0.0',required_app_schema_min='1.1.0' if m['classification']=='ICD-10-PCS' else '1.0.0',content_filename='content.sqlite',content_sha256=digest(db_path.read_bytes()))
     check_manifest(m)
     validate_db(db_path,m)
     raw = json_bytes(m)

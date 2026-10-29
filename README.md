@@ -1,10 +1,12 @@
-# ICD-10-CM Offline Dictionary · 0.1.1 Demo
+# ICD-10-CM / PCS Offline Dictionary · 0.2.0 Demo
 
 已實作 Flutter/Dart 離線 App、Python 3.13 builder/validator、標準 `.icdpack` 與自動化測試。**尚未通過完整跨 Windows/Android 驗收，不可用於臨床編碼或申報。**
 
 App、資料包、`user.sqlite` 物理分離；App 不含字典、Python runtime、雲端 API 或自動下載。相同原包直接匯入，不重封、不按平台轉換。
 
 ## 交付與驗收
+
+* **0.2.0：修正Android大型NHI包匯入OOM，新增PCS獨立查詢／七軸／健保署2023同版中文搜尋。** [操作與驗收](docs/RELEASE_0.2.0.md)，成品放 `manual-test-0.2.0/`；舊CM包不用重製，PCS新包需新版App。
 
 * 原始碼私有備份：[maria0010101/ICD-10-CM-Tool](https://github.com/maria0010101/ICD-10-CM-Tool)。不包含官方完整資料、使用者資料、venv 或 SDK。
 * 本機手動測試交付目錄：`manual-test-0.1.1/`；內有新版圖示 APK、Windows App ZIP、Windows 獨立資料庫工具 ZIP、合成 samples、SHA256 與繁體中文操作說明（產物不混入 Git 原始碼）。

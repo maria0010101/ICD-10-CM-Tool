@@ -154,7 +154,7 @@ class SafeZip {
         await raf.setPosition(entry.offset);
         var remaining = entry.compressed;
         while (remaining > 0) {
-          final data = await raf.read(min(1024, remaining));
+          final data = await raf.read(min(64 * 1024, remaining));
           if (data.isEmpty) {
             throw PackException('ZIP 資料截斷');
           }

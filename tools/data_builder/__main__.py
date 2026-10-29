@@ -9,7 +9,7 @@ from .package import PackageError, digest, json_bytes, verify, write_package
 from .sample import sample
 
 def main():
-    p=argparse.ArgumentParser(description='Offline ICD package builder 0.1.2')
+    p=argparse.ArgumentParser(description='Offline ICD package builder 0.2.0')
     sub=p.add_subparsers(dest='command',required=True)
     sub.add_parser('gui',help='Open local desktop builder')
     a=sub.add_parser('sample'); a.add_argument('--output',type=Path,required=True); a.add_argument('--revision',type=int,default=1)

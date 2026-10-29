@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:file_selector/file_selector.dart';
 import 'package:flutter/material.dart' hide DataRow;
@@ -7,6 +6,7 @@ import 'package:flutter/services.dart';
 
 import '../app/controller.dart';
 import '../data/package_store.dart';
+import '../data/package_picker.dart';
 import '../data/repository.dart';
 import '../domain/manifest.dart';
 
@@ -131,17 +131,12 @@ class _DictionaryHomeState extends State<DictionaryHome> {
 
   Future<void> importPack() async {
     PreparedPack? prepared;
+    SelectedPackage? selected;
     setState(() => busy = true);
     try {
-      final selected = await openFile(
-        acceptedTypeGroups: [
-          const XTypeGroup(label: 'ICD package', extensions: ['icdpack']),
-        ],
-      );
-      if (selected == null) {
-        return;
-      }
-      prepared = await c.store.prepare(File(selected.path));
+      selected = await pickPackage();
+      if (selected == null) return;
+      prepared = await c.store.prepare(selected.file);
       if (!mounted) {
         return;
       }
@@ -172,14 +167,21 @@ class _DictionaryHomeState extends State<DictionaryHome> {
       );
       if (yes == true) {
         final hash = await c.store.publish(prepared);
-        await c.choose(
-          hash,
-          translation: prepared.manifest.kind == 'icd10cm_zh_tw',
-        );
+        if (prepared.manifest.isOverlay &&
+            (c.active == null ||
+                !prepared.manifest.bases.contains(
+                  c.store.manifest(c.active!).id,
+                ))) {
+          error('中譯包已安全匯入；請先啟用相容英文版，再於資料管理啟用中譯。');
+          setState(() {});
+        } else {
+          await c.choose(hash, translation: prepared.manifest.isOverlay);
+        }
       }
     } catch (e) {
       error(e);
     } finally {
+      await selected?.dispose();
       if (prepared != null) {
         await c.store.discard(prepared);
       }
@@ -192,7 +194,10 @@ class _DictionaryHomeState extends State<DictionaryHome> {
   Widget versionPicker() {
     final installed = c.store.installed
         .where(
-          (r) => c.store.manifest(r['hash'] as String).kind != 'icd10cm_zh_tw',
+          (r) =>
+              !c.store.manifest(r['hash'] as String).isOverlay &&
+              c.store.manifest(r['hash'] as String).classification ==
+                  c.classification,
         )
         .toList();
     return DropdownButton<String>(
@@ -469,6 +474,7 @@ class _DictionaryHomeState extends State<DictionaryHome> {
           spacing: 8,
           children: [
             Chip(label: Text(d['state'] as String)),
+            Chip(label: Text(m.classification)),
             Chip(label: Text(m.edition)),
             if (m.sample)
               const Chip(label: Text('SAMPLE / NOT FOR CLINICAL CODING')),
@@ -543,12 +549,42 @@ class _DictionaryHomeState extends State<DictionaryHome> {
           ],
         ),
         const Divider(),
+        if (m.isPcs && (d['pcs_axes'] as List? ?? []).isNotEmpty) ...[
+          const Text('PCS 七軸（本碼所屬同一官方資料列）'),
+          for (final axis in d['pcs_axes'] as List)
+            ListTile(
+              title: Text(
+                '${axis['position']} · ${axis['title']} · ${axis['code']}',
+              ),
+              subtitle: Text('${axis['label']}'),
+            ),
+        ],
+        if (m.isPcs && (d['pcs_rows'] as List? ?? []).isNotEmpty)
+          ExpansionTile(
+            title: const Text('官方七軸表：各列組合範圍（不可跨列拼接）'),
+            children: [
+              for (final row in d['pcs_rows'] as List)
+                Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Text(
+                    '列 ${row['order']}\n${(row['axes'] as List).map((a) => '${a['position']} ${a['title']}: ${(a['labels'] as List).map((l) => '${l['code']} ${l['label']}').join(' / ')}').join('\n')}',
+                  ),
+                ),
+            ],
+          ),
         const Text('階層（由上而下）'),
         for (final a in d['ancestors'] as List)
           Text('${a['code']} ${a['title_en']}'),
         const SizedBox(height: 16),
-        Text('本層與繼承 notes', style: Theme.of(context).textTheme.titleLarge),
-        for (final n in d['notes'] as List)
+        Text(
+          m.isPcs ? 'PCS 來源註記與 section 參考定義（非 CM 繼承規則）' : '本層與繼承 notes',
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
+        for (final n in (d['notes'] as List).where(
+          (n) =>
+              n['note_type'] != 'pcs_table' &&
+              n['note_type'] != 'nhi_source_columns',
+        ))
           Card(
             child: Padding(
               padding: const EdgeInsets.all(12),
@@ -683,9 +719,7 @@ class _DictionaryHomeState extends State<DictionaryHome> {
               onPressed: () => guard(
                 () => c.choose(
                   r['hash'] as String,
-                  translation:
-                      c.store.manifest(r['hash'] as String).kind ==
-                      'icd10cm_zh_tw',
+                  translation: c.store.manifest(r['hash'] as String).isOverlay,
                 ),
               ),
             ),
@@ -694,8 +728,9 @@ class _DictionaryHomeState extends State<DictionaryHome> {
       if (c.store.installed
               .where(
                 (r) =>
-                    c.store.manifest(r['hash'] as String).kind !=
-                    'icd10cm_zh_tw',
+                    !c.store.manifest(r['hash'] as String).isOverlay &&
+                    c.store.manifest(r['hash'] as String).classification ==
+                        c.classification,
               )
               .length >=
           2)
@@ -754,7 +789,7 @@ class _DictionaryHomeState extends State<DictionaryHome> {
         onPressed: () => showLicensePage(
           context: context,
           applicationName: 'ICD Offline · Demo',
-          applicationVersion: '0.1.1',
+          applicationVersion: '0.2.0',
         ),
         child: const Text('開放原始碼授權'),
       ),
@@ -769,9 +804,16 @@ class _DictionaryHomeState extends State<DictionaryHome> {
   Future<void> compareVersions() async {
     final packs = c.store.installed
         .where(
-          (r) => c.store.manifest(r['hash'] as String).kind != 'icd10cm_zh_tw',
+          (r) =>
+              !c.store.manifest(r['hash'] as String).isOverlay &&
+              c.store.manifest(r['hash'] as String).classification ==
+                  c.classification,
         )
         .toList();
+    if (packs.length < 2) {
+      error('目前分類至少需兩個版本才能比較');
+      return;
+    }
     String left = packs.first['hash'] as String,
         right = packs.last['hash'] as String;
     final accepted = await showDialog<bool>(
@@ -926,6 +968,21 @@ class _DictionaryHomeState extends State<DictionaryHome> {
         ),
         body: Column(
           children: [
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: SegmentedButton<String>(
+                segments: const [
+                  ButtonSegment(value: 'ICD-10-CM', label: Text('CM 診斷')),
+                  ButtonSegment(value: 'ICD-10-PCS', label: Text('PCS 處置')),
+                ],
+                selected: {c.classification},
+                onSelectionChanged: busy
+                    ? null
+                    : (selection) =>
+                          guard(() => c.switchClassification(selection.single)),
+              ),
+            ),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: versionPicker(),

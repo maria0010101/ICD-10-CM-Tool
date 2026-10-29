@@ -75,4 +75,5 @@ jobs:
             dist/*windows-x64-demo.zip
             dist/*windows-x64-demo.zip.sha256
             evidence/linux-probe.json
+            evidence/pcs-native.json
             evidence/windows-bundle-launch.json

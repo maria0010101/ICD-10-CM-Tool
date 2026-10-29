@@ -18,7 +18,7 @@ import urllib.request
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
-VERSION='0.1.2'
+VERSION='0.2.0'
 RUNTIME_URL='https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.13.18%2B20261026-x86_64-pc-windows-msvc-install_only_stripped.tar.gz'
 RUNTIME_SHA='7369f7a35f261222a6ac8b3a87c1c88eeebee8af945d85346202591a64038dd3'
 
@@ -72,6 +72,7 @@ def package(output,cache,unpacked=None):
         (bundle/'scripts').mkdir()
         shutil.copyfile(ROOT/'scripts/build_official_local.py',bundle/'scripts/build_official_local.py')
         shutil.copyfile(ROOT/'docs/OFFICIAL_IMPORT_0.1.2.md',bundle/'docs/OFFICIAL_IMPORT_0.1.2.md')
+        shutil.copyfile(ROOT/'docs/RELEASE_0.2.0.md',bundle/'docs/RELEASE_0.2.0.md')
         for name in ['cdc-profile.example.json','nhi-profile.example.json']:
             shutil.copyfile(ROOT/'docs'/name,bundle/'docs'/name)
         for name in ['LICENSE','LICENSES.md','SOURCE_PROVENANCE.md']:
@@ -79,16 +80,16 @@ def package(output,cache,unpacked=None):
         (bundle/'ICD-Data-Builder.cmd').write_text('@echo off\nsetlocal\nchcp 65001 >nul\ncd /d "%~dp0"\nif "%~1"=="" goto gui\n"runtime\\python.exe" -E -s -X utf8 -m tools.data_builder %*\ngoto done\n:gui\n"runtime\\python.exe" -E -s -X utf8 -m tools.data_builder gui\n:done\nif errorlevel 1 pause\n',encoding='utf-8')
         (bundle/'SELF-TEST.cmd').write_text('@echo off\nsetlocal\nchcp 65001 >nul\ncd /d "%~dp0"\n"runtime\\python.exe" -E -s -X utf8 -m pytest tools/data_builder/tests -q\npause\n',encoding='utf-8')
         shutil.copyfile(ROOT/'scripts/smoke_builder_gui.py',bundle/'smoke_gui.py')
-        (bundle/'README-先讀.txt').write_text('''ICD 離線資料庫製作工具 0.1.2（Windows x64）
+        (bundle/'README-先讀.txt').write_text('''ICD 離線資料庫製作工具 0.2.0（Windows x64）
 
 解壓後雙擊 ICD-Data-Builder.cmd，開啟繁體中文視窗。
 附私有 Python 3.13.18、Tk、SQLite 與所有鎖定套件，不需另外安裝 Python／pip。
 不要移動 runtime 子目錄；不修改系統 PATH、登錄或其他 Python 環境。
 
 功能：選官方原檔總資料夾，從下拉選單選 CM／ODS／PCS 設定，再建立新資料。
-CM → .icdpack；PCS／健保署全分頁 → 獨立 .sqlite（不可匯入現有 CM App）。
-附 7 種已核對且 SHA256 鎖定的來源設定，不需手改 JSON。
-詳細步驟及資料表欄位見 docs/OFFICIAL_IMPORT_0.1.2.md。
+CM／PCS App profile → .icdpack（PCS需App0.2.0）；來源表profile → 獨立 .sqlite。
+附 10 種已核對且 SHA256 鎖定的來源設定，不需手改 JSON。
+新版PCS與手機修正見 docs/RELEASE_0.2.0.md；原始表格式見 docs/OFFICIAL_IMPORT_0.1.2.md。
 請先用「合成測試包」與 SELF-TEST.cmd 測試工具，再核對 docs/ 中的 profile。
 正式原始資料不附送，也不會自動下載；不明確中譯 lineage 必須保持 unresolved。
 不得把 SAMPLE / NOT FOR CLINICAL CODING 當成正式字典。

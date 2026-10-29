@@ -57,14 +57,18 @@
       "enum": [
         "icd10cm_en",
         "icd10cm_zh_tw",
-        "icd10cm_combined"
+        "icd10cm_combined",
+        "icd10pcs_en",
+        "icd10pcs_zh_tw",
+        "icd10pcs_combined"
       ]
     },
     "classification": {
       "type": "string",
       "minLength": 1,
       "enum": [
-        "ICD-10-CM"
+        "ICD-10-CM",
+        "ICD-10-PCS"
       ]
     },
     "jurisdiction": {

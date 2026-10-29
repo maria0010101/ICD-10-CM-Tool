@@ -46,3 +46,9 @@
 ## 4. 發布停止條件
 
 若有跨平台不同結果、版本錯置、Excludes/Code First 遺漏、匯入失敗覆寫正式資料、非離線網路行為、官方中文錯誤標籤，皆不可標記可供正式編碼用途。無正式資料時，發行物只能標為 demo。
+
+## 0.2.0新增回歸
+
+- T23：以原始70MiB級NHI包驗證Android native64KiB串流、原包SHA不變、完整驗證與舊資料保留；SAF UI與私有file URI的native實作測試分列。
+- T24：PCS精確碼／FTS／Index明確目標／七軸同row與分類切換；同年度與不同年度分開，heading不可當完整碼。
+- T25：健保署2023 PCS同一原始列的中英文可搜尋，但不冒稱FY2027中譯；原CM unresolved overlay政策不變。

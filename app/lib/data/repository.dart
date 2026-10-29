@@ -1,4 +1,5 @@
 import 'dart:isolate';
+import 'dart:convert';
 
 import 'package:sqlite3/sqlite3.dart';
 import 'package:unorm_dart/unorm_dart.dart' as unicode;
@@ -46,7 +47,8 @@ class DictionaryRepository {
       d?.execute('PRAGMA query_only=ON');
     }
     if (overlayManifest != null &&
-        !overlayManifest!.bases.contains(manifest.id)) {
+        (!overlayManifest!.bases.contains(manifest.id) ||
+            overlayManifest!.classification != manifest.classification)) {
       close();
       throw PackException('中譯包不相容目前英文版本');
     }
@@ -209,6 +211,7 @@ class DictionaryRepository {
       'translations': translations(code),
       'references': translations(code, includeUnresolved: true),
       'children': children(id),
+      if (manifest.isPcs) ...pcsAxes(notes, node['code'] as String),
       'related_index': rows(
         "SELECT * FROM index_entries WHERE replace(upper(target_code),'.','')=? ORDER BY display_order LIMIT 100",
         [code],
@@ -240,7 +243,10 @@ class DictionaryRepository {
   List<DataRow> resolveTarget(String target) {
     // Exact targets are exact. Ranges/incomplete suffixes NEVER silently resolve.
     final key = normalizeCode(target);
-    if (!RegExp(r'^[A-Z][A-Z0-9]{2,6}$').hasMatch(key)) {
+    if (!(manifest.isPcs
+            ? RegExp(r'^(?:[0-9A-HJ-NP-Z]{3}|[0-9A-HJ-NP-Z]{7})$')
+            : RegExp(r'^[A-Z][A-Z0-9]{2,6}$'))
+        .hasMatch(key)) {
       return [];
     }
     return rows('SELECT * FROM code_nodes WHERE code_normalized=?', [key]);
@@ -291,12 +297,62 @@ class DictionaryRepository {
           .toList();
 }
 
+Map<String, Object?> pcsAxes(List<DataRow> notes, String code) {
+  final axes = <Map<String, Object?>>[];
+  final rows = <Map<String, Object?>>[];
+  for (final note in notes.where((n) => n['note_type'] == 'pcs_table')) {
+    final raw = note['note_text'] as String;
+    if (raw.length > 1024 * 1024) {
+      throw PackException('PCS table metadata 超出限制');
+    }
+    final table = jsonDecode(raw) as Map<String, dynamic>;
+    if (table['prefix'] !=
+        code.substring(0, code.length < 3 ? code.length : 3)) {
+      continue;
+    }
+    final shared = table['axes'] as List;
+    for (final sourceRow in table['rows'] as List) {
+      final rowAxes = sourceRow['axes'] as List;
+      final matches =
+          code.length == 7 &&
+          rowAxes.every(
+            (a) => (a['labels'] as List).any(
+              (l) => l['code'] == code[(a['position'] as int) - 1],
+            ),
+          );
+      if (code.length == 7 && !matches) continue;
+      rows.add({
+        'order': sourceRow['order'],
+        'axes': rowAxes,
+        'source_reference': note['source_reference'],
+      });
+      if (matches) {
+        for (final a in [...shared, ...rowAxes]) {
+          final label = (a['labels'] as List).firstWhere(
+            (l) => l['code'] == code[(a['position'] as int) - 1],
+          );
+          axes.add({
+            'position': a['position'],
+            'title': a['title'],
+            'definition': a['definition'],
+            ...Map<String, Object?>.from(label),
+          });
+        }
+      }
+    }
+  }
+  return {'pcs_axes': axes, 'pcs_rows': rows};
+}
+
 Future<List<DataRow>> computeDiff(
   String left,
   PackManifest lm,
   String right,
   PackManifest rm,
 ) => Isolate.run(() {
+  if (lm.classification != rm.classification) {
+    throw PackException('CM 與 PCS 是不同分類，不能直接作版間比較');
+  }
   final a = DictionaryRepository(left, lm), b = DictionaryRepository(right, rm);
   try {
     return a.compare(b);

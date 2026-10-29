@@ -17,10 +17,34 @@ class DictionaryController extends ChangeNotifier {
   int selected = 0;
   int _generation = 0;
   Timer? _timer;
-  DictionaryController(this.store);
-  String? get active => store.active;
+  String classification;
+  DictionaryController(this.store)
+    : classification = store.active == null
+          ? 'ICD-10-CM'
+          : store.manifest(store.active!).classification;
+  String? get active =>
+      store.active != null &&
+          store.manifest(store.active!).classification == classification
+      ? store.active
+      : null;
+  Future<void> switchClassification(String value) async {
+    classification = value;
+    final saved = store.preference('active:$value');
+    final candidates = store.installed.where((r) {
+      final m = store.manifest(r['hash'] as String);
+      return m.classification == value && !m.isOverlay;
+    }).toList();
+    if (candidates.isNotEmpty) {
+      final hash = candidates.any((r) => r['hash'] == saved)
+          ? saved!
+          : candidates.last['hash'] as String;
+      await store.activate(hash);
+    }
+    await refresh();
+  }
+
   Future<T> read<T>(T Function(DictionaryRepository) operation) async {
-    final hash = store.active;
+    final hash = active;
     if (hash == null) {
       throw StateError('請先匯入資料包');
     }
@@ -47,6 +71,10 @@ class DictionaryController extends ChangeNotifier {
     _generation++;
     detail = null;
     results = [];
+    roots = [];
+    scopes = ['all', 'tabular'];
+    lastError = null;
+    searching = false;
     if (active != null) {
       final data = await read((r) => (r.children(null), r.availableScopes()));
       roots = data.$1;
@@ -110,6 +138,7 @@ class DictionaryController extends ChangeNotifier {
   Future<void> choose(String hash, {bool translation = false}) async {
     _generation++;
     await store.activate(hash, translation: translation);
+    classification = store.manifest(hash).classification;
     await refresh();
   }
 

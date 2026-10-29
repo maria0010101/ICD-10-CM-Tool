@@ -119,3 +119,7 @@ CREATE INDEX idx_zh_code ON zh_ngrams(code_normalized);
 ## 7. 發布、授權與來源
 
 發行前檢查各官方檔案使用條款；`SOURCE_PROVENANCE.md` 記錄下載頁、原始檔 SHA256、release/effective date、轉換工具版、匯入時間與譯名來源。不得把其他網站的排版、搜尋結果或受限制文件直接再散布。
+
+## 分類API1.1擴充（App 0.2.0）
+
+新增 `classification=ICD-10-PCS`，kind為 `icd10pcs_en`／`icd10pcs_zh_tw`／`icd10pcs_combined`，PCS的required_app_schema_min為1.1.0；CM仍為1.0.0。實體schema_version仍1.0.0，既有SQL allowlist完全不變。PCS採分離分類語義：七軸／row組合及完整來源XML以typed notes保留，非CM coding notes；完整碼、來源heading、明確Index目標及來源版號不可混淆。詳 `docs/RELEASE_0.2.0.md`。

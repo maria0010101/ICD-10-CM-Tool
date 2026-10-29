@@ -61,8 +61,7 @@ Future<PackManifest> validateStage(
         throw PackException('資料列數不符：$table');
       }
     }
-    if (manifest.kind != 'icd10cm_zh_tw' &&
-        manifest.counts['code_nodes'] == 0) {
+    if (!manifest.isOverlay && manifest.counts['code_nodes'] == 0) {
       throw PackException('英文包不可為空');
     }
     for (final table in ['code_nodes', 'index_entries']) {
@@ -97,26 +96,42 @@ Future<PackManifest> validateStage(
         throw PackException('FTS content 不一致');
       }
     }
-    for (final row in db.select('SELECT * FROM translations')) {
-      if (row['search_normalized'] !=
-              normalizeText(row['title_zh_tw'] as String) ||
-          (row['mapping_status'] != 'unresolved' &&
-              !manifest.bases.contains(row['base_package_id']))) {
-        throw PackException('中譯 lineage/正規化錯誤');
+    // Bound row materialization: large official NHI overlays carry verbose
+    // source-column JSON. A keyset batch keeps that payload out of memory.
+    var lastTranslation = 0;
+    final postings = db.prepare(
+      'SELECT ngram,code_normalized FROM zh_ngrams WHERE source_translation_id=?',
+    );
+    try {
+      while (true) {
+        final batch = db.select(
+          'SELECT id,code_normalized,title_zh_tw,search_normalized,mapping_status,base_package_id FROM translations WHERE id>? ORDER BY id LIMIT 256',
+          [lastTranslation],
+        );
+        if (batch.isEmpty) break;
+        for (final row in batch) {
+          final title = row['title_zh_tw'] as String;
+          if (title.length > 10000 ||
+              row['search_normalized'] != normalizeText(title) ||
+              (row['mapping_status'] != 'unresolved' &&
+                  !manifest.bases.contains(row['base_package_id']))) {
+            throw PackException('中譯 lineage/正規化錯誤');
+          }
+          final expected = ngrams(row['search_normalized'] as String);
+          final actual = postings.select([row['id']]);
+          if (actual.length != expected.length ||
+              actual.any(
+                (g) =>
+                    g['code_normalized'] != row['code_normalized'] ||
+                    !expected.contains(g['ngram']),
+              )) {
+            throw PackException('中文索引不完整');
+          }
+          lastTranslation = row['id'] as int;
+        }
       }
-      final expected = ngrams(row['search_normalized'] as String);
-      final actual = db.select(
-        'SELECT ngram,code_normalized FROM zh_ngrams WHERE source_translation_id=?',
-        [row['id']],
-      );
-      if (actual.length != expected.length ||
-          actual.any(
-            (g) =>
-                g['code_normalized'] != row['code_normalized'] ||
-                !expected.contains(g['ngram']),
-          )) {
-        throw PackException('中文索引不完整');
-      }
+    } finally {
+      postings.close();
     }
   } finally {
     db.close();
