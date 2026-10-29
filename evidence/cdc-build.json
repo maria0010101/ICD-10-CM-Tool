@@ -1,0 +1,42 @@
+{
+  "package_id": "icd10cm-us-fy2027-oct-en",
+  "package_version": "1.0.0",
+  "kind": "icd10cm_en",
+  "classification": "ICD-10-CM",
+  "jurisdiction": "US",
+  "edition": "FY2027",
+  "release_id": "2026-10-01",
+  "effective_from": "2026-10-01",
+  "effective_to": "2027-09-30",
+  "language": "en",
+  "source_organization": "CDC/NCHS",
+  "source_urls": [
+    "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/ICD10CM/2027/"
+  ],
+  "created_at": "2026-10-29T00:00:00Z",
+  "is_sample": false,
+  "source_files": [
+    {
+      "name": "cdc-2027.zip",
+      "sha256": "99b5c2be16ff53eab861cc0be4b1dacba27f687b8ff4bc700679944355037ee0"
+    },
+    {
+      "name": "cdc-descriptions-2027.zip",
+      "sha256": "93e3ad6004badf470c55bfe679b748ae88fd9b2b421851e409eec382c7713b9a"
+    }
+  ],
+  "row_counts": {
+    "code_nodes": 98723,
+    "notes": 27079,
+    "index_entries": 99108,
+    "index_crossrefs": 16344,
+    "table_cells": 54182,
+    "translations": 0,
+    "zh_ngrams": 0
+  },
+  "format": "icdpack",
+  "schema_version": "1.0.0",
+  "required_app_schema_min": "1.0.0",
+  "content_filename": "content.sqlite",
+  "content_sha256": "9cb7fcf1da68d066f355a407b8b95c16041d9a313bacfcb84bdebf93e23974fa"
+}

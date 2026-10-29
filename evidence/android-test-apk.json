@@ -1,0 +1,8 @@
+{
+  "package_id": "tw.offline.icd.icd_dictionary.debug",
+  "apk_bytes": 106418981,
+  "sha256": "5becdc5aeb44e9ecb4ab69319dc12f249e026c0fa8f6f3bda1a04f5dce711f89",
+  "target": "integration_test/device_test.dart",
+  "release_apk_unchanged": true,
+  "production_install_attempted": false
+}

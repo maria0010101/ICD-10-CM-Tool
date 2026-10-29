@@ -1,0 +1,106 @@
+{
+  "checked_at": "2026-10-29T02:05:02.909004+00:00",
+  "device": "2109119DG / Android 14 / ARM64",
+  "app_id": "tw.offline.icd.icd_dictionary.debug",
+  "install_attempts_this_resume": 1,
+  "integration_cases_passed": 1,
+  "integration_exit_code": 0,
+  "production_package_installed": false,
+  "runtime_sources_changed": false,
+  "package_comparisons": {
+    "sample": {
+      "package_sha256_equal": true,
+      "snapshot_sha256_equal": true,
+      "full_snapshot_equal": true,
+      "query_count": 50,
+      "package_sha256": "47a8de79118cd66e7e7365a0085a4323318b893fad08282074730d31b5582ed5",
+      "snapshot_sha256": "9a6c1e4a7a4ab4b0c8666d1291818ac74ca19bf0acee58bafc235f61685b26d4",
+      "edition": "SAMPLE-1",
+      "sqlite_version": "3.54.1",
+      "android_benchmark": {
+        "code": {
+          "iterations": 1000,
+          "p50_ms": 0.151,
+          "p95_ms": 0.25,
+          "p99_ms": 0.468
+        },
+        "english": {
+          "iterations": 1000,
+          "p50_ms": 0.53,
+          "p95_ms": 0.713,
+          "p99_ms": 0.994
+        },
+        "chinese": {
+          "iterations": 1000,
+          "p50_ms": 0.462,
+          "p95_ms": 0.564,
+          "p99_ms": 0.941
+        },
+        "tree": {
+          "iterations": 1000,
+          "p50_ms": 0.046,
+          "p95_ms": 0.064,
+          "p99_ms": 0.098
+        }
+      }
+    },
+    "official": {
+      "package_sha256_equal": true,
+      "snapshot_sha256_equal": true,
+      "full_snapshot_equal": true,
+      "query_count": 50,
+      "package_sha256": "6f46a5a52fe2f371ffc19eda5026ca69775aaf36c1c03d76ec8e3e0df7093baa",
+      "snapshot_sha256": "73477607c97a153a12eb215ae035dfd0fb15a59fa9a988a61825212dac94d6fb",
+      "edition": "FY2027",
+      "sqlite_version": "3.54.1",
+      "android_benchmark": {
+        "code": {
+          "iterations": 1000,
+          "p50_ms": 0.065,
+          "p95_ms": 0.095,
+          "p99_ms": 0.124
+        },
+        "english": {
+          "iterations": 1000,
+          "p50_ms": 2.39,
+          "p95_ms": 2.666,
+          "p99_ms": 3.219
+        },
+        "chinese": {
+          "iterations": 1000,
+          "p50_ms": 0.204,
+          "p95_ms": 0.242,
+          "p99_ms": 0.302
+        },
+        "tree": {
+          "iterations": 1000,
+          "p50_ms": 0.168,
+          "p95_ms": 0.205,
+          "p99_ms": 0.257
+        }
+      }
+    }
+  },
+  "layouts": {
+    "390.0": {
+      "panes": 1,
+      "exception": null
+    },
+    "800.0": {
+      "panes": 2,
+      "exception": null
+    },
+    "1440.0": {
+      "panes": 3,
+      "exception": null
+    }
+  },
+  "rollback_passed": true,
+  "user_data_isolated": true,
+  "windows_tested": false,
+  "physical_tablet_tested": false,
+  "flight_mode_tested": false,
+  "compiled_test_source_sha256": "959563cc911d84310d8460e47452608b2ea34827484ce70051ab49b91664e640",
+  "current_test_source_sha256": "11d404c090f4f1a7a93b79ef8e5871a8d10b5b15bd4b033075d8f8f7096c5f88",
+  "comment_only_post_test_change_verified": true
+}

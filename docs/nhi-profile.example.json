@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "package_id": "replace-with-nhi-edition-revision",
+    "package_version": "1.0.0", "kind": "icd10cm_zh_tw",
+    "classification": "ICD-10-CM", "jurisdiction": "TW",
+    "edition": "REPLACE_WITH_OFFICIAL_NHI_EDITION", "release_id": "REPLACE_WITH_RELEASE_ID",
+    "effective_from": "2026-01-01", "effective_to": "2026-12-31",
+    "language": "zh-TW", "source_organization": "衛生福利部中央健康保險署（必須核對原檔）",
+    "source_urls": ["https://www.nhi.gov.tw/REPLACE_WITH_ACTUAL_DOWNLOAD_PAGE"],
+    "created_at": "2026-10-29T00:00:00Z", "is_sample": false,
+    "translation_edition": "REPLACE_WITH_EDITION", "translation_revision": "REPLACE_WITH_REVISION",
+    "mapping_policy": "unresolved", "compatible_base_package_ids": ["REPLACE_WITH_INTENDED_BASE_PACKAGE_ID"]
+  },
+  "inputs": ["official-nhi.xlsx"],
+  "translation": {"file": "official-nhi.xlsx", "columns": {"sheet":"Sheet1", "code":"REPLACE_WITH_CODE_HEADER", "title_zh_tw":"REPLACE_WITH_CHINESE_HEADER"}}
+}

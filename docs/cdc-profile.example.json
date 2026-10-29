@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "package_id": "icd10cm-us-fy2027-oct-en",
+    "package_version": "1.0.0",
+    "kind": "icd10cm_en",
+    "classification": "ICD-10-CM",
+    "jurisdiction": "US",
+    "edition": "FY2027",
+    "release_id": "2026-10-01",
+    "effective_from": "2026-10-01",
+    "effective_to": "2027-09-30",
+    "language": "en",
+    "source_organization": "CDC/NCHS",
+    "source_urls": ["https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/ICD10CM/2027/"],
+    "created_at": "2026-10-29T00:00:00Z",
+    "is_sample": false
+  },
+  "inputs": ["cdc-2027.zip", "cdc-descriptions-2027.zip"]
+}

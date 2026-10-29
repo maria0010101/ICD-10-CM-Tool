@@ -1,0 +1,15 @@
+.venv*/
+.local-source/
+__pycache__/
+.pytest_cache/
+*.pyc
+build/
+dist/
+manual-test-*/
+# Local device inventories and derived full-content probe snapshots stay local.
+evidence/*-installed.txt
+evidence/*-device-report.json
+evidence/linux-official-probe.json
+evidence/host-cpu.txt
+evidence/toolchain.txt
+evidence/android-device.txt

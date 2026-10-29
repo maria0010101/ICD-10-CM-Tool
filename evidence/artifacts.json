@@ -1,0 +1,25 @@
+{
+  "recorded_at": "2026-10-29T01:51:47.538473+00:00",
+  "artifacts": [
+    {
+      "file": "samples/sample-demo-v1.icdpack",
+      "bytes": 7260,
+      "sha256": "47a8de79118cd66e7e7365a0085a4323318b893fad08282074730d31b5582ed5"
+    },
+    {
+      "file": "samples/sample-demo-v2.icdpack",
+      "bytes": 7295,
+      "sha256": "ea0f25d4e0364bafd906966657bfce48940931dbe43b4f7ffb7f93f4308ca335"
+    },
+    {
+      "file": "samples/sample-overlay-unresolved.icdpack",
+      "bytes": 5187,
+      "sha256": "01a4e5595fb2c4d65373621c89417512f588113ae6eb279060be9af9edcb1778"
+    },
+    {
+      "file": "dist/icd-offline-0.1.0-android-arm64-demo.apk",
+      "bytes": 19915808,
+      "sha256": "75e2ac8379890718b4405de98c30c70cc054caffd94f6665f3eda6608c7ab5cd"
+    }
+  ]
+}

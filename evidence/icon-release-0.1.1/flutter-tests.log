@@ -1,0 +1,20 @@
+00:00 +0: loading /tmp/icd-work-build/app/test/repository_test.dart
+00:00 +0: /tmp/icd-work-build/app/test/cross_probe_test.dart: 50-query native snapshot + 1000-query warm benchmark
+00:00 +1: /tmp/icd-work-build/app/test/cross_probe_test.dart: 50-query native snapshot + 1000-query warm benchmark
+00:00 +2: /tmp/icd-work-build/app/test/cross_probe_test.dart: 50-query native snapshot + 1000-query warm benchmark
+00:00 +3: /tmp/icd-work-build/app/test/cross_probe_test.dart: 50-query native snapshot + 1000-query warm benchmark
+00:00 +4: /tmp/icd-work-build/app/test/cross_probe_test.dart: 50-query native snapshot + 1000-query warm benchmark
+00:00 +5: /tmp/icd-work-build/app/test/cross_probe_test.dart: 50-query native snapshot + 1000-query warm benchmark
+00:00 +6: /tmp/icd-work-build/app/test/cross_probe_test.dart: 50-query native snapshot + 1000-query warm benchmark
+00:00 +7: /tmp/icd-work-build/app/test/cross_probe_test.dart: 50-query native snapshot + 1000-query warm benchmark
+00:00 +8: /tmp/icd-work-build/app/test/cross_probe_test.dart: 50-query native snapshot + 1000-query warm benchmark
+00:00 +9: /tmp/icd-work-build/app/test/cross_probe_test.dart: 50-query native snapshot + 1000-query warm benchmark
+00:01 +10: /tmp/icd-work-build/app/test/widget_test.dart: empty import flow 390.0px and text scaling
+00:01 +11: /tmp/icd-work-build/app/test/cross_probe_test.dart: official English release native snapshot and 1000 warm queries
+00:01 +12: /tmp/icd-work-build/app/test/cross_probe_test.dart: official English release native snapshot and 1000 warm queries
+00:01 +13: /tmp/icd-work-build/app/test/cross_probe_test.dart: official English release native snapshot and 1000 warm queries
+00:02 +14: /tmp/icd-work-build/app/test/cross_probe_test.dart: official English release native snapshot and 1000 warm queries
+00:02 +15: /tmp/icd-work-build/app/test/cross_probe_test.dart: official English release native snapshot and 1000 warm queries
+00:03 +16: /tmp/icd-work-build/app/test/cross_probe_test.dart: official English release native snapshot and 1000 warm queries
+00:10 +17: All tests passed!
+EXIT=0

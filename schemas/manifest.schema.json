@@ -1,0 +1,219 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ICD pack v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "schema_version",
+    "package_id",
+    "package_version",
+    "kind",
+    "classification",
+    "jurisdiction",
+    "edition",
+    "release_id",
+    "effective_from",
+    "effective_to",
+    "language",
+    "source_organization",
+    "created_at",
+    "content_filename",
+    "content_sha256",
+    "required_app_schema_min",
+    "is_sample",
+    "source_urls",
+    "source_files",
+    "row_counts"
+  ],
+  "properties": {
+    "format": {
+      "type": "string",
+      "minLength": 1,
+      "enum": [
+        "icdpack"
+      ]
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1,
+      "enum": [
+        "1.0.0"
+      ]
+    },
+    "package_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9][a-z0-9._-]{0,127}$"
+    },
+    "package_version": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "kind": {
+      "type": "string",
+      "minLength": 1,
+      "enum": [
+        "icd10cm_en",
+        "icd10cm_zh_tw",
+        "icd10cm_combined"
+      ]
+    },
+    "classification": {
+      "type": "string",
+      "minLength": 1,
+      "enum": [
+        "ICD-10-CM"
+      ]
+    },
+    "jurisdiction": {
+      "type": "string",
+      "minLength": 1
+    },
+    "edition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "release_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "effective_from": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "effective_to": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "language": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_organization": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "content_filename": {
+      "type": "string",
+      "minLength": 1,
+      "enum": [
+        "content.sqlite"
+      ]
+    },
+    "content_sha256": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "required_app_schema_min": {
+      "type": "string",
+      "minLength": 1
+    },
+    "is_sample": {
+      "type": "boolean"
+    },
+    "source_urls": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^(https://|sample://)"
+      }
+    },
+    "source_files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "sha256"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "row_counts": {
+      "type": "object",
+      "required": [
+        "code_nodes",
+        "notes",
+        "index_entries",
+        "index_crossrefs",
+        "table_cells",
+        "translations",
+        "zh_ngrams"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "code_nodes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100000000
+        },
+        "notes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100000000
+        },
+        "index_entries": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100000000
+        },
+        "index_crossrefs": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100000000
+        },
+        "table_cells": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100000000
+        },
+        "translations": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100000000
+        },
+        "zh_ngrams": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100000000
+        }
+      }
+    },
+    "translation_edition": {
+      "type": "string"
+    },
+    "translation_revision": {
+      "type": "string"
+    },
+    "mapping_policy": {
+      "type": "string"
+    },
+    "compatible_base_package_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+00:00 +0: loading /tmp/icd-work-build/app/integration_test/device_test.dart
+Running Gradle task 'assembleDebug'...                          
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/home/hpd/.gradle/wrapper/dists/gradle-9.3.1-all/9ot9r568e8zfvvd4mn8rbu1j0/gradle-9.3.1/lib/native-platform-0.22-milestone-29.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+Running Gradle task 'assembleDebug'...                             36.9s
+✓ Built build/app/outputs/flutter-apk/app-debug.apk
+Installing build/app/outputs/flutter-apk/app-debug.apk...          17.1s
+Error: ADB exited with exit code 1
+Performing Streamed Install
+
+adb: failed to install /tmp/icd-work-build/app/build/app/outputs/flutter-apk/app-debug.apk: Failure [INSTALL_FAILED_USER_RESTRICTED: Install canceled by user]
+00:00 +0 -1: loading /tmp/icd-work-build/app/integration_test/device_test.dart [E]
+  Failed to load "/tmp/icd-work-build/app/integration_test/device_test.dart": Unable to start the app on the device.
+00:00 +0 -1: Some tests failed.
+
+Failing tests:
+  /tmp/icd-work-build/app/integration_test/device_test.dart: loading /tmp/icd-work-build/app/integration_test/device_test.dart
+EXIT=1

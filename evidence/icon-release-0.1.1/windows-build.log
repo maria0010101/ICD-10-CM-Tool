@@ -1,0 +1,2 @@
+"build windows" only supported on Windows hosts.
+EXIT=1

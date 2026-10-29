@@ -1,0 +1,9 @@
+............................                                             [100%]
+=============================== warnings summary ===============================
+tools/data_builder/tests/test_package.py::test_unsafe_zip_names[content.sqlite]
+  /home/hpd/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/zipfile/__init__.py:1686: UserWarning: Duplicate name: 'content.sqlite'
+    return self._open_to_write(zinfo, force_zip64=force_zip64)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+28 passed, 1 warning in 0.61s
+EXIT=0

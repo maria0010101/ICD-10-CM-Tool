@@ -1,0 +1,45 @@
+{
+  "package_id": "nhi-2023-20260827-unresolved",
+  "package_version": "1.0.1",
+  "kind": "icd10cm_zh_tw",
+  "classification": "ICD-10-CM",
+  "jurisdiction": "TW",
+  "edition": "NHI-2023",
+  "release_id": "2026-08-27",
+  "effective_from": "2025-01-01",
+  "effective_to": "9999-12-31",
+  "language": "zh-TW",
+  "source_organization": "衛生福利部中央健康保險署",
+  "source_urls": [
+    "https://data.gov.tw/dataset/177507",
+    "https://info.nhi.gov.tw/api/iode0000s01/Dataset?rId=A21030000I-D20025-005"
+  ],
+  "created_at": "2026-10-29T00:00:00Z",
+  "is_sample": false,
+  "translation_edition": "NHI-2023",
+  "translation_revision": "2026-08-27",
+  "mapping_policy": "unresolved",
+  "compatible_base_package_ids": [
+    "icd10cm-us-fy2027-oct-en"
+  ],
+  "source_files": [
+    {
+      "name": "nhi-2023-1150827.csv",
+      "sha256": "acd950e2ae193ac7c1438165584d48cfa239a9ac6ae9819444cae4d679e123dc"
+    }
+  ],
+  "row_counts": {
+    "code_nodes": 0,
+    "notes": 0,
+    "index_entries": 0,
+    "index_crossrefs": 0,
+    "table_cells": 0,
+    "translations": 96802,
+    "zh_ngrams": 3243772
+  },
+  "format": "icdpack",
+  "schema_version": "1.0.0",
+  "required_app_schema_min": "1.0.0",
+  "content_filename": "content.sqlite",
+  "content_sha256": "2b5aef7d2d253135ddeffeaecc412b2df6929a7aa4c72ab5e356ec97da047700"
+}

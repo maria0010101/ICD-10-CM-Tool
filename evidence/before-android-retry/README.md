@@ -1,0 +1,134 @@
+# ICD-10-CM Offline Dictionary · 0.1.0 Demo
+
+已實作 Flutter/Dart 離線 App、Python 3.13 builder/validator、標準 `.icdpack` 與自動化測試。**尚未通過完整跨 Windows/Android 驗收，不可用於臨床編碼或申報。**
+
+App、資料包、`user.sqlite` 物理分離；App 不含字典、Python runtime、雲端 API 或自動下載。相同原包直接匯入，不重封、不按平台轉換。
+
+## 交付與驗收
+
+* [實際測試與 Gate 報告](docs/ACCEPTANCE.md)／[原始證據](evidence/)
+* [架構與工具鏈](docs/ARCHITECTURE.md)／[需求追蹤](docs/TRACEABILITY.md)
+* [已知限制](docs/KNOWN_LIMITATIONS.md)／[來源與版本](SOURCE_PROVENANCE.md)／[授權](LICENSES.md)
+* Android APK：`dist/icd-offline-0.1.0-android-arm64-demo.apk`（以驗收報告與 SHA256 清單確認是否實際產生）
+* 完整原始碼 ZIP：`dist/icd-offline-0.1.0-source-demo.zip`（不含官方完整資料、SDK、venv）；雜湊在 `dist/SHA256SUMS.txt`。
+* Windows portable：此 Linux 主機無 MSVC，**未建置／未實測**；不得把原始碼當成 EXE。
+
+原本的開發規格 README 已原封保存為 [README.spec-original.md](README.spec-original.md)；規範文件 AGENTS/SRS/DATA_PACKAGE_SPEC/TEST_PLAN 保留。
+
+## 可執行功能
+
+* 完整碼正規化（有無小數點、大小寫、全形）、英文 FTS5 AND/OR／前綴、中文 NFKC unigram/bigram 索引。
+* Chapter→Block→Category→Subcategory 懶載入；Index 主詞／子詞、see/seeAlso/subcat/manif/seecat、Neoplasm／Drugs 表格欄位與 External Cause Index。
+* 本碼與上層 notes 按來源／順序呈現，保留原文、原始 XML、7th character 與 placeholder；不從 leaf 推論 billable。
+* 手機單欄列表→詳情頁、平板雙欄、寬桌面三欄／可拖動欄寬；明暗模式、文字放大、Ctrl+L/F、方向鍵、Enter、Esc。
+* 手動檔案選取→安全 ZIP→staging→SHA256→schema allowlist→SQLite integrity／FK／FTS／n-gram→預覽→原子發布→啟用，保留多版本與上一版。
+* 收藏／本機註解／可關閉搜尋紀錄、個人 JSON 匯出匯入；與官方資料完全分開。
+* 版間新增、移除、描述、狀態與 notes 差異；官方拆分／合併 lineage **尚未完成**，不作語義等價保證。
+
+## 一、安裝開發依賴
+
+已驗證工具鏈：Flutter **3.47.5**、Dart **3.13.4**、Python **3.13.18**。直接及間接依賴鎖在 `app/pubspec.lock`、`tools/data_builder/requirements.lock`。
+
+Windows PowerShell（先自行安裝 Python 3.13／Flutter；建 Windows 另需 Visual Studio C++ workload）：
+
+```powershell
+py -3.13 -m venv .venv313
+.\.venv313\Scripts\python -m pip install --require-hashes -r tools/data_builder/requirements.lock
+.\.venv313\Scripts\python -m pytest tools/data_builder/tests -q
+cd app
+flutter pub get --enforce-lockfile
+flutter analyze
+flutter test
+```
+
+Linux：
+
+```bash
+python3.13 -m venv .venv313
+.venv313/bin/python -m pip install --require-hashes -r tools/data_builder/requirements.lock
+.venv313/bin/python -m pytest tools/data_builder/tests -q
+cd app && flutter pub get --enforce-lockfile && flutter analyze && flutter test
+```
+
+**本機 Flutter 3.47.5 的 analyzer 在中文路徑出現 LSP JSON 截斷**，已保留初始失敗 log；可使用 ASCII 暫存副本（不改 SDK）：
+
+```bash
+scripts/prepare_ascii_build.sh /tmp/icd-work-build
+cd /tmp/icd-work-build/app
+flutter analyze
+flutter test
+```
+
+不要同時在同一 build directory 執行 Flutter test/pub/build，避免 generated plugin registrant 競爭。原始碼修改後重新同步；產物與 evidence 複製回原專案。
+
+## 二、直接執行 App／匯入 sample
+
+```bash
+cd app
+flutter run -d windows  # 在 Windows 主機
+flutter run -d <android-device-id>
+```
+
+第一次啟動沒有字典，點「匯入 .icdpack」，從 `samples/` 選 `sample-demo-v1.icdpack`。它是 **SAMPLE / NOT FOR CLINICAL CODING** 合成資料，不自稱官方字典。v2 用於版本差異／回復，overlay 用於未確認中譯測試。
+
+App 的正式 Android package ID 為 `tw.offline.icd.icd_dictionary`，debug／integration 為 `.debug`，不共用正式資料；最低 API 24、ARM64。不要以解除安裝／清資料解決測試安裝問題。
+
+* Android：app-private support directory，無公共儲存權限要求。
+* Windows：EXE 旁 `portable-data/`；必須先解壓到可寫目錄，不能直接在 ZIP 中執行。
+* `.icdpack` 原檔以 archive SHA256 定址保留，唯讀 `content.sqlite`；只有 `user.sqlite` 可寫。
+
+## 三、資料製作（Python 僅在 builder 執行）
+
+```powershell
+# 如 samples 既有輸出同名，請選新檔名；builder 不覆寫發行檔。
+python -m tools.data_builder sample --output sample-demo-new.icdpack
+python -m tools.data_builder verify --package samples/sample-demo-v1.icdpack
+python -m tools.data_builder validate-source --input official-files/cdc-2027.zip
+python -m tools.data_builder build --source-dir official-files --profile docs/cdc-profile.example.json --output fy2027-new.icdpack
+```
+
+`validate-source` 檢查 archive／原檔 hash／XML DTD，完整語義與列數驗證由 `build`／`verify`／`audit` 執行。CLI 遇錯 exit 1，輸出具體原因。輸出含 manifest、標準 SQLite、checksums；檔頭固定，可重現（相同原檔、profile、builder、SQLite 版本）。
+
+### CDC/CMS 官方英文
+
+從 [CDC 官方 FY2027 下載目錄](https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/ICD10CM/2027/) 取得 `icd10cm-table-and-index-2027.zip` 與 `icd10cm-code-descriptions-2027.zip`，另存為 profile 指定的兩個本機名稱，或修改 inputs。CMS 的 ICD-10-PCS 不是本 App 的 CM 資料來源。
+
+Adapter 解析 Tabular XML、四種 Index/Table XML、order TXT，補足官方 order 中的七字元完整碼；完整 order snapshot 不再重複套用 addenda。未知 XML tag、錯年度、缺少必要檔案會阻擋；未載入的輔助檔雜湊會記錄在報告，不宣稱其已套用。
+
+```powershell
+python -m tools.data_builder.audit --package fy2027-new.icdpack --input official-files/cdc-2027.zip --input official-files/cdc-descriptions-2027.zip
+```
+
+實際 FY2027 原檔 hash、計數、描述差異及 notes 稽核在 `evidence/cdc-*.json`。完整下載／轉換包保留 `.local-source/`，未包含在 APK 或程式交付 ZIP。
+
+### 台灣健保署官方中譯
+
+[健保署政府開放資料集（2023 中文 CM／PCS）](https://data.gov.tw/dataset/177507)；請只選 CM，記錄實際修訂批次、URL、SHA256。也可從健保署官網取得 XLSX。
+
+1. 複製 `docs/nhi-profile.example.json`，填實際 header／sheet、版別及修訂日期；CSV 必須 UTF-8，XLSX 公式拒絕。ODS 尚不支援。
+2. `inputs` 列出原檔，`translation.columns` 明確指定 code／title_zh_tw 欄位。所有來源欄位原值保留於 translation.notes JSON，以供追溯。
+3. `mapping_policy` 預設 `unresolved`，不進入合格中譯搜尋。不得只因同一 code 就改為 exact_edition。
+4. 有明確驗證／審核紀錄才指定 `exact_edition` 或 `reviewed_cross_release`，以及唯一 base package ID；跨版始終顯示警示。
+5. 使用相同 `build --profile` CLI 製作 overlay；在 App 匯入並選定適用英文版。不同 base 切換時自動解除不相容 overlay，不刪檔。
+
+本機已以官方 2023 CSV 實際測試 parser，但對 FY2027 的 mapping 仍未確認。`effective_to=9999-12-31` 是未宣告期限的本機契約值，**不是官方保證有效至該年**。不提供假造的官方中譯相容性。
+
+## 四、安全、測試與打包
+
+* ZIP 僅三檔、≤256 MiB、總展開≤512 MiB、比例≤200；拒絕重複／路徑穿越／symlink／加密／未知格式，streaming 限制實際解壓大小與 CRC。
+* XML 禁止 DTD／外部實體／網路；XLSX 不執行公式。SQLite 唯讀、trusted_schema=OFF、schema allowlist，FTS write-command 僅在驗證副本執行。
+* SHA256 是完整性而非官方簽章。來源仍需獨立核對。
+* 匯入先查可用空間，切換用 SQLite FULL synchronous transaction；任何驗證／複製失敗不更動現行指標。
+
+```powershell
+powershell -File scripts/test.ps1
+powershell -File scripts/build_android.ps1
+powershell -File scripts/build_windows.ps1 -VCRuntimeDir 'C:\licensed-redist\Microsoft.VC143.CRT'
+Get-FileHash -Algorithm SHA256 samples/sample-demo-v1.icdpack
+```
+
+Windows 腳本要求合法的 app-local Microsoft CRT 路徑；不偷拷系統 DLL。完整 Release bundle（exe、SQLite／Flutter DLL、data）才可打 portable ZIP。必須再於乾淨 Windows 工作站實際啟動。
+
+Android build 預設 demo debug signing，不是正式發布憑證。正式發布前另配置簽署、通過飛航模式及實機 Gate，不能把「Built APK」當作「實機成功」。
+
+實機 integration 指令與 define 檔產生方式見 `scripts/prepare_device_test.py`。使用 `.debug`，加 `--no-uninstall`；若手機拒絕安裝，停止並處理正常系統授權，不重試清資料。

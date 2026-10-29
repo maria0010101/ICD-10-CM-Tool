@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-10-29T02:09:57.025906+00:00",
+  "runtime_files_equal": true,
+  "checked_files": [
+    "app/lib/main.dart",
+    "app/lib/app/controller.dart",
+    "app/lib/domain/manifest.dart",
+    "app/lib/data/safe_zip.dart",
+    "app/lib/data/repository.dart",
+    "app/lib/data/validator.dart",
+    "app/lib/data/capacity.dart",
+    "app/lib/data/package_store.dart",
+    "app/lib/ui/dictionary_app.dart",
+    "app/assets/schema_contract.json",
+    "app/pubspec.yaml",
+    "app/pubspec.lock"
+  ],
+  "release_apk_unchanged": true,
+  "release_apk_sha256": "75e2ac8379890718b4405de98c30c70cc054caffd94f6665f3eda6608c7ab5cd"
+}

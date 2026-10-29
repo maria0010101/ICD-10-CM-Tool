@@ -1,0 +1,44 @@
+{
+  "package_id": "sample-demo-v1",
+  "package_version": "1.0.0",
+  "kind": "icd10cm_combined",
+  "classification": "ICD-10-CM",
+  "jurisdiction": "SAMPLE",
+  "edition": "SAMPLE-1",
+  "release_id": "2026-10-29",
+  "effective_from": "2026-10-01",
+  "effective_to": "2027-09-30",
+  "language": "en+zh-TW",
+  "source_organization": "SAMPLE / NOT FOR CLINICAL CODING",
+  "source_urls": [
+    "sample://synthetic-fixture"
+  ],
+  "source_files": [
+    {
+      "name": "sample.py",
+      "sha256": "24536c3bc7f3607f44ba363b617f0cb676195e9442827effc4bb2310c0f18947"
+    }
+  ],
+  "created_at": "2026-10-29T00:00:00Z",
+  "is_sample": true,
+  "translation_edition": "SAMPLE-TW",
+  "translation_revision": "2026-10-29",
+  "mapping_policy": "exact_edition",
+  "compatible_base_package_ids": [
+    "sample-demo-v1"
+  ],
+  "row_counts": {
+    "code_nodes": 8,
+    "notes": 7,
+    "index_entries": 6,
+    "index_crossrefs": 2,
+    "table_cells": 2,
+    "translations": 3,
+    "zh_ngrams": 25
+  },
+  "format": "icdpack",
+  "schema_version": "1.0.0",
+  "required_app_schema_min": "1.0.0",
+  "content_filename": "content.sqlite",
+  "content_sha256": "80bc9e7344aa7df5471c064aa8aba1accf571b49b0496cc785c1753980329658"
+}
