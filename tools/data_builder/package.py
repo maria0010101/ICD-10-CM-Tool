@@ -193,8 +193,11 @@ def write_package(db_path: Path, metadata: dict, output: Path):
     # Reproducible archive headers; never overwrite an existing release artifact.
     output.parent.mkdir(parents=True,exist_ok=True)
     temp = output.with_suffix(output.suffix+'.staging')
+    owned_temp = False
     try:
-        with temp.open('xb') as stream, zipfile.ZipFile(stream,'w',zipfile.ZIP_DEFLATED) as z:
+        stream = temp.open('xb')
+        owned_temp = True
+        with stream, zipfile.ZipFile(stream,'w',zipfile.ZIP_DEFLATED) as z:
             for name,data in [('manifest.json',raw),('content.sqlite',content),('checksums.sha256',checks)]:
                 zi = zipfile.ZipInfo(name,(2026,1,1,0,0,0)); zi.compress_type=zipfile.ZIP_DEFLATED; zi.external_attr=0o100644<<16
                 z.writestr(zi,data)
@@ -202,5 +205,5 @@ def write_package(db_path: Path, metadata: dict, output: Path):
         # link is atomic no-replace on Windows/POSIX; output must not already exist.
         os.link(temp,output)
     finally:
-        temp.unlink(missing_ok=True)
+        if owned_temp: temp.unlink(missing_ok=True)
     return m

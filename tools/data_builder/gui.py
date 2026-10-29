@@ -2,6 +2,7 @@
 from __future__ import annotations
 from datetime import datetime
 import os
+import json
 from pathlib import Path
 import queue
 import sqlite3
@@ -24,7 +25,7 @@ def main():
         import ctypes
         ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('tw.offline.icd.builder')
     root = tk.Tk()
-    root.title('ICD 離線資料包製作工具 · 0.1.1')
+    root.title('ICD 離線資料包製作工具 · 0.1.2')
     root.geometry('900x720')
     root.minsize(650, 540)
     icon = ROOT / 'branding' / 'app_icon.ico'
@@ -63,9 +64,9 @@ def main():
         if kind == 'dir':
             value = filedialog.askdirectory(title='選擇官方原檔資料夾')
         elif kind == 'output':
-            value = filedialog.asksaveasfilename(title='選擇新資料包檔名（不覆寫既有檔）', defaultextension='.icdpack',
-                                              initialfile='icd-'+datetime.now().strftime('%Y%m%d-%H%M%S')+'.icdpack',
-                                              filetypes=[('ICD data package', '*.icdpack')])
+            value = filedialog.asksaveasfilename(title='選擇新資料包檔名（不覆寫既有檔）', defaultextension='.sqlite' if selected_output_type() != 'icdpack' else '.icdpack',
+                                              initialfile='icd-'+datetime.now().strftime('%Y%m%d-%H%M%S')+('.sqlite' if selected_output_type() != 'icdpack' else '.icdpack'),
+                                              filetypes=[('SQLite source tables', '*.sqlite')] if selected_output_type() != 'icdpack' else [('ICD data package', '*.icdpack')])
         else:
             value = filedialog.askopenfilename(filetypes=[('JSON profile', '*.json')] if kind == 'profile' else [('ICD data package', '*.icdpack')])
         if value:
@@ -91,17 +92,29 @@ def main():
             events.put(('text', f'ERROR: {exc}\n'))
             events.put(('done', 1))
 
+    def selected_output_type():
+        if tabs.select() != str(build): return 'icdpack'
+        try:
+            return json.loads(Path(profile.get()).read_text(encoding='utf-8')).get('output_type', 'icdpack')
+        except (OSError, ValueError):
+            return 'icdpack'
+
     def run(kind):
         if state['process'] is not None:
             return
-        if kind == 'verify':
+        if kind == 'catalog':
+            if not Path(source.get()).is_dir():
+                messagebox.showerror('缺少輸入', '請先選取含 cms／健保署子目錄的官方原檔總資料夾。')
+                return
+            arguments = ['catalog', '--source-dir', source.get()]
+        elif kind == 'verify':
             if not Path(package.get()).is_file():
                 messagebox.showerror('缺少檔案', '請選取要驗證的 .icdpack。')
                 return
             arguments = ['verify', '--package', package.get()]
         else:
             if not output.get() or Path(output.get()).exists():
-                messagebox.showerror('輸出檔案', '請選擇尚不存在的新 .icdpack 檔名；工具不覆寫既有資料。')
+                messagebox.showerror('輸出檔案', '請選擇尚不存在的新輸出檔名；CM 用 .icdpack，PCS／原始表用 .sqlite。')
                 return
             arguments = ['sample', '--output', output.get()]
             if kind == 'build':
@@ -116,12 +129,27 @@ def main():
         status.set('處理中…所有檔案僅在本機使用，視窗保持可操作。')
         threading.Thread(target=worker, args=(arguments,), daemon=True).start()
 
-    field(build, 0, '官方原檔資料夾', source, 'dir')
-    field(build, 1, '來源／版別 profile', profile, 'profile')
-    field(build, 2, '新 .icdpack', output, 'output')
-    ttk.Label(build, text='profile 範本位於 docs/；需核對原檔、版本、修訂日期與中譯 lineage。').grid(row=3, column=0, columnspan=3, sticky='w', pady=6)
+    presets = {}
+    for path in sorted((ROOT / 'docs/source_profiles').glob('*.json')):
+        presets[json.loads(path.read_text(encoding='utf-8'))['label']] = path
+    ttk.Label(build, text='已核對的來源設定').grid(row=0, column=0, sticky='w')
+    preset = ttk.Combobox(build, values=list(presets), state='readonly', width=45)
+    preset.grid(row=0, column=1, columnspan=2, sticky='ew')
+    def select_preset(event=None):
+        profile.set(str(presets[preset.get()]))
+        output.set('')
+    preset.bind('<<ComboboxSelected>>', select_preset)
+    if presets:
+        preferred = next((label for label, path in presets.items() if path.stem == 'cm-fy2027-oct'), next(iter(presets)))
+        preset.set(preferred); select_preset()
+    field(build, 1, '官方原檔總資料夾', source, 'dir')
+    field(build, 2, '自訂／目前 profile', profile, 'profile')
+    field(build, 3, '新輸出 .icdpack／.sqlite', output, 'output')
+    ttk.Label(build, text='選含 cms／健保署的總資料夾；CM 可匯入 App，PCS／原始表僅供獨立 SQLite 查閱。').grid(row=4, column=0, columnspan=3, sticky='w', pady=6)
     buttons.append(ttk.Button(build, text='離線建立資料包', command=lambda: run('build')))
-    buttons[-1].grid(row=4, column=1, sticky='w')
+    buttons[-1].grid(row=5, column=1, sticky='w')
+    buttons.append(ttk.Button(build, text='檢查總資料夾／可用設定', command=lambda: run('catalog')))
+    buttons[-1].grid(row=5, column=2, sticky='w')
     field(verify, 0, '既有 .icdpack', package, 'package')
     buttons.append(ttk.Button(verify, text='檢查 SHA256／schema／SQLite／索引', command=lambda: run('verify')))
     buttons[-1].grid(row=1, column=1, sticky='w', pady=8)

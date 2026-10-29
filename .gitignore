@@ -13,3 +13,6 @@ evidence/linux-official-probe.json
 evidence/host-cpu.txt
 evidence/toolchain.txt
 evidence/android-device.txt
+
+# User-provided official sources remain local; never redistribute in backups.
+/2027 ICD-10-CM files/

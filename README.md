@@ -82,6 +82,8 @@ App 的正式 Android package ID 為 `tw.offline.icd.icd_dictionary`，debug／i
 
 ## 三、資料製作（Python 僅在 builder 執行）
 
+**Builder 0.1.2 新增本批官方原檔的 7 種來源設定、ODS 直接串流匯入，以及獨立 PCS／健保署全分頁 SQLite。** 詳見 [官方轉檔操作說明](docs/OFFICIAL_IMPORT_0.1.2.md)。新工具與實際資料在 `manual-test-0.1.2/`；舊 App 0.1.1 與舊產物保留，無需重建 APK。
+
 Windows 無開發環境時，解壓獨立工具 ZIP，雙擊 `ICD-Data-Builder.cmd` 開啟繁體中文 GUI；附私有 Python 3.13.18／Tk／鎖定依賴，不需系統 Python、pip 或網路。`SELF-TEST.cmd` 執行隨附測試；命令列可使用 `ICD-Data-Builder.cmd verify --package path.icdpack`。工具與 App 完全分開，App ZIP／APK 不含 Python。
 
 ```powershell
@@ -110,7 +112,7 @@ python -m tools.data_builder.audit --package fy2027-new.icdpack --input official
 
 [健保署政府開放資料集（2023 中文 CM／PCS）](https://data.gov.tw/dataset/177507)；請只選 CM，記錄實際修訂批次、URL、SHA256。也可從健保署官網取得 XLSX。
 
-1. 複製 `docs/nhi-profile.example.json`，填實際 header／sheet、版別及修訂日期；CSV 必須 UTF-8，XLSX 公式拒絕。ODS 尚不支援。
+1. 複製 `docs/nhi-profile.example.json`，填實際 header／sheet、版別及修訂日期；CSV 必須 UTF-8，XLSX 公式拒絕。ODS 已支援串流讀取，須明確指定 `ICD-10-CM` 分頁；本批可直接選內建來源設定。
 2. `inputs` 列出原檔，`translation.columns` 明確指定 code／title_zh_tw 欄位。所有來源欄位原值保留於 translation.notes JSON，以供追溯。
 3. `mapping_policy` 預設 `unresolved`，不進入合格中譯搜尋。不得只因同一 code 就改為 exact_edition。
 4. 有明確驗證／審核紀錄才指定 `exact_edition` 或 `reviewed_cross_release`，以及唯一 base package ID；跨版始終顯示警示。

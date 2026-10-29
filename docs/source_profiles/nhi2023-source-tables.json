@@ -1,0 +1,20 @@
+{
+  "label": "健保署 ODS 全部分頁 → 獨立 SQLite（CM／PCS 分類保留）",
+  "metadata": {
+    "classification": "ICD-10-CM/PCS source",
+    "edition": "NHI-2023",
+    "release_id": "1150827",
+    "source_organization": "衛生福利部中央健康保險署",
+    "source_urls": [
+      "https://data.gov.tw/dataset/177507"
+    ],
+    "mapping_policy": "unresolved"
+  },
+  "inputs": [
+    "健保署/1.2023年中文版ICD-10-CM_PCS_1150827.ods"
+  ],
+  "input_sha256": {
+    "健保署/1.2023年中文版ICD-10-CM_PCS_1150827.ods": "b6108ab1dccdfe18faf9640b9a340a2d8ac655bfa4bd66169d64cb5874706846"
+  },
+  "output_type": "nhi_source_tables"
+}

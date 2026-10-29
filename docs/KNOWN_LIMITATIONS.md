@@ -6,7 +6,7 @@
 * Android：使用者允許後的一次重試安裝成功，`.debug` 整合測試1/1通過、Linux↔Android兩包各50查詢一致；未修改手機設定、未解除安裝或清資料。Release APK實機啟動仍未測。
 * 實體平板、旋轉、TalkBack／Windows 螢幕閱讀器及乾淨 Windows 環境未測；widget viewport 測試不等同實體裝置測試。
 * Release 預設沿用 Flutter 的本機 debug 簽章，僅供 demo 安裝。正式簽署金鑰未配置，不可作正式發布憑證。
-* 已實際解析官方 NHI 2023 中文 CSV（96,802列），但與 FY2027 美國版尚無已驗證 lineage；CSV/XLSX 可保存為 `unresolved`，但不因此自動標成相容譯名。ODS 明確不支援，需先人工另存 CSV/XLSX，公式一律拒絕。
+* 已實際解析官方 NHI 2023 中文 CSV（96,802列），但與 FY2027 美國版尚無已驗證 lineage；CSV/XLSX 可保存為 `unresolved`，但不因此自動標成相容譯名。Builder 0.1.2 已支援 ODS 指定分頁／全分頁獨立匯出，公式一律拒絕；PCS 獨立資料表不是現有 CM App 模組。
 * 版本差異能比對新增／移除／描述／billable／本節點 notes；**尚未實作官方 conversion 檔的拆分／合併 lineage**，不能從代碼前綴推論。FR-034 為 partial。
 * 官方英文來源計數及原文稽核已執行；這不是疾病分類師的獨立內容簽核。未確認官方資料完整再散布權限，不把完整資料放入發行物。
 * p95 若是 synthetic／無中文內容的資料，不算正式中文效能 Gate；已測Linux與Android正式英文warm資料層，所有效能須分別看資料、硬體與build mode。

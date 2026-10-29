@@ -37,6 +37,7 @@ def check_tags(root, allowed):
 def source_files(paths):
     out=[]
     for p in paths:
+        if p.stat().st_size > MAX_ARCHIVE: raise PackageError('Source file size limit')
         if p.suffix.lower()=='.zip':
             with zipfile.ZipFile(p) as z:
                 for info in safe_entries(z,package=False):
@@ -165,43 +166,28 @@ def import_cdc(db, paths, meta):
     return report
 
 def import_nhi(db, path: Path, columns: dict, metadata: dict):
-    if path.stat().st_size>MAX_ARCHIVE: raise PackageError('Translation file size limit')
-    required={'code','title_zh_tw'}
-    if not required<=columns.keys(): raise PackageError('Explicit code/title_zh_tw column mapping required')
-    if path.suffix.lower()=='.csv':
-        with path.open(encoding='utf-8-sig',newline='') as f: rows=list(csv.reader(f))
-    elif path.suffix.lower()=='.xlsx':
-        # XLSX is also an untrusted ZIP/XML container. Bound it before openpyxl.
-        with zipfile.ZipFile(path) as archive:
-            for entry in safe_entries(archive,package=False):
-                if entry.filename.lower().endswith(('.xml','.rels')):
-                    xml_root(archive.read(entry))
-        wb=load_workbook(path,read_only=True,data_only=False)
-        try:
-            rows=[]
-            sheet=wb[columns.get('sheet',wb.sheetnames[0])]
-            for row in sheet:
-                if any(c.data_type=='f' for c in row): raise PackageError('Spreadsheet formulas prohibited')
-                rows.append([c.value for c in row])
-        finally: wb.close()
-    else: raise PackageError('Unsupported translation format; use explicit UTF-8 CSV or XLSX (ODS unavailable)')
-    if not rows: raise PackageError('Empty translation table')
-    header=[str(v) for v in rows[0]]
-    if len(set(header))!=len(header): raise PackageError('Duplicate headers')
-    try: indices={k:header.index(columns[k]) for k in required}
-    except ValueError as e: raise PackageError('Mapped column missing; update mapping JSON') from e
-    count=0
-    for line,row in enumerate(rows[1:],2):
-        if all(v is None or v=='' for v in row): continue
-        code=str(row[indices['code']] or '').strip(); title=str(row[indices['title_zh_tw']] or '')
-        if code.startswith(('=','+','@')) or title.startswith(('=','+','@')): raise PackageError('Formula-like value prohibited')
-        if not re.fullmatch(r'[A-Z][A-Z0-9]{2}(?:\.?[A-Z0-9]{1,4})?',code.upper()) or not title.strip(): raise PackageError('Invalid translation row '+str(line))
-        status=metadata['mapping_policy']
-        base=metadata.get('compatible_base_package_ids',[])
-        if status!='unresolved' and len(base)!=1: raise PackageError('Reviewed mapping needs exactly one base')
-        ident=db.execute('INSERT INTO translations(code_normalized,title_zh_tw,search_normalized,translation_edition,translation_revision,source_reference,mapping_status,base_package_id,notes) VALUES (?,?,?,?,?,?,?,?,?)',
-            (code_key(code),title,normalized(title),metadata['translation_edition'],metadata['translation_revision'],path.name+':row:'+str(line),status,base[0] if base else None,json.dumps({'mapping_decision':'Explicit source profile; not inferred by code equality','source_columns':dict(zip(header,row))},ensure_ascii=False))).lastrowid
-        db.executemany('INSERT INTO zh_ngrams VALUES (?,?,?)',[(g,code_key(code),ident) for g in sorted(grams(title))])
-        count+=1
-    db.commit()
-    return {'translation_rows':count,'columns':columns,'source_sha256':digest(path.read_bytes())}
+    from .spreadsheets import mapped_records
+    if columns.get('sheet') and columns['sheet'] != 'ICD-10-CM' and path.suffix.lower() == '.ods':
+        raise PackageError('CM overlay requires the ICD-10-CM sheet, never PCS or deleted-code sheets')
+    count = 0
+    db.execute('SAVEPOINT nhi_import')
+    try:
+        for line, row in mapped_records(path, columns):
+            code = row[columns['code']].strip(); title = row[columns['title_zh_tw']]
+            if code.startswith(('=', '+', '@')) or title.startswith(('=', '+', '@')):
+                raise PackageError('Formula-like value prohibited')
+            if not re.fullmatch(r'[A-Z][A-Z0-9]{2}(?:\.?[A-Z0-9]{1,4})?', code.upper()) or not title.strip():
+                raise PackageError('Invalid translation row ' + str(line))
+            status = metadata['mapping_policy']; base = metadata.get('compatible_base_package_ids', [])
+            if status != 'unresolved' and len(base) != 1: raise PackageError('Reviewed mapping needs exactly one base')
+            reference = path.name + (':' + columns['sheet'] if columns.get('sheet') else '') + ':row:' + str(line)
+            ident = db.execute('INSERT INTO translations(code_normalized,title_zh_tw,search_normalized,translation_edition,translation_revision,source_reference,mapping_status,base_package_id,notes) VALUES (?,?,?,?,?,?,?,?,?)',
+                (code_key(code), title, normalized(title), metadata['translation_edition'], metadata['translation_revision'], reference, status, base[0] if base else None,
+                 json.dumps({'mapping_decision':'Explicit source profile; not inferred by code equality','source_columns':row}, ensure_ascii=False))).lastrowid
+            db.executemany('INSERT INTO zh_ngrams VALUES (?,?,?)', [(g, code_key(code), ident) for g in sorted(grams(title))])
+            count += 1
+        if not count: raise PackageError('Empty translation table')
+        db.execute('RELEASE nhi_import'); db.commit()
+    except Exception:
+        db.execute('ROLLBACK TO nhi_import'); db.execute('RELEASE nhi_import'); raise
+    return {'translation_rows':count, 'columns':columns, 'source_sha256':digest(path.read_bytes())}

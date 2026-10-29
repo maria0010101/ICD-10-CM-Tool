@@ -133,3 +133,10 @@ def test_xlsx_dtd_rejected_before_openpyxl(tmp_path):
     try:
         with pytest.raises(PackageError,match='DTD'):import_nhi(db,source,{'code':'code','title_zh_tw':'zh'},{})
     finally:db.close()
+
+
+def test_existing_staging_file_is_preserved(tmp_path):
+    stage=tmp_path/'new.icdpack.staging';stage.write_bytes(b'PREEXISTING USER FILE')
+    with pytest.raises(FileExistsError):sample(tmp_path/'new.icdpack')
+    assert stage.read_bytes()==b'PREEXISTING USER FILE'
+    assert not (tmp_path/'new.icdpack').exists()

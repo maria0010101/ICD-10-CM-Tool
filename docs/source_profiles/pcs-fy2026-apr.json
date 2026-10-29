@@ -1,0 +1,27 @@
+{
+  "label": "PCS 獨立 SQLite FY2026 · 2026-04-01（不是 App 資料包）",
+  "metadata": {
+    "classification": "ICD-10-PCS",
+    "edition": "FY2026",
+    "release_id": "2026-04-01",
+    "effective_from": "2026-04-01",
+    "effective_to": "2026-09-30",
+    "source_organization": "CMS",
+    "source_urls": [
+      "https://www.cms.gov/medicare/coding-billing/icd-10-codes"
+    ],
+    "created_at": "2026-10-29T00:00:00Z",
+    "is_sample": false
+  },
+  "inputs": [
+    "cms/FY 2026/zip-file-2-2026-code-tables-and-index.zip",
+    "cms/FY 2026/zip-file-3-2026-icd-10-pcs-codes-file.zip",
+    "cms/FY 2026/zip-file-4-2026-icd-10-pcs-order-file-long-and-abbreviated-titles.zip"
+  ],
+  "input_sha256": {
+    "cms/FY 2026/zip-file-2-2026-code-tables-and-index.zip": "567c4c012556a862c17d2653e6f49ecbf6c6bdbf82eba3e19576a207c417e41f",
+    "cms/FY 2026/zip-file-3-2026-icd-10-pcs-codes-file.zip": "e545c9aaf2ced94543ff3584f653dba9be9fd312fb8759ea0f3713a7d1b3f3f2",
+    "cms/FY 2026/zip-file-4-2026-icd-10-pcs-order-file-long-and-abbreviated-titles.zip": "9bb4a892c34b82d525182a6db6ef42ccba2c7b331ac5d24d459664a1129d776d"
+  },
+  "output_type": "pcs_tables"
+}

@@ -1,0 +1,29 @@
+{
+  "label": "CM 英文 FY2026 · 2026-04-01",
+  "metadata": {
+    "classification": "ICD-10-CM",
+    "edition": "FY2026",
+    "release_id": "2026-04-01",
+    "effective_from": "2026-04-01",
+    "effective_to": "2026-09-30",
+    "source_organization": "CMS; CDC/NCHS",
+    "source_urls": [
+      "https://www.cms.gov/medicare/coding-billing/icd-10-codes"
+    ],
+    "created_at": "2026-10-29T00:00:00Z",
+    "is_sample": false,
+    "package_id": "icd10cm-us-fy2026-apr-en",
+    "package_version": "1.1.0",
+    "kind": "icd10cm_en",
+    "jurisdiction": "US",
+    "language": "en"
+  },
+  "inputs": [
+    "cms/FY 2026/april-1-2026-code-tables-tabular-and-index.zip",
+    "cms/FY 2026/april-1-2026-code-descriptions-in-tabular-order.zip"
+  ],
+  "input_sha256": {
+    "cms/FY 2026/april-1-2026-code-tables-tabular-and-index.zip": "c623e47143c156d1427fe7cd2bee7ac1ae6994bdd2196b9ec27d4a3219bcfd48",
+    "cms/FY 2026/april-1-2026-code-descriptions-in-tabular-order.zip": "4fd9d8b37f02ab42827c7e7be30595c005b0cc3a6bae7a515e3f4c86b6918688"
+  }
+}

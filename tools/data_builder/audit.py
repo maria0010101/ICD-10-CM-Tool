@@ -3,19 +3,20 @@
 Run only with actual local official ZIPs; writes evidence, never fetches sources.
 """
 import json
+import re
 from pathlib import Path
 import sqlite3
 import tempfile
 import zipfile
 from lxml import etree as ET
 from .package import verify
-from .adapters import source_files, parse_order, text, NOTES
+from .adapters import source_files, parse_order, text, NOTES, xml_root
 
 def audit(package: Path, inputs: list[Path]):
     with tempfile.TemporaryDirectory() as td:
         target=Path(td); manifest=verify(package,target);db=sqlite3.connect(target/'content.sqlite')
-        files=source_files(inputs);roots={n:ET.fromstring(raw) for n,raw in files if n.endswith('.xml')}
-        order=next(parse_order(raw) for n,raw in files if 'order-2027.txt' in n)
+        files=source_files(inputs);roots={n:xml_root(raw) for n,raw in files if n.endswith('.xml')}
+        order=next(parse_order(raw) for n,raw in files if re.search(r'order[-_]\d{4}\.txt$', n))
         actual={r[0]:(r[1],r[2]) for r in db.execute("SELECT code_normalized,billable,title_en FROM code_nodes WHERE code!=''")}
         missing=sorted(set(order)-set(actual));extra=sorted(set(actual)-set(order))
         billable=[c for c,(b,t,s) in order.items() if c in actual and actual[c][0]!=b]
