@@ -8,6 +8,20 @@ import 'package:icd_dictionary/data/package_store.dart';
 import 'package:icd_dictionary/data/repository.dart';
 import 'package:icd_dictionary/ui/dictionary_app.dart';
 
+// Observe the exact Future started by the real widget callback. pumpAndSettle
+// drains frames, not native SQLite isolates; await their owner before cleanup.
+class _ObservedController extends DictionaryController {
+  _ObservedController(super.store);
+  Future<void>? lastSwitch;
+
+  @override
+  Future<void> switchClassification(String value) {
+    final operation = super.switchClassification(value);
+    lastSwitch = operation;
+    return operation;
+  }
+}
+
 void main() {
   test(
     'PCS shared package: code, FTS, seven axes, Index and family isolation',
@@ -97,15 +111,18 @@ void main() {
             capacity: 1 << 40,
           ),
         );
-        final controller = DictionaryController(store);
+        final controller = _ObservedController(store);
         await controller.choose(hash);
         await tester.pumpWidget(DictionaryApp(controller: controller));
         await tester.pumpAndSettle();
         await tester.tap(find.text('PCS 處置'));
+        expect(controller.lastSwitch, isNotNull);
+        await controller.lastSwitch;
         await tester.pumpAndSettle();
         expect(find.text('CM 診斷'), findsOneWidget);
         expect(controller.active, isNull);
         await tester.tap(find.text('CM 診斷'));
+        await controller.lastSwitch;
         await tester.pumpAndSettle();
         expect(controller.classification, 'ICD-10-CM');
         expect(tester.takeException(), isNull);
