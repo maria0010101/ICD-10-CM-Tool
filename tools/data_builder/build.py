@@ -55,7 +55,7 @@ def catalog(source_dir: Path):
     from .package import ROOT
     found = []
     for profile_path in sorted((ROOT / 'docs/source_profiles').glob('*.json')):
-        profile = json.loads(profile_path.read_text())
+        profile = json.loads(profile_path.read_text(encoding='utf-8'))
         missing = [name for name in profile['inputs'] if not (source_dir / name).is_file()]
         found.append({'profile':profile_path.name, 'label':profile['label'],
                       'output_type':profile.get('output_type', 'icdpack'), 'missing_files':missing,

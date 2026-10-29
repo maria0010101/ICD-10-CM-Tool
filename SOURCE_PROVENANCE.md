@@ -45,3 +45,9 @@
 * 所有 mapping_status=unresolved；不視為 FY2027 已驗證官方中譯。effective_to=9999-12-31 是未知期限 sentinel，非官方有效期限保證。
 * 原始全部欄位（包括英文、USE、修訂狀態）保存於 translations.notes JSON；譯名不覆蓋英文內容。
 * 資料頁標示政府資料開放授權條款第1版；本專案仍不將完整分類資料隨 App 再散布。
+
+## 使用者提供的官方批次（Builder 0.1.2）
+
+來源目錄 `2027 ICD-10-CM files/`，共 34 檔；逐檔 SHA256／大小在 `evidence/official-import-0.1.2/source-inventory.json`。本批包括 FY2026／FY2027 CM、FY2026 April／FY2027 PCS，以及健保署 2023／1150827 多分頁 ODS。下載時間未由檔名或本機時間推定。
+
+實際轉檔設定在 `docs/source_profiles/`，操作與範圍見 `docs/OFFICIAL_IMPORT_0.1.2.md`，實測見 `docs/OFFICIAL_IMPORT_0.1.2_RESULTS.md`。原檔及完整轉換資料不隨 Git／工具 ZIP 散布。
