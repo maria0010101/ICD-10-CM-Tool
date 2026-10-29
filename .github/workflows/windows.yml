@@ -19,9 +19,19 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.13.18'
+      - name: Pinned standalone Python 3.13.18 (security-release runtime)
+        shell: pwsh
+        run: |
+          $Archive = Join-Path $env:RUNNER_TEMP 'cpython-3.13.18-windows-x64.tar.gz'
+          $Target = Join-Path $env:RUNNER_TEMP 'icd-python313'
+          Invoke-WebRequest -Uri 'https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.13.18%2B20261026-x86_64-pc-windows-msvc-install_only_stripped.tar.gz' -OutFile $Archive
+          if ((Get-FileHash $Archive -Algorithm SHA256).Hash.ToLowerInvariant() -ne '7369f7a35f261222a6ac8b3a87c1c88eeebee8af945d85346202591a64038dd3') { throw 'Python runtime SHA256 mismatch' }
+          New-Item -ItemType Directory -Force $Target | Out-Null
+          tar -xzf $Archive -C $Target
+          if ($LASTEXITCODE -ne 0) { throw 'Python runtime extraction failed' }
+          $PythonDir = Join-Path $Target 'python'
+          $PythonDir | Out-File -FilePath $env:GITHUB_PATH -Append -Encoding utf8
+          & (Join-Path $PythonDir 'python.exe') --version
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.47.5'
