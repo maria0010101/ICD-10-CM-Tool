@@ -1,0 +1,12 @@
+{
+  "source_order_rows": 80174,
+  "complete_codes": 79256,
+  "source_tables": 918,
+  "source_index_entries": 25023,
+  "original_xml_documents": 3,
+  "package_sha256": "e2ba1a7d024465b053d676490f0eb46588c5662f5f3d4f910089ecca70b36c99",
+  "classification": "ICD-10-PCS",
+  "edition": "FY2027",
+  "mismatches": [],
+  "passed": true
+}

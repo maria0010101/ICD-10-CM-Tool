@@ -1,0 +1,10 @@
+{
+  "sha256": "0158ee65303548fb7e047067e6086e19fd99f61368c0a298d92811fa0c8d0cdc",
+  "bytes": 31067405,
+  "crc": "passed",
+  "source_files_compared": 18,
+  "source_profiles": 10,
+  "ci_run": "https://github.com/maria0010101/ICD-10-CM-Tool/actions/runs/40830841409",
+  "official_data_bundled": false,
+  "sample_and_malicious_test_fixtures": 14
+}

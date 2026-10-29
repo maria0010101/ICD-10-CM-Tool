@@ -51,3 +51,8 @@
 來源目錄 `2027 ICD-10-CM files/`，共 34 檔；逐檔 SHA256／大小在 `evidence/official-import-0.1.2/source-inventory.json`。本批包括 FY2026／FY2027 CM、FY2026 April／FY2027 PCS，以及健保署 2023／1150827 多分頁 ODS。下載時間未由檔名或本機時間推定。
 
 實際轉檔設定在 `docs/source_profiles/`，操作與範圍見 `docs/OFFICIAL_IMPORT_0.1.2.md`，實測見 `docs/OFFICIAL_IMPORT_0.1.2_RESULTS.md`。原檔及完整轉換資料不隨 Git／工具 ZIP 散布。
+
+
+## 0.2.0 PCS App projection
+
+使用本機原官方下載（原檔34/34 SHA256保全），CMS FY2027／FY2026 April的codes、order、tables、Index、definitions投影至共用schema；原XML逐節點及完整來源保留，七軸row分組不跨組合併。健保署2023／1150827 ODS明確選ICD-10-PCS分頁，同一列英中對照的exact_edition只針對本身NHI2023版，不與美國FY2027宣稱相容。全量資料僅留本機，獨立原值稽核結果見 `evidence/release-0.2.0/*.source-audit.json`。合成PCS fixture明標SAMPLE，與正式資料分開。

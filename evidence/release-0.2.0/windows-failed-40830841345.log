@@ -1,0 +1,107 @@
+windows-x64	Analyze, native tests, release build and app-local CRT	﻿2026-10-29T06:44:58.1972869Z ##[group]Run $Version = (Select-String '^version:\s*([0-9.]+)' app/pubspec.yaml).Matches[0].Groups[1].Value
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:44:58.1973828Z [36;1m$Version = (Select-String '^version:\s*([0-9.]+)' app/pubspec.yaml).Matches[0].Groups[1].Value[0m
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:44:58.1974534Z [36;1m"APP_VERSION=$Version" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8[0m
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:44:58.1975094Z [36;1m& ./scripts/build_windows.ps1[0m
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:44:58.2050713Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:44:58.2051177Z env:
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:44:58.2051563Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.47.5-x64/flutter
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:44:58.2052110Z   PUB_CACHE: C:\Users\runneradmin\AppData\Local\Pub\Cache
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:44:58.2052484Z ##[endgroup]
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:01.8900751Z Resolving dependencies...
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:02.4678512Z Downloading packages...
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:02.4679176Z   cli_util 0.4.2 (0.6.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:02.4679693Z   cross_file 0.3.5+5 (0.4.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:02.4680404Z   cupertino_icons 1.0.9 (2.0.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:02.4681106Z   material_color_utilities 0.13.0 (0.13.1 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:02.4681766Z   test_api 0.7.12 (0.7.15 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:02.4682338Z   vector_math 2.4.0 (2.4.4 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:02.4683016Z Got dependencies!
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:02.4683693Z 6 packages have newer versions incompatible with dependency constraints.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:02.4684597Z Try `flutter pub outdated` for more information.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:03.5947717Z Resolving dependencies...
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:03.6980339Z Downloading packages...
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:03.8593915Z   cli_util 0.4.2 (0.6.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:03.8595046Z   cross_file 0.3.5+5 (0.4.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:03.8595735Z   cupertino_icons 1.0.9 (2.0.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:03.8596449Z   material_color_utilities 0.13.0 (0.13.1 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:03.8597117Z   test_api 0.7.12 (0.7.15 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:03.8597752Z   vector_math 2.4.0 (2.4.4 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:03.8598418Z Got dependencies!
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:03.8599254Z 6 packages have newer versions incompatible with dependency constraints.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:03.8600186Z Try `flutter pub outdated` for more information.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:16.1960801Z Analyzing app...                                                
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:16.1983207Z No issues found! (ran in 10.9s)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:17.4045959Z Resolving dependencies...
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:17.5076927Z Downloading packages...
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:17.6712933Z   cli_util 0.4.2 (0.6.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:17.6713853Z   cross_file 0.3.5+5 (0.4.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:17.6714538Z   cupertino_icons 1.0.9 (2.0.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:17.6715251Z   material_color_utilities 0.13.0 (0.13.1 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:17.6715963Z   test_api 0.7.12 (0.7.15 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:17.6716556Z   vector_math 2.4.0 (2.4.4 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:17.6717172Z Got dependencies!
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:17.6718050Z 6 packages have newer versions incompatible with dependency constraints.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:17.6719047Z Try `flutter pub outdated` for more information.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:22.6814731Z 
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:36.5021368Z ##[group]✅ Passing tests
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:36.5022931Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/cross_probe_test.dart: 50-query native snapshot + 1000-query warm benchmark
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:36.5030620Z ##[endgroup]
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:36.5031702Z ##[group]⏭️ Skipped tests
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:36.5033378Z ⏭️ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/cross_probe_test.dart: official English release native snapshot and 1000 warm queries (skipped)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:39.7222970Z ##[endgroup]
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:39.7223973Z ##[group]✅ Passing tests
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:39.7225122Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/pcs_test.dart: PCS shared package: code, FTS, seven axes, Index and family isolation
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1047248Z ##[endgroup]
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1054067Z ##[group]❌ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/pcs_test.dart: PCS selector remains available when that family has no package (failed)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1055964Z ══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1057033Z The following PathAccessException was thrown while running async test code:
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1058145Z Deletion failed, path = 'C:\Users\RUNNER~1\AppData\Local\Temp\pcs-ui-8f3363fa' (OS Error: The
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1059516Z process cannot access the file because it is being used by another process, errno = 32)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1060314Z 
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1060640Z When the exception was thrown, this was the stack:
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1061339Z #0      _checkForErrorResponse (dart:io/common.dart:58:9)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1062597Z #1      _Directory._delete.<anonymous closure> (dart:io/directory_impl.dart:208:7)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1063368Z <asynchronous suspension>
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1064310Z #7      main.<anonymous closure>.<anonymous closure> (file:///D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/pcs_test.dart:109:9)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1074292Z <asynchronous suspension>
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1074850Z <asynchronous suspension>
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1075632Z #9      main.<anonymous closure> (file:///D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/pcs_test.dart:81:7)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1076981Z <asynchronous suspension>
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1077986Z #10     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1080539Z <asynchronous suspension>
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1102976Z #11     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1104044Z <asynchronous suspension>
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1104542Z <asynchronous suspension>
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1105498Z (elided 7 frames from dart:async and package:stack_trace)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1106010Z 
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1106252Z The exception was caught asynchronously.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1107310Z ════════════════════════════════════════════════════════════════════════════════════════════════════
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1108206Z Test failed. See exception logs above.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1109041Z The test description was: PCS selector remains available when that family has no package
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1109723Z 
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:41.1110217Z ##[endgroup]
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:42.1993682Z ##[group]✅ Passing tests
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:42.1995228Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/repository_test.dart: normalization AND OR prefixes cannot inject FTS SQL
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:42.9639968Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/repository_test.dart: same bytes readonly queries and inherited notes/index/lineage
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:43.5352630Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/repository_test.dart: atomic rollback survives interrupted staging/disk full/publish and isolates user data
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:43.8717930Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/repository_test.dart: version diff reports changed description, never silently merges translation
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:44.2273698Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/repository_test.dart: malicious ZIP/DB/schema are rejected without changing active data
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:44.6838076Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/repository_test.dart: overlay cannot silently turn an unresolved translation into official compatible content
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:44.7978661Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/repository_test.dart: duplicate JSON keys cannot differ across validators
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:45.1561316Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/repository_test.dart: tampered installed file cannot activate, old pointer retained
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:46.1499135Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/widget_test.dart: adaptive breakpoints
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:48.0373157Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/widget_test.dart: empty import flow 390.0px and text scaling
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:48.4314824Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/widget_test.dart: empty import flow 800.0px and text scaling
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:48.8308000Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/widget_test.dart: empty import flow 1440.0px and text scaling
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:50.0296294Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/widget_test.dart: populated search/detail 390.0px at 1.6x text scale
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:51.0798688Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/widget_test.dart: populated search/detail 800.0px at 1.6x text scale
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:51.9392685Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/widget_test.dart: populated search/detail 1440.0px at 1.6x text scale
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:51.9729184Z ##[endgroup]
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:51.9729869Z 
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:51.9922493Z ##[error]17 tests passed, 1 failed, 1 skipped.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:52.2775881Z [31;1mException: [0mD:\a\ICD-10-CM-Tool\ICD-10-CM-Tool\scripts\build_windows.ps1:33[0m
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:52.2778260Z [31;1m[0m[36;1mLine |[0m
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:52.2779459Z [31;1m[0m[36;1m[36;1m  33 | [0m     if ($LASTEXITCODE -ne 0) { [36;1mthrow 'Flutter tests failed'[0m }[0m
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:52.2780959Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:52.2783050Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mFlutter tests failed[0m
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-29T06:45:52.3008270Z ##[error]Process completed with exit code 1.

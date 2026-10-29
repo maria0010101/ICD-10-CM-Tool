@@ -1,0 +1,41 @@
+{
+  "app_version": "0.2.0+3",
+  "artifacts": [
+    {
+      "file": "data/nhi2023-pcs-app.icdpack",
+      "bytes": 53944319,
+      "sha256": "50a4d613563f60e7b7adf11ac47042dbdd886dd748e8f354d187b3d1203e9277"
+    },
+    {
+      "file": "data/pcs-fy2026-apr-app.icdpack",
+      "bytes": 9093411,
+      "sha256": "479610dbac336573cb87dff11e7c619be8b5a9722bd89e78de5e203422245580"
+    },
+    {
+      "file": "data/pcs-fy2027-oct-app.icdpack",
+      "bytes": 9132310,
+      "sha256": "e2ba1a7d024465b053d676490f0eb46588c5662f5f3d4f910089ecca70b36c99"
+    },
+    {
+      "file": "icd-data-builder-0.2.0-windows-x64-portable.zip",
+      "bytes": 31067405,
+      "sha256": "0158ee65303548fb7e047067e6086e19fd99f61368c0a298d92811fa0c8d0cdc"
+    },
+    {
+      "file": "icd-offline-0.2.0-android-arm64-demo.apk",
+      "bytes": 21611420,
+      "sha256": "9eb09896e37af8eec68c8cbca8fa603e6d54662e7225dba1425a71fa5e70aea4"
+    },
+    {
+      "file": "icd-offline-0.2.0-windows-x64-demo.zip",
+      "bytes": 15147951,
+      "sha256": "e7470f0d7994a8fc42dc4a91669840a56f6d2d825d6d263afee11b424851b7b6"
+    }
+  ],
+  "app_windows_ci": "https://github.com/maria0010101/ICD-10-CM-Tool/actions/runs/40831793850",
+  "builder_windows_ci": "https://github.com/maria0010101/ICD-10-CM-Tool/actions/runs/40830841409",
+  "android_tests": "Android14 ARM64 isolated debug; 4 imports and real SAF large NHI selection/publication passed",
+  "release_android_runtime": "not installed; production app preserved",
+  "official_full_windows_import": "not run",
+  "clinical_validation": "not performed"
+}

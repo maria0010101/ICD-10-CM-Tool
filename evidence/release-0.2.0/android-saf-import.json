@@ -1,0 +1,27 @@
+{
+  "build": "0.2.0 debug normal main",
+  "device": "Android 14 ARM64",
+  "original_download_file": "Download/manual-test-0.1.2/data/nhi2023-cm-ods-unresolved.icdpack",
+  "sha256": "e3007d6ddd00eed0f8477ab28a8537e6eb4f248f914589bb6b519a1aceb6d48b",
+  "system_picker": "ACTION_OPEN_DOCUMENT through Android DocumentsUI, actual content URI",
+  "validation_preview_seen": true,
+  "published": true,
+  "no_base_warning_seen": true,
+  "native_cache_clean_after_completion": true,
+  "production_app_version_unchanged": "0.1.1 / 2002",
+  "production_user_data_not_read_or_modified": true,
+  "screenshot": "android-saf-nhi-preview.png",
+  "pcs_ui": {
+    "sha256": "e2ba1a7d024465b053d676490f0eb46588c5662f5f3d4f910089ecca70b36c99",
+    "actual_saf_import": true,
+    "query": "0016070",
+    "result_count": 1,
+    "detail_visible": true,
+    "all_seven_axes_seen": true,
+    "axis_7": "Qualifier 0 Nasopharynx",
+    "screenshots": [
+      "android-pcs-detail-top.png",
+      "android-pcs-detail-axes.png"
+    ]
+  }
+}

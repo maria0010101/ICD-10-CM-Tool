@@ -1,0 +1,15 @@
+{
+  "artifact": "manual-test-0.2.0/icd-offline-0.2.0-android-arm64-demo.apk",
+  "sha256": "9eb09896e37af8eec68c8cbca8fa603e6d54662e7225dba1425a71fa5e70aea4",
+  "bytes": 21611420,
+  "abi": [
+    "arm64-v8a"
+  ],
+  "release": true,
+  "application_id": "tw.offline.icd.icd_dictionary",
+  "versionName": "0.2.0",
+  "versionCode": 2003,
+  "network_permission": false,
+  "signature_matches_0_1_1": true,
+  "signing": "existing Android debug certificate, manual-test distribution only"
+}

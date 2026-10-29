@@ -1,0 +1,10 @@
+{
+  "source_bilingual_rows": 78530,
+  "package_bilingual_rows": 78530,
+  "us_cross_release_compatibility_claim": false,
+  "package_sha256": "50a4d613563f60e7b7adf11ac47042dbdd886dd748e8f354d187b3d1203e9277",
+  "classification": "ICD-10-PCS",
+  "edition": "NHI-2023-PCS",
+  "mismatches": [],
+  "passed": true
+}

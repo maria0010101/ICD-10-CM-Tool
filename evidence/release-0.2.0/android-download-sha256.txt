@@ -1,0 +1,5 @@
+50a4d613563f60e7b7adf11ac47042dbdd886dd748e8f354d187b3d1203e9277  /sdcard/Download/manual-test-0.2.0/data/nhi2023-pcs-app.icdpack
+479610dbac336573cb87dff11e7c619be8b5a9722bd89e78de5e203422245580  /sdcard/Download/manual-test-0.2.0/data/pcs-fy2026-apr-app.icdpack
+e2ba1a7d024465b053d676490f0eb46588c5662f5f3d4f910089ecca70b36c99  /sdcard/Download/manual-test-0.2.0/data/pcs-fy2027-oct-app.icdpack
+9eb09896e37af8eec68c8cbca8fa603e6d54662e7225dba1425a71fa5e70aea4  /sdcard/Download/manual-test-0.2.0/icd-offline-0.2.0-android-arm64-demo.apk
+e3007d6ddd00eed0f8477ab28a8537e6eb4f248f914589bb6b519a1aceb6d48b  /sdcard/Download/manual-test-0.1.2/data/nhi2023-cm-ods-unresolved.icdpack

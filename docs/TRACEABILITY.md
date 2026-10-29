@@ -14,15 +14,15 @@
 | FR032/033/035 | manifest.dart、translations/zh_ngrams、SOURCE_PROVENANCE | 多版本、獨立 overlay、unresolved 不默認相容；正式中文 CSV 逐列稽核 |
 | FR034 | repository.compare、compareVersions | 新增／移除／描述／state／notes；官方拆分／合併 lineage 尚未實作（partial） |
 | FR040 | adapters.import_cdc、audit.py | CDC FY2027 ZIP/XML/TXT 實際轉換與完整 code/notes/Index 計數；未知 tag 阻擋 |
-| FR041 | adapters.import_nhi、audit_nhi.py | 官方 CSV 實際轉換、XLSX／公式 fixtures；ODS 明確 unsupported |
-| FR042/043/044 | package_store.dart、dictionary_app.dart | 選檔、預檢／預覽、staging、保留舊版、rollback／logs；UI 檔案選擇器實機待測 |
+| FR041 | adapters.import_nhi、audit_nhi.py | 官方 CSV 實際轉換、XLSX／公式 fixtures；0.1.2 ODS 串流／全分頁來源表已完成，逐值稽核見官方轉檔報告 |
+| FR042/043/044 | package_store.dart、dictionary_app.dart | 選檔、預檢／預覽、staging、保留舊版、rollback／logs；0.2.0 Android SAF 原大型包實際選檔／預覽／發布已測 |
 | FR045/046 | safe_zip.dart、validator.dart、package.py | Python + Dart malicious fixtures；schema allowlist、FTS integrity、副本；錯版拒絕 |
 | FR050/051 | package_store.dart | user.sqlite 分離、收藏／註解／history、JSON；跨版收藏警示；回復前後不覆寫 |
 | FR060/061 | 分層 repository、versioned manifest | P2 僅預留；沒有授權模組／私人詞庫 UI，不宣稱已完成 |
 | NFR001 | Release Android manifest、所有 lib/ | 無 runtime HTTP／telemetry；正式 APK 無 INTERNET（以 badging 為準）；飛航／防火牆 Gate 待測 |
 | NFR002/003 | test_support/probe、evidence、dist | sample + 官方英文各1000次 warm benchmarks；體積／SHA 實測；中文／冷啟動／frame time待補 |
 | NFR004/005/008 | Android minSdk24、capacity.dart、package_store | Windows API 與 Android StatFs 實作；真正裝置空間不足／斷電待測 |
-| NFR006/007 | schema、locks、tests、.github/workflows | 來源稽核／lockfile／CI 定義；CI 未遠端執行，沒有假造綠燈 |
+| NFR006/007 | schema、locks、tests、.github/workflows | 來源稽核／lockfile／CI 定義；Windows Actions 已實際執行，原生測試／建置／hosted啟動證據見各版報告 |
 
 ## 里程碑證據
 
@@ -30,7 +30,7 @@
 * B：`schemas/`、`tools/data_builder/`、`samples/`、`evidence/python-tests.log`、`cdc-audit.json`、`nhi-audit.json`。
 * C：`app/lib/{app,domain,data,ui}/`、`evidence/flutter-tests.log`、`linux-probe.json`。
 * D：`package_store.dart`、`safe_zip.dart`、`validator.dart`；Dart transaction/ZIP/overlay tests；首次安裝受阻；使用者允許後一次重試成功，Android整合測試1/1通過。
-* E：`scripts/`、`LICENSES.md`、`README.md`、`docs/ACCEPTANCE.md`、`dist/`；Windows無產物、Android是否產生以 log 與 checksum 實際結果為準。
+* E：`scripts/`、`LICENSES.md`、`README.md`、`docs/ACCEPTANCE.md`、`dist/`；Windows及Android實際產物以各版 log 與 checksum 為準；完整Gate未全部通過。
 
 ## 尚待完成的可執行工作
 
@@ -39,3 +39,13 @@
 3. 實體平板、飛航／阻斷網路、旋轉、螢幕閱讀器、真正 ENOSPC／kill/relaunch。
 4. 經審核 NHI 2023→選定 base lineage，或建立同版 CDC 英文包；不可直接把 FY2027 同碼對照改 exact。
 5. 官方 conversion 拆分／合併資料 adapter、內容專業簽核、冷啟動／UI frame-time、正式發布簽署。
+
+## 0.2.0 使用者追加需求追蹤
+
+| 要求 | 實作／證據 | 驗收範圍 |
+|---|---|---|
+| 修復NHI大型包手機匯入 | MainActivity SAF 64KiB串流、package_picker、validator256筆批次、safe_zip64KiB；原OOM／SHA／四包Android整合測試及系統選檔預覽 | 原NHI CM包不改；正式App不清資料；release APK建置，人工升級另測 |
+| App PCS查詢 | classification隔離、pcs_pack、七軸row、Index部分碼候選、NHI同版中英；Python43／Flutter19測試 | CMS兩版與NHI三包獨立來源逐筆稽核；正式全量Windows尚待人工匯入 |
+| 新資料製作入口 | 3個App profiles + 舊7種，共10種；Windows獨立builder與Tk原生測試 | 原 `.sqlite` 是來源表，不改名冒充 `.icdpack` |
+
+歷史表與0.1.0 Gate記錄保留其當時範圍；最新實際結果以[0.2.0報告](RELEASE_0.2.0.md)及對應evidence為準。
