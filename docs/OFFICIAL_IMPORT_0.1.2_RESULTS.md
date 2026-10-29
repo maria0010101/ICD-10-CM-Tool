@@ -44,3 +44,11 @@ flutter test test/generated_official_test.dart --dart-define='ICD_IMPORT_DATA=/a
 * PCS 是獨立來源資料表，不是 CM App 的 PCS 模組；完整碼／heading 與 Index 範圍保持區別。Guidelines／POA／conversion／PDF errata 未轉為可執行規則，FR-034 仍 partial。
 * SHA256 是完整性與已審核批次鎖定，不是官方簽章。分開記錄 edition／effective release／來源，不因目錄名相同而混用。
 * 舊工具與舊產物保留；已有輸出／report／staging 檔案不覆寫，新增測試特別驗證既有 staging 不被刪除。
+
+## Windows 可攜工具交付證據
+
+[GitHub Windows Actions 40823267837](https://github.com/maria0010101/ICD-10-CM-Tool/actions/runs/40823267837)，來源 commit `34547e65bf52f1f1c2b2e263d23eff540127b00c`，整個 workflow 成功。
+Bundled Python 3.13.18 / SQLite3.53.1 / Tk8.6：**41 passed、GUI constructed=true**。
+下載成品後核對 ZIP CRC、SHA256；所有 builder 模組及7個來源設定在正規化 Git checkout 的 CRLF／LF 後與目前來源一致。原 ZIP 未修改；完整官方檔案不在工具 ZIP。
+
+工具：`icd-data-builder-0.1.2-windows-x64-portable.zip`，31,047,584 bytes；SHA256 `a83addd2cc687a3e9d60253f25da25000e6d8ae7da00e6de23ed8acbaf82f4e7`。

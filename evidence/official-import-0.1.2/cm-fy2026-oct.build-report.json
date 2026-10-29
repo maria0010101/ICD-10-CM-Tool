@@ -1,0 +1,36 @@
+{
+  "cdc": {
+    "expanded_order_nodes": 51305,
+    "input_files": {
+      "icd10orderfiles.zip!icd10cm_codes_2026.txt": "a7e2a77e4627ed55c8afe2b8a7ae22efcbab6b6b162d96cf145213772c1246ba",
+      "icd10orderfiles.zip!icd10cm_codes_addenda_2026.txt": "8524d0dcbbb2ecf36223086134d47e3574ddfa6a54ebbe5351782578d99fd2c8",
+      "icd10orderfiles.zip!icd10cm_order_2026.txt": "6dc95c9c7e96c734806e1682f4bf9df76251d60e99199bba0d375ba3dd11026b",
+      "icd10orderfiles.zip!icd10cm_order_addenda_2026.txt": "19fc109e579aedd793a40a0a18295dd167b82205e10525573ddfe85138674f16",
+      "table-and-index.zip!Table and Index/icd10cm_drug_2026.xml": "c2d34259339f4ec27aa4822316716091568d8f477bc34ccae4946321ebce6524",
+      "table-and-index.zip!Table and Index/icd10cm_eindex_2026.xml": "91555639910deb29c341e538f7b6fd55f9fd39480a6d1656247badb0b9336504",
+      "table-and-index.zip!Table and Index/icd10cm_index_2026.xml": "9ac7762acf8abc6baf18497a6b85d9d3e96ab6d4ec28977ed9c161003374d420",
+      "table-and-index.zip!Table and Index/icd10cm_neoplasm_2026.xml": "2ea9b87e0a71e1da9522af7465b7a165ef47bbc484324a475a2046992a0201e8",
+      "table-and-index.zip!Table and Index/icd10cm_tabular_2026.xml": "81f928efebb8f83d89e7265d6ba9fb72c9f853c80b92723021a9bfdde000d266"
+    },
+    "order_count": 98186,
+    "xml_counts": {
+      "alphabetic": 81509,
+      "drugs": 7430,
+      "external": 8090,
+      "instruction_notes": 26960,
+      "neoplasm": 1940,
+      "tabular_diag": 46881
+    }
+  },
+  "profile_sha256": "003a817564873d5a695039db43ef28dda8e4a3f5f42cfa4d9641e7bc965b1731",
+  "source_files": [
+    {
+      "name": "table-and-index.zip",
+      "sha256": "abfc45a54e4edc215cbaa2f0d18b30112db2bf9141857c9f8902390a495e6696"
+    },
+    {
+      "name": "icd10orderfiles.zip",
+      "sha256": "55a9124a27ca78a4a5c41e1101eda064ec2e08d105ff9e78d1fbd1a83298ef11"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "file": "icd-data-builder-0.1.2-windows-x64-portable.zip",
+    "bytes": 31047584,
+    "sha256": "a83addd2cc687a3e9d60253f25da25000e6d8ae7da00e6de23ed8acbaf82f4e7"
+  },
+  {
+    "file": "data/cm-fy2026-apr.icdpack",
+    "bytes": 15409743,
+    "sha256": "91d01f64add33a08cf282251cbb0852f4dd24dd3f2120084f13b7ce566315078"
+  },
+  {
+    "file": "data/cm-fy2026-oct.icdpack",
+    "bytes": 15333338,
+    "sha256": "982fb20fee7c0398f1123d4e0220ae08f88d7c81434ffd16eaad3b3bcfcfc53a"
+  },
+  {
+    "file": "data/cm-fy2027-oct.icdpack",
+    "bytes": 15401773,
+    "sha256": "c1311f826d5491569438ee4cc30e7e402015ad763f960b8ababe4c2d1f536714"
+  },
+  {
+    "file": "data/nhi2023-cm-ods-unresolved.icdpack",
+    "bytes": 73239748,
+    "sha256": "e3007d6ddd00eed0f8477ab28a8537e6eb4f248f914589bb6b519a1aceb6d48b"
+  },
+  {
+    "file": "data/nhi2023-source-tables.sqlite",
+    "bytes": 108806144,
+    "sha256": "2a3c27c1424fb186954e9dfb1b79dec70d04138e5bcef89f5071fb28d9881614"
+  },
+  {
+    "file": "data/pcs-fy2026-apr.sqlite",
+    "bytes": 51884032,
+    "sha256": "9be80913e9aa2bb2e5a445bb877854089d2c9a5ef607284926177f21eb676828"
+  },
+  {
+    "file": "data/pcs-fy2027-oct.sqlite",
+    "bytes": 51974144,
+    "sha256": "e361752aeeb1f640fb76744bfda33dca126c199893e7e59eb6adf3e8b88433ce"
+  }
+]

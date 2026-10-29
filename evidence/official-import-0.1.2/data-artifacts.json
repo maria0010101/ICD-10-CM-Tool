@@ -1,0 +1,134 @@
+{
+  "official_source_file_count": 34,
+  "artifacts": [
+    {
+      "file": "cm-fy2026-apr.icdpack",
+      "bytes": 15409743,
+      "sha256": "91d01f64add33a08cf282251cbb0852f4dd24dd3f2120084f13b7ce566315078",
+      "row_counts": {
+        "code_nodes": 98506,
+        "index_crossrefs": 16342,
+        "index_entries": 98975,
+        "notes": 26971,
+        "table_cells": 54146,
+        "translations": 0,
+        "zh_ngrams": 0
+      },
+      "edition": "FY2026",
+      "release_id": "2026-04-01",
+      "source_audit_passed": true
+    },
+    {
+      "file": "cm-fy2026-oct.icdpack",
+      "bytes": 15333338,
+      "sha256": "982fb20fee7c0398f1123d4e0220ae08f88d7c81434ffd16eaad3b3bcfcfc53a",
+      "row_counts": {
+        "code_nodes": 98506,
+        "index_crossrefs": 16340,
+        "index_entries": 98969,
+        "notes": 26969,
+        "table_cells": 54146,
+        "translations": 0,
+        "zh_ngrams": 0
+      },
+      "edition": "FY2026",
+      "release_id": "2025-10-01",
+      "source_audit_passed": true
+    },
+    {
+      "file": "cm-fy2027-oct.icdpack",
+      "bytes": 15401773,
+      "sha256": "c1311f826d5491569438ee4cc30e7e402015ad763f960b8ababe4c2d1f536714",
+      "row_counts": {
+        "code_nodes": 98723,
+        "index_crossrefs": 16344,
+        "index_entries": 99108,
+        "notes": 27079,
+        "table_cells": 54182,
+        "translations": 0,
+        "zh_ngrams": 0
+      },
+      "edition": "FY2027",
+      "release_id": "2026-10-01",
+      "source_audit_passed": true
+    },
+    {
+      "file": "nhi2023-cm-ods-unresolved.icdpack",
+      "bytes": 73239748,
+      "sha256": "e3007d6ddd00eed0f8477ab28a8537e6eb4f248f914589bb6b519a1aceb6d48b",
+      "row_counts": {
+        "code_nodes": 0,
+        "index_crossrefs": 0,
+        "index_entries": 0,
+        "notes": 0,
+        "table_cells": 0,
+        "translations": 96802,
+        "zh_ngrams": 3243772
+      },
+      "edition": "NHI-2023",
+      "release_id": "1150827",
+      "source_audit_passed": true
+    },
+    {
+      "file": "nhi2023-source-tables.sqlite",
+      "bytes": 108806144,
+      "sha256": "2a3c27c1424fb186954e9dfb1b79dec70d04138e5bcef89f5071fb28d9881614",
+      "row_counts": {
+        "nhi_codes": 175332,
+        "pcs_axis_labels": 0,
+        "pcs_codes": 0,
+        "pcs_definitions": 0,
+        "pcs_index_entries": 0,
+        "pcs_index_refs": 0,
+        "pcs_rows": 0,
+        "pcs_tables": 0,
+        "source_documents": 0,
+        "source_metadata": 10,
+        "spreadsheet_rows": 178497,
+        "spreadsheet_sheets": 6
+      },
+      "integrity_check": "ok"
+    },
+    {
+      "file": "pcs-fy2026-apr.sqlite",
+      "bytes": 51884032,
+      "sha256": "9be80913e9aa2bb2e5a445bb877854089d2c9a5ef607284926177f21eb676828",
+      "row_counts": {
+        "nhi_codes": 0,
+        "pcs_axis_labels": 33684,
+        "pcs_codes": 80110,
+        "pcs_definitions": 963,
+        "pcs_index_entries": 24852,
+        "pcs_index_refs": 19162,
+        "pcs_rows": 2756,
+        "pcs_tables": 917,
+        "source_documents": 3,
+        "source_metadata": 13,
+        "spreadsheet_rows": 0,
+        "spreadsheet_sheets": 0
+      },
+      "integrity_check": "ok"
+    },
+    {
+      "file": "pcs-fy2027-oct.sqlite",
+      "bytes": 51974144,
+      "sha256": "e361752aeeb1f640fb76744bfda33dca126c199893e7e59eb6adf3e8b88433ce",
+      "row_counts": {
+        "nhi_codes": 0,
+        "pcs_axis_labels": 33872,
+        "pcs_codes": 80174,
+        "pcs_definitions": 976,
+        "pcs_index_entries": 25023,
+        "pcs_index_refs": 19293,
+        "pcs_rows": 2801,
+        "pcs_tables": 918,
+        "source_documents": 3,
+        "source_metadata": 13,
+        "spreadsheet_rows": 0,
+        "spreadsheet_sheets": 0
+      },
+      "integrity_check": "ok"
+    }
+  ],
+  "raw_official_data_uploaded": false
+}

@@ -1,0 +1,82 @@
+{
+  "profiles": [
+    {
+      "profile": "cm-fy2026-apr.json",
+      "label": "CM 英文 FY2026 · 2026-04-01",
+      "output_type": "icdpack",
+      "missing_files": [],
+      "ready": true,
+      "inputs": [
+        "cms/FY 2026/april-1-2026-code-tables-tabular-and-index.zip",
+        "cms/FY 2026/april-1-2026-code-descriptions-in-tabular-order.zip"
+      ]
+    },
+    {
+      "profile": "cm-fy2026-oct.json",
+      "label": "CM 英文 FY2026 · 2025-10-01",
+      "output_type": "icdpack",
+      "missing_files": [],
+      "ready": true,
+      "inputs": [
+        "cms/FY 2026/table-and-index.zip",
+        "cms/FY 2026/icd10orderfiles.zip"
+      ]
+    },
+    {
+      "profile": "cm-fy2027-oct.json",
+      "label": "CM 英文 FY2027 · 2026-10-01",
+      "output_type": "icdpack",
+      "missing_files": [],
+      "ready": true,
+      "inputs": [
+        "cms/FY 2027/2027-icd-10-table-and-index.zip",
+        "cms/FY 2027/2027-code-descriptions-in-tabular-order.zip"
+      ]
+    },
+    {
+      "profile": "nhi2023-cm-ods-unresolved.json",
+      "label": "健保署 2023 CM 中譯 · 1150827（跨版未確認）",
+      "output_type": "icdpack",
+      "missing_files": [],
+      "ready": true,
+      "inputs": [
+        "健保署/1.2023年中文版ICD-10-CM_PCS_1150827.ods"
+      ]
+    },
+    {
+      "profile": "nhi2023-source-tables.json",
+      "label": "健保署 ODS 全部分頁 → 獨立 SQLite（CM／PCS 分類保留）",
+      "output_type": "nhi_source_tables",
+      "missing_files": [],
+      "ready": true,
+      "inputs": [
+        "健保署/1.2023年中文版ICD-10-CM_PCS_1150827.ods"
+      ]
+    },
+    {
+      "profile": "pcs-fy2026-apr.json",
+      "label": "PCS 獨立 SQLite FY2026 · 2026-04-01（不是 App 資料包）",
+      "output_type": "pcs_tables",
+      "missing_files": [],
+      "ready": true,
+      "inputs": [
+        "cms/FY 2026/zip-file-2-2026-code-tables-and-index.zip",
+        "cms/FY 2026/zip-file-3-2026-icd-10-pcs-codes-file.zip",
+        "cms/FY 2026/zip-file-4-2026-icd-10-pcs-order-file-long-and-abbreviated-titles.zip"
+      ]
+    },
+    {
+      "profile": "pcs-fy2027-oct.json",
+      "label": "PCS 獨立 SQLite FY2027 · 2026-10-01（不是 App 資料包）",
+      "output_type": "pcs_tables",
+      "missing_files": [],
+      "ready": true,
+      "inputs": [
+        "cms/FY 2027/zip-file-2-2027-code-tables-and-index.zip",
+        "cms/FY 2027/zip-file-3-2027-icd-10-pcs-codes-file.zip",
+        "cms/FY 2027/zip-file-4-2027-icd-10-pcs-order-file-long-and-abbreviated-titles.zip"
+      ]
+    }
+  ],
+  "notice": "Select one explicit release; filenames alone are not proof of edition. Build checks pinned source hashes."
+}

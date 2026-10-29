@@ -1,0 +1,18 @@
+{
+  "reviewed_source_page": "https://www.cms.gov/medicare/coding-billing/icd-10-codes",
+  "checks": [
+    {
+      "release": "2025-10-01",
+      "url": "https://www.cms.gov/files/zip/2026-icd-10-pcs-order-file-long-and-abbreviated-titles.zip",
+      "sha256": "64e37e6060bfd9eca74d9973be28fdf570b40f87a3a855bd078eb343dd0e594e",
+      "matches_local": false
+    },
+    {
+      "release": "2026-04-01",
+      "url": "https://www.cms.gov/files/zip/april-1-2026-icd-10-pcs-order-file-long-abbreviated-titles.zip",
+      "sha256": "9bb4a892c34b82d525182a6db6ef42ccba2c7b331ac5d24d459664a1129d776d",
+      "matches_local": true
+    }
+  ],
+  "method": "Downloaded official order archives for SHA256 comparison; no downloaded source embedded in Git"
+}

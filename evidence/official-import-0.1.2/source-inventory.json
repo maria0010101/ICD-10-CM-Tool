@@ -1,0 +1,175 @@
+{
+  "origin": "User-provided official downloads; original timestamps/download times not inferred",
+  "files": [
+    {
+      "file": "cms/FY 2026/april-1-2026-addendum.zip",
+      "bytes": 294423,
+      "sha256": "e2d2d4c328e1552b5be000372dd76f70d467a32735b1c8bfdb1f4e013f0e95c6"
+    },
+    {
+      "file": "cms/FY 2026/april-1-2026-code-descriptions-in-tabular-order.zip",
+      "bytes": 2242530,
+      "sha256": "4fd9d8b37f02ab42827c7e7be30595c005b0cc3a6bae7a515e3f4c86b6918688"
+    },
+    {
+      "file": "cms/FY 2026/april-1-2026-code-tables-tabular-and-index.zip",
+      "bytes": 22755010,
+      "sha256": "c623e47143c156d1427fe7cd2bee7ac1ae6994bdd2196b9ec27d4a3219bcfd48"
+    },
+    {
+      "file": "cms/FY 2026/icd-10-cm-conversion-table-fy2026-april-1-2026.zip",
+      "bytes": 169772,
+      "sha256": "43fe164cb229d68455a45bd763cf046e014804bb6ed99074715df34cfa3a7ffd"
+    },
+    {
+      "file": "cms/FY 2026/icd10cm_drug_addenda_2026.zip",
+      "bytes": 894553,
+      "sha256": "46b3173f4ad6fa4dd139755d3c5e17808bfb8edec14636288537c3476d24adea"
+    },
+    {
+      "file": "cms/FY 2026/icd10orderfiles.zip",
+      "bytes": 2204985,
+      "sha256": "55a9124a27ca78a4a5c41e1101eda064ec2e08d105ff9e78d1fbd1a83298ef11"
+    },
+    {
+      "file": "cms/FY 2026/icd_10_cm_conversion_table_fy2026.zip",
+      "bytes": 167768,
+      "sha256": "6e30c53d704441979ec2f903d53e32edaa6f5351552c2fb74e8779c58c1a3d47"
+    },
+    {
+      "file": "cms/FY 2026/icd_10_cm_october_2025_guidelines_0.pdf",
+      "bytes": 838642,
+      "sha256": "2e87b3b088d6032edf6cda8c946cf342619df0c07237055a0e3be68410a0c267"
+    },
+    {
+      "file": "cms/FY 2026/pcs_guidelines_2026-508.pdf",
+      "bytes": 324388,
+      "sha256": "dc7da8ff568e646cdcf8ffc083b7bd227e3b6718f70e893009be6072fd9969b9"
+    },
+    {
+      "file": "cms/FY 2026/pcs_guidelines_2026.pdf",
+      "bytes": 341470,
+      "sha256": "60c46e064073ce6f95ab499f8fea348d2ea3a928bb01b499b9bdbfcd33a80aff"
+    },
+    {
+      "file": "cms/FY 2026/poaexemptcodesfy26.zip",
+      "bytes": 1228270,
+      "sha256": "eedc59099e27b069f97c90880859431bf4a7416fa8e16672b04040a98cb28e9c"
+    },
+    {
+      "file": "cms/FY 2026/table-and-index.zip",
+      "bytes": 22074209,
+      "sha256": "abfc45a54e4edc215cbaa2f0d18b30112db2bf9141857c9f8902390a495e6696"
+    },
+    {
+      "file": "cms/FY 2026/zip-file-1-2026-version-update-summary.zip",
+      "bytes": 211846,
+      "sha256": "75e64d55c66b168e08706a8576b745bf01da2e7b3921458925d9c270116c0e34"
+    },
+    {
+      "file": "cms/FY 2026/zip-file-1-pcs_update_summary_2026.zip",
+      "bytes": 105047,
+      "sha256": "9c4f7875ebd1097c9bdcc5d76df74933949b1d3f4146905760138fb19b9a7789"
+    },
+    {
+      "file": "cms/FY 2026/zip-file-2-2026-code-tables-and-index.zip",
+      "bytes": 7684862,
+      "sha256": "567c4c012556a862c17d2653e6f49ecbf6c6bdbf82eba3e19576a207c417e41f"
+    },
+    {
+      "file": "cms/FY 2026/zip-file-3-2026-icd-10-pcs-codes-file.zip",
+      "bytes": 622552,
+      "sha256": "e545c9aaf2ced94543ff3584f653dba9be9fd312fb8759ea0f3713a7d1b3f3f2"
+    },
+    {
+      "file": "cms/FY 2026/zip-file-4-2026-icd-10-pcs-order-file-long-and-abbreviated-titles.zip",
+      "bytes": 1270589,
+      "sha256": "9bb4a892c34b82d525182a6db6ef42ccba2c7b331ac5d24d459664a1129d776d"
+    },
+    {
+      "file": "cms/FY 2026/zip-file-5-2026-addendum.zip",
+      "bytes": 398924,
+      "sha256": "e909c6fb310111a8652f2d0d8ec220ad6102ea0011c7ac5c6f767b22024f60c2"
+    },
+    {
+      "file": "cms/FY 2026/zip-file-6-2026-icd-pcs-conversion-table.zip",
+      "bytes": 1080721,
+      "sha256": "9b3f43a3befa119754f31c545e997836c3a5167fdf821ffb778e812a117ad99c"
+    },
+    {
+      "file": "cms/FY 2027/2027-code-descriptions-in-tabular-order.zip",
+      "bytes": 2208022,
+      "sha256": "91c6c9d1117764ce72375a0f3a5493b1725dafbc1ab283b55799076c9e194965"
+    },
+    {
+      "file": "cms/FY 2027/2027-icd-10-cm-addendum.zip",
+      "bytes": 671906,
+      "sha256": "16986a34d1458e549217229686f1a487cf6419ee6acb1043fbc770f8fabdd026"
+    },
+    {
+      "file": "cms/FY 2027/2027-icd-10-table-and-index.zip",
+      "bytes": 22059093,
+      "sha256": "37baa476323714be16f95c9b2c96812bf6f3623d9f15188866e584dc529b0298"
+    },
+    {
+      "file": "cms/FY 2027/errata-web-announcment-icd10-ms-drgs-v44-new-procedure-codes-added.pdf",
+      "bytes": 231391,
+      "sha256": "411bc5c892c8750da929514da3bfeef048a47fa2c0fcbcd1db97c5276a2f3456"
+    },
+    {
+      "file": "cms/FY 2027/icd-10-cm-conversion-table-fy2027-october-1-2026-final.zip",
+      "bytes": 175330,
+      "sha256": "9478b8f95e137177e18be3df906c35566674b16313b12740d9e8e3778cb0e67a"
+    },
+    {
+      "file": "cms/FY 2027/icd_10_cm_october_1_2026_fy27_guidelines.pdf",
+      "bytes": 830104,
+      "sha256": "1f0065b609b678e98f85bf047b3b012c6a88ba3222e42be2f2435889e05738ab"
+    },
+    {
+      "file": "cms/FY 2027/pcs_guidelines_2027.pdf",
+      "bytes": 337494,
+      "sha256": "5bed1b9979d2de881dbc1f960c335394369c3eed055c758454886e7b7c3a7038"
+    },
+    {
+      "file": "cms/FY 2027/poaexemptcodesfy27.zip",
+      "bytes": 1654940,
+      "sha256": "03f55091045024d07c99860470b9069ef2db4c19242d4c2ba0e9f30905bea904"
+    },
+    {
+      "file": "cms/FY 2027/zip-file-1-2027-version-update-summary.zip",
+      "bytes": 211531,
+      "sha256": "c26b19c9246f24ecaccf056eb21640bf1cdded07527910e24bb1d006494f2860"
+    },
+    {
+      "file": "cms/FY 2027/zip-file-2-2027-code-tables-and-index.zip",
+      "bytes": 8078885,
+      "sha256": "db77f8b948a612db66320724a515dd7bc350036805ff0ecfd58839bcbfb34c84"
+    },
+    {
+      "file": "cms/FY 2027/zip-file-3-2027-icd-10-pcs-codes-file.zip",
+      "bytes": 664342,
+      "sha256": "8db2465fe7a65f53bf21d840fce825d7d107dbd603b7fcb66358c8321919809d"
+    },
+    {
+      "file": "cms/FY 2027/zip-file-4-2027-icd-10-pcs-order-file-long-and-abbreviated-titles.zip",
+      "bytes": 1322280,
+      "sha256": "c9064c5c66873ecc4cc9aab1b100be605f2db457fd458113076b5eb6ce246439"
+    },
+    {
+      "file": "cms/FY 2027/zip-file-5-2027-addendum.zip",
+      "bytes": 504539,
+      "sha256": "c71a9d73b5db6a8b9b73af05f0aeeea5683f201ad4505cbb10b33fbb50208a9d"
+    },
+    {
+      "file": "cms/FY 2027/zip-file-6-2027-icd-pcs-conversion-table.zip",
+      "bytes": 1116341,
+      "sha256": "82f337d3763933d0b3c30cd8624f7003c5190782703ffd203eafbc6b3fecae4c"
+    },
+    {
+      "file": "健保署/1.2023年中文版ICD-10-CM_PCS_1150827.ods",
+      "bytes": 4242747,
+      "sha256": "b6108ab1dccdfe18faf9640b9a340a2d8ac655bfa4bd66169d64cb5874706846"
+    }
+  ]
+}

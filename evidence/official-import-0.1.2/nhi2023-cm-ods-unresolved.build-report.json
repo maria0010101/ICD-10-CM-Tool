@@ -1,0 +1,18 @@
+{
+  "nhi": {
+    "columns": {
+      "code": "2023年版\nICD-10-CM",
+      "sheet": "ICD-10-CM",
+      "title_zh_tw": "2023 CM中文名稱"
+    },
+    "source_sha256": "b6108ab1dccdfe18faf9640b9a340a2d8ac655bfa4bd66169d64cb5874706846",
+    "translation_rows": 96802
+  },
+  "profile_sha256": "1346478e1266fd0c5acd6d67d8ea9043694b276916680237f8f9afeb379ad034",
+  "source_files": [
+    {
+      "name": "1.2023年中文版ICD-10-CM_PCS_1150827.ods",
+      "sha256": "b6108ab1dccdfe18faf9640b9a340a2d8ac655bfa4bd66169d64cb5874706846"
+    }
+  ]
+}

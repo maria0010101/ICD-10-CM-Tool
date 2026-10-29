@@ -1,0 +1,59 @@
+{
+  "os": "Linux 7.3.0-4-cachyos #1 SMP PREEMPT_DYNAMIC Fri, 23 Oct 2026 15:59:50 +0000",
+  "sqlite": "3.54.1",
+  "packs": {
+    "cm-fy2026-oct": {
+      "package_sha256": "982fb20fee7c0398f1123d4e0220ae08f88d7c81434ffd16eaad3b3bcfcfc53a",
+      "row_counts": {
+        "code_nodes": 98506,
+        "index_crossrefs": 16340,
+        "index_entries": 98969,
+        "notes": 26969,
+        "table_cells": 54146,
+        "translations": 0,
+        "zh_ngrams": 0
+      },
+      "english_and_code_search": true
+    },
+    "cm-fy2026-apr": {
+      "package_sha256": "91d01f64add33a08cf282251cbb0852f4dd24dd3f2120084f13b7ce566315078",
+      "row_counts": {
+        "code_nodes": 98506,
+        "index_crossrefs": 16342,
+        "index_entries": 98975,
+        "notes": 26971,
+        "table_cells": 54146,
+        "translations": 0,
+        "zh_ngrams": 0
+      },
+      "english_and_code_search": true
+    },
+    "cm-fy2027-oct": {
+      "package_sha256": "c1311f826d5491569438ee4cc30e7e402015ad763f960b8ababe4c2d1f536714",
+      "row_counts": {
+        "code_nodes": 98723,
+        "index_crossrefs": 16344,
+        "index_entries": 99108,
+        "notes": 27079,
+        "table_cells": 54182,
+        "translations": 0,
+        "zh_ngrams": 0
+      },
+      "english_and_code_search": true
+    },
+    "nhi2023-cm-ods-unresolved": {
+      "package_sha256": "e3007d6ddd00eed0f8477ab28a8537e6eb4f248f914589bb6b519a1aceb6d48b",
+      "row_counts": {
+        "code_nodes": 0,
+        "index_crossrefs": 0,
+        "index_entries": 0,
+        "notes": 0,
+        "table_cells": 0,
+        "translations": 96802,
+        "zh_ngrams": 3243772
+      },
+      "unresolved_not_qualified_translation": true
+    }
+  },
+  "scope": "Linux native Flutter test engine, not Windows/Android full official acceptance"
+}

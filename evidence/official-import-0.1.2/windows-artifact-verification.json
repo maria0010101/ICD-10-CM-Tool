@@ -1,0 +1,12 @@
+{
+  "file": "icd-data-builder-0.1.2-windows-x64-portable.zip",
+  "bytes": 31047584,
+  "sha256": "a83addd2cc687a3e9d60253f25da25000e6d8ae7da00e6de23ed8acbaf82f4e7",
+  "zip_crc_ok": true,
+  "bundled_source_matches_after_git_crlf_normalization": true,
+  "reviewed_profiles_match": 7,
+  "official_full_data_included": false,
+  "windows_ci_run": 40823267837,
+  "head_commit": "34547e65bf52f1f1c2b2e263d23eff540127b00c",
+  "windows_tests_passed": 41
+}

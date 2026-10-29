@@ -1,0 +1,36 @@
+{
+  "cdc": {
+    "expanded_order_nodes": 51305,
+    "input_files": {
+      "april-1-2026-code-descriptions-in-tabular-order.zip!Code Descriptions/icd10cm_codes_2026.txt": "a7e2a77e4627ed55c8afe2b8a7ae22efcbab6b6b162d96cf145213772c1246ba",
+      "april-1-2026-code-descriptions-in-tabular-order.zip!Code Descriptions/icd10cm_codes_addenda_2026.txt": "25dcc1536817b90925be99f4c882fb98bbe543ef6b945378283cf11ee196c75b",
+      "april-1-2026-code-descriptions-in-tabular-order.zip!Code Descriptions/icd10cm_order_2026.txt": "6dc95c9c7e96c734806e1682f4bf9df76251d60e99199bba0d375ba3dd11026b",
+      "april-1-2026-code-descriptions-in-tabular-order.zip!Code Descriptions/icd10cm_order_addenda_2026.txt": "c6edfb9f81c60d41ab99a00952c2519d922573e74a87a1486d8d658eacc1348f",
+      "april-1-2026-code-tables-tabular-and-index.zip!Table and Index/icd10cm_drug_2026.xml": "c2d34259339f4ec27aa4822316716091568d8f477bc34ccae4946321ebce6524",
+      "april-1-2026-code-tables-tabular-and-index.zip!Table and Index/icd10cm_eindex_2026.xml": "91555639910deb29c341e538f7b6fd55f9fd39480a6d1656247badb0b9336504",
+      "april-1-2026-code-tables-tabular-and-index.zip!Table and Index/icd10cm_index_2026.xml": "2dc67f728d05e765a9b7ffe7c74a5a2ce11c9492d58db00c72d83778ea6356ec",
+      "april-1-2026-code-tables-tabular-and-index.zip!Table and Index/icd10cm_neoplasm_2026.xml": "2ea9b87e0a71e1da9522af7465b7a165ef47bbc484324a475a2046992a0201e8",
+      "april-1-2026-code-tables-tabular-and-index.zip!Table and Index/icd10cm_tabular_2026.xml": "fbbb7f6ee319eb0259e43d369ec50bc15af9a2c983d4440b936b3d70a53f7624"
+    },
+    "order_count": 98186,
+    "xml_counts": {
+      "alphabetic": 81515,
+      "drugs": 7430,
+      "external": 8090,
+      "instruction_notes": 26962,
+      "neoplasm": 1940,
+      "tabular_diag": 46881
+    }
+  },
+  "profile_sha256": "6f9013af243812ac16f4a3e80c837d417cbd16eee9885c79be2a8487d5d34031",
+  "source_files": [
+    {
+      "name": "april-1-2026-code-tables-tabular-and-index.zip",
+      "sha256": "c623e47143c156d1427fe7cd2bee7ac1ae6994bdd2196b9ec27d4a3219bcfd48"
+    },
+    {
+      "name": "april-1-2026-code-descriptions-in-tabular-order.zip",
+      "sha256": "4fd9d8b37f02ab42827c7e7be30595c005b0cc3a6bae7a515e3f4c86b6918688"
+    }
+  ]
+}

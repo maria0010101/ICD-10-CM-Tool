@@ -1,0 +1,38 @@
+{
+  "app_import_supported": false,
+  "bytes": 108806144,
+  "deleted_code_sheets_merged": false,
+  "integrity_check": "ok",
+  "mapping_status": "unresolved",
+  "output": "nhi2023-source-tables.sqlite",
+  "profile_sha256": "661919800f96775c70470ae94273e34b11ef22b2b05cdeaf48e22a961d7edce2",
+  "row_counts": {
+    "nhi_codes": 175332,
+    "pcs_axis_labels": 0,
+    "pcs_codes": 0,
+    "pcs_definitions": 0,
+    "pcs_index_entries": 0,
+    "pcs_index_refs": 0,
+    "pcs_rows": 0,
+    "pcs_tables": 0,
+    "source_documents": 0,
+    "source_metadata": 10,
+    "spreadsheet_rows": 178497,
+    "spreadsheet_sheets": 6
+  },
+  "sha256": "2a3c27c1424fb186954e9dfb1b79dec70d04138e5bcef89f5071fb28d9881614",
+  "source_files": [
+    {
+      "name": "1.2023年中文版ICD-10-CM_PCS_1150827.ods",
+      "sha256": "b6108ab1dccdfe18faf9640b9a340a2d8ac655bfa4bd66169d64cb5874706846"
+    }
+  ],
+  "source_sheet_rows": {
+    "2014_cm代碼刪除": 645,
+    "2014_pcs代碼刪除": 1170,
+    "ICD-10-CM": 96802,
+    "ICD-10-PCS": 78530,
+    "更新明細": 1336,
+    "更新歷程": 14
+  }
+}

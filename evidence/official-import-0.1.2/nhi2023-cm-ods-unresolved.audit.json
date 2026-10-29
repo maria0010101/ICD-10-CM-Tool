@@ -1,0 +1,11 @@
+{
+  "source_sha256": "b6108ab1dccdfe18faf9640b9a340a2d8ac655bfa4bd66169d64cb5874706846",
+  "package_sha256": "e3007d6ddd00eed0f8477ab28a8537e6eb4f248f914589bb6b519a1aceb6d48b",
+  "source_rows": 96802,
+  "translation_rows": 96802,
+  "ngram_rows": 3243772,
+  "mismatched_rows": [],
+  "mapping_status": "unresolved",
+  "official_compatibility_with_fy2027": false,
+  "passed": true
+}

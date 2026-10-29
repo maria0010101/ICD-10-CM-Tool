@@ -1,0 +1,55 @@
+{
+  "app_import_supported": false,
+  "billable_codes": 79256,
+  "bytes": 51974144,
+  "ignored_members": [
+    "zip-file-3-2027-icd-10-pcs-codes-file.zip!codes_addenda_2027.txt",
+    "zip-file-4-2027-icd-10-pcs-order-file-long-and-abbreviated-titles.zip!order_addenda_2027.txt"
+  ],
+  "input_members": {
+    "zip-file-2-2027-code-tables-and-index.zip!icd10pcs_definitions_2027.xml": "3f840d44865d9119e9ad202312bd9e0a7178d0812fd6d4024f37920407c69684",
+    "zip-file-2-2027-code-tables-and-index.zip!icd10pcs_index_2027.xml": "089d4d56de78d473faef6c4283f79ca8476c5b6aa04afeddbafbb7fcfb3c9422",
+    "zip-file-2-2027-code-tables-and-index.zip!icd10pcs_tables_2027.xml": "298c25eebd920e8fb791d3b4587e520b43829cf77f9ed90cfb67a8a22b994f62",
+    "zip-file-3-2027-icd-10-pcs-codes-file.zip!codes_addenda_2027.txt": "b57ca494b5b7ac6e7179e5a0f8ef9582984c0a76b73cef21b344cd7b5b340662",
+    "zip-file-3-2027-icd-10-pcs-codes-file.zip!icd10pcs_codes_2027.txt": "e7e08e07050024d362d119bd372c75e3860a568554d0d31eb287b935485ff3c6",
+    "zip-file-4-2027-icd-10-pcs-order-file-long-and-abbreviated-titles.zip!icd10pcs_order_2027.txt": "f564ff1f9cc8a000124f7943633f15847ce45ef35e2fbc3e99bbbb5b43c8af6c",
+    "zip-file-4-2027-icd-10-pcs-order-file-long-and-abbreviated-titles.zip!order_addenda_2027.txt": "f0b76e918daf925f95daeebae30d132b8d0fb17176892918c997683b755937b0"
+  },
+  "integrity_check": "ok",
+  "order_rows": 80174,
+  "output": "pcs-fy2027-oct.sqlite",
+  "profile_sha256": "f324d5ebcaf3c879b0281be9b1d4472a871267a6f46c7fb809fa1d7d3c25f49a",
+  "row_counts": {
+    "nhi_codes": 0,
+    "pcs_axis_labels": 33872,
+    "pcs_codes": 80174,
+    "pcs_definitions": 976,
+    "pcs_index_entries": 25023,
+    "pcs_index_refs": 19293,
+    "pcs_rows": 2801,
+    "pcs_tables": 918,
+    "source_documents": 3,
+    "source_metadata": 13,
+    "spreadsheet_rows": 0,
+    "spreadsheet_sheets": 0
+  },
+  "sha256": "e361752aeeb1f640fb76744bfda33dca126c199893e7e59eb6adf3e8b88433ce",
+  "source_definition_terms": 976,
+  "source_files": [
+    {
+      "name": "zip-file-2-2027-code-tables-and-index.zip",
+      "sha256": "db77f8b948a612db66320724a515dd7bc350036805ff0ecfd58839bcbfb34c84"
+    },
+    {
+      "name": "zip-file-3-2027-icd-10-pcs-codes-file.zip",
+      "sha256": "8db2465fe7a65f53bf21d840fce825d7d107dbd603b7fcb66358c8321919809d"
+    },
+    {
+      "name": "zip-file-4-2027-icd-10-pcs-order-file-long-and-abbreviated-titles.zip",
+      "sha256": "c9064c5c66873ecc4cc9aab1b100be605f2db457fd458113076b5eb6ce246439"
+    }
+  ],
+  "source_index_entries": 25023,
+  "table_generated_codes": 79256,
+  "table_roster_exact_match": true
+}

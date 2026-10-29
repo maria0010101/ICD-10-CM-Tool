@@ -1,0 +1,36 @@
+{
+  "cdc": {
+    "expanded_order_nodes": 51378,
+    "input_files": {
+      "2027-code-descriptions-in-tabular-order.zip!Code Descriptions/icd10cm_codes_2027.txt": "3c0583a38ee0e848f7dc0ac8ce88e8f001bbba8c6385ed825d44d46f6e5297c9",
+      "2027-code-descriptions-in-tabular-order.zip!Code Descriptions/icd10cm_codes_addenda_2027.txt": "cfba025073235af449a177204dcb9455048729f4b7634fc39cde55b601f06237",
+      "2027-code-descriptions-in-tabular-order.zip!Code Descriptions/icd10cm_order_2027.txt": "38981fb2c1226e2b92393cef7d921d2293494dd184b5ad039dde08e4b364265f",
+      "2027-code-descriptions-in-tabular-order.zip!Code Descriptions/icd10cm_order_addenda_2027.txt": "d64c57ef4534e4f90336decf27a34ba42979c31cd88f6ea923b5b5edd3da6384",
+      "2027-icd-10-table-and-index.zip!Table and Index/icd10cm_drug_2027.xml": "648f541db8b8c748558020dee59e8abf8c851fff3809a95ab3cee460873d8e31",
+      "2027-icd-10-table-and-index.zip!Table and Index/icd10cm_eindex_2027.xml": "3e2079305218ee7b430ee46243e89a1dcebdf361309b9e0ab3cd19fc22e2b87b",
+      "2027-icd-10-table-and-index.zip!Table and Index/icd10cm_index_2027.xml": "248e4a133996f986ba98821a411f0e8afee632a2de1d98f23e02fba8b6fd8a15",
+      "2027-icd-10-table-and-index.zip!Table and Index/icd10cm_neoplasm_2027.xml": "c9c7baf1dc94ee433254945f9a69eedee6c0dd71ac86ec79b4d56121314f522e",
+      "2027-icd-10-table-and-index.zip!Table and Index/icd10cm_tabular_2027.xml": "d778c97a5bb9da7d71645610e277f8db3bd302befa3b08d71dd5043715a74b2a"
+    },
+    "order_count": 98403,
+    "xml_counts": {
+      "alphabetic": 81642,
+      "drugs": 7436,
+      "external": 8090,
+      "instruction_notes": 27070,
+      "neoplasm": 1940,
+      "tabular_diag": 47025
+    }
+  },
+  "profile_sha256": "3efd5502f91fef26810f079136f2fdfe16dbbdcef83d38234a1741da95b70ca5",
+  "source_files": [
+    {
+      "name": "2027-icd-10-table-and-index.zip",
+      "sha256": "37baa476323714be16f95c9b2c96812bf6f3623d9f15188866e584dc529b0298"
+    },
+    {
+      "name": "2027-code-descriptions-in-tabular-order.zip",
+      "sha256": "91c6c9d1117764ce72375a0f3a5493b1725dafbc1ab283b55799076c9e194965"
+    }
+  ]
+}

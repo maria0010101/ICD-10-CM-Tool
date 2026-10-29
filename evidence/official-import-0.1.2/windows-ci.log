@@ -1,0 +1,251 @@
+builder-windows-x64	Set up job	﻿2026-10-29T05:25:05.9674535Z Current runner version: '2.338.0'
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9717706Z ##[group]Runner Image Provisioner
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9718372Z Hosted Compute Agent
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9718826Z Version: 20261021.618
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9719308Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9719892Z Build Date: 2026-10-21T00:45:21Z
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9720427Z Worker ID: {f26918d0-2683-4de5-9e2c-d38d93e099f5}
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9721015Z Region: southcentralus
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9721482Z Cloud: Azure
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9721884Z ##[endgroup]
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9722920Z ##[group]Operating System
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9723408Z Microsoft Windows Server 2025
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9723871Z 10.0.26100
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9724288Z Datacenter
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9724732Z ##[endgroup]
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9725129Z ##[group]Runner Image
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9725569Z Image: windows-2025-vs2026
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9726045Z Version: 20261021.278.1
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9726967Z Included Software: https://github.com/actions/runner-images/blob/win25-vs2026/20261021.278/images/windows/Windows2025-VS2026-Readme.md
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9728795Z Image Release: https://github.com/actions/runner-images/releases/tag/win25-vs2026%2F20261021.278
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9729626Z ##[endgroup]
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9730469Z ##[group]GITHUB_TOKEN Permissions
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9731960Z Contents: read
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9732458Z Metadata: read
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9732856Z ##[endgroup]
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9734540Z Secret source: Actions
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9735215Z Cache mode: write
+builder-windows-x64	Set up job	2026-10-29T05:25:05.9735764Z Prepare workflow directory
+builder-windows-x64	Set up job	2026-10-29T05:25:06.0054943Z Prepare all required actions
+builder-windows-x64	Set up job	2026-10-29T05:25:06.0111255Z Getting action download info
+builder-windows-x64	Set up job	2026-10-29T05:25:06.2430016Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+builder-windows-x64	Set up job	2026-10-29T05:25:06.3531534Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+builder-windows-x64	Set up job	2026-10-29T05:25:06.5679070Z Complete job name: builder-windows-x64
+builder-windows-x64	Run actions/checkout@v4	﻿2026-10-29T05:25:06.6631572Z ##[group]Run actions/checkout@v4
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:06.6632237Z with:
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:06.6632458Z   persist-credentials: false
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:06.6632722Z   repository: maria0010101/ICD-10-CM-Tool
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:06.6634783Z   token: ***
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:06.6634984Z   ssh-strict: true
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:06.6635191Z   ssh-user: git
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:06.6635395Z   clean: true
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:06.6635610Z   sparse-checkout-cone-mode: true
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:06.6635866Z   fetch-depth: 1
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:06.6636072Z   fetch-tags: false
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:06.6636288Z   show-progress: true
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:06.6636503Z   lfs: false
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:06.6636701Z   submodules: false
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:06.6636917Z   set-safe-directory: true
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:06.6637165Z   allow-unsafe-pr-checkout: false
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:06.6637505Z ##[endgroup]
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:07.3438402Z Syncing repository: maria0010101/ICD-10-CM-Tool
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:07.3444169Z ##[group]Getting Git version info
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:07.3445339Z Working directory is 'D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool'
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:07.3446524Z [command]"C:\Program Files\Git\bin\git.exe" version
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:07.3447131Z git version 2.56.0.windows.2
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:07.3448792Z ##[endgroup]
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:07.3453088Z Temporarily overriding HOME='D:\a\_temp\2b369992-1295-4b4d-ac4f-dc268de49942' before making global git config changes
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:07.3454389Z Adding repository directory to the temporary git global config as a safe directory
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:07.3455594Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:07.3457582Z Deleting the contents of 'D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool'
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:07.3458727Z ##[group]Initializing the repository
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:07.3459460Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:08.3456993Z Initialized empty Git repository in D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/.git/
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:08.3461545Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/maria0010101/ICD-10-CM-Tool
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:08.3464731Z ##[endgroup]
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:08.3466141Z ##[group]Disabling automatic garbage collection
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:08.3467457Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:08.3470113Z ##[endgroup]
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:08.3471566Z ##[group]Setting up auth
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:08.3472971Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:08.3477869Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:09.2366379Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:09.2641313Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:09.6955156Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:09.7201623Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:10.1298297Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:10.1701678Z ##[endgroup]
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:10.1702208Z ##[group]Fetching the repository
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:10.1710807Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +34547e65bf52f1f1c2b2e263d23eff540127b00c:refs/remotes/origin/main
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:11.4552263Z From https://github.com/maria0010101/ICD-10-CM-Tool
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:11.4553074Z  * [new ref]         34547e65bf52f1f1c2b2e263d23eff540127b00c -> origin/main
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:11.4607370Z ##[endgroup]
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:11.4608601Z ##[group]Determining the checkout info
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:11.4609049Z ##[endgroup]
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:11.4609475Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:11.4995337Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:11.5212893Z ##[group]Checking out the ref
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:11.5218262Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B main refs/remotes/origin/main
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:11.6187981Z Switched to a new branch 'main'
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:11.6215069Z branch 'main' set up to track 'origin/main'.
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:11.6246088Z ##[endgroup]
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:11.6557028Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:11.6773069Z 34547e65bf52f1f1c2b2e263d23eff540127b00c
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:11.6805685Z ##[group]Removing auth
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:11.6811133Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:11.7042202Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:12.1245358Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:12.1455122Z http.https://github.com/.extraheader
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:12.1493099Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:12.1743549Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:12.5804577Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:12.6037664Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+builder-windows-x64	Run actions/checkout@v4	2026-10-29T05:25:13.0233974Z ##[endgroup]
+builder-windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	﻿2026-10-29T05:25:13.0485965Z ##[group]Run $Archive = Join-Path $env:RUNNER_TEMP 'cpython-3.13.18-windows-x64.tar.gz'
+builder-windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-29T05:25:13.0486380Z [36;1m$Archive = Join-Path $env:RUNNER_TEMP 'cpython-3.13.18-windows-x64.tar.gz'[0m
+builder-windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-29T05:25:13.0486634Z [36;1m$Target = Join-Path $env:RUNNER_TEMP 'icd-python313'[0m
+builder-windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-29T05:25:13.0487153Z [36;1mInvoke-WebRequest -Uri 'https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.13.18%2B20261026-x86_64-pc-windows-msvc-install_only_stripped.tar.gz' -OutFile $Archive[0m
+builder-windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-29T05:25:13.0487898Z [36;1mif ((Get-FileHash $Archive -Algorithm SHA256).Hash.ToLowerInvariant() -ne '7369f7a35f261222a6ac8b3a87c1c88eeebee8af945d85346202591a64038dd3') { throw 'Python runtime SHA256 mismatch' }[0m
+builder-windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-29T05:25:13.0488340Z [36;1mNew-Item -ItemType Directory -Force $Target | Out-Null[0m
+builder-windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-29T05:25:13.0488526Z [36;1mtar -xzf $Archive -C $Target[0m
+builder-windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-29T05:25:13.0488734Z [36;1mif ($LASTEXITCODE -ne 0) { throw 'Python runtime extraction failed' }[0m
+builder-windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-29T05:25:13.0489001Z [36;1m$PythonDir = Join-Path $Target 'python'[0m
+builder-windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-29T05:25:13.0489213Z [36;1m$PythonDir | Out-File -FilePath $env:GITHUB_PATH -Append -Encoding utf8[0m
+builder-windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-29T05:25:13.0489469Z [36;1m& (Join-Path $PythonDir 'python.exe') --version[0m
+builder-windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-29T05:25:13.1298250Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+builder-windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-29T05:25:13.1298475Z ##[endgroup]
+builder-windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-29T05:25:14.5848545Z Python 3.13.18
+builder-windows-x64	Create portable tool from locked runtime and wheels	﻿2026-10-29T05:25:14.6422437Z ##[group]Run $Root = Join-Path $env:RUNNER_TEMP 'icd-builder-native-test'
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:14.6465938Z [36;1m$Root = Join-Path $env:RUNNER_TEMP 'icd-builder-native-test'[0m
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:14.6466507Z [36;1mpython scripts/package_builder.py --output dist/icd-data-builder-0.1.2-windows-x64-portable.zip --unpacked $Root[0m
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:14.6467025Z [36;1mif ($LASTEXITCODE -ne 0) { throw 'Builder packaging failed' }[0m
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:14.6467441Z [36;1m"BUILDER_TEST_ROOT=$Root" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8[0m
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:14.6520844Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:14.6521048Z ##[endgroup]
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:17.9552943Z Collecting attrs==26.1.0 (from -r D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool\tools\data_builder\requirements-windows.lock (line 3))
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:17.9983202Z   Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.0643577Z Collecting colorama==0.4.6 (from -r D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool\tools\data_builder\requirements-windows.lock (line 9))
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.0746757Z   Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.1177291Z Collecting et-xmlfile==2.0.0 (from -r D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool\tools\data_builder\requirements-windows.lock (line 15))
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.1278823Z   Downloading et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.1659526Z Collecting iniconfig==2.3.1 (from -r D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool\tools\data_builder\requirements-windows.lock (line 19))
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.1777845Z   Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.2269152Z Collecting jsonschema==4.26.0 (from -r D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool\tools\data_builder\requirements-windows.lock (line 23))
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.2373163Z   Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.2848677Z Collecting jsonschema-specifications==2025.9.1 (from -r D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool\tools\data_builder\requirements-windows.lock (line 27))
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.2952440Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.4862070Z Collecting lxml==6.0.4 (from -r D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool\tools\data_builder\requirements-windows.lock (line 31))
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.4980084Z   Downloading lxml-6.0.4-cp313-cp313-win_amd64.whl (4.0 MB)
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.6345675Z      ---------------------------------------- 4.0/4.0 MB 29.5 MB/s  0:00:00
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.6704252Z Collecting openpyxl==3.1.5 (from -r D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool\tools\data_builder\requirements-windows.lock (line 167))
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.6809659Z   Downloading openpyxl-3.1.5-py2.py3-none-any.whl (250 kB)
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.7232422Z Collecting packaging==26.3 (from -r D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool\tools\data_builder\requirements-windows.lock (line 171))
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.7335756Z   Downloading packaging-26.3-py3-none-any.whl (129 kB)
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.7756595Z Collecting pluggy==1.7.0 (from -r D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool\tools\data_builder\requirements-windows.lock (line 175))
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.7862843Z   Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.8280502Z Collecting pygments==2.21.0 (from -r D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool\tools\data_builder\requirements-windows.lock (line 179))
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.8386039Z   Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.8616271Z      ---------------------------------------- 1.3/1.3 MB 46.6 MB/s  0:00:00
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.8945199Z Collecting pytest==9.0.2 (from -r D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool\tools\data_builder\requirements-windows.lock (line 183))
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.9062715Z   Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.9568349Z Collecting referencing==0.37.0 (from -r D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool\tools\data_builder\requirements-windows.lock (line 187))
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:18.9683807Z   Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:19.1285416Z Collecting rpds-py==2026.9.1 (from -r D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool\tools\data_builder\requirements-windows.lock (line 193))
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:19.1406847Z   Downloading rpds_py-2026.9.1-cp313-cp313-win_amd64.whl (222 kB)
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:19.1635753Z Saved .\.local-source\portable-builder\wheels\attrs-26.1.0-py3-none-any.whl
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:19.1640791Z Saved .\.local-source\portable-builder\wheels\colorama-0.4.6-py2.py3-none-any.whl
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:19.1645523Z Saved .\.local-source\portable-builder\wheels\et_xmlfile-2.0.0-py3-none-any.whl
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:19.1650409Z Saved .\.local-source\portable-builder\wheels\iniconfig-2.3.1-py3-none-any.whl
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:19.1656291Z Saved .\.local-source\portable-builder\wheels\jsonschema-4.26.0-py3-none-any.whl
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:19.1661071Z Saved .\.local-source\portable-builder\wheels\jsonschema_specifications-2025.9.1-py3-none-any.whl
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:19.1682039Z Saved .\.local-source\portable-builder\wheels\lxml-6.0.4-cp313-cp313-win_amd64.whl
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:19.1688263Z Saved .\.local-source\portable-builder\wheels\openpyxl-3.1.5-py2.py3-none-any.whl
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:19.1693285Z Saved .\.local-source\portable-builder\wheels\packaging-26.3-py3-none-any.whl
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:19.1698330Z Saved .\.local-source\portable-builder\wheels\pluggy-1.7.0-py3-none-any.whl
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:19.1709010Z Saved .\.local-source\portable-builder\wheels\pygments-2.21.0-py3-none-any.whl
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:19.1715209Z Saved .\.local-source\portable-builder\wheels\pytest-9.0.2-py3-none-any.whl
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:19.1719895Z Saved .\.local-source\portable-builder\wheels\referencing-0.37.0-py3-none-any.whl
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:19.1725077Z Saved .\.local-source\portable-builder\wheels\rpds_py-2026.9.1-cp313-cp313-win_amd64.whl
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:19.1726679Z Successfully downloaded attrs colorama et-xmlfile iniconfig jsonschema jsonschema-specifications lxml openpyxl packaging pluggy pygments pytest referencing rpds-py
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:32.8948921Z {
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:32.8968646Z   "output": "D:\\a\\ICD-10-CM-Tool\\ICD-10-CM-Tool\\dist\\icd-data-builder-0.1.2-windows-x64-portable.zip",
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:32.8969162Z   "bytes": 31047584,
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:32.8969485Z   "sha256": "a83addd2cc687a3e9d60253f25da25000e6d8ae7da00e6de23ed8acbaf82f4e7"
+builder-windows-x64	Create portable tool from locked runtime and wheels	2026-10-29T05:25:32.8969861Z }
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	﻿2026-10-29T05:25:32.9835195Z ##[group]Run New-Item -ItemType Directory -Force evidence | Out-Null
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:32.9835542Z [36;1mNew-Item -ItemType Directory -Force evidence | Out-Null[0m
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:32.9835744Z [36;1m$Evidence = (Resolve-Path evidence).Path[0m
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:32.9835919Z [36;1mPush-Location $env:BUILDER_TEST_ROOT[0m
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:32.9836061Z [36;1mtry {[0m
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:32.9836329Z [36;1m  & ./runtime/python.exe -E -s -X utf8 -m pytest tools/data_builder/tests -q 2>&1 | Tee-Object "$Evidence/builder-windows-tests.log"[0m
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:32.9836697Z [36;1m  if ($LASTEXITCODE -ne 0) { throw 'Bundled Python tests failed' }[0m
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:32.9836998Z [36;1m  & ./runtime/python.exe -E -s -X utf8 smoke_gui.py | Tee-Object "$Evidence/builder-windows-gui.json"[0m
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:32.9837300Z [36;1m  if ($LASTEXITCODE -ne 0) { throw 'Bundled Tk GUI construction failed' }[0m
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:32.9837860Z [36;1m  & ./runtime/python.exe -E -s -X utf8 -c "import json,sys,sqlite3,platform; print(json.dumps(dict(python=sys.version,sqlite=sqlite3.sqlite_version,platform=platform.platform(),windows_native=True)))" | Set-Content "$Evidence/builder-windows-runtime.json"[0m
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:32.9838670Z [36;1m  if ($LASTEXITCODE -ne 0) { throw 'Bundled runtime check failed' }[0m
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:32.9838865Z [36;1m} finally { Pop-Location }[0m
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:32.9839062Z [36;1m$Zip = Get-Item dist/icd-data-builder-0.1.2-windows-x64-portable.zip[0m
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:32.9839429Z [36;1m"$((Get-FileHash $Zip -Algorithm SHA256).Hash.ToLowerInvariant())  $($Zip.Name)" | Set-Content -Encoding ascii "$($Zip.FullName).sha256"[0m
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:32.9882283Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:32.9882475Z env:
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:32.9882609Z   BUILDER_TEST_ROOT: D:\a\_temp\icd-builder-native-test
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:32.9882776Z ##[endgroup]
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:42.9522315Z .........................................                                [100%]
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:42.9523599Z ============================== warnings summary ===============================
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:42.9529051Z tools/data_builder/tests/test_package.py::test_unsafe_zip_names[content.sqlite]
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:42.9529738Z   D:\a\_temp\icd-builder-native-test\runtime\Lib\zipfile\__init__.py:1686: UserWarning: Duplicate name: 'content.sqlite'
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:42.9530321Z     return self._open_to_write(zinfo, force_zip64=force_zip64)
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:42.9530608Z 
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:42.9530866Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:42.9531266Z 41 passed, 1 warning in 9.00s
+builder-windows-x64	Verify bundled interpreter, ETL tests and real Tk GUI construction	2026-10-29T05:25:44.2320222Z {"gui_constructed": true, "python": "3.13.18 (main, Oct 26 2026, 14:10:48) [MSC v.1944 64 bit (AMD64)]", "sqlite": "3.53.1", "tk": 8.6}
+builder-windows-x64	Run actions/upload-artifact@v4	﻿2026-10-29T05:25:44.4217415Z ##[group]Run actions/upload-artifact@v4
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.4217629Z with:
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.4217768Z   name: data-builder-windows-x64-0.1.2
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.4217914Z   retention-days: 30
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.4218035Z   if-no-files-found: error
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.4218551Z   path: dist/icd-data-builder-0.1.2-windows-x64-portable.zip
+builder-windows-x64	Run actions/upload-artifact@v4	dist/icd-data-builder-0.1.2-windows-x64-portable.zip.sha256
+builder-windows-x64	Run actions/upload-artifact@v4	evidence/builder-windows-tests.log
+builder-windows-x64	Run actions/upload-artifact@v4	evidence/builder-windows-gui.json
+builder-windows-x64	Run actions/upload-artifact@v4	evidence/builder-windows-runtime.json
+builder-windows-x64	Run actions/upload-artifact@v4	
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.4219079Z   compression-level: 6
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.4219196Z   overwrite: false
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.4219309Z   include-hidden-files: false
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.4219436Z env:
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.4220066Z   BUILDER_TEST_ROOT: D:\a\_temp\icd-builder-native-test
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.4220241Z ##[endgroup]
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.5431793Z (node:3844) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.5435463Z (Use `node --trace-deprecation ...` to show where the warning was created)
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.5486213Z Multiple search paths detected. Calculating the least common ancestor of all paths
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.5489312Z The least common ancestor is D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool. This will be the root directory of the artifact
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.5489876Z With the provided path, there will be 5 files uploaded
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.5492388Z Artifact name is valid!
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.5493059Z Root directory input is valid!
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:44.8560347Z Beginning upload of artifact content to blob storage
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:45.0469836Z (node:3844) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:45.6691627Z Uploaded bytes 8388608
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:45.8248547Z Uploaded bytes 16777216
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:46.1660078Z Uploaded bytes 25165824
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:46.4126211Z Uploaded bytes 30240301
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:46.4515676Z Finished uploading artifact content to blob storage!
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:46.4517117Z SHA256 digest of uploaded artifact zip is 8a0cc4d6096b696e11cbda7eef2933097a6050b3f0f771efeb2f3c31f6646069
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:46.4518276Z Finalizing artifact upload
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:46.9438939Z Artifact data-builder-windows-x64-0.1.2.zip successfully finalized. Artifact ID 12874934509
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:46.9439694Z Artifact data-builder-windows-x64-0.1.2 has been successfully uploaded! Final size is 30240301 bytes. Artifact ID is 12874934509
+builder-windows-x64	Run actions/upload-artifact@v4	2026-10-29T05:25:46.9446310Z Artifact download URL: https://github.com/maria0010101/ICD-10-CM-Tool/actions/runs/40823267837/artifacts/12874934509
+builder-windows-x64	Post Run actions/checkout@v4	﻿2026-10-29T05:25:46.9737138Z Post job cleanup.
+builder-windows-x64	Post Run actions/checkout@v4	2026-10-29T05:25:47.0775858Z [command]"C:\Program Files\Git\bin\git.exe" version
+builder-windows-x64	Post Run actions/checkout@v4	2026-10-29T05:25:47.1020025Z git version 2.56.0.windows.2
+builder-windows-x64	Post Run actions/checkout@v4	2026-10-29T05:25:47.1064856Z Temporarily overriding HOME='D:\a\_temp\15f6fb9b-b4c2-4659-b278-2053c6de13ad' before making global git config changes
+builder-windows-x64	Post Run actions/checkout@v4	2026-10-29T05:25:47.1067028Z Adding repository directory to the temporary git global config as a safe directory
+builder-windows-x64	Post Run actions/checkout@v4	2026-10-29T05:25:47.1071889Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool
+builder-windows-x64	Post Run actions/checkout@v4	2026-10-29T05:25:47.1319582Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+builder-windows-x64	Post Run actions/checkout@v4	2026-10-29T05:25:47.1553244Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+builder-windows-x64	Post Run actions/checkout@v4	2026-10-29T05:25:47.6308670Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+builder-windows-x64	Post Run actions/checkout@v4	2026-10-29T05:25:47.6547500Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+builder-windows-x64	Post Run actions/checkout@v4	2026-10-29T05:25:48.0875775Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+builder-windows-x64	Post Run actions/checkout@v4	2026-10-29T05:25:48.1109787Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+builder-windows-x64	Complete job	﻿2026-10-29T05:25:48.5644627Z Cleaning up orphan processes
+builder-windows-x64	Complete job	2026-10-29T05:25:48.6185163Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
