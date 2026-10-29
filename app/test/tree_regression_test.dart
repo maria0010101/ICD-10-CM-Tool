@@ -82,7 +82,7 @@ void main() {
                   width: 260,
                   child: RepaintBoundary(
                     key: capture,
-                    child: ColoredBox(
+                    child: Material(
                       color: Colors.white,
                       child: ListView(
                         children: [
