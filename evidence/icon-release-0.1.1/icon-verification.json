@@ -1,0 +1,34 @@
+{
+  "source_png_sha256": "7782dfcd8417ff264aecd72ca52ad89b55ae49fb028166d79d3522bfaacc675a",
+  "app_asset_identical": true,
+  "windows_ico_header": [
+    0,
+    1,
+    1
+  ],
+  "windows_ico_bytes": 48892,
+  "android_sizes": {
+    "mdpi": [
+      48,
+      48
+    ],
+    "hdpi": [
+      72,
+      72
+    ],
+    "xhdpi": [
+      96,
+      96
+    ],
+    "xxhdpi": [
+      144,
+      144
+    ],
+    "xxxhdpi": [
+      192,
+      192
+    ]
+  },
+  "apk_has_exact_branding_asset": true,
+  "apk_embedded_dictionaries_or_python": []
+}

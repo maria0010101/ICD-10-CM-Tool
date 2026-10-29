@@ -1,0 +1,14 @@
+{
+  "artifact": "manual-test-0.1.1/icd-data-builder-0.1.1-windows-x64-portable.zip",
+  "sha256": "aa81de65dafdf3e783ba7bf82ad8b3dfef89218ddf4ab0b891b295669078ff9a",
+  "bytes": 31023993,
+  "windows_native_tests_passed": 28,
+  "gui_constructed_on_windows": true,
+  "ci_run": "https://github.com/maria0010101/ICD-10-CM-Tool/actions/runs/40806513703",
+  "runtime": {
+    "python": "3.13.18 (main, Oct 26 2026, 14:10:48) [MSC v.1944 64 bit (AMD64)]",
+    "sqlite": "3.53.1",
+    "platform": "Windows-2025Server-10.0.26100-SP0",
+    "windows_native": true
+  }
+}

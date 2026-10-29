@@ -1,8 +1,8 @@
 # 已知限制與發布停止條件
 
-本版是 **0.1.0 開發／demo**，不是已通過所有 Gate 的臨床產品。
+本版是 **0.1.1 開發／demo**，不是已通過所有 Gate 的臨床產品；後續 Windows 結果以 [補驗報告](RELEASE_0.1.1.md) 為準。
 
-* Windows：Linux 主機沒有 MSVC，未產生或實測 Windows portable ZIP；原生專案與 PowerShell 打包腳本已提供。G1、G7 不可標為通過。
+* Windows：使用 GitHub Actions Windows x64／MSVC 建置。Hosted runner 的原生測試與 App 啟動不代表乾淨工作站、實體桌面操作或正式資料全量驗收；G7 仍需人工測試。
 * Android：使用者允許後的一次重試安裝成功，`.debug` 整合測試1/1通過、Linux↔Android兩包各50查詢一致；未修改手機設定、未解除安裝或清資料。Release APK實機啟動仍未測。
 * 實體平板、旋轉、TalkBack／Windows 螢幕閱讀器及乾淨 Windows 環境未測；widget viewport 測試不等同實體裝置測試。
 * Release 預設沿用 Flutter 的本機 debug 簽章，僅供 demo 安裝。正式簽署金鑰未配置，不可作正式發布憑證。

@@ -1,0 +1,38 @@
+{
+  "release": "0.1.1-demo",
+  "artifacts": [
+    {
+      "file": "icd-data-builder-0.1.1-windows-x64-portable.zip",
+      "bytes": 31023993,
+      "sha256": "aa81de65dafdf3e783ba7bf82ad8b3dfef89218ddf4ab0b891b295669078ff9a"
+    },
+    {
+      "file": "icd-offline-0.1.1-android-arm64-demo.apk",
+      "bytes": 21545852,
+      "sha256": "e6ef5641de6cbfa8757e5aaa0df2cc0856df194a9d0f78df3aeacfa0272d3448"
+    },
+    {
+      "file": "icd-offline-0.1.1-windows-x64-demo.zip",
+      "bytes": 15121952,
+      "sha256": "af2e761dacd04288e923446f8e9676b42f2b9d116b1c3d97d24dea98dfeca29b"
+    },
+    {
+      "file": "samples/sample-demo-v1.icdpack",
+      "bytes": 7260,
+      "sha256": "47a8de79118cd66e7e7365a0085a4323318b893fad08282074730d31b5582ed5"
+    },
+    {
+      "file": "samples/sample-demo-v2.icdpack",
+      "bytes": 7295,
+      "sha256": "ea0f25d4e0364bafd906966657bfce48940931dbe43b4f7ffb7f93f4308ca335"
+    },
+    {
+      "file": "samples/sample-overlay-unresolved.icdpack",
+      "bytes": 5187,
+      "sha256": "01a4e5595fb2c4d65373621c89417512f588113ae6eb279060be9af9edcb1778"
+    }
+  ],
+  "source_repository": "https://github.com/maria0010101/ICD-10-CM-Tool",
+  "windows_app_run": 40806947784,
+  "windows_builder_run": 40806513703
+}

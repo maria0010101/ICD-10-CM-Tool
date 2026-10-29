@@ -1,4 +1,4 @@
-# 授權清單（開發版 0.1.0）
+# 授權清單（開發版 0.1.1）
 
 本次新增原始碼採 MIT（見 LICENSE）；原有規格文件維持原作者權利，不變更其授權。
 
@@ -18,6 +18,11 @@
 | openpyxl | 3.1.5 | MIT |
 | jsonschema | 4.26.0 | MIT |
 | pytest | 9.0.2 | MIT（僅開發） |
+| flutter_launcher_icons | 0.14.4 | MIT，僅開發期圖示產生器 |
+| image | 4.12.0 | MIT，僅開發期圖示處理 |
+| CPython standalone | 3.13.18 / 20261026 | Python PSF 及 runtime 內附第三方授權；僅獨立資料庫工具，非 App 依賴 |
+| Tcl/Tk | 依工具 runtime report | 保留 runtime 內附授權；僅資料庫 GUI |
+| colorama | 0.4.6 | BSD-3-Clause，Windows工具測試依賴 |
 | VC++ app-local CRT | Windows 建置時指定 | Microsoft redistributable license；不得任意複製系統 DLL |
 
 完整直接／間接依賴版本與套件雜湊見 `app/pubspec.lock`、`tools/data_builder/requirements.lock`。

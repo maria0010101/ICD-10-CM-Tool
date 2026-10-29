@@ -1,4 +1,4 @@
-# ICD-10-CM Offline Dictionary · 0.1.0 Demo
+# ICD-10-CM Offline Dictionary · 0.1.1 Demo
 
 已實作 Flutter/Dart 離線 App、Python 3.13 builder/validator、標準 `.icdpack` 與自動化測試。**尚未通過完整跨 Windows/Android 驗收，不可用於臨床編碼或申報。**
 
@@ -6,13 +6,15 @@ App、資料包、`user.sqlite` 物理分離；App 不含字典、Python runtime
 
 ## 交付與驗收
 
-* [實際測試與 Gate 報告](docs/ACCEPTANCE.md)／[原始證據](evidence/)
+* 原始碼私有備份：[maria0010101/ICD-10-CM-Tool](https://github.com/maria0010101/ICD-10-CM-Tool)。不包含官方完整資料、使用者資料、venv 或 SDK。
+* 本機手動測試交付目錄：`manual-test-0.1.1/`；內有新版圖示 APK、Windows App ZIP、Windows 獨立資料庫工具 ZIP、合成 samples、SHA256 與繁體中文操作說明（產物不混入 Git 原始碼）。
+* [0.1.1 發行與 Windows CI 證據](docs/RELEASE_0.1.1.md)／[0.1.0 歷史 Gate 報告](docs/ACCEPTANCE.md)／[原始證據](evidence/)
 * [架構與工具鏈](docs/ARCHITECTURE.md)／[需求追蹤](docs/TRACEABILITY.md)
 * [已知限制](docs/KNOWN_LIMITATIONS.md)／[來源與版本](SOURCE_PROVENANCE.md)／[授權](LICENSES.md)
 * Android APK：`dist/icd-offline-0.1.0-android-arm64-demo.apk`（以驗收報告與 SHA256 清單確認是否實際產生）
 * 完整原始碼 ZIP：`dist/icd-offline-0.1.0-source-demo.zip`（不含官方完整資料、SDK、venv）；雜湊在 `dist/SHA256SUMS.txt`。
 * Android 補驗：一次重試安裝成功，`.debug` 整合測試1/1通過；sample／正式英文兩包各50查詢與Linux一致。補驗後原始碼：`dist/icd-offline-0.1.0-source-android-verified.zip`。Release實機及Windows Gate仍未通過。
-* Windows portable：此 Linux 主機無 MSVC，**未建置／未實測**；不得把原始碼當成 EXE。
+* Windows 由 GitHub Actions 的 Windows x64／Visual Studio 建置；結果、執行環境與限制見 0.1.1 報告。Hosted runner 不等同乾淨工作站驗收。
 
 原本的開發規格 README 已原封保存為 [README.spec-original.md](README.spec-original.md)；規範文件 AGENTS/SRS/DATA_PACKAGE_SPEC/TEST_PLAN 保留。
 
@@ -34,7 +36,7 @@ Windows PowerShell（先自行安裝 Python 3.13／Flutter；建 Windows 另需 
 
 ```powershell
 py -3.13 -m venv .venv313
-.\.venv313\Scripts\python -m pip install --require-hashes -r tools/data_builder/requirements.lock
+.\.venv313\Scripts\python -m pip install --require-hashes -r tools/data_builder/requirements-windows.lock
 .\.venv313\Scripts\python -m pytest tools/data_builder/tests -q
 cd app
 flutter pub get --enforce-lockfile
@@ -79,6 +81,8 @@ App 的正式 Android package ID 為 `tw.offline.icd.icd_dictionary`，debug／i
 * `.icdpack` 原檔以 archive SHA256 定址保留，唯讀 `content.sqlite`；只有 `user.sqlite` 可寫。
 
 ## 三、資料製作（Python 僅在 builder 執行）
+
+Windows 無開發環境時，解壓獨立工具 ZIP，雙擊 `ICD-Data-Builder.cmd` 開啟繁體中文 GUI；附私有 Python 3.13.18／Tk／鎖定依賴，不需系統 Python、pip 或網路。`SELF-TEST.cmd` 執行隨附測試；命令列可使用 `ICD-Data-Builder.cmd verify --package path.icdpack`。工具與 App 完全分開，App ZIP／APK 不含 Python。
 
 ```powershell
 # 如 samples 既有輸出同名，請選新檔名；builder 不覆寫發行檔。
@@ -128,7 +132,9 @@ powershell -File scripts/build_windows.ps1 -VCRuntimeDir 'C:\licensed-redist\Mic
 Get-FileHash -Algorithm SHA256 samples/sample-demo-v1.icdpack
 ```
 
-Windows 腳本要求合法的 app-local Microsoft CRT 路徑；不偷拷系統 DLL。完整 Release bundle（exe、SQLite／Flutter DLL、data）才可打 portable ZIP。必須再於乾淨 Windows 工作站實際啟動。
+Windows 腳本可由 Visual Studio 安裝目錄自動尋找合法的 app-local Microsoft CRT，也可明確指定路徑；不拷貝系統 DLL。完整 Release bundle（exe、SQLite／Flutter DLL、data）才可打 portable ZIP。必須再於乾淨 Windows 工作站實際啟動。
+
+可在 GitHub Actions 選 `Windows portable build`／`Offline database builder for Windows` 執行 `workflow_dispatch` 重建；Flutter 及 Python runtime 版本固定，Python archive 與依賴皆核對 SHA256。Actions artifacts 保留 30 天；本機交付資料夾另保存下載副本。
 
 Android build 預設 demo debug signing，不是正式發布憑證。正式發布前另配置簽署、通過飛航模式及實機 Gate，不能把「Built APK」當作「實機成功」。
 

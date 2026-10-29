@@ -1,0 +1,319 @@
+
+File: .local-source/windows-bundle-40806947784/icd_dictionary.exe
+Format: COFF-x86-64
+Arch: x86_64
+AddressSize: 64bit
+ImageFileHeader {
+  Machine: IMAGE_FILE_MACHINE_AMD64 (0x8664)
+  SectionCount: 6
+  TimeDateStamp: 2026-10-29 02:37:52 (0x6AE2B180)
+  PointerToSymbolTable: 0x0
+  SymbolCount: 0
+  StringTableSize: 0
+  OptionalHeaderSize: 240
+  Characteristics [ (0x22)
+    IMAGE_FILE_EXECUTABLE_IMAGE (0x2)
+    IMAGE_FILE_LARGE_ADDRESS_AWARE (0x20)
+  ]
+}
+ImageOptionalHeader {
+  Magic: 0x20B
+  MajorLinkerVersion: 14
+  MinorLinkerVersion: 51
+  SizeOfCode: 24576
+  SizeOfInitializedData: 80384
+  SizeOfUninitializedData: 0
+  AddressOfEntryPoint: 0x5FA0
+  BaseOfCode: 0x1000
+  ImageBase: 0x140000000
+  SectionAlignment: 4096
+  FileAlignment: 512
+  MajorOperatingSystemVersion: 6
+  MinorOperatingSystemVersion: 0
+  MajorImageVersion: 0
+  MinorImageVersion: 0
+  MajorSubsystemVersion: 6
+  MinorSubsystemVersion: 0
+  SizeOfImage: 118784
+  SizeOfHeaders: 1024
+  CheckSum: 0x0
+  Subsystem: IMAGE_SUBSYSTEM_WINDOWS_GUI (0x2)
+  Characteristics [ (0x8160)
+    IMAGE_DLL_CHARACTERISTICS_DYNAMIC_BASE (0x40)
+    IMAGE_DLL_CHARACTERISTICS_HIGH_ENTROPY_VA (0x20)
+    IMAGE_DLL_CHARACTERISTICS_NX_COMPAT (0x100)
+    IMAGE_DLL_CHARACTERISTICS_TERMINAL_SERVER_AWARE (0x8000)
+  ]
+  SizeOfStackReserve: 1048576
+  SizeOfStackCommit: 4096
+  SizeOfHeapReserve: 1048576
+  SizeOfHeapCommit: 4096
+  NumberOfRvaAndSize: 16
+  DataDirectory {
+    ExportTableRVA: 0x0
+    ExportTableSize: 0x0
+    ImportTableRVA: 0xBA44
+    ImportTableSize: 0x168
+    ResourceTableRVA: 0xF000
+    ResourceTableSize: 0xC780
+    ExceptionTableRVA: 0xE000
+    ExceptionTableSize: 0x750
+    CertificateTableRVA: 0x0
+    CertificateTableSize: 0x0
+    BaseRelocationTableRVA: 0x1C000
+    BaseRelocationTableSize: 0x100
+    DebugRVA: 0xA0E0
+    DebugSize: 0x1C
+    ArchitectureRVA: 0x0
+    ArchitectureSize: 0x0
+    GlobalPtrRVA: 0x0
+    GlobalPtrSize: 0x0
+    TLSTableRVA: 0xA100
+    TLSTableSize: 0x28
+    LoadConfigTableRVA: 0x9FA0
+    LoadConfigTableSize: 0x140
+    BoundImportRVA: 0x0
+    BoundImportSize: 0x0
+    IATRVA: 0x7000
+    IATSize: 0x490
+    DelayImportDescriptorRVA: 0x0
+    DelayImportDescriptorSize: 0x0
+    CLRRuntimeHeaderRVA: 0x0
+    CLRRuntimeHeaderSize: 0x0
+    ReservedRVA: 0x0
+    ReservedSize: 0x0
+  }
+}
+DOSHeader {
+  Magic: MZ
+  UsedBytesInTheLastPage: 144
+  FileSizeInPages: 3
+  NumberOfRelocationItems: 0
+  HeaderSizeInParagraphs: 4
+  MinimumExtraParagraphs: 0
+  MaximumExtraParagraphs: 65535
+  InitialRelativeSS: 0
+  InitialSP: 184
+  Checksum: 0
+  InitialIP: 0
+  InitialRelativeCS: 0
+  AddressOfRelocationTable: 64
+  OverlayNumber: 0
+  OEMid: 0
+  OEMinfo: 0
+  AddressOfNewExeHeader: 280
+}
+Import {
+  Name: dwmapi.dll
+  ImportLookupTableRVA: 0xBF48
+  ImportAddressTableRVA: 0x7398
+  Symbol: DwmSetWindowAttribute (27)
+}
+Import {
+  Name: file_selector_windows_plugin.dll
+  ImportLookupTableRVA: 0xBF58
+  ImportAddressTableRVA: 0x73A8
+  Symbol: FileSelectorWindowsRegisterWithRegistrar (0)
+}
+Import {
+  Name: flutter_windows.dll
+  ImportLookupTableRVA: 0xBF68
+  ImportAddressTableRVA: 0x73B8
+  Symbol: FlutterDesktopEngineSetNextFrameCallback (15)
+  Symbol: FlutterDesktopViewControllerCreate (39)
+  Symbol: FlutterDesktopViewControllerDestroy (40)
+  Symbol: FlutterDesktopViewControllerGetView (43)
+  Symbol: FlutterDesktopViewControllerForceRedraw (41)
+  Symbol: FlutterDesktopEngineGetMessenger (5)
+  Symbol: FlutterDesktopMessengerSend (22)
+  Symbol: FlutterDesktopMessengerSendWithReply (24)
+  Symbol: FlutterDesktopMessengerSendResponse (23)
+  Symbol: FlutterDesktopMessengerSetCallback (25)
+  Symbol: FlutterDesktopMessengerAddRef (18)
+  Symbol: FlutterDesktopMessengerRelease (21)
+  Symbol: FlutterDesktopMessengerIsAvailable (19)
+  Symbol: FlutterDesktopMessengerLock (20)
+  Symbol: FlutterDesktopMessengerUnlock (26)
+  Symbol: FlutterDesktopEngineGetPluginRegistrar (6)
+  Symbol: FlutterDesktopViewControllerHandleTopLevelWindowProc (45)
+  Symbol: FlutterDesktopEngineReloadSystemFonts (13)
+  Symbol: FlutterDesktopEngineDestroy (2)
+  Symbol: FlutterDesktopEngineCreate (0)
+  Symbol: FlutterDesktopGetDpiForMonitor (17)
+  Symbol: FlutterDesktopResyncOutputStreams (35)
+  Symbol: FlutterDesktopViewGetHWND (47)
+}
+Import {
+  Name: KERNEL32.dll
+  ImportLookupTableRVA: 0xBBC0
+  ImportAddressTableRVA: 0x7010
+  Symbol: InitializeSListHead (927)
+  Symbol: GetSystemTimeAsFileTime (799)
+  Symbol: GetCurrentThreadId (587)
+  Symbol: GetCurrentProcessId (583)
+  Symbol: QueryPerformanceCounter (1158)
+  Symbol: SetUnhandledExceptionFilter (1469)
+  Symbol: FreeLibrary (473)
+  Symbol: AllocConsole (22)
+  Symbol: WideCharToMultiByte (1617)
+  Symbol: LocalFree (1031)
+  Symbol: GetCommandLineW (517)
+  Symbol: AttachConsole (40)
+  Symbol: IsDebuggerPresent (949)
+  Symbol: GetProcAddress (738)
+  Symbol: LoadLibraryA (1017)
+  Symbol: GetStartupInfoW (774)
+  Symbol: GetModuleHandleW (682)
+}
+Import {
+  Name: USER32.dll
+  ImportLookupTableRVA: 0xBD08
+  ImportAddressTableRVA: 0x7158
+  Symbol: GetMessageW (407)
+  Symbol: TranslateMessage (986)
+  Symbol: DispatchMessageW (194)
+  Symbol: DefWindowProcW (172)
+  Symbol: PostQuitMessage (706)
+  Symbol: RegisterClassW (756)
+  Symbol: UnregisterClassW (997)
+  Symbol: CreateWindowExW (123)
+  Symbol: DestroyWindow (186)
+  Symbol: ShowWindow (953)
+  Symbol: MoveWindow (676)
+  Symbol: SetWindowPos (928)
+  Symbol: SetFocus (852)
+  Symbol: GetClientRect (316)
+  Symbol: GetWindowLongPtrW (506)
+  Symbol: SetWindowLongPtrW (924)
+  Symbol: SetParent (879)
+  Symbol: LoadCursorW (620)
+  Symbol: LoadIconW (622)
+  Symbol: MonitorFromPoint (673)
+}
+Import {
+  Name: SHELL32.dll
+  ImportLookupTableRVA: 0xBCF8
+  ImportAddressTableRVA: 0x7148
+  Symbol: CommandLineToArgvW (9)
+}
+Import {
+  Name: ole32.dll
+  ImportLookupTableRVA: 0xC028
+  ImportAddressTableRVA: 0x7478
+  Symbol: CoInitializeEx (97)
+  Symbol: CoUninitialize (145)
+}
+Import {
+  Name: ADVAPI32.dll
+  ImportLookupTableRVA: 0xBBB0
+  ImportAddressTableRVA: 0x7000
+  Symbol: RegGetValueW (637)
+}
+Import {
+  Name: MSVCP140.dll
+  ImportLookupTableRVA: 0xBC50
+  ImportAddressTableRVA: 0x70A0
+  Symbol: ?width@ios_base@std@@QEAA_J_J@Z (1341)
+  Symbol: ?width@ios_base@std@@QEBA_JXZ (1342)
+  Symbol: ?flags@ios_base@std@@QEBAHXZ (871)
+  Symbol: ?good@ios_base@std@@QEBA_NXZ (965)
+  Symbol: ?_Xbad_function_call@std@@YAXXZ (652)
+  Symbol: ?sync_with_stdio@ios_base@std@@SA_N_N@Z (1280)
+  Symbol: ?_Raise_handler@std@@3P6AXAEBVexception@stdext@@@ZEA (604)
+  Symbol: ?_Xlength_error@std@@YAXPEBD@Z (654)
+  Symbol: ?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z (1221)
+  Symbol: ?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBAPEAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ (1290)
+  Symbol: ?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHD@Z (1246)
+  Symbol: ?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBAPEAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ (1159)
+  Symbol: ?fill@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADXZ (865)
+  Symbol: ?widen@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADD@Z (1332)
+  Symbol: ?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAXXZ (580)
+  Symbol: ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@P6AAEAV01@AEAV01@@Z@Z (262)
+  Symbol: ?put@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@D@Z (1121)
+  Symbol: ?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ (872)
+  Symbol: ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A (674)
+  Symbol: ?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAA_JPEBD_J@Z (1249)
+}
+Import {
+  Name: VCRUNTIME140_1.dll
+  ImportLookupTableRVA: 0xBE10
+  ImportAddressTableRVA: 0x7260
+  Symbol: __CxxFrameHandler4 (0)
+}
+Import {
+  Name: VCRUNTIME140.dll
+  ImportLookupTableRVA: 0xBDB0
+  ImportAddressTableRVA: 0x7200
+  Symbol: memcpy (60)
+  Symbol: __C_specific_handler (8)
+  Symbol: memset (62)
+  Symbol: __std_terminate (35)
+  Symbol: __std_type_info_compare (36)
+  Symbol: _CxxThrowException (1)
+  Symbol: __std_exception_destroy (34)
+  Symbol: __std_exception_copy (33)
+  Symbol: __current_exception_context (28)
+  Symbol: __current_exception (27)
+  Symbol: memcmp (59)
+}
+Import {
+  Name: api-ms-win-crt-string-l1-1-0.dll
+  ImportLookupTableRVA: 0xBF28
+  ImportAddressTableRVA: 0x7378
+  Symbol: wcslen (163)
+  Symbol: strlen (139)
+  Symbol: wcsnlen (169)
+}
+Import {
+  Name: api-ms-win-crt-stdio-l1-1-0.dll
+  ImportLookupTableRVA: 0xBEF0
+  ImportAddressTableRVA: 0x7340
+  Symbol: _fileno (38)
+  Symbol: _set_fmode (84)
+  Symbol: _dup2 (27)
+  Symbol: __p__commode (1)
+  Symbol: __acrt_iob_func (0)
+  Symbol: freopen_s (134)
+}
+Import {
+  Name: api-ms-win-crt-heap-l1-1-0.dll
+  ImportLookupTableRVA: 0xBE20
+  ImportAddressTableRVA: 0x7270
+  Symbol: _callnewh (8)
+  Symbol: _set_new_mode (22)
+  Symbol: free (24)
+  Symbol: malloc (25)
+}
+Import {
+  Name: api-ms-win-crt-runtime-l1-1-0.dll
+  ImportLookupTableRVA: 0xBE68
+  ImportAddressTableRVA: 0x72B8
+  Symbol: _get_wide_winmain_command_line (47)
+  Symbol: _exit (35)
+  Symbol: _configure_wide_argv (25)
+  Symbol: _cexit (22)
+  Symbol: _c_exit (21)
+  Symbol: _register_thread_local_exe_atexit_callback (61)
+  Symbol: _initterm (54)
+  Symbol: terminate (103)
+  Symbol: _initterm_e (55)
+  Symbol: _set_app_type (66)
+  Symbol: _initialize_onexit_table (52)
+  Symbol: _register_onexit_function (60)
+  Symbol: _crt_atexit (30)
+  Symbol: _seh_filter_exe (64)
+  Symbol: exit (85)
+  Symbol: _initialize_wide_environment (53)
+}
+Import {
+  Name: api-ms-win-crt-math-l1-1-0.dll
+  ImportLookupTableRVA: 0xBE58
+  ImportAddressTableRVA: 0x72A8
+  Symbol: __setusermatherr (9)
+}
+Import {
+  Name: api-ms-win-crt-locale-l1-1-0.dll
+  ImportLookupTableRVA: 0xBE48
+  ImportAddressTableRVA: 0x7298
+  Symbol: _configthreadlocale (8)
+}

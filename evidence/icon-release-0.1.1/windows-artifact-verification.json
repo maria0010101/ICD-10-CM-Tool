@@ -1,0 +1,28 @@
+{
+  "file": "icd-offline-0.1.1-windows-x64-demo.zip",
+  "bytes": 15121952,
+  "sha256": "af2e761dacd04288e923446f8e9676b42f2b9d116b1c3d97d24dea98dfeca29b",
+  "crc_ok": true,
+  "pe_machine": "AMD64 (0x8664)",
+  "generated_icon_payload_in_exe": true,
+  "branding_png_matches_source": true,
+  "no_dictionary_or_python_runtime": true,
+  "no_user_database": true,
+  "dlls": [
+    "concrt140.dll",
+    "dartjni.dll",
+    "file_selector_windows_plugin.dll",
+    "flutter_windows.dll",
+    "msvcp140_1.dll",
+    "msvcp140_2.dll",
+    "msvcp140_atomic_wait.dll",
+    "msvcp140_codecvt_ids.dll",
+    "msvcp140.dll",
+    "sqlite3.dll",
+    "vccorlib140.dll",
+    "vcruntime140_1.dll",
+    "vcruntime140_threads.dll",
+    "vcruntime140.dll"
+  ],
+  "ci_run": 40806947784
+}

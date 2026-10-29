@@ -1,0 +1,25 @@
+{
+  "platforms": [
+    "GitHub Windows x64 native test engine",
+    "Linux x64 native test engine",
+    "Android ARM64 device (0.1.0 debug harness)"
+  ],
+  "windows_ci_commit": "d8c291063fd9cf79251e72852f00efbd662277e1",
+  "package_sha256": "47a8de79118cd66e7e7365a0085a4323318b893fad08282074730d31b5582ed5",
+  "query_count": 50,
+  "snapshot_sha256": "9a6c1e4a7a4ab4b0c8666d1291818ac74ca19bf0acee58bafc235f61685b26d4",
+  "full_snapshot_equal": true,
+  "compared_snapshot_fields": [
+    "queries",
+    "notes",
+    "index_crossrefs",
+    "table_cells",
+    "row_counts"
+  ],
+  "sqlite_version": "3.54.1",
+  "limits": [
+    "synthetic SAMPLE-1 only on Windows; official full data not uploaded",
+    "not a clean workstation nor new Android release runtime test",
+    "probe legacy build_revision label is superseded by CI commit metadata"
+  ]
+}

@@ -1,0 +1,18 @@
+Looking in links: .local-source/portable-builder/wheels
+Processing ./.local-source/portable-builder/wheels/attrs-26.1.0-py3-none-any.whl (from -r tools/data_builder/requirements-windows.lock (line 3))
+Processing ./.local-source/portable-builder/wheels/colorama-0.4.6-py2.py3-none-any.whl (from -r tools/data_builder/requirements-windows.lock (line 9))
+Processing ./.local-source/portable-builder/wheels/et_xmlfile-2.0.0-py3-none-any.whl (from -r tools/data_builder/requirements-windows.lock (line 15))
+Processing ./.local-source/portable-builder/wheels/iniconfig-2.3.1-py3-none-any.whl (from -r tools/data_builder/requirements-windows.lock (line 19))
+Processing ./.local-source/portable-builder/wheels/jsonschema-4.26.0-py3-none-any.whl (from -r tools/data_builder/requirements-windows.lock (line 23))
+Processing ./.local-source/portable-builder/wheels/jsonschema_specifications-2025.9.1-py3-none-any.whl (from -r tools/data_builder/requirements-windows.lock (line 27))
+Processing ./.local-source/portable-builder/wheels/lxml-6.0.4-cp313-cp313-win_amd64.whl (from -r tools/data_builder/requirements-windows.lock (line 31))
+Processing ./.local-source/portable-builder/wheels/openpyxl-3.1.5-py2.py3-none-any.whl (from -r tools/data_builder/requirements-windows.lock (line 167))
+Processing ./.local-source/portable-builder/wheels/packaging-26.3-py3-none-any.whl (from -r tools/data_builder/requirements-windows.lock (line 171))
+Processing ./.local-source/portable-builder/wheels/pluggy-1.7.0-py3-none-any.whl (from -r tools/data_builder/requirements-windows.lock (line 175))
+Processing ./.local-source/portable-builder/wheels/pygments-2.21.0-py3-none-any.whl (from -r tools/data_builder/requirements-windows.lock (line 179))
+Processing ./.local-source/portable-builder/wheels/pytest-9.0.2-py3-none-any.whl (from -r tools/data_builder/requirements-windows.lock (line 183))
+Processing ./.local-source/portable-builder/wheels/referencing-0.37.0-py3-none-any.whl (from -r tools/data_builder/requirements-windows.lock (line 187))
+Processing ./.local-source/portable-builder/wheels/rpds_py-2026.9.1-cp313-cp313-win_amd64.whl (from -r tools/data_builder/requirements-windows.lock (line 193))
+Installing collected packages: rpds-py, pygments, pluggy, packaging, lxml, iniconfig, et-xmlfile, colorama, attrs, referencing, pytest, openpyxl, jsonschema-specifications, jsonschema
+
+Successfully installed attrs-26.1.0 colorama-0.4.6 et-xmlfile-2.0.0 iniconfig-2.3.1 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 lxml-6.0.4 openpyxl-3.1.5 packaging-26.3 pluggy-1.7.0 pygments-2.21.0 pytest-9.0.2 referencing-0.37.0 rpds-py-2026.9.1
