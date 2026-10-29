@@ -1,0 +1,112 @@
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Windows portable build · 40838049027
+Triggered via push less than a minute ago
+
+JOBS
+* windows-x64 (ID 123327415448)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Pinned standalone Python 3.13.18 (security-release runtime)
+  * Run subosito/flutter-action@v2
+  * Locked builder dependencies and Python tests
+  * Analyze, native tests, release build and app-local CRT
+  * Launch bundled executable on the hosted Windows runner
+  * Preserve portable ZIP and native FTS5 query evidence
+  * Post Run subosito/flutter-action@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Windows portable build · 40838049027
+Triggered via push about 1 minute ago
+
+JOBS
+* windows-x64 (ID 123327415448)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Pinned standalone Python 3.13.18 (security-release runtime)
+  * Run subosito/flutter-action@v2
+  * Locked builder dependencies and Python tests
+  * Analyze, native tests, release build and app-local CRT
+  * Launch bundled executable on the hosted Windows runner
+  * Preserve portable ZIP and native FTS5 query evidence
+  * Post Run subosito/flutter-action@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Windows portable build · 40838049027
+Triggered via push about 1 minute ago
+
+JOBS
+* windows-x64 (ID 123327415448)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Pinned standalone Python 3.13.18 (security-release runtime)
+  * Run subosito/flutter-action@v2
+  * Locked builder dependencies and Python tests
+  * Analyze, native tests, release build and app-local CRT
+  * Launch bundled executable on the hosted Windows runner
+  * Preserve portable ZIP and native FTS5 query evidence
+  * Post Run subosito/flutter-action@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Windows portable build · 40838049027
+Triggered via push about 2 minutes ago
+
+JOBS
+* windows-x64 (ID 123327415448)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Pinned standalone Python 3.13.18 (security-release runtime)
+  ✓ Run subosito/flutter-action@v2
+  * Locked builder dependencies and Python tests
+  * Analyze, native tests, release build and app-local CRT
+  * Launch bundled executable on the hosted Windows runner
+  * Preserve portable ZIP and native FTS5 query evidence
+  * Post Run subosito/flutter-action@v2
+  * Post Run actions/checkout@v4
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main Windows portable build · 40838049027
+Triggered via push about 3 minutes ago
+
+JOBS
+* windows-x64 (ID 123327415448)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Pinned standalone Python 3.13.18 (security-release runtime)
+  ✓ Run subosito/flutter-action@v2
+  ✓ Locked builder dependencies and Python tests
+  * Analyze, native tests, release build and app-local CRT
+  * Launch bundled executable on the hosted Windows runner
+  * Preserve portable ZIP and native FTS5 query evidence
+  * Post Run subosito/flutter-action@v2
+  * Post Run actions/checkout@v4
+X main Windows portable build · 40838049027
+Triggered via push about 3 minutes ago
+
+JOBS
+X windows-x64 in 3m22s (ID 123327415448)
+  ✓ Set up job
+  ✓ Run actions/checkout@v4
+  ✓ Pinned standalone Python 3.13.18 (security-release runtime)
+  ✓ Run subosito/flutter-action@v2
+  ✓ Locked builder dependencies and Python tests
+  X Analyze, native tests, release build and app-local CRT
+  - Launch bundled executable on the hosted Windows runner
+  ✓ Preserve portable ZIP and native FTS5 query evidence
+  ✓ Post Run subosito/flutter-action@v2
+  ✓ Post Run actions/checkout@v4
+  ✓ Complete job
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+windows-x64: .github#2
+
+X Process completed with exit code 1.
+windows-x64: .github#203
+
+X 20 tests passed, 1 failed, 1 skipped.
+windows-x64: .github#197
+

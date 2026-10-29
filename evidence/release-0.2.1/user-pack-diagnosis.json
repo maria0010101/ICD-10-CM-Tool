@@ -1,0 +1,18 @@
+{
+  "original_file": "nhi-icd-10-cm-20261029-152146.icdpack",
+  "sha256": "d81e1127ae174692a7bcda7e27189675639d6520dfe4f19385de39584bea52f0",
+  "validated": true,
+  "kind": "icd10cm_zh_tw",
+  "mapping_policy": "unresolved",
+  "row_counts": {
+    "code_nodes": 0,
+    "index_crossrefs": 0,
+    "index_entries": 0,
+    "notes": 0,
+    "table_cells": 0,
+    "translations": 96802,
+    "zh_ngrams": 3243772
+  },
+  "standalone_activation_supported": false,
+  "reason": "overlay has no code_nodes; use a new same-source NHI CM bilingual standalone pack, never relabel this overlay as FY2027 compatible"
+}

@@ -1,0 +1,32 @@
+{
+  "app_version": "0.2.1+4",
+  "artifacts": [
+    {
+      "file": "data/nhi2023-cm-app.icdpack",
+      "bytes": 81248397,
+      "sha256": "544c441b27e8b126d6342da50405580098298613b9d7ba360883268008b1ab7a"
+    },
+    {
+      "file": "icd-data-builder-0.2.1-windows-x64-portable.zip",
+      "bytes": 31080426,
+      "sha256": "8138a575a150c79942df89b0fb6af3ebadf17cf6bbc405f889af3049708ec912"
+    },
+    {
+      "file": "icd-offline-0.2.1-android-arm64-demo.apk",
+      "bytes": 21611420,
+      "sha256": "9e29dfa335c2ddb62be0cc1b40c3c61d11a06882f8cb83693a0a869be08fa888"
+    },
+    {
+      "file": "icd-offline-0.2.1-windows-x64-demo.zip",
+      "bytes": 15148895,
+      "sha256": "3f5fc0033a0a8308ed3d24902513bd2845b38dbb6658e586ec5a4dedb32923d3"
+    }
+  ],
+  "app_windows_ci": "https://github.com/maria0010101/ICD-10-CM-Tool/actions/runs/40838564627",
+  "builder_windows_ci": "https://github.com/maria0010101/ICD-10-CM-Tool/actions/runs/40837889917",
+  "android_test": "isolated debug full official NHI CM import, independent activation, Chinese/English/code queries and live tree expansion passed",
+  "production_app_installation": "not performed; preserved 0.1.1/2002",
+  "official_full_windows_import": "not run; final user manual acceptance pending",
+  "user_original_overlay_sha256": "d81e1127ae174692a7bcda7e27189675639d6520dfe4f19385de39584bea52f0",
+  "user_original_overlay_preserved": true
+}

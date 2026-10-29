@@ -56,3 +56,7 @@
 ## 0.2.0 PCS App projection
 
 使用本機原官方下載（原檔34/34 SHA256保全），CMS FY2027／FY2026 April的codes、order、tables、Index、definitions投影至共用schema；原XML逐節點及完整來源保留，七軸row分組不跨組合併。健保署2023／1150827 ODS明確選ICD-10-PCS分頁，同一列英中對照的exact_edition只針對本身NHI2023版，不與美國FY2027宣稱相容。全量資料僅留本機，獨立原值稽核結果見 `evidence/release-0.2.0/*.source-audit.json`。合成PCS fixture明標SAMPLE，與正式資料分開。
+
+## 0.2.1 NHI CM獨立版
+
+相同官方2023／1150827 ODS的ICD-10-CM分頁，96,802同源中英／USE及其他欄位，原始碼展示不改。新增combined包僅聲明對自身NHI版本exact_edition；原使用者overlay保存原SHA且仍unresolved。前綴導覽不是美國Chapter／Block，沒有原檔未提供的Index或Tabular註記；逐筆稽核與原檔保全見release-0.2.1 evidence，完整資料留本機。

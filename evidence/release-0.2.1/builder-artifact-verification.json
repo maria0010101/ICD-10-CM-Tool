@@ -1,0 +1,9 @@
+{
+  "sha256": "8138a575a150c79942df89b0fb6af3ebadf17cf6bbc405f889af3049708ec912",
+  "bytes": 31080426,
+  "profiles": 11,
+  "python_sources_verified": 21,
+  "official_data_bundled": false,
+  "crc": "passed",
+  "ci_run": "https://github.com/maria0010101/ICD-10-CM-Tool/actions/runs/40837889917"
+}

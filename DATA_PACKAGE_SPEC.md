@@ -123,3 +123,7 @@ CREATE INDEX idx_zh_code ON zh_ngrams(code_normalized);
 ## 分類API1.1擴充（App 0.2.0）
 
 新增 `classification=ICD-10-PCS`，kind為 `icd10pcs_en`／`icd10pcs_zh_tw`／`icd10pcs_combined`，PCS的required_app_schema_min為1.1.0；CM仍為1.0.0。實體schema_version仍1.0.0，既有SQL allowlist完全不變。PCS採分離分類語義：七軸／row組合及完整來源XML以typed notes保留，非CM coding notes；完整碼、來源heading、明確Index目標及來源版號不可混淆。詳 `docs/RELEASE_0.2.0.md`。
+
+## NHI CM同版combined來源（0.2.1）
+
+沿用既有 `icd10cm_combined` 與物理schema1.0.0；同一官方ODS列提供CM原碼／USE／英文／中文，`exact_edition`及compatible_base_package_ids只指向包自身。前綴導覽與source_scope／nhi_source_columns註記說明資料範圍，不冒充官方Chapter／Block／Index／Tabular notes；缺少的來源不虛構。原unresolved附加中譯仍不能單獨啟用或默認對FY2027相容；製作獨立版須另外產生新檔，不就地改寫使用者原包。

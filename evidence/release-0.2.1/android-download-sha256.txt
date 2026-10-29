@@ -1,0 +1,2 @@
+544c441b27e8b126d6342da50405580098298613b9d7ba360883268008b1ab7a  /sdcard/Download/manual-test-0.2.1/data/nhi2023-cm-app.icdpack
+9e29dfa335c2ddb62be0cc1b40c3c61d11a06882f8cb83693a0a869be08fa888  /sdcard/Download/manual-test-0.2.1/icd-offline-0.2.1-android-arm64-demo.apk

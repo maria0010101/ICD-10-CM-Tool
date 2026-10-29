@@ -1,0 +1,11 @@
+{
+  "source_bilingual_rows": 96802,
+  "package_bilingual_rows": 96802,
+  "package_sha256": "544c441b27e8b126d6342da50405580098298613b9d7ba360883268008b1ab7a",
+  "classification": "ICD-10-CM",
+  "edition": "NHI-2023-CM",
+  "same_source_edition_only": true,
+  "us_cross_release_compatibility_claim": false,
+  "mismatches": [],
+  "passed": true
+}

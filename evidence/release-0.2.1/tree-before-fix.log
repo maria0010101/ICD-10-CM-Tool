@@ -1,0 +1,500 @@
+Resolving dependencies...
+Downloading packages...
+  cli_util 0.4.2 (0.6.0 available)
+  cross_file 0.3.5+5 (0.4.0 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_math 2.4.0 (2.4.4 available)
+Got dependencies!
+6 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading /tmp/icd-work-build/app/test/tree_regression_test.dart
+00:00 +0: native hierarchy and Index expand inside narrow desktop pane
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: null
+  Actual: ArgumentError:<Invalid argument(s): Illegal argument in isolate message: object is
+unsendable - Library:'dart:async' Class: _Future@5048458 (see restrictions listed at
+`SendPort.send()` documentation for more information)
+           <- pending in Instance of 'TrackingController' (from
+file:///tmp/icd-work-build/app/test/tree_regression_test.dart)
+           <- Closure: (Map<String, Object?>) => Future<void> from Function 'open':. (from
+package:icd_dictionary/app/controller.dart)
+           <- onOpen in Instance of 'HierarchyTile' (from
+package:icd_dictionary/ui/dictionary_app.dart)
+           <- _widget in Instance of '_HierarchyTileState' (from
+package:icd_dictionary/ui/dictionary_app.dart)
+           <- field this in _HierarchyTileState.build.<anonymous closure> (from
+package:icd_dictionary/ui/dictionary_app.dart)
+           <- onTap in Instance of 'InkWell' (from package:flutter/src/material/ink_well.dart)
+           <- _widget in Instance of 'StatelessElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'InheritedElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- key in Instance of '_HashSetEntry<InheritedElement>' (from dart:collection)
+           <- _List len:8 (from dart:core)
+           <- _buckets in Instance of '_HashSet<InheritedElement>' (from dart:collection)
+           <- _dependencies in Instance of 'StatelessElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _ancestorRenderObjectElement in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _ancestorRenderObjectElement in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _parent in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- element in Instance of 'DebugCreator' (from
+package:flutter/src/widgets/framework.dart)
+           <- debugCreator in Instance of 'RenderPadding' (from
+package:flutter/src/rendering/shifted_box.dart)
+           <- _parent in Instance of 'RenderPositionedBox' (from
+package:flutter/src/rendering/shifted_box.dart)
+           <- _parent in Instance of 'RenderSemanticsAnnotations' (from
+package:flutter/src/rendering/proxy_box.dart)
+           <- _renderObject in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _ancestorRenderObjectElement in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _parent in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _parent in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- element in Instance of 'DebugCreator' (from
+package:flutter/src/widgets/framework.dart)
+           <- debugCreator in Instance of 'RenderConstrainedBox' (from
+package:flutter/src/rendering/proxy_box.dart)
+           <- _parent in Instance of 'RenderPositionedBox' (from
+package:flutter/src/rendering/shifted_box.dart)
+           <- _parent in Instance of 'RenderParagraph' (from
+package:flutter/src/rendering/paragraph.dart)
+           <- _renderObject in Instance of 'MultiChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- key in Instance of '_HashMapEntry' (from dart:collection)
+           <- _List len:8 (from dart:core)
+           <- _buckets in Instance of '_HashMap<Element, Object?>' (from dart:collection)
+           <- _dependents in Instance of 'InheritedModelElement<_MediaQueryAspect>' (from
+package:flutter/src/widgets/inherited_model.dart)
+           <- key in Instance of '_HashSetEntry<InheritedElement>' (from dart:collection)
+           <- _List len:8 (from dart:core)
+           <- _buckets in Instance of '_HashSet<InheritedElement>' (from dart:collection)
+           <- _dependencies in Instance of 'MultiChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- element in Instance of 'DebugCreator' (from
+package:flutter/src/widgets/framework.dart)
+           <- debugCreator in Instance of 'RenderParagraph' (from
+package:flutter/src/rendering/paragraph.dart)
+           <- _List len:8 (from dart:core)
+           <- _Map len:3 (from dart:_compact_hash)
+           <- _slotToChild in Instance of '_RenderListTile' (from
+package:flutter/src/material/list_tile.dart)
+           <- _child in Instance of 'RenderPadding' (from
+package:flutter/src/rendering/shifted_box.dart)
+           <- _child in Instance of 'RenderPadding' (from
+package:flutter/src/rendering/shifted_box.dart)
+           <- referenceBox in Instance of 'InkDecoration' (from
+package:flutter/src/material/ink_decoration.dart)
+           <- _ink in Instance of '_InkState' (from
+package:flutter/src/material/ink_decoration.dart)
+           <- _state in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'StatelessElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- key in Instance of '_HashMapEntry' (from dart:collection)
+           <- next in Instance of '_HashMapEntry' (from dart:collection)
+           <- _List len:8 (from dart:core)
+           <- _buckets in Instance of '_HashMap<Element, Object?>' (from dart:collection)
+           <- _dependents in Instance of 'InheritedElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- key in Instance of '_HashSetEntry<InheritedElement>' (from dart:collection)
+           <- next in Instance of '_HashSetEntry<InheritedElement>' (from dart:collection)
+           <- _List len:8 (from dart:core)
+           <- _buckets in Instance of '_HashSet<InheritedElement>' (from dart:collection)
+           <- _dependencies in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _element in Instance of 'ScrollableState' (from
+package:flutter/src/widgets/scrollable.dart)
+           <- context in Instance of 'ScrollPositionWithSingleContext' (from
+package:flutter/src/widgets/scroll_position_with_single_context.dart)
+           <- _position in Instance of '_RenderScrollSemantics' (from
+package:flutter/src/widgets/scrollable.dart)
+           <- _renderObject in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of '_NotificationElement<ScrollMetricsNotification>' (from
+package:flutter/src/widgets/notification_listener.dart)
+           <- _child in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'StatelessElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- key in Instance of '_HashMapEntry' (from dart:collection)
+           <- _List len:8 (from dart:core)
+           <- _buckets in Instance of '_HashMap<Element, Object?>' (from dart:collection)
+           <- _dependents in Instance of 'InheritedModelElement<_MediaQueryAspect>' (from
+package:flutter/src/widgets/inherited_model.dart)
+           <- _child in Instance of 'ParentDataElement<MultiChildLayoutParentData>' (from
+package:flutter/src/widgets/framework.dart)
+           <- _List len:2 (from dart:core)
+           <- _children in Instance of 'MultiChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _ancestorRenderObjectElement in Instance of 'MultiChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- element in Instance of 'DebugCreator' (from
+package:flutter/src/widgets/framework.dart)
+           <- debugCreator in Instance of 'RenderStack' (from
+package:flutter/src/rendering/stack.dart)
+           <- _parent in Instance of 'RenderTransform' (from
+package:flutter/src/rendering/proxy_box.dart)
+           <- _parent in Instance of 'RenderTransform' (from
+package:flutter/src/rendering/proxy_box.dart)
+           <- _renderObject in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _element in Instance of '_AnimatedState' (from
+package:flutter/src/widgets/transitions.dart)
+           <- Closure: () => void from Function '_handleChange@818170175':. (from
+package:flutter/src/widgets/transitions.dart)
+           <- _List len:8 (from dart:core)
+           <- _Map len:1 (from dart:_compact_hash)
+           <- _map in Instance of 'HashedObserverList<() => void>' (from
+package:flutter/src/foundation/observer_list.dart)
+           <- _listeners in Instance of 'TrainHoppingAnimation' (from
+package:flutter/src/animation/animations.dart)
+           <- _currentRotationAnimation in Instance of '_FloatingActionButtonTransitionState' (from
+package:flutter/src/material/scaffold.dart)
+           <- _creator in Instance of '_WidgetTicker' (from
+package:flutter/src/widgets/ticker_provider.dart)
+           <- _ticker in Instance of 'AnimationController' (from
+package:flutter/src/animation/animation_controller.dart)
+           <- parent in Instance of 'CurvedAnimation' (from
+package:flutter/src/animation/animations.dart)
+           <- next in Instance of 'AnimationMin<double>' (from
+package:flutter/src/animation/animations.dart)
+           <- Closure: (AnimationStatus) => void from Function
+'_maybeNotifyStatusListeners@368411118':. (from package:flutter/src/animation/animations.dart)
+           <- _List len:3 (from dart:core)
+           <- Instance(length:2) of '_GrowableList' (from dart:core)
+           <- _list in Instance of 'ObserverList<(AnimationStatus) => void>' (from
+package:flutter/src/foundation/observer_list.dart)
+           <- _statusListeners in Instance of '_AnimationSwap<double>' (from
+package:flutter/src/material/floating_action_button_location.dart)
+           <- first in Instance of 'AnimationMin<double>' (from
+package:flutter/src/animation/animations.dart)
+           <- Closure: (AnimationStatus) => void from Function
+'_maybeNotifyStatusListeners@368411118':. (from package:flutter/src/animation/animations.dart)
+           <- _List len:3 (from dart:core)
+           <- Instance(length:3) of '_GrowableList' (from dart:core)
+           <- _list in Instance of 'ObserverList<(AnimationStatus) => void>' (from
+package:flutter/src/foundation/observer_list.dart)
+           <- _statusListeners in Instance of 'AnimationController' (from
+package:flutter/src/animation/animation_controller.dart)
+           <- _floatingActionButtonVisibilityController in Instance of 'ScaffoldState' (from
+package:flutter/src/material/scaffold.dart)
+           <- _state in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'StatelessElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _element in Instance of '_AnimatedState' (from
+package:flutter/src/widgets/transitions.dart)
+           <- Closure: () => void from Function '_handleChange@818170175':. (from
+package:flutter/src/widgets/transitions.dart)
+           <- _List len:1 (from dart:core)
+           <- _listeners in Instance of 'ValueNotifier<bool>' (from
+package:flutter/src/foundation/change_notifier.dart)
+           <- userGestureInProgressNotifier in Instance of 'NavigatorState' (from
+package:flutter/src/widgets/navigator.dart)
+           <- _creator in Instance of '_WidgetTicker' (from
+package:flutter/src/widgets/ticker_provider.dart)
+           <- _ticker in Instance of 'AnimationController' (from
+package:flutter/src/animation/animation_controller.dart)
+           <- _parent in Instance of 'ProxyAnimation' (from
+package:flutter/src/animation/animations.dart)
+           <- parent in Instance of 'ReverseAnimation' (from
+package:flutter/src/animation/animations.dart)
+           <- _parent in Instance of 'ProxyAnimation' (from
+package:flutter/src/animation/animations.dart)
+           <- _reverseAnimation in Instance of '_DualTransitionBuilderState' (from
+package:flutter/src/widgets/dual_transition_builder.dart)
+           <- _state in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'StatelessElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- key in Instance of '_HashMapEntry' (from dart:collection)
+           <- _List len:32 (from dart:core)
+           <- _buckets in Instance of '_HashMap<Element, Object?>' (from dart:collection)
+           <- _dependents in Instance of 'InheritedElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- key in Instance of '_HashSetEntry<InheritedElement>' (from dart:collection)
+           <- _List len:8 (from dart:core)
+           <- _buckets in Instance of '_HashSet<InheritedElement>' (from dart:collection)
+           <- _dependencies in Instance of 'MultiChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'StatelessElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _element in Instance of '_AnimatedState' (from
+package:flutter/src/widgets/transitions.dart)
+           <- Closure: () => void from Function '_handleChange@818170175':. (from
+package:flutter/src/widgets/transitions.dart)
+           <- _List len:8 (from dart:core)
+           <- _Map len:2 (from dart:_compact_hash)
+           <- _map in Instance of 'HashedObserverList<() => void>' (from
+package:flutter/src/foundation/observer_list.dart)
+           <- _listeners in Instance of 'AnimationController' (from
+package:flutter/src/animation/animation_controller.dart)
+           <- _animationController in Instance of '_ExpansibleState' (from
+package:flutter/src/widgets/expansible.dart)
+           <- Closure: () => void from Function '_toggleExpansion@937186054':. (from
+package:flutter/src/widgets/expansible.dart)
+           <- _List len:2 (from dart:core)
+           <- _listeners in Instance of 'ExpansibleController' (from
+package:flutter/src/widgets/expansible.dart)
+           <- Closure: () => void from Function 'expand':. (from
+package:flutter/src/widgets/expansible.dart)
+           <- onTap in Instance of 'InkWell' (from package:flutter/src/material/ink_well.dart)
+           <- _widget in Instance of 'StatelessElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'StatelessElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'InheritedElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _List len:2 (from dart:core)
+           <- keyValuePairs in Instance of '_CompressedNode' (from
+package:flutter/src/foundation/persistent_hash_map.dart)
+           <- _List len:32 (from dart:core)
+           <- descendants in Instance of '_FullNode' (from
+package:flutter/src/foundation/persistent_hash_map.dart)
+           <- _root in Instance of 'PersistentHashMap<Type, InheritedElement>' (from
+package:flutter/src/foundation/persistent_hash_map.dart)
+           <- _inheritedElements in Instance of 'InheritedElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _element in Instance of '_ActionsState' (from
+package:flutter/src/widgets/actions.dart)
+           <- Closure: (Action<Intent>) => void from Function '_handleActionChanged@817441002':.
+(from package:flutter/src/widgets/actions.dart)
+           <- _List len:3 (from dart:core)
+           <- Instance(length:1) of '_GrowableList' (from dart:core)
+           <- _list in Instance of 'ObserverList<(Action<Intent>) => void>' (from
+package:flutter/src/foundation/observer_list.dart)
+           <- _listeners in Instance of 'CallbackAction<ButtonActivateIntent>' (from
+package:flutter/src/widgets/actions.dart)
+           <- _List len:8 (from dart:core)
+           <- _Map len:2 (from dart:_compact_hash)
+           <- _actionMap in Instance of '_InkResponseState' (from
+package:flutter/src/material/ink_well.dart)
+           <- Closure: (FocusHighlightMode) => void from Function 'handleFocusHighlightModeChange':.
+(from package:flutter/src/material/ink_well.dart)
+           <- _List len:8 (from dart:core)
+           <- _Map len:2 (from dart:_compact_hash)
+           <- _map in Instance of 'HashedObserverList<(FocusHighlightMode) => void>' (from
+package:flutter/src/foundation/observer_list.dart)
+           <- _listeners in Instance of '_HighlightModeManager' (from
+package:flutter/src/widgets/focus_manager.dart)
+           <- _highlightManager in Instance of 'FocusManager' (from
+package:flutter/src/widgets/focus_manager.dart)
+           <- Closure: () => void from Function 'applyFocusChangesIfNeeded':. (from
+package:flutter/src/widgets/focus_manager.dart)
+           <- field f in StackZoneSpecification._registerCallback.<anonymous closure> (from
+package:stack_trace/src/stack_zone_specification.dart)
+           <- field registered in _CustomZone.bindCallbackGuarded.<anonymous closure> (from
+dart:async)
+           <- field microtask in FakeAsync.run.<anonymous closure>.<anonymous closure> (from
+package:fake_async/fake_async.dart)
+           <- _List len:8 (from dart:core)
+           <- _table in Instance of 'ListQueue<() => void>' (from dart:collection)
+           <- _microtasks in Instance of 'FakeAsync' (from package:fake_async/fake_async.dart)
+           <- _currentFakeAsync in Instance of 'AutomatedTestWidgetsFlutterBinding' (from
+package:flutter_test/src/binding.dart)
+           <- _binding in Instance of '_BindingPipelineManifold' (from
+package:flutter/src/rendering/binding.dart)
+           <- _manifold in Instance of 'PipelineOwner' (from
+package:flutter/src/rendering/object.dart)
+           <- _owner in Instance of 'RenderParagraph' (from
+package:flutter/src/rendering/paragraph.dart)
+           <- Closure: () => void from Function '_scheduleSystemFontsUpdate@354266271':. (from
+package:flutter/src/rendering/paragraph.dart)
+           <- _List len:8 (from dart:core)
+           <- _Set len:4 (from dart:_compact_hash)
+           <- _systemFontsCallbacks in Instance of '_SystemFontsNotifier' (from
+package:flutter/src/painting/binding.dart)
+           <- _repaint in Instance of 'BannerPainter' (from package:flutter/src/widgets/banner.dart)
+           <- _painter in Instance of '_BannerState' (from package:flutter/src/widgets/banner.dart)
+           <- _state in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'StatelessElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'SingleChildRenderObjectElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of '_InheritedNotifierElement<FocusNode>' (from
+package:flutter/src/widgets/inherited_notifier.dart)
+           <- _child in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- key in Instance of '_HashMapEntry' (from dart:collection)
+           <- _List len:8 (from dart:core)
+           <- _buckets in Instance of '_HashMap<Element, Object?>' (from dart:collection)
+           <- _dependents in Instance of '_InheritedNotifierElement<FocusNode>' (from
+package:flutter/src/widgets/inherited_notifier.dart)
+           <- _child in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- key in Instance of '_HashMapEntry' (from dart:collection)
+           <- _List len:8 (from dart:core)
+           <- _buckets in Instance of '_HashMap<Element, Object?>' (from dart:collection)
+           <- _dependents in Instance of '_InheritedNotifierElement<FocusNode>' (from
+package:flutter/src/widgets/inherited_notifier.dart)
+           <- _child in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- key in Instance of '_HashMapEntry' (from dart:collection)
+           <- _List len:8 (from dart:core)
+           <- _buckets in Instance of '_HashMap<Element, Object?>' (from dart:collection)
+           <- _dependents in Instance of '_InheritedNotifierElement<FocusNode>' (from
+package:flutter/src/widgets/inherited_notifier.dart)
+           <- _child in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- key in Instance of '_HashMapEntry' (from dart:collection)
+           <- _List len:8 (from dart:core)
+           <- _buckets in Instance of '_HashMap<Element, Object?>' (from dart:collection)
+           <- _dependents in Instance of '_InheritedNotifierElement<FocusNode>' (from
+package:flutter/src/widgets/inherited_notifier.dart)
+           <- _child in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- key in Instance of '_HashMapEntry' (from dart:collection)
+           <- _List len:8 (from dart:core)
+           <- _buckets in Instance of '_HashMap<Element, Object?>' (from dart:collection)
+           <- _dependents in Instance of '_InheritedNotifierElement<FocusNode>' (from
+package:flutter/src/widgets/inherited_notifier.dart)
+           <- _child in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of '_InheritedNotifierElement<FocusNode>' (from
+package:flutter/src/widgets/inherited_notifier.dart)
+           <- _child in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _context in Instance of '_FocusTraversalGroupNode' (from
+package:flutter/src/widgets/focus_traversal.dart)
+           <- _List len:15 (from dart:core)
+           <- Instance(length:9) of '_GrowableList' (from dart:core)
+           <- _ancestors in Instance of '_FocusTraversalGroupNode' (from
+package:flutter/src/widgets/focus_traversal.dart)
+           <- _List len:3 (from dart:core)
+           <- Instance(length:1) of '_GrowableList' (from dart:core)
+           <- _children in Instance of 'FocusScopeNode' (from
+package:flutter/src/widgets/focus_manager.dart)
+           <- _enclosingScope in Instance of 'FocusScopeNode' (from
+package:flutter/src/widgets/focus_manager.dart)
+           <- _parent in Instance of 'FocusNode' (from
+package:flutter/src/widgets/focus_manager.dart)
+           <- _parent in Instance of 'FocusNode' (from
+package:flutter/src/widgets/focus_manager.dart)
+           <- _internalNode in Instance of '_FocusState' (from
+package:flutter/src/widgets/focus_scope.dart)
+           <- _state in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'InheritedElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _element in Instance of '_ActionsState' (from
+package:flutter/src/widgets/actions.dart)
+           <- Closure: (Action<Intent>) => void from Function '_handleActionChanged@817441002':.
+(from package:flutter/src/widgets/actions.dart)
+           <- _List len:3 (from dart:core)
+           <- Instance(length:1) of '_GrowableList' (from dart:core)
+           <- _list in Instance of 'ObserverList<(Action<Intent>) => void>' (from
+package:flutter/src/foundation/observer_list.dart)
+           <- _listeners in Instance of 'CallbackAction<ButtonActivateIntent>' (from
+package:flutter/src/widgets/actions.dart)
+           <- _List len:8 (from dart:core)
+           <- _Map len:2 (from dart:_compact_hash)
+           <- _actionMap in Instance of '_InkResponseState' (from
+package:flutter/src/material/ink_well.dart)
+           <- Closure: () => void from Function 'handleStatesControllerChange':. (from
+package:flutter/src/material/ink_well.dart)
+           <- _List len:2 (from dart:core)
+           <- _listeners in Instance of 'WidgetStatesController' (from
+package:flutter/src/widgets/widget_state.dart)
+           <- _internalStatesController in Instance of '_SelectableIconButtonState' (from
+package:flutter/src/material/icon_button.dart)
+           <- _state in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _child in Instance of 'StatelessElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- key in Instance of '_HashMapEntry' (from dart:collection)
+           <- _List len:32 (from dart:core)
+           <- _buckets in Instance of '_HashMap<Element, Object?>' (from dart:collection)
+           <- _dependents in Instance of 'InheritedElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _List len:32 (from dart:core)
+           <- keyValuePairs in Instance of '_CompressedNode' (from
+package:flutter/src/foundation/persistent_hash_map.dart)
+           <- _root in Instance of 'PersistentHashMap<Type, InheritedElement>' (from
+package:flutter/src/foundation/persistent_hash_map.dart)
+           <- _inheritedElements in Instance of 'StatefulElement' (from
+package:flutter/src/widgets/framework.dart)
+           <- _element in Instance of '_IndexRootsState' (from
+package:icd_dictionary/ui/dictionary_app.dart)
+           <- Context num_variables: 5 <- Closure: (DictionaryRepository) => List<Map<String,
+Object?>> (from package:icd_dictionary/ui/dictionary_app.dart)
+           <- field operation in DictionaryController.read.<anonymous closure> (from
+package:icd_dictionary/app/controller.dart)
+           <- computation in Instance of '_RemoteRunner<List<Map<String, Object?>>>' (from
+dart:isolate)
+          >
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///tmp/icd-work-build/app/test/tree_regression_test.dart:41:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///tmp/icd-work-build/app/test/tree_regression_test.dart line 41
+The test description was:
+  native hierarchy and Index expand inside narrow desktop pane
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:01 +0 -1: native hierarchy and Index expand inside narrow desktop pane [E]
+  Test failed. See exception logs above.
+  The test description was: native hierarchy and Index expand inside narrow desktop pane
+  
+00:01 +0 -1: Some tests failed.
+
+Failing tests:
+  /tmp/icd-work-build/app/test/tree_regression_test.dart: native hierarchy and Index expand inside narrow desktop pane

@@ -1,0 +1,23 @@
+{
+  "artifact": "manual-test-0.2.1/icd-offline-0.2.1-windows-x64-demo.zip",
+  "sha256": "3f5fc0033a0a8308ed3d24902513bd2845b38dbb6658e586ec5a4dedb32923d3",
+  "bytes": 15148895,
+  "architecture": "AMD64",
+  "crc": "passed",
+  "required_runtime_files": [
+    "flutter_windows.dll",
+    "sqlite3.dll",
+    "vcruntime140.dll",
+    "vcruntime140_1.dll",
+    "msvcp140.dll",
+    "data/icudtl.dat",
+    "LICENSES.md"
+  ],
+  "root_icon_payloads": 1,
+  "hosted_exe_launch": true,
+  "official_data_or_python_bundled": false,
+  "nhi_cm_sample_sha256": "48693eec99323996424cbc1827edaf868a676985c5344bce8f04dc4b53d7bd1e",
+  "full_query_snapshots_compared": 50,
+  "official_full_data_windows_import": "not run; full official data not uploaded",
+  "ci_run": "https://github.com/maria0010101/ICD-10-CM-Tool/actions/runs/40838564627"
+}

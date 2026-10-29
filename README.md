@@ -86,7 +86,7 @@ App 的正式 Android package ID 為 `tw.offline.icd.icd_dictionary`，debug／i
 
 ## 三、資料製作（Python 僅在 builder 執行）
 
-**目前 Builder 0.2.1 共11種設定（含可單獨啟用的NHI CM中英App包），沿用，新增CMS FY2026 April／FY2027及健保署2023 PCS App資料包。** 請使用 `manual-test-0.2.1/` 工具；PCS App包必須搭配App0.2.0以上，不可使用舊來源表SQLite改副檔名。詳細步驟見[0.2.0說明](docs/RELEASE_0.2.0.md)。
+**目前 Builder 0.2.1 共11種設定：新增可單獨啟用的NHI CM同版中英App包，保留既有CM／PCS與來源資料表設定。** 請使用 `manual-test-0.2.1/` 工具；PCS App包必須搭配App0.2.0以上，不可使用舊來源表SQLite改副檔名。詳細步驟見[0.2.1說明](docs/RELEASE_0.2.1.md)，PCS來源細節見[0.2.0說明](docs/RELEASE_0.2.0.md)。
 
 **歷史 Builder 0.1.2 新增本批官方原檔的 7 種來源設定、ODS 直接串流匯入，以及獨立 PCS／健保署全分頁 SQLite。** 詳見 [官方轉檔操作說明](docs/OFFICIAL_IMPORT_0.1.2.md)／[實測報告](docs/OFFICIAL_IMPORT_0.1.2_RESULTS.md)。新工具與實際資料在 `manual-test-0.1.2/`；舊 App 0.1.1 與舊產物保留，無需重建 APK。
 

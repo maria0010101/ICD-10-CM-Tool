@@ -1,6 +1,6 @@
 # 已知限制與發布停止條件
 
-本版是 **0.2.0 開發／demo**，不是已通過所有 Gate 的臨床產品；本次測試範圍以[0.2.0報告](RELEASE_0.2.0.md)為準，舊版證據保留。
+本版是 **0.2.1 開發／demo**，不是已通過所有 Gate 的臨床產品；本次測試範圍以[0.2.1報告](RELEASE_0.2.1.md)為準，舊版證據保留。
 
 * Windows：使用 GitHub Actions Windows x64／MSVC 建置。Hosted runner 的原生測試與 App 啟動不代表乾淨工作站、實體桌面操作或正式資料全量驗收；G7 仍需人工測試。
 .debug0.2.0 已於Android14 ARM64完成舊NHI CM包、兩種PCS包與CM英文包匯入／查詢回歸，正式App及使用者資料未修改。
@@ -17,3 +17,5 @@
 * 目前 SHA256 是完整性驗證，不是簽章；使用者仍需核對來源，勿把自述 source_organization 當官方認證。
 * 收藏／個人註解僅在本機，按 package ID 隔離；搜尋紀錄可關閉。不同版本收藏不自動遷移；未提供雲端同步或個人資料上傳。
 * 低階 FTS、索引檢查均在 isolate 執行，還未完成正式資料冷啟動與 UI frame-time 1000 次效能報告。搜尋結果最多100筆，顯式提示上限；Index 主詞每批100筆，子詞按展開載入。
+
+* 0.2.1新增NHI CM同版中英獨立包，可獨立啟用；代碼前綴導覽不是官方Chapter/Block，原ODS沒有美國Tabular notes／Index。舊NHI overlay依舊unresolved，不成為FY2027合格中譯。

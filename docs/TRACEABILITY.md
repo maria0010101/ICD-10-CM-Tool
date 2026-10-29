@@ -49,3 +49,11 @@
 | 新資料製作入口 | 3個App profiles + 舊7種，共10種；Windows獨立builder與Tk原生測試 | 原 `.sqlite` 是來源表，不改名冒充 `.icdpack` |
 
 歷史表與0.1.0 Gate記錄保留其當時範圍；最新實際結果以[0.2.0報告](RELEASE_0.2.0.md)及對應evidence為準。
+
+## 0.2.1修正追蹤
+
+- FR003/032/035/041：新增NHI CM同版獨立combined包，原值全量audit及中文／英文／碼50次查詢，舊overlay不改版別政策；`nhi_cm_pack.py`、`audit_nhi_cm.py`、`nhi_cm_test.dart`。
+- FR010/013/022：`loadChildren`與`resolveTarget`純資料API在UI作用域外產生查詢closure；分類樹／Index native widget展開及100筆分批，避免State/Element隱含跨isolate；`tree_regression_test.dart`，原重現log保留。
+- FR043/046：管理介面分辨附加中譯／獨立版，無相容base時不允許錯用overlay；GUI預設獨立NHI CM與用途提示，11種profiles。
+
+最新結果與未測範圍見[0.2.1報告](RELEASE_0.2.1.md)。
