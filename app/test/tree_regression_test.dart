@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:ui' as ui;
 
+import 'package:flutter/services.dart';
+
 import 'package:flutter/rendering.dart';
 
 import 'package:flutter/material.dart' hide DataRow;
@@ -52,10 +54,27 @@ void main() {
         controller = TrackingController(store);
         await controller.choose(hash);
       }
+      // Native-test rendering proof only, not an interactive EXE screenshot.
+      final font = File(
+        Platform.isWindows
+            ? r'C:\Windows\Fonts\segoeui.ttf'
+            : '/usr/share/fonts/TTF/DejaVuSans.ttf',
+      );
+      if (await font.exists()) {
+        final loader = FontLoader('TreeProof')
+          ..addFont(
+            Future.value(ByteData.sublistView(await font.readAsBytes())),
+          );
+        await loader.load();
+      }
       final capture = GlobalKey();
       try {
         await tester.pumpWidget(
           MaterialApp(
+            theme: ThemeData(
+              fontFamily: 'TreeProof',
+              brightness: Brightness.light,
+            ),
             home: Scaffold(
               body: Align(
                 alignment: Alignment.topLeft,
@@ -63,19 +82,22 @@ void main() {
                   width: 260,
                   child: RepaintBoundary(
                     key: capture,
-                    child: ListView(
-                      children: [
-                        HierarchyTile(
-                          row: controller.roots.first,
-                          controller: controller,
-                          onOpen: controller.open,
-                        ),
-                        IndexRoots(
-                          controller: controller,
-                          type: 'alphabetic',
-                          onOpen: controller.open,
-                        ),
-                      ],
+                    child: ColoredBox(
+                      color: Colors.white,
+                      child: ListView(
+                        children: [
+                          HierarchyTile(
+                            row: controller.roots.first,
+                            controller: controller,
+                            onOpen: controller.open,
+                          ),
+                          IndexRoots(
+                            controller: controller,
+                            type: 'alphabetic',
+                            onOpen: controller.open,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
