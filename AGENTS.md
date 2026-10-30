@@ -35,7 +35,7 @@
 - **跨平台原封不動匯入**：標準 `.icdpack` 為帶版本的 ZIP 容器，內含純 SQLite/JSON，禁止任何絕對路徑、平台專屬二進位與平台專屬 SQL extension；Windows 與 Android 接受同一 SHA-256 的檔案，資料與查詢結果一致。
 - **資料版本**：英文字典（例如 FY2027 Oct release）與台灣中文翻譯版（例如 2023 edition + revision date）獨立標記；不得只依 code 字串無條件合併跨版本翻譯；不明者顯示警示。
 - **註記與索引忠實度**：Chapter、Block、Category、Subcategory notes 都要保留來源節點及順序；顯示繼承註記並清楚標示來源。包括 Excludes1/2、Code First、Use Additional Code、Code Also、Includes、7th character、placeholder、Index cross-references（see / see also）等；不能因搜尋引擎正規化而改變官方原文。
-- **編碼安全**：結果排序不等於診斷確立；不要將未完成的 Category 當成有效可申報碼，須有明確的 billable/leaf/state 與版本語義；無中譯時顯示「該版本無經驗證官方中譯」。
+- **編碼安全**：結果排序不等於診斷確立；不要將未完成的 Category 當成有效可申報碼，須有明確的 billable/leaf/state 與版本語義；依2026-10-30使用者修訂，無合格中譯時省略中譯列，不產生或顯示缺譯提示；有中譯時仍保留來源與相容性標記。
 - **離線安全**：所有匯入均不得執行外部內容，ZIP 限制解壓大小/數量/路徑穿越，XML 禁止 XXE、公式不執行，SQLite 使用唯讀開啟資料包（匯入驗證階段為例外）。
 - **資料回復**：所有資料更新 staging + validation + atomic publish，錯誤則不影響現行版本；使用者資料獨立且不被清除。
 - **絕不杜撰資料**：沒有官方原始檔時，只使用清楚標示 `SAMPLE / NOT FOR CLINICAL CODING` 的測試資料；不得將示例當作正式完整字典。

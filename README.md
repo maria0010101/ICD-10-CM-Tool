@@ -6,6 +6,7 @@ App、資料包、`user.sqlite` 物理分離；App 不含字典、Python runtime
 
 ## 交付與驗收
 
+* **0.2.2：依分類人員回饋調整缺譯提示、notes浮動視窗及各尺寸導覽。** [操作與驗收](docs/RELEASE_0.2.2.md)，資料格式與既有包不變。
 * **0.2.1：新增健保署CM同版中英獨立包，修正分類樹／Index展開的isolate閉包錯誤。** [操作與驗收](docs/RELEASE_0.2.1.md)，新版成品與NHI CM包在 `manual-test-0.2.1/`；舊附加中譯包不變。
 
 * **0.2.0：修正Android大型NHI包匯入OOM，新增PCS獨立查詢／七軸／健保署2023同版中文搜尋。** [操作與驗收](docs/RELEASE_0.2.0.md)，成品放 `manual-test-0.2.0/`；舊CM包不用重製，PCS新包需新版App。

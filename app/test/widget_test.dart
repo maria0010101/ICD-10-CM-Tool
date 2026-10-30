@@ -108,12 +108,12 @@ void main() {
       await tester.pumpAndSettle();
       if (width >= 720) {
         await tester.scrollUntilVisible(
-          find.text('本層與繼承 notes'),
+          find.text('本層與繼承notes'),
           200,
           scrollable: find.byType(Scrollable).last,
         );
         await tester.pumpAndSettle();
-        expect(find.text('本層與繼承 notes'), findsOneWidget);
+        expect(find.text('本層與繼承notes'), findsOneWidget);
       }
       expect(tester.takeException(), isNull);
       await tester.pumpWidget(const SizedBox());

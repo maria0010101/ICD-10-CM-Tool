@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:file_selector/file_selector.dart';
+import 'package:flutter/foundation.dart'
+    show defaultTargetPlatform, TargetPlatform;
 import 'package:flutter/material.dart' hide DataRow;
 import 'package:flutter/services.dart';
 
@@ -67,6 +69,7 @@ class _DictionaryHomeState extends State<DictionaryHome> {
   final input = TextEditingController(), searchFocus = FocusNode();
   bool busy = false;
   int tab = 0;
+  bool managing = false;
   double treeWidth = 260, resultWidth = 370;
   @override
   void initState() {
@@ -346,9 +349,16 @@ class _DictionaryHomeState extends State<DictionaryHome> {
                     subtitle: Text(
                       code == null
                           ? '${r['entry_type']} → ${r['target_code'] ?? 'cross reference'}'
-                          : '${r['title_zh_tw'] ?? '該版本無經驗證官方中譯'}\n${r['state']} · ${c.store.manifest(c.active!).edition}',
+                          : [
+                              if ((r['title_zh_tw'] as String? ?? '')
+                                  .isNotEmpty)
+                                r['title_zh_tw'],
+                              '${r['state']} · ${c.store.manifest(c.active!).edition}',
+                            ].join('\n'),
                     ),
-                    isThreeLine: code != null,
+                    isThreeLine:
+                        code != null &&
+                        (r['title_zh_tw'] as String? ?? '').isNotEmpty,
                     onTap: () {
                       c.selected = i;
                       c.store.recordSearch(
@@ -502,13 +512,10 @@ class _DictionaryHomeState extends State<DictionaryHome> {
           style: Theme.of(context).textTheme.headlineSmall,
         ),
         const SizedBox(height: 10),
-        if (zh.isEmpty)
-          const Text('該版本無經驗證官方中譯')
-        else
-          for (final t in zh)
-            SelectableText(
-              '${t['title_zh_tw']}\n${m.sample ? '合成測試中譯' : '來源對照宣告'}：${t['translation_edition']} / ${t['translation_revision']}\n${t['mapping_status'] == 'reviewed_cross_release' ? '非同版，僅供參考（已審核跨版）' : t['mapping_status']} · ${t['source_reference']}',
-            ),
+        for (final t in zh)
+          SelectableText(
+            '${t['title_zh_tw']}\n${m.sample ? '合成測試中譯' : '來源對照宣告'}：${t['translation_edition']} / ${t['translation_revision']}\n${t['mapping_status'] == 'reviewed_cross_release' ? '非同版，僅供參考（已審核跨版）' : t['mapping_status']} · ${t['source_reference']}',
+          ),
         if ((d['references'] as List).length > zh.length)
           ExpansionTile(
             title: const Text('顯示未確認跨版參考（不代表官方相容）'),
@@ -563,6 +570,11 @@ class _DictionaryHomeState extends State<DictionaryHome> {
               label: const Text('個人註解'),
               onPressed: () => editNote(m, d),
             ),
+            TextButton.icon(
+              icon: const Icon(Icons.notes),
+              label: const Text('本層與繼承notes'),
+              onPressed: () => showNotes(m, d),
+            ),
           ],
         ),
         const Divider(),
@@ -592,35 +604,6 @@ class _DictionaryHomeState extends State<DictionaryHome> {
         const Text('階層（由上而下）'),
         for (final a in d['ancestors'] as List)
           Text('${a['code']} ${a['title_en']}'),
-        const SizedBox(height: 16),
-        Text(
-          m.isPcs ? 'PCS 來源註記與 section 參考定義（非 CM 繼承規則）' : '本層與繼承 notes',
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
-        for (final n in (d['notes'] as List).where(
-          (n) =>
-              n['note_type'] != 'pcs_table' &&
-              n['note_type'] != 'nhi_source_columns',
-        ))
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '${n['note_type']} · ${n['inherited'] == true ? '繼承' : '本碼'}：${n['owner_code']} ${n['owner_title']}',
-                    style: Theme.of(context).textTheme.labelLarge,
-                  ),
-                  SelectableText(n['note_text'] as String),
-                  SelectableText(
-                    '來源：${n['source_reference']}',
-                    style: Theme.of(context).textTheme.labelSmall,
-                  ),
-                ],
-              ),
-            ),
-          ),
         const Divider(),
         const Text('子碼'),
         for (final child in d['children'] as List)
@@ -638,6 +621,61 @@ class _DictionaryHomeState extends State<DictionaryHome> {
       ],
     );
   }
+
+  Future<void> showNotes(PackManifest m, DataRow d) => showDialog<void>(
+    context: context,
+    builder: (context) {
+      final notes = (d['notes'] as List)
+          .where(
+            (n) =>
+                n['note_type'] != 'pcs_table' &&
+                n['note_type'] != 'nhi_source_columns',
+          )
+          .toList();
+      return AlertDialog(
+        title: const Text('本層與繼承notes'),
+        content: SizedBox(
+          width: 720,
+          height: MediaQuery.sizeOf(context).height * .6,
+          child: SelectionArea(
+            child: ListView(
+              children: [
+                Text('${d['code']}  ${d['title_en']}'),
+                if (m.isPcs) const Text('PCS 來源註記與 section 參考定義（非 CM 繼承規則）'),
+                if (notes.isEmpty) const Text('此來源未提供本層或繼承 notes'),
+                for (final n in notes)
+                  Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(12),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '${n['note_type']} · ${n['inherited'] == true ? '繼承' : '本碼'}：${n['owner_code']} ${n['owner_title']}',
+                            style: Theme.of(context).textTheme.labelLarge,
+                          ),
+                          Text(n['note_text'] as String),
+                          Text(
+                            '來源：${n['source_reference']}',
+                            style: Theme.of(context).textTheme.labelSmall,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('關閉'),
+          ),
+        ],
+      );
+    },
+  );
 
   Future<void> editNote(PackManifest m, DataRow d) async {
     final text = TextEditingController(
@@ -934,6 +972,22 @@ class _DictionaryHomeState extends State<DictionaryHome> {
     );
   }
 
+  Widget panelSelector() => Padding(
+    padding: const EdgeInsets.all(8),
+    child: SegmentedButton<int>(
+      segments: const [
+        ButtonSegment(value: 0, icon: Icon(Icons.search), label: Text('搜尋')),
+        ButtonSegment(
+          value: 1,
+          icon: Icon(Icons.account_tree_outlined),
+          label: Text('分類'),
+        ),
+      ],
+      selected: {tab},
+      onSelectionChanged: (selection) => setState(() => tab = selection.single),
+    ),
+  );
+
   Widget divider(bool tree) => GestureDetector(
     behavior: HitTestBehavior.opaque,
     onHorizontalDragUpdate: (d) => setState(() {
@@ -991,7 +1045,7 @@ class _DictionaryHomeState extends State<DictionaryHome> {
             ),
             IconButton(
               tooltip: '資料管理',
-              onPressed: () => setState(() => tab = tab == 2 ? 0 : 2),
+              onPressed: () => setState(() => managing = !managing),
               icon: const Icon(Icons.storage),
             ),
           ],
@@ -1030,7 +1084,7 @@ class _DictionaryHomeState extends State<DictionaryHome> {
             Expanded(
               child: LayoutBuilder(
                 builder: (context, constraints) {
-                  if (tab == 2) {
+                  if (managing) {
                     return managePanel();
                   }
                   if (c.active == null) {
@@ -1065,12 +1119,30 @@ class _DictionaryHomeState extends State<DictionaryHome> {
                   }
                   final panes = paneCount(constraints.maxWidth);
                   if (panes == 1) {
-                    return tab == 1 ? treePanel() : searchPanel();
+                    final panel = tab == 1 ? treePanel() : searchPanel();
+                    if (defaultTargetPlatform != TargetPlatform.windows) {
+                      return panel;
+                    }
+                    return Column(
+                      children: [
+                        panelSelector(),
+                        Expanded(child: panel),
+                      ],
+                    );
                   }
                   if (panes == 2) {
                     return Row(
                       children: [
-                        Expanded(child: tab == 1 ? treePanel() : searchPanel()),
+                        Expanded(
+                          child: Column(
+                            children: [
+                              panelSelector(),
+                              Expanded(
+                                child: tab == 1 ? treePanel() : searchPanel(),
+                              ),
+                            ],
+                          ),
+                        ),
                         const VerticalDivider(width: 1),
                         Expanded(child: detailPanel()),
                       ],
@@ -1093,18 +1165,24 @@ class _DictionaryHomeState extends State<DictionaryHome> {
             ),
           ],
         ),
-        bottomNavigationBar: NavigationBar(
-          selectedIndex: tab,
-          onDestinationSelected: (v) => setState(() => tab = v),
-          destinations: const [
-            NavigationDestination(icon: Icon(Icons.search), label: '搜尋'),
-            NavigationDestination(
-              icon: Icon(Icons.account_tree_outlined),
-              label: '分類',
-            ),
-            NavigationDestination(icon: Icon(Icons.storage), label: '資料'),
-          ],
-        ),
+        bottomNavigationBar:
+            paneCount(MediaQuery.sizeOf(context).width) == 1 &&
+                defaultTargetPlatform != TargetPlatform.windows
+            ? NavigationBar(
+                selectedIndex: tab,
+                onDestinationSelected: (v) => setState(() {
+                  tab = v;
+                  managing = false;
+                }),
+                destinations: const [
+                  NavigationDestination(icon: Icon(Icons.search), label: '搜尋'),
+                  NavigationDestination(
+                    icon: Icon(Icons.account_tree_outlined),
+                    label: '分類',
+                  ),
+                ],
+              )
+            : null,
       ),
     ),
   );
