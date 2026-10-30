@@ -1,0 +1,1210 @@
+{
+  "package_sha256": "47a8de79118cd66e7e7365a0085a4323318b893fad08282074730d31b5582ed5",
+  "query_count": 50,
+  "sqlite_version": "3.54.1",
+  "snapshot_sha256": "9a6c1e4a7a4ab4b0c8666d1291818ac74ca19bf0acee58bafc235f61685b26d4",
+  "snapshot": {
+    "queries": [
+      {
+        "query": "I50.9",
+        "results": [
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "I509",
+        "results": [
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": " i509 ",
+        "results": [
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "i50.9",
+        "results": [
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "Ｉ５０９",
+        "results": [
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "I50",
+        "results": [
+          {
+            "id": 3,
+            "code": "I50",
+            "code_normalized": "I50",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Heart failure",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "I5",
+        "results": [
+          {
+            "id": 3,
+            "code": "I50",
+            "code_normalized": "I50",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Heart failure",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "heart failure",
+        "results": [
+          {
+            "id": 3,
+            "code": "I50",
+            "code_normalized": "I50",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Heart failure",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          },
+          {
+            "id": 2,
+            "term_path": "Failure > heart"
+          },
+          {
+            "id": 3,
+            "term_path": "Failure > heart > unspecified"
+          }
+        ]
+      },
+      {
+        "query": "failure heart",
+        "results": [
+          {
+            "id": 3,
+            "code": "I50",
+            "code_normalized": "I50",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Heart failure",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          },
+          {
+            "id": 2,
+            "term_path": "Failure > heart"
+          },
+          {
+            "id": 3,
+            "term_path": "Failure > heart > unspecified"
+          }
+        ]
+      },
+      {
+        "query": "heart",
+        "results": [
+          {
+            "id": 3,
+            "code": "I50",
+            "code_normalized": "I50",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Heart failure",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          },
+          {
+            "id": 2,
+            "term_path": "Failure > heart"
+          },
+          {
+            "id": 3,
+            "term_path": "Failure > heart > unspecified"
+          }
+        ]
+      },
+      {
+        "query": "failure",
+        "results": [
+          {
+            "id": 3,
+            "code": "I50",
+            "code_normalized": "I50",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Heart failure",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 5,
+            "code": "N17",
+            "code_normalized": "N17",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Acute kidney failure",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          },
+          {
+            "id": 6,
+            "code": "N17.9",
+            "code_normalized": "N179",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Acute kidney failure, unspecified",
+            "title_zh_tw": "腎衰竭",
+            "translation_status": "exact_edition"
+          },
+          {
+            "id": 1,
+            "term_path": "Failure"
+          },
+          {
+            "id": 2,
+            "term_path": "Failure > heart"
+          },
+          {
+            "id": 3,
+            "term_path": "Failure > heart > unspecified"
+          }
+        ]
+      },
+      {
+        "query": "hear",
+        "results": [
+          {
+            "id": 3,
+            "code": "I50",
+            "code_normalized": "I50",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Heart failure",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          },
+          {
+            "id": 2,
+            "term_path": "Failure > heart"
+          },
+          {
+            "id": 3,
+            "term_path": "Failure > heart > unspecified"
+          }
+        ]
+      },
+      {
+        "query": "fail",
+        "results": [
+          {
+            "id": 3,
+            "code": "I50",
+            "code_normalized": "I50",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Heart failure",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 5,
+            "code": "N17",
+            "code_normalized": "N17",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Acute kidney failure",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          },
+          {
+            "id": 6,
+            "code": "N17.9",
+            "code_normalized": "N179",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Acute kidney failure, unspecified",
+            "title_zh_tw": "腎衰竭",
+            "translation_status": "exact_edition"
+          },
+          {
+            "id": 1,
+            "term_path": "Failure"
+          },
+          {
+            "id": 2,
+            "term_path": "Failure > heart"
+          },
+          {
+            "id": 3,
+            "term_path": "Failure > heart > unspecified"
+          }
+        ]
+      },
+      {
+        "query": "heart OR failure",
+        "results": []
+      },
+      {
+        "query": "heart \" failure",
+        "results": [
+          {
+            "id": 3,
+            "code": "I50",
+            "code_normalized": "I50",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Heart failure",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          },
+          {
+            "id": 2,
+            "term_path": "Failure > heart"
+          },
+          {
+            "id": 3,
+            "term_path": "Failure > heart > unspecified"
+          }
+        ]
+      },
+      {
+        "query": "kidney",
+        "results": [
+          {
+            "id": 5,
+            "code": "N17",
+            "code_normalized": "N17",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Acute kidney failure",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 6,
+            "code": "N17.9",
+            "code_normalized": "N179",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Acute kidney failure, unspecified",
+            "title_zh_tw": "腎衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "acute kidney",
+        "results": [
+          {
+            "id": 5,
+            "code": "N17",
+            "code_normalized": "N17",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Acute kidney failure",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 6,
+            "code": "N17.9",
+            "code_normalized": "N179",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Acute kidney failure, unspecified",
+            "title_zh_tw": "腎衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "failure acute",
+        "results": [
+          {
+            "id": 5,
+            "code": "N17",
+            "code_normalized": "N17",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Acute kidney failure",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 6,
+            "code": "N17.9",
+            "code_normalized": "N179",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Acute kidney failure, unspecified",
+            "title_zh_tw": "腎衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "N17.9",
+        "results": [
+          {
+            "id": 6,
+            "code": "N17.9",
+            "code_normalized": "N179",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Acute kidney failure, unspecified",
+            "title_zh_tw": "腎衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "N179",
+        "results": [
+          {
+            "id": 6,
+            "code": "N17.9",
+            "code_normalized": "N179",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Acute kidney failure, unspecified",
+            "title_zh_tw": "腎衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": " n179 ",
+        "results": [
+          {
+            "id": 6,
+            "code": "N17.9",
+            "code_normalized": "N179",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Acute kidney failure, unspecified",
+            "title_zh_tw": "腎衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "N17",
+        "results": [
+          {
+            "id": 5,
+            "code": "N17",
+            "code_normalized": "N17",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Acute kidney failure",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 6,
+            "code": "N17.9",
+            "code_normalized": "N179",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Acute kidney failure, unspecified",
+            "title_zh_tw": "腎衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "腎衰竭",
+        "results": [
+          {
+            "id": 6,
+            "code": "N17.9",
+            "code_normalized": "N179",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Acute kidney failure, unspecified",
+            "title_zh_tw": "腎衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "心臟衰竭",
+        "results": [
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "心臟",
+        "results": [
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "衰竭",
+        "results": [
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          },
+          {
+            "id": 6,
+            "code": "N17.9",
+            "code_normalized": "N179",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Acute kidney failure, unspecified",
+            "title_zh_tw": "腎衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "心",
+        "results": [
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "腎",
+        "results": [
+          {
+            "id": 6,
+            "code": "N17.9",
+            "code_normalized": "N179",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Acute kidney failure, unspecified",
+            "title_zh_tw": "腎衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "未確認跨版翻譯",
+        "results": []
+      },
+      {
+        "query": "S00.0",
+        "results": [
+          {
+            "id": 8,
+            "code": "S00.0",
+            "code_normalized": "S000",
+            "billable": 0,
+            "state": "requires_extension",
+            "title_en": "SAMPLE placeholder requires seventh character",
+            "title_zh_tw": null,
+            "translation_status": null
+          }
+        ]
+      },
+      {
+        "query": "S000",
+        "results": [
+          {
+            "id": 8,
+            "code": "S00.0",
+            "code_normalized": "S000",
+            "billable": 0,
+            "state": "requires_extension",
+            "title_en": "SAMPLE placeholder requires seventh character",
+            "title_zh_tw": null,
+            "translation_status": null
+          }
+        ]
+      },
+      {
+        "query": "S00",
+        "results": [
+          {
+            "id": 7,
+            "code": "S00",
+            "code_normalized": "S00",
+            "billable": 0,
+            "state": "requires_extension",
+            "title_en": "SAMPLE injury category",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 8,
+            "code": "S00.0",
+            "code_normalized": "S000",
+            "billable": 0,
+            "state": "requires_extension",
+            "title_en": "SAMPLE placeholder requires seventh character",
+            "title_zh_tw": null,
+            "translation_status": null
+          }
+        ]
+      },
+      {
+        "query": "injury",
+        "results": [
+          {
+            "id": 7,
+            "code": "S00",
+            "code_normalized": "S00",
+            "billable": 0,
+            "state": "requires_extension",
+            "title_en": "SAMPLE injury category",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 4,
+            "term_path": "SAMPLE injury"
+          }
+        ]
+      },
+      {
+        "query": "placeholder",
+        "results": [
+          {
+            "id": 8,
+            "code": "S00.0",
+            "code_normalized": "S000",
+            "billable": 0,
+            "state": "requires_extension",
+            "title_en": "SAMPLE placeholder requires seventh character",
+            "title_zh_tw": null,
+            "translation_status": null
+          }
+        ]
+      },
+      {
+        "query": "seventh",
+        "results": [
+          {
+            "id": 8,
+            "code": "S00.0",
+            "code_normalized": "S000",
+            "billable": 0,
+            "state": "requires_extension",
+            "title_en": "SAMPLE placeholder requires seventh character",
+            "title_zh_tw": null,
+            "translation_status": null
+          }
+        ]
+      },
+      {
+        "query": "Failure > heart",
+        "results": [
+          {
+            "id": 3,
+            "code": "I50",
+            "code_normalized": "I50",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Heart failure",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          },
+          {
+            "id": 2,
+            "term_path": "Failure > heart"
+          },
+          {
+            "id": 3,
+            "term_path": "Failure > heart > unspecified"
+          }
+        ]
+      },
+      {
+        "query": "SAMPLE",
+        "results": [
+          {
+            "id": 1,
+            "code": "",
+            "code_normalized": "@chapter",
+            "billable": 0,
+            "state": "nonbillable",
+            "title_en": "SAMPLE Chapter",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 2,
+            "code": "",
+            "code_normalized": "@block",
+            "billable": 0,
+            "state": "nonbillable",
+            "title_en": "SAMPLE Block",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 7,
+            "code": "S00",
+            "code_normalized": "S00",
+            "billable": 0,
+            "state": "requires_extension",
+            "title_en": "SAMPLE injury category",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 8,
+            "code": "S00.0",
+            "code_normalized": "S000",
+            "billable": 0,
+            "state": "requires_extension",
+            "title_en": "SAMPLE placeholder requires seventh character",
+            "title_zh_tw": null,
+            "translation_status": null
+          },
+          {
+            "id": 4,
+            "term_path": "SAMPLE injury"
+          },
+          {
+            "id": 5,
+            "term_path": "SAMPLE neoplasm"
+          },
+          {
+            "id": 6,
+            "term_path": "SAMPLE substance"
+          }
+        ]
+      },
+      {
+        "query": "substance",
+        "results": [
+          {
+            "id": 6,
+            "term_path": "SAMPLE substance"
+          }
+        ]
+      },
+      {
+        "query": "neoplasm",
+        "results": [
+          {
+            "id": 5,
+            "term_path": "SAMPLE neoplasm"
+          }
+        ]
+      },
+      {
+        "query": "notpresentword",
+        "results": []
+      },
+      {
+        "query": "",
+        "results": [
+          {
+            "id": 3,
+            "code": "I50",
+            "code_normalized": "I50",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Heart failure"
+          },
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified"
+          },
+          {
+            "id": 5,
+            "code": "N17",
+            "code_normalized": "N17",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Acute kidney failure"
+          },
+          {
+            "id": 6,
+            "code": "N17.9",
+            "code_normalized": "N179",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Acute kidney failure, unspecified"
+          },
+          {
+            "id": 7,
+            "code": "S00",
+            "code_normalized": "S00",
+            "billable": 0,
+            "state": "requires_extension",
+            "title_en": "SAMPLE injury category"
+          },
+          {
+            "id": 8,
+            "code": "S00.0",
+            "code_normalized": "S000",
+            "billable": 0,
+            "state": "requires_extension",
+            "title_en": "SAMPLE placeholder requires seventh character"
+          }
+        ]
+      },
+      {
+        "query": "  ",
+        "results": [
+          {
+            "id": 3,
+            "code": "I50",
+            "code_normalized": "I50",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Heart failure"
+          },
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified"
+          },
+          {
+            "id": 5,
+            "code": "N17",
+            "code_normalized": "N17",
+            "billable": 0,
+            "state": "incomplete",
+            "title_en": "Acute kidney failure"
+          },
+          {
+            "id": 6,
+            "code": "N17.9",
+            "code_normalized": "N179",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Acute kidney failure, unspecified"
+          },
+          {
+            "id": 7,
+            "code": "S00",
+            "code_normalized": "S00",
+            "billable": 0,
+            "state": "requires_extension",
+            "title_en": "SAMPLE injury category"
+          },
+          {
+            "id": 8,
+            "code": "S00.0",
+            "code_normalized": "S000",
+            "billable": 0,
+            "state": "requires_extension",
+            "title_en": "SAMPLE placeholder requires seventh character"
+          }
+        ]
+      },
+      {
+        "query": "*",
+        "results": []
+      },
+      {
+        "query": "\"",
+        "results": []
+      },
+      {
+        "query": "OR",
+        "results": []
+      },
+      {
+        "query": "heart failure unspecified",
+        "results": [
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          },
+          {
+            "id": 3,
+            "term_path": "Failure > heart > unspecified"
+          }
+        ]
+      },
+      {
+        "query": "acute failure unspecified",
+        "results": [
+          {
+            "id": 6,
+            "code": "N17.9",
+            "code_normalized": "N179",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Acute kidney failure, unspecified",
+            "title_zh_tw": "腎衰竭",
+            "translation_status": "exact_edition"
+          }
+        ]
+      },
+      {
+        "query": "S00-S09",
+        "results": []
+      },
+      {
+        "query": "Failure unspecified",
+        "results": [
+          {
+            "id": 4,
+            "code": "I50.9",
+            "code_normalized": "I509",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Heart failure, unspecified",
+            "title_zh_tw": "心臟衰竭",
+            "translation_status": "exact_edition"
+          },
+          {
+            "id": 6,
+            "code": "N17.9",
+            "code_normalized": "N179",
+            "billable": 1,
+            "state": "billable",
+            "title_en": "Acute kidney failure, unspecified",
+            "title_zh_tw": "腎衰竭",
+            "translation_status": "exact_edition"
+          },
+          {
+            "id": 3,
+            "term_path": "Failure > heart > unspecified"
+          }
+        ]
+      },
+      {
+        "query": "initial encounter",
+        "results": []
+      }
+    ],
+    "notes": [
+      {
+        "id": 1,
+        "owner_node_id": 1,
+        "note_type": "includes",
+        "note_text": "SAMPLE chapter note",
+        "display_order": 0,
+        "source_element": "includes",
+        "source_reference": "SAMPLE:note",
+        "raw_xml": "<note>SAMPLE chapter note</note>",
+        "owner_code": "",
+        "owner_title": "SAMPLE Chapter",
+        "inherited": true
+      },
+      {
+        "id": 2,
+        "owner_node_id": 2,
+        "note_type": "excludes1",
+        "note_text": "SAMPLE excludes text; verify Tabular",
+        "display_order": 0,
+        "source_element": "excludes1",
+        "source_reference": "SAMPLE:note",
+        "raw_xml": "<note>SAMPLE excludes text; verify Tabular</note>",
+        "owner_code": "",
+        "owner_title": "SAMPLE Block",
+        "inherited": true
+      },
+      {
+        "id": 3,
+        "owner_node_id": 3,
+        "note_type": "codeFirst",
+        "note_text": "SAMPLE code-first instruction",
+        "display_order": 0,
+        "source_element": "codeFirst",
+        "source_reference": "SAMPLE:note",
+        "raw_xml": "<note>SAMPLE code-first instruction</note>",
+        "owner_code": "I50",
+        "owner_title": "Heart failure",
+        "inherited": true
+      },
+      {
+        "id": 4,
+        "owner_node_id": 3,
+        "note_type": "excludes2",
+        "note_text": "SAMPLE excludes2 instruction",
+        "display_order": 1,
+        "source_element": "excludes2",
+        "source_reference": "SAMPLE:note",
+        "raw_xml": "<note>SAMPLE excludes2 instruction</note>",
+        "owner_code": "I50",
+        "owner_title": "Heart failure",
+        "inherited": true
+      },
+      {
+        "id": 5,
+        "owner_node_id": 4,
+        "note_type": "useAdditionalCode",
+        "note_text": "SAMPLE local additional-code note",
+        "display_order": 0,
+        "source_element": "useAdditionalCode",
+        "source_reference": "SAMPLE:note",
+        "raw_xml": "<note>SAMPLE local additional-code note</note>",
+        "owner_code": "I50.9",
+        "owner_title": "Heart failure, unspecified",
+        "inherited": false
+      }
+    ],
+    "index_crossrefs": [
+      {
+        "id": 1,
+        "index_entry_id": 1,
+        "ref_type": "see",
+        "target_term": "Failure > heart",
+        "display_order": 0
+      },
+      {
+        "id": 2,
+        "index_entry_id": 2,
+        "ref_type": "seeAlso",
+        "target_term": "SAMPLE injury",
+        "display_order": 1
+      }
+    ],
+    "table_cells": [
+      {
+        "id": 1,
+        "index_entry_id": 5,
+        "column_label": "SAMPLE benign",
+        "target_code": "D00-D09",
+        "display_order": 0
+      },
+      {
+        "id": 2,
+        "index_entry_id": 6,
+        "column_label": "SAMPLE adverse effect",
+        "target_code": "T00-",
+        "display_order": 0
+      }
+    ],
+    "row_counts": {
+      "code_nodes": 8,
+      "index_crossrefs": 2,
+      "index_entries": 6,
+      "notes": 7,
+      "table_cells": 2,
+      "translations": 3,
+      "zh_ngrams": 25
+    }
+  },
+  "benchmark": {
+    "code": {
+      "iterations": 1000,
+      "p50_ms": 0.204,
+      "p95_ms": 0.349,
+      "p99_ms": 0.53
+    },
+    "english": {
+      "iterations": 1000,
+      "p50_ms": 0.688,
+      "p95_ms": 1.002,
+      "p99_ms": 1.364
+    },
+    "chinese": {
+      "iterations": 1000,
+      "p50_ms": 0.669,
+      "p95_ms": 1.048,
+      "p99_ms": 1.332
+    },
+    "tree": {
+      "iterations": 1000,
+      "p50_ms": 0.088,
+      "p95_ms": 0.198,
+      "p99_ms": 0.216
+    }
+  },
+  "os": "\"Windows Server 2025 Datacenter\" 10.0 (Build 26100)",
+  "time": "2026-10-30T05:47:22.910589Z",
+  "edition": "SAMPLE-1",
+  "build_revision": "working-tree-0.1.0"
+}

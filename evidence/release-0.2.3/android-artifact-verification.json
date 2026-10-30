@@ -1,0 +1,10 @@
+{
+  "version": "0.2.3",
+  "version_code": 2006,
+  "package": "tw.offline.icd.icd_dictionary",
+  "label": "ICD Offline",
+  "same_signer_as_022": true,
+  "sha256": "4594761414c25fab1c1a4ab90702f84682f54ebbccb9ac7e1b130746dae769b1",
+  "bytes": 21808048,
+  "no_internet_permission": true
+}

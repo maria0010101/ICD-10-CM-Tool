@@ -1,0 +1,13 @@
+{
+  "sha256": "3d29add9f9aa3061a926a0e88a54e460953f90ef73d320b6f8e3363df63fddbb",
+  "bytes": 15218463,
+  "zip_crc_passed": true,
+  "exe_machine": "AMD64",
+  "product_name": "ICD Offline",
+  "version": "0.2.3",
+  "crt_and_sqlite_present": true,
+  "official_and_user_data_absent": true,
+  "icon_payloads_embedded": 1,
+  "nhi2014_crossplatform_queries_equal": 100,
+  "hosted_windows_launch_passed": true
+}

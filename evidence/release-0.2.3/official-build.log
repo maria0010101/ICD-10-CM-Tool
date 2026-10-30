@@ -1,0 +1,22 @@
+BUILD cm-fy2023-apr
+PASS cm-fy2023-apr {'code_nodes': 97114, 'notes': 26036, 'index_entries': 97532, 'index_crossrefs': 16204, 'table_cells': 54098, 'translations': 0, 'zh_ngrams': 0}
+BUILD cm-fy2024-apr
+PASS cm-fy2024-apr {'code_nodes': 97615, 'notes': 26305, 'index_entries': 98117, 'index_crossrefs': 16297, 'table_cells': 54110, 'translations': 0, 'zh_ngrams': 0}
+BUILD cm-fy2025-apr
+PASS cm-fy2025-apr {'code_nodes': 97903, 'notes': 26716, 'index_entries': 98454, 'index_crossrefs': 16329, 'table_cells': 54128, 'translations': 0, 'zh_ngrams': 0}
+BUILD cm-fy2025-oct
+PASS cm-fy2025-oct {'code_nodes': 97903, 'notes': 26707, 'index_entries': 98455, 'index_crossrefs': 16329, 'table_cells': 54128, 'translations': 0, 'zh_ngrams': 0}
+BUILD nhi2014-cm-app
+PASS nhi2014-cm-app {'code_nodes': 91761, 'notes': 91956, 'index_entries': 0, 'index_crossrefs': 0, 'table_cells': 0, 'translations': 91736, 'zh_ngrams': 3050698}
+BUILD nhi2014-pcs-app
+PASS nhi2014-pcs-app {'code_nodes': 71943, 'notes': 71968, 'index_entries': 0, 'index_crossrefs': 0, 'table_cells': 0, 'translations': 71924, 'zh_ngrams': 2255449}
+BUILD pcs-fy2023-apr-app
+PASS pcs-fy2023-apr-app {'code_nodes': 79564, 'notes': 80330, 'index_entries': 24202, 'index_crossrefs': 18583, 'table_cells': 0, 'translations': 0, 'zh_ngrams': 0}
+BUILD pcs-fy2024-apr-app
+PASS pcs-fy2024-apr-app {'code_nodes': 79675, 'notes': 80468, 'index_entries': 24373, 'index_crossrefs': 18732, 'table_cells': 0, 'translations': 0, 'zh_ngrams': 0}
+BUILD pcs-fy2025-apr-app
+PASS pcs-fy2025-apr-app {'code_nodes': 80029, 'notes': 80836, 'index_entries': 24528, 'index_crossrefs': 18880, 'table_cells': 0, 'translations': 0, 'zh_ngrams': 0}
+BUILD pcs-fy2025-oct-app
+PASS pcs-fy2025-oct-app {'code_nodes': 79988, 'notes': 80789, 'index_entries': 24484, 'index_crossrefs': 18838, 'table_cells': 0, 'translations': 0, 'zh_ngrams': 0}
+
+EXIT=0

@@ -1,0 +1,9 @@
+{
+  "sha256": "6a757b62d9db98135e918e89d3430afc69d8b0a1aacbc40581e6ce0df2846e52",
+  "bytes": 31117999,
+  "zip_crc_passed": true,
+  "source_profiles": 21,
+  "python_and_profiles_parity": true,
+  "comparison": "text CRLF/LF normalized; binary bytes exact; archive unchanged",
+  "version": "0.2.3"
+}

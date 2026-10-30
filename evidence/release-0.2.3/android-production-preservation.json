@@ -1,0 +1,12 @@
+{
+  "package": "tw.offline.icd.icd_dictionary",
+  "package_metadata_unchanged": true,
+  "metadata": {
+    "versionCode": "2005 minSdk=24 targetSdk=36",
+    "versionName": "0.2.2",
+    "firstInstallTime": "2026-10-29 13:36:35",
+    "lastUpdateTime": "2026-10-30 13:38:14"
+  },
+  "test_package": "tw.offline.icd.icd_dictionary.debug",
+  "production_data_not_opened_by_test": true
+}

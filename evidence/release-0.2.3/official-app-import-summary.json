@@ -1,0 +1,159 @@
+{
+  "platform": "Linux 7.3.0-4-cachyos #1 SMP PREEMPT_DYNAMIC Fri, 23 Oct 2026 15:59:50 +0000",
+  "packs": {
+    "icd10cm-us-fy2023-apr-en": {
+      "package_sha256": "bf0296cbf697f8dc882da511d307046dbb95aca0b49fd8e01cca475fa678a921",
+      "row_counts": {
+        "code_nodes": 97114,
+        "index_crossrefs": 16204,
+        "index_entries": 97532,
+        "notes": 26036,
+        "table_cells": 54098,
+        "translations": 0,
+        "zh_ngrams": 0
+      },
+      "edition": "FY2023",
+      "release_id": "2023-04-01",
+      "successful_queries": 50
+    },
+    "icd10cm-us-fy2024-apr-en": {
+      "package_sha256": "7a087fef68925fae9120417c80c7e2e2c7482c6cfb8086e848213ebda5060be5",
+      "row_counts": {
+        "code_nodes": 97615,
+        "index_crossrefs": 16297,
+        "index_entries": 98117,
+        "notes": 26305,
+        "table_cells": 54110,
+        "translations": 0,
+        "zh_ngrams": 0
+      },
+      "edition": "FY2024",
+      "release_id": "2024-04-01",
+      "successful_queries": 50
+    },
+    "icd10cm-us-fy2025-apr-en": {
+      "package_sha256": "12f9db18786ddf26462f44d3ff905b8484ff8ef7b1b3d82bea71cd7d797ae857",
+      "row_counts": {
+        "code_nodes": 97903,
+        "index_crossrefs": 16329,
+        "index_entries": 98454,
+        "notes": 26716,
+        "table_cells": 54128,
+        "translations": 0,
+        "zh_ngrams": 0
+      },
+      "edition": "FY2025",
+      "release_id": "2025-04-01",
+      "successful_queries": 50
+    },
+    "icd10cm-us-fy2025-oct-en": {
+      "package_sha256": "f32fa653f443febab55fe0631315533cbddf236b7b0b2f78f87cf04ad12141c9",
+      "row_counts": {
+        "code_nodes": 97903,
+        "index_crossrefs": 16329,
+        "index_entries": 98455,
+        "notes": 26707,
+        "table_cells": 54128,
+        "translations": 0,
+        "zh_ngrams": 0
+      },
+      "edition": "FY2025",
+      "release_id": "2024-10-01",
+      "successful_queries": 50
+    },
+    "icd10cm-tw-nhi2014-1131212-bilingual": {
+      "package_sha256": "92218839488fe08dce6a4e0788bb0c82028ab628cb8691155ca56bff1e8da72d",
+      "row_counts": {
+        "code_nodes": 91761,
+        "index_crossrefs": 0,
+        "index_entries": 0,
+        "notes": 91956,
+        "table_cells": 0,
+        "translations": 91736,
+        "zh_ngrams": 3050698
+      },
+      "edition": "NHI-2014-CM",
+      "release_id": "1131212",
+      "successful_queries": 50
+    },
+    "icd10pcs-tw-nhi2014-1120509-bilingual": {
+      "package_sha256": "9fbff7076b3f7c6283ac8f2e2ca8be5c58d859dc86414594ba33c82b9e072cfd",
+      "row_counts": {
+        "code_nodes": 71943,
+        "index_crossrefs": 0,
+        "index_entries": 0,
+        "notes": 71968,
+        "table_cells": 0,
+        "translations": 71924,
+        "zh_ngrams": 2255449
+      },
+      "edition": "NHI-2014-PCS",
+      "release_id": "1120509",
+      "successful_queries": 50
+    },
+    "icd10pcs-us-fy2023-apr-en": {
+      "package_sha256": "e8a54a0fc74d4e1884ff7753207da4c4a4cec8962bd7a9ef48920710d24cc766",
+      "row_counts": {
+        "code_nodes": 79564,
+        "index_crossrefs": 18583,
+        "index_entries": 24202,
+        "notes": 80330,
+        "table_cells": 0,
+        "translations": 0,
+        "zh_ngrams": 0
+      },
+      "edition": "FY2023",
+      "release_id": "2023-04-01",
+      "successful_queries": 50
+    },
+    "icd10pcs-us-fy2024-apr-en": {
+      "package_sha256": "c14ff6616978feb6ad39a21c0cf1ed04b97371fac3d05503c7e439711956b9a2",
+      "row_counts": {
+        "code_nodes": 79675,
+        "index_crossrefs": 18732,
+        "index_entries": 24373,
+        "notes": 80468,
+        "table_cells": 0,
+        "translations": 0,
+        "zh_ngrams": 0
+      },
+      "edition": "FY2024",
+      "release_id": "2024-04-01",
+      "successful_queries": 50
+    },
+    "icd10pcs-us-fy2025-apr-en": {
+      "package_sha256": "4f78a37707fbc23ec0e15d8ec5c1b67684ed738b83bbf01080237fb976064978",
+      "row_counts": {
+        "code_nodes": 80029,
+        "index_crossrefs": 18880,
+        "index_entries": 24528,
+        "notes": 80836,
+        "table_cells": 0,
+        "translations": 0,
+        "zh_ngrams": 0
+      },
+      "edition": "FY2025",
+      "release_id": "2025-04-01",
+      "successful_queries": 50
+    },
+    "icd10pcs-us-fy2025-oct-en": {
+      "package_sha256": "843f5fb8172bba79152d4a947865ad4e275be2e5a91b5588db144f115e0b137e",
+      "row_counts": {
+        "code_nodes": 79988,
+        "index_crossrefs": 18838,
+        "index_entries": 24484,
+        "notes": 80789,
+        "table_cells": 0,
+        "translations": 0,
+        "zh_ngrams": 0
+      },
+      "edition": "FY2025",
+      "release_id": "2024-10-01",
+      "successful_queries": 50
+    }
+  },
+  "packages_imported": 10,
+  "successful_queries": 500,
+  "original_archive_hashes_preserved": true,
+  "full_snapshots_kept_local": true
+}

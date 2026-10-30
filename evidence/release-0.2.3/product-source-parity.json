@@ -1,0 +1,6 @@
+{
+  "dart_files": 10,
+  "android_build_matches_current_product_source": true,
+  "windows_product_commit": "e712aaa48409c3a793fd8dfb10ec9dbff5d731b5",
+  "only_later_app_change": "integration test define transport; not imported by production"
+}

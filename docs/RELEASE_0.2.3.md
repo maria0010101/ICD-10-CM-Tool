@@ -69,3 +69,18 @@ Windows PowerShell（可攜製作工具不需系統Python）：
 ## 實際測試／交付結果
 
 建置完成後於本節補記結果；未完成的項目不得算通過。
+
+### 完成結果
+
+- Python3.13.18：Linux58項通過；Windows可攜工具內建Python58項通過，真正Tk8.6視窗建構通過。LinuxTk9.0亦實際建構成功。唯一pytest warning來自刻意建立重複ZIP entry的惡意fixture。
+- Flutter3.47.5／Dart3.13.4：Linux及Windows各29項通過、1項既有完整英文資料測試因隔離／CI未放該原包而略過；兩端analyze無問題。本機另以`verify_source_profiles.dart`對全部10個新完整包執行App匯入／啟用與500次查詢，1項整合測試通過，原包hash全數不變。
+- 新資料全量來源稽核：8個CMS包及2個NHI2014包全部passed；NHI2014 CM91737碼／91736中譯／195修訂參照列，PCS71924碼及中譯／25修訂參照列。86個官方輸入檔前後hash相同。
+- Android14 ARM64隔離`.debug`整合測試1項通過，2個合成2014包的SHA／列數／100次完整查詢結果與Linux／Windows golden完全相同；正式套件的版本及安裝時間未變，測試沒有開啟其資料。測試harness初次傳入多行JSON define導致frontend URI解析失敗；改用minified JSON的UTF-8 base64後重新建置及實機測試通過。aapt版本由已安裝build-tools動態檢查，不假設存在36.1.0。
+- [Windows App CI 41010070834](https://github.com/maria0010101/ICD-10-CM-Tool/actions/runs/41010070834)／產品來源`e712aaa`成功：原生測試、完整CRT ZIP及EXE實際啟動，建立獨立user.sqlite且完整性通過。下載成品核對SHA／CRC／AMD64／產品名稱與版本／圖示payload／DLL／無內嵌資料，NHI2014兩包100次snapshot與Linux及Android一致。
+- [Windows Builder CI 41009953752](https://github.com/maria0010101/ICD-10-CM-Tool/actions/runs/41009953752)／工具來源`b4dbff1`成功：下載ZIP中的Python程式、schema及21個profiles與本機一致（文字CRLF/LF正規化比對，二進位逐byte）。更新的整合測試harness不屬於製作工具或正式App入口。
+- Release ARM64 APK0.2.3／2006、label為ICD Offline，與0.2.2相同簽章及applicationId，無INTERNET權限。仍沿用前版開發簽章，未宣稱商店正式簽署。三個成品與10個新資料包在`manual-test-0.2.3/`；APK副本已核對SHA並放手機`Download/manual-test-0.2.3/`，未自動安裝正式包。
+- 舊Windows App run41009953691因新增snapshot比對由最終run取代取消，不計為通過。`xvfb-run`不在本機；直接使用既有桌面DISPLAY的GUI smoke成功，不把缺工具算通過。
+
+### 尚未執行的驗收
+
+乾淨Windows工作站、實體平板、正式Release覆蓋安裝後的人工操作、全部10個新完整資料包在Windows／Android的全量跨端比對、飛航／封鎖網路及真實ENOSPC／kill/relaunch、正式資料各裝置p95 Gate仍未完整執行。這些不因名稱移除Demo而標示通過。現有跨端自動驗證是兩個合成2014包，不等同完整官方資料在所有平台的專業驗收。

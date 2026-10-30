@@ -1,0 +1,45 @@
+Resolving dependencies...
+Downloading packages...
+  cli_util 0.4.2 (0.6.0 available)
+  cross_file 0.3.5+5 (0.4.0 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_math 2.4.0 (2.4.4 available)
+Got dependencies!
+6 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading /tmp/icd-build-023/app/test/widget_test.dart
+00:00 +0: /tmp/icd-build-023/app/test/widget_test.dart: adaptive breakpoints
+00:00 +1: /tmp/icd-build-023/app/test/tree_regression_test.dart: native hierarchy and Index expand inside narrow desktop pane
+00:00 +2: /tmp/icd-build-023/app/test/tree_regression_test.dart: native hierarchy and Index expand inside narrow desktop pane
+00:00 +3: /tmp/icd-build-023/app/test/tree_regression_test.dart: native hierarchy and Index expand inside narrow desktop pane
+00:01 +4: /tmp/icd-build-023/app/test/tree_regression_test.dart: native hierarchy and Index expand inside narrow desktop pane
+00:01 +5: /tmp/icd-build-023/app/test/tree_regression_test.dart: native hierarchy and Index expand inside narrow desktop pane
+00:01 +6: /tmp/icd-build-023/app/test/tree_regression_test.dart: native hierarchy and Index expand inside narrow desktop pane
+00:01 +7: /tmp/icd-build-023/app/test/tree_regression_test.dart: native hierarchy and Index expand inside narrow desktop pane
+00:01 +8: /tmp/icd-build-023/app/test/tree_regression_test.dart: native hierarchy and Index expand inside narrow desktop pane
+00:02 +9: /tmp/icd-build-023/app/test/tree_regression_test.dart: native hierarchy and Index expand inside narrow desktop pane
+00:03 +10: /tmp/icd-build-023/app/test/tree_regression_test.dart: native hierarchy and Index expand inside narrow desktop pane
+00:03 +11: /tmp/icd-build-023/app/test/review_ui_test.dart: review navigation 390.0 TargetPlatform.android
+00:03 +12: /tmp/icd-build-023/app/test/review_ui_test.dart: review navigation 390.0 TargetPlatform.android
+00:03 +13: /tmp/icd-build-023/app/test/review_ui_test.dart: review navigation 390.0 TargetPlatform.android
+00:04 +14: /tmp/icd-build-023/app/test/review_ui_test.dart: review navigation 390.0 TargetPlatform.android
+00:05 +15: /tmp/icd-build-023/app/test/widget_test.dart: populated search/detail 390.0px at 1.6x text scale
+00:05 +16: /tmp/icd-build-023/app/test/widget_test.dart: populated search/detail 390.0px at 1.6x text scale
+00:05 +17: /tmp/icd-build-023/app/test/pcs_test.dart: PCS selector remains available when that family has no package
+00:07 +18: /tmp/icd-build-023/app/test/pcs_test.dart: PCS selector remains available when that family has no package
+00:07 +19: /tmp/icd-build-023/app/test/pcs_test.dart: PCS selector remains available when that family has no package
+00:08 +20: /tmp/icd-build-023/app/test/pcs_test.dart: PCS selector remains available when that family has no package
+00:08 +21: /tmp/icd-build-023/app/test/widget_test.dart: populated search/detail 1440.0px at 1.6x text scale
+00:08 +22: /tmp/icd-build-023/app/test/nhi_cm_test.dart: NHI CM standalone: independent activation, FTS, Chinese and lineage
+00:08 +23: /tmp/icd-build-023/app/test/review_ui_test.dart: review navigation 650.0 TargetPlatform.windows
+00:09 +24: /tmp/icd-build-023/app/test/nhi_cm_test.dart: overlay is labelled and cannot activate without a base
+00:10 +25: /tmp/icd-build-023/app/test/nhi_cm_test.dart: overlay is labelled and cannot activate without a base
+00:10 +26: /tmp/icd-build-023/app/test/nhi_cm_test.dart: overlay is labelled and cannot activate without a base
+00:11 +27: /tmp/icd-build-023/app/test/cross_probe_test.dart: 50-query native snapshot + 1000-query warm benchmark
+00:11 +28: /tmp/icd-build-023/app/test/cross_probe_test.dart: 50-query native snapshot + 1000-query warm benchmark
+00:11 +29: /tmp/icd-build-023/app/test/cross_probe_test.dart: official English release native snapshot and 1000 warm queries
+00:11 +29 ~1: All tests passed!
+
+EXIT=0

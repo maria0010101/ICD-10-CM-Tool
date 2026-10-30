@@ -1,0 +1,15 @@
+{
+  "environment": "GitHub hosted Windows runner, not a clean workstation",
+  "commit": "e712aaa48409c3a793fd8dfb10ec9dbff5d731b5",
+  "app_user_tables": [
+    "preferences",
+    "installed_packages",
+    "import_log",
+    "favorites",
+    "personal_notes",
+    "search_history"
+  ],
+  "process_alive": true,
+  "timestamp": "2026-10-30T05:49:43.9328039Z",
+  "app_user_sqlite_verified": true
+}

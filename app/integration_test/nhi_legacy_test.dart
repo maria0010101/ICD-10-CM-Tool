@@ -25,7 +25,9 @@ void main() {
     );
     const cm = String.fromEnvironment('LEGACY_CM_B64');
     const pcs = String.fromEnvironment('LEGACY_PCS_B64');
-    const expectedJson = String.fromEnvironment('LEGACY_EXPECTED_JSON');
+    final expectedJson = utf8.decode(
+      base64Decode(const String.fromEnvironment('LEGACY_EXPECTED_B64')),
+    );
     final snapshots = <String, Object?>{};
     try {
       for (final cl in ['cm', 'pcs']) {
