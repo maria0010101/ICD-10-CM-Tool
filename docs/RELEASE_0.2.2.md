@@ -22,8 +22,10 @@ cd /tmp/icd-build-022/app
 flutter pub get --enforce-lockfile
 flutter analyze
 flutter test --reporter expanded
-# 手機隔離ID，PACK1只含合成sample：
-flutter test -d DEVICE integration_test/review_ui_test.dart --no-uninstall --dart-define-from-file=DEFINES
+# 手機隔離ID，PACK1只含合成sample，先產生DEFINES並建置debug目標：
+flutter build apk --debug --target integration_test/review_ui_test.dart --dart-define-from-file=DEFINES
+# 回repo根目錄，由host核對實際APK ID、執行測試及截圖握手：
+python3 scripts/run_android_review_ui.py --device DEVICE --build-dir /tmp/icd-build-022/app --defines DEFINES
 flutter build apk --release --target-platform android-arm64 --split-per-abi
 ```
 

@@ -565,15 +565,19 @@ class _DictionaryHomeState extends State<DictionaryHome> {
                 setState(() {});
               },
             ),
-            TextButton.icon(
-              icon: const Icon(Icons.edit_note),
-              label: const Text('個人註解'),
-              onPressed: () => editNote(m, d),
-            ),
-            TextButton.icon(
-              icon: const Icon(Icons.notes),
-              label: const Text('本層與繼承notes'),
-              onPressed: () => showNotes(m, d),
+            Wrap(
+              children: [
+                TextButton.icon(
+                  icon: const Icon(Icons.edit_note),
+                  label: const Text('個人註解'),
+                  onPressed: () => editNote(m, d),
+                ),
+                TextButton.icon(
+                  icon: const Icon(Icons.notes),
+                  label: const Text('本層與繼承notes'),
+                  onPressed: () => showNotes(m, d),
+                ),
+              ],
             ),
           ],
         ),

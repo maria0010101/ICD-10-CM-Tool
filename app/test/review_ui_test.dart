@@ -94,7 +94,10 @@ void main() {
     testWidgets('notes dialog and optional translation: $sample', (
       tester,
     ) async {
-      tester.view.physicalSize = const Size(1440, 1100);
+      tester.view.physicalSize = Size(
+        sample == 'sample-nhi-cm-v1' ? 800 : 1440,
+        1100,
+      );
       tester.view.devicePixelRatio = 1;
       addTearDown(() {
         tester.view.resetPhysicalSize();
