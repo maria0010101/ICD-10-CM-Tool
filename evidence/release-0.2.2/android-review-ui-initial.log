@@ -1,0 +1,54 @@
+Resolving dependencies...
+Downloading packages...
+  cli_util 0.4.2 (0.6.0 available)
+  cross_file 0.3.5+5 (0.4.0 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_math 2.4.0 (2.4.4 available)
+Got dependencies!
+6 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading /tmp/icd-build-022/app/integration_test/review_ui_test.dart
+Running Gradle task 'assembleDebug'...                          
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/home/hpd/.gradle/wrapper/dists/gradle-9.3.1-all/9ot9r568e8zfvvd4mn8rbu1j0/gradle-9.3.1/lib/native-platform-0.22-milestone-29.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+Running Gradle task 'assembleDebug'...                             19.0s
+✓ Built build/app/outputs/flutter-apk/app-debug.apk
+Installing build/app/outputs/flutter-apk/app-debug.apk...           7.1s
+00:00 +0: classification reviewer phone UI with unchanged sample package
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: Too many elements
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:696:24)
+#1      WidgetController.widget (package:flutter_test/src/controller.dart:828:30)
+#2      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2429:15)
+#5      TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#6      WidgetController.scrollUntilVisible (package:flutter_test/src/controller.dart:2427:27)
+#7      main.<anonymous closure> (file:///tmp/icd-build-022/app/integration_test/review_ui_test.dart:51:22)
+<asynchronous suspension>
+#8      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#9      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 3 frames from dart:async and package:stack_trace)
+
+The test description was:
+  classification reviewer phone UI with unchanged sample package
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:03 +0 -1: classification reviewer phone UI with unchanged sample package [E]
+  Test failed. See exception logs above.
+  The test description was: classification reviewer phone UI with unchanged sample package
+  
+00:03 +0 -1: (tearDownAll)
+00:03 +0 -1: Some tests failed.
+
+Failing tests:
+  /tmp/icd-build-022/app/integration_test/review_ui_test.dart: classification reviewer phone UI with unchanged sample package
+EXIT=1

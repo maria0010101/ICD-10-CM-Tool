@@ -1,0 +1,54 @@
+{
+  "windows_zip": {
+    "crc_ok": true,
+    "required_runtime_files": true,
+    "amd64": true,
+    "no_official_or_user_data": true,
+    "no_python": true,
+    "entries": 30
+  },
+  "linux-probe.json": {
+    "linux_windows_snapshot_equal": true,
+    "fields": [
+      "package_sha256",
+      "query_count",
+      "snapshot_sha256",
+      "snapshot"
+    ]
+  },
+  "nhi-cm-native.json": {
+    "linux_windows_snapshot_equal": true,
+    "fields": [
+      "sha256",
+      "classification",
+      "snapshots"
+    ]
+  },
+  "pcs-native.json": {
+    "linux_windows_snapshot_equal": true,
+    "fields": [
+      "package_sha256",
+      "classification",
+      "seven_axes",
+      "index_target_not_inherited_from_subterm"
+    ]
+  },
+  "android_apk": {
+    "crc_ok": true,
+    "version": "0.2.2",
+    "version_code": 2005,
+    "arm64_only": true,
+    "same_signer_as_0_2_1": true,
+    "no_internet_permission": true,
+    "no_embedded_icdpack": true
+  },
+  "icd-offline-0.2.2-android-arm64-demo.apk": {
+    "sha256": "284a354f97598890e6d9169078f4ffff41f7342025d2d29a6f8f8367d63e7ea4",
+    "bytes": 21808060
+  },
+  "icd-offline-0.2.2-windows-x64-demo.zip": {
+    "sha256": "9e1183185a3ccab1e205b39a124afd2686c8d09c322b1ad380607c955f7b1e31",
+    "bytes": 15219156
+  },
+  "timestamp": "2026-10-30T04:04:52.770871+00:00"
+}

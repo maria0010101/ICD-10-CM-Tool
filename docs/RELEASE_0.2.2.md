@@ -39,3 +39,19 @@ Windows PowerShell：`./scripts/build_windows.ps1`（原生analyze/test/build及
 - 初次新增介面測試因platform override晚於framework invariant才回復而失敗；已在finally回復後重跑，未略過斷言。
 - 本版未改資料或要求重做全部正式資料稽核／效能Gate。Windows乾淨工作站、平板實機、正式App Release人工驗收與樣本／hosted測試分列，不假設通過。
 - 實際完成結果及產物雜湊於建置後補記。
+
+### 已完成本機及手機結果
+
+- Python46項通過；一則warning來自刻意建立的惡意重複ZIP項目fixture。Flutter28項通過／1項未在ASCII隔離目錄提供完整官方CM資料而略過；analyze無問題。
+- 手機Android14／ARM64隔離ID整合測試1項通過，實際點擊搜尋結果→詳情→notes浮動視窗→關閉→返回→資料管理往返；S00.0合成碼確實沒有合格中譯，缺譯列省略，未確認跨版參考警示保留。
+- 手機實際notes截圖為 `evidence/release-0.2.2/android-notes-dialog.png`，內容完全為SAMPLE；未用test engine截圖冒充EXE畫面。
+- 初次手機測試的捲動helper未限定Scrollable而報Too many elements，改為詳情主捲動區後重測，不是忽略framework例外。
+- 正式Android套件仍0.1.1／2002；測試未安裝或清除正式包，也沒有改裝置安全設定。
+- 既有NHI CM獨立包SHA仍為 `544c441b27e8b126d6342da50405580098298613b9d7ba360883268008b1ab7a`；原附加中譯包SHA仍為 `d81e1127ae174692a7bcda7e27189675639d6520dfe4f19385de39584bea52f0`。
+- Windows早期run41000225046由本次更新的相鄰按鈕排版run41000384050取代而取消，不計為通過。
+
+### 最終建置與交付
+
+Windows [Actions41000384050](https://github.com/maria0010101/ICD-10-CM-Tool/actions/runs/41000384050)／產品來源`71ce0cf`成功：Python46項、Flutter28項通過／1項完整官方資料略過、analyze0問題、EXE啟動與user.sqlite完整性通過。下載ZIP已核對遠端sidecar、CRC、AMD64、必要DLL及無內嵌官方／使用者資料；與Linux CM／NHI／PCS樣本snapshot逐值一致。
+
+Release ARM64 APK0.2.2／2005已完成並驗證與前版相同簽章，無INTERNET權限或內嵌字典。APK與Windows ZIP均已放 `manual-test-0.2.2/`，SHA256SUMS全數核對通過，手機APK副本在 `Download/manual-test-0.2.2/`。詳細大小、雜湊及測試矩陣見該目錄artifact-manifest與驗收報告；正式App未由測試自動升級。

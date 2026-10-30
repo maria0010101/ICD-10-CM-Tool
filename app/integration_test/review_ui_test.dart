@@ -30,14 +30,16 @@ void main() {
       try {
         final hash = await store.publish(await store.prepare(input));
         await c.choose(hash);
-        c.query = 'N179';
+        c.query = 'S000';
         await c.search();
         await tester.pumpWidget(DictionaryApp(controller: c));
         await tester.pumpAndSettle();
         expect(find.byType(NavigationDestination), findsNWidgets(2));
         expect(find.widgetWithText(NavigationDestination, '資料'), findsNothing);
         expect(find.textContaining('該版本無經驗證官方中譯'), findsNothing);
-        await tester.tap(find.text('N17.9  Acute kidney failure, unspecified'));
+        await tester.tap(
+          find.text('S00.0  SAMPLE placeholder requires seventh character'),
+        );
         final deadline = DateTime.now().add(const Duration(seconds: 20));
         while (find.text('代碼 / Index 詳情').evaluate().isEmpty &&
             DateTime.now().isBefore(deadline)) {
@@ -46,9 +48,15 @@ void main() {
         }
         await tester.pumpAndSettle();
         expect(find.text('代碼 / Index 詳情'), findsOneWidget);
+        expect(c.detail!['translations'] as List, isEmpty);
+        expect(find.text('顯示未確認跨版參考（不代表官方相容）'), findsOneWidget);
         expect(find.textContaining('該版本無經驗證官方中譯'), findsNothing);
         final button = find.widgetWithText(TextButton, '本層與繼承notes');
-        await tester.scrollUntilVisible(button, 160);
+        await tester.scrollUntilVisible(
+          button,
+          160,
+          scrollable: find.byType(Scrollable).first,
+        );
         await tester.pumpAndSettle();
         expect(find.text('SAMPLE chapter note'), findsNothing);
         await tester.tap(button);

@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-10-30T04:00:21.442350+00:00",
+  "source_commit": "71ce0cf843282c7c763bc82f6c086ff505264c19",
+  "python": "3.13.18",
+  "flutter": "3.47.5",
+  "dart": "3.13.4",
+  "python_tests": {
+    "passed": 46,
+    "warnings": 1,
+    "warning_reason": "intentional duplicate ZIP member malicious-input fixture"
+  },
+  "flutter_tests": {
+    "passed": 28,
+    "skipped": 1,
+    "skip_reason": "full official CM pack not copied into isolated ASCII build tree"
+  },
+  "analyze": "No issues found",
+  "unchanged_existing_packages": {
+    "nhi2023-cm-app.icdpack": "544c441b27e8b126d6342da50405580098298613b9d7ba360883268008b1ab7a",
+    "nhi-icd-10-cm-20261029-152146.icdpack": "d81e1127ae174692a7bcda7e27189675639d6520dfe4f19385de39584bea52f0"
+  },
+  "not_claimed": [
+    "clean Windows full data manual acceptance",
+    "physical tablet acceptance",
+    "production release upgrade verification",
+    "renewed full-data G3/G6 clinical acceptance"
+  ]
+}

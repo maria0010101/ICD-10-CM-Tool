@@ -1,0 +1,21 @@
+{
+  "app/lib/main.dart": "195df015028001e47dca438052f384384e0dfb373cd7df1ed986a367ff95ce40",
+  "app/lib/app/controller.dart": "47103486b014297eb9e943dcd072d8376cda3b32a60821d96e5b1ddcdb1a0e84",
+  "app/lib/domain/manifest.dart": "d4fc25c809984af0bdc8896c32333514d45ee8fbb4fedaded1599f858205fbb1",
+  "app/lib/data/safe_zip.dart": "89c27c29eb92cf28837c6b67e89f462b2b041ca0647630916db00ea83c0ffee7",
+  "app/lib/data/repository.dart": "71e62648b8579e8d0850dd6fdddd1632570b1e811499765284d6652b804192e8",
+  "app/lib/data/validator.dart": "095be4265521f9d68c4ee9820b2547d16adae0558ed5c53774ba4207b0f02448",
+  "app/lib/data/capacity.dart": "99f529850a00d3c7046649655eb0c6365941dd0e7f83a1fc5c9618238f589404",
+  "app/lib/data/package_store.dart": "a67f62070b94cb6fcdcb4f9e90341a0e633262e1667a8d697eb74922512093fe",
+  "app/lib/data/package_picker.dart": "870e48214d0ceff52a0d6753474adff42257e9d0edcb19c11cccaaaa9d021a02",
+  "app/lib/ui/dictionary_app.dart": "9545cfab3ae4b9d9eab0ff98d46b01a9938008d18b24e97fc662630a02a64325",
+  "app/test/widget_test.dart": "981f0cb2f938d8936f48c41a063108a649213a2b3636cd14ad601e8e9ba02369",
+  "app/test/repository_test.dart": "7b89c617e856889f192f747908eb429f2cd6d699a2ad80b29e0601498990aeca",
+  "app/test/cross_probe_test.dart": "1b18fd25966ba15e9eb8537500043ce5e2e42a1a4086f6242355b11bcb23de3f",
+  "app/test/pcs_test.dart": "9e6929fcc0e449784d03b6c2669907e2bdf037bd393d97aabf2dce456439663b",
+  "app/test/tree_regression_test.dart": "c326c26ffca6e3d8e1d4fea9efc259fa96cae737f425316b30a8c8bbffeca66d",
+  "app/test/nhi_cm_test.dart": "1bb2aab19878f3350228fc4a480f1ffcef3409c8210dde80ff3d45f18930bc83",
+  "app/test/review_ui_test.dart": "783b778b05a4bc74428a588e0aadc6bbe0d2153a949b3f5a65e2778f8090cbd6",
+  "app/pubspec.yaml": "f9e798f2a1a282e55ab119247a26a58d71d5ef67129c252dca21508d14b4024b",
+  "app/pubspec.lock": "2d09365d3aea57416624cdb2f4e4566a861f27e708b1b3fe66e5000eed6eafc4"
+}
