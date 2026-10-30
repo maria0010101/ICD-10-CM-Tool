@@ -61,6 +61,15 @@ Future<PackManifest> validateStage(
         throw PackException('資料列數不符：$table');
       }
     }
+    if (manifest.json['code_status_policy'] == 'not_provided' &&
+        db
+                .select(
+                  'SELECT count(*) AS n FROM code_nodes WHERE billable!=0',
+                )
+                .single['n'] !=
+            0) {
+      throw PackException('來源未提供可申報狀態，資料包不得推定完整碼');
+    }
     if (!manifest.isOverlay && manifest.counts['code_nodes'] == 0) {
       throw PackException('英文包不可為空');
     }

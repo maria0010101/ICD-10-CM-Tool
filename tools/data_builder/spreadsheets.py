@@ -33,7 +33,7 @@ def _text(element):
     return (element.text or '') + ''.join(_text(c) + (c.tail or '') for c in element)
 
 
-def ods_rows(path: Path):
+def ods_rows(path: Path, *, inert_formula_columns: dict[str, list[int]] | None = None):
     """Yield (sheet, original 1-based row, trimmed string cells).
 
     Read every sheet, even if a caller only needs CM. Never expand a million
@@ -65,7 +65,7 @@ def ods_rows(path: Path):
                         sheet = element.get(T + 'name'); row_number = 0
                         if not sheet or sheet in seen: raise PackageError('Missing/duplicate ODS sheet')
                         seen.add(sheet)
-                    if T + 'formula' in element.attrib:
+                    if T + 'formula' in element.attrib and (not inert_formula_columns or element.tag != T + 'table-cell'):
                         raise PackageError('Spreadsheet formulas prohibited')
                     if element.get(LINK, '').strip() and not element.get(LINK).startswith('#'):
                         raise PackageError('External ODS links prohibited')
@@ -81,9 +81,16 @@ def ods_rows(path: Path):
                         n = _count(cell, 'number-columns-repeated', 16_384)
                         column_count += n
                         if column_count > 16_384: raise PackageError('ODS column resource limit')
+                        formula = cell.get(T + 'formula')
+                        if formula is not None:
+                            allowed = (inert_formula_columns or {}).get(sheet, [])
+                            if n != 1 or column_count not in allowed:
+                                raise PackageError('Formula outside explicitly inert auxiliary columns')
                         value = '\n'.join(_text(p) for p in cell.findall(X + 'p'))
                         if not value and cell.get(O + 'value-type'):
                             value = cell.get(O + 'string-value', cell.get(O + 'value', cell.get(O + 'date-value', cell.get(O + 'boolean-value', ''))))
+                        if formula is not None:
+                            value = '[INERT FORMULA; NOT EVALUATED] ' + formula + ' [CACHED; NOT USED] ' + value
                         if value:
                             if len(cells) + pending + n > MAX_COLUMNS:
                                 raise PackageError('ODS nonempty column resource limit')

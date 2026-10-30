@@ -1,0 +1,31 @@
+{
+  "label": "CM App 英文 FY2023 · 2023-04-01",
+  "metadata": {
+    "classification": "ICD-10-CM",
+    "edition": "FY2023",
+    "release_id": "2023-04-01",
+    "effective_from": "2023-04-01",
+    "effective_to": "2023-09-30",
+    "source_organization": "CMS; CDC/NCHS",
+    "source_urls": [
+      "https://www.cms.gov/medicare/coding-billing/icd-10-codes",
+      "https://www.cms.gov/files/zip/2023-code-tables-tabular-and-index-updated-01/11/2023.zip",
+      "https://www.cms.gov/files/zip/2023-code-descriptions-tabular-order-updated-01/11/2023.zip"
+    ],
+    "created_at": "2026-10-30T00:00:00Z",
+    "is_sample": false,
+    "package_id": "icd10cm-us-fy2023-apr-en",
+    "package_version": "1.0.0",
+    "kind": "icd10cm_en",
+    "jurisdiction": "US",
+    "language": "en"
+  },
+  "inputs": [
+    "cms/FY 2023/icd10cm_table_2023.zip",
+    "cms/FY 2023/icd10OrderFiles.zip"
+  ],
+  "input_sha256": {
+    "cms/FY 2023/icd10cm_table_2023.zip": "ea2c13d265ef837e1bd58c8ce552901de6a9f4eeebf8c13a8b4774d43336d6fd",
+    "cms/FY 2023/icd10OrderFiles.zip": "cc7158228f6de01aa08650cc3afe446973a879dd78d44f1fec7150d45cfe1e06"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "label": "PCS 健保署2014同版中英獨立版 · 1120509（未提供USE）",
+  "metadata": {
+    "package_id": "icd10pcs-tw-nhi2014-1120509-bilingual",
+    "package_version": "1.0.0",
+    "kind": "icd10pcs_combined",
+    "classification": "ICD-10-PCS",
+    "jurisdiction": "TW",
+    "edition": "NHI-2014-PCS",
+    "release_id": "1120509",
+    "effective_from": "2016-01-01",
+    "effective_to": "2024-12-31",
+    "language": "en+zh-TW",
+    "source_organization": "衛生福利部中央健康保險署",
+    "source_urls": [
+      "https://www.nhi.gov.tw/ch/lp-3839-1.html",
+      "https://www.nhi.gov.tw/ch/cp-6051-aeadf-3050-1.html"
+    ],
+    "created_at": "2026-10-30T00:00:00Z",
+    "is_sample": false,
+    "translation_edition": "NHI-2014",
+    "translation_revision": "1120509",
+    "mapping_policy": "exact_edition",
+    "compatible_base_package_ids": [
+      "icd10pcs-tw-nhi2014-1120509-bilingual"
+    ],
+    "code_status_policy": "not_provided"
+  },
+  "inputs": [
+    "健保署/1.2 2014年版ICD-10-PCS中文版(112.05.09更新).ods"
+  ],
+  "input_sha256": {
+    "健保署/1.2 2014年版ICD-10-PCS中文版(112.05.09更新).ods": "e73521b61140597f25528c4bcf17cc255379e23d4e8d6bb9477441f4e73bf508"
+  },
+  "output_type": "nhi_legacy_app",
+  "legacy_layout": {
+    "sheets": [
+      "0-1",
+      "0-2",
+      "0-3",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "B",
+      "C",
+      "D",
+      "F",
+      "G",
+      "H"
+    ],
+    "reference_sheets": [
+      "修正說明"
+    ],
+    "inert_formula_columns": {
+      "0-2": [
+        5,
+        6
+      ]
+    }
+  }
+}

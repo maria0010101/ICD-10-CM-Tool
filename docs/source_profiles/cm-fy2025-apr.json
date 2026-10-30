@@ -1,0 +1,31 @@
+{
+  "label": "CM App 英文 FY2025 · 2025-04-01",
+  "metadata": {
+    "classification": "ICD-10-CM",
+    "edition": "FY2025",
+    "release_id": "2025-04-01",
+    "effective_from": "2025-04-01",
+    "effective_to": "2025-09-30",
+    "source_organization": "CMS; CDC/NCHS",
+    "source_urls": [
+      "https://www.cms.gov/medicare/coding-billing/icd-10-codes",
+      "https://www.cms.gov/files/zip/2025-code-tables-tabular-and-index-april.zip",
+      "https://www.cms.gov/files/zip/2025-code-descriptions-tabular-order-april.zip"
+    ],
+    "created_at": "2026-10-30T00:00:00Z",
+    "is_sample": false,
+    "package_id": "icd10cm-us-fy2025-apr-en",
+    "package_version": "1.0.0",
+    "kind": "icd10cm_en",
+    "jurisdiction": "US",
+    "language": "en"
+  },
+  "inputs": [
+    "cms/FY 2025/table-and-index.zip",
+    "cms/FY 2025/code-descriptions.zip"
+  ],
+  "input_sha256": {
+    "cms/FY 2025/table-and-index.zip": "bbb4e547338c7097dfaaaebeb6447a3bb7c23342223deacbdc9a573b651f7c03",
+    "cms/FY 2025/code-descriptions.zip": "82291c7e21ac175574ea79413dc9e777e84d0bc4c92c08f6c3a2b3827d7384dc"
+  }
+}

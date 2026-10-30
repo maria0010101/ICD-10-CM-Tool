@@ -127,3 +127,7 @@ CREATE INDEX idx_zh_code ON zh_ngrams(code_normalized);
 ## NHI CM同版combined來源（0.2.1）
 
 沿用既有 `icd10cm_combined` 與物理schema1.0.0；同一官方ODS列提供CM原碼／USE／英文／中文，`exact_edition`及compatible_base_package_ids只指向包自身。前綴導覽與source_scope／nhi_source_columns註記說明資料範圍，不冒充官方Chapter／Block／Index／Tabular notes；缺少的來源不虛構。原unresolved附加中譯仍不能單獨啟用或默認對FY2027相容；製作獨立版須另外產生新檔，不就地改寫使用者原包。
+
+## 0.2.3 NHI2014來源狀態擴充
+
+實體SQLite不變；可選manifest `code_status_policy=not_provided`表示來源未提供USE，所有節點billable保守為0但UI不可宣稱來源判為非申報碼。這種包required_app_schema_min為1.2.0（App0.2.3），舊包仍有效。譯名限同來源交錯列exact_edition，缺譯不補列；輔助公式僅保存為不可執行文字。詳[0.2.3](docs/RELEASE_0.2.3.md)。

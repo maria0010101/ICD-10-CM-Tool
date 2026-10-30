@@ -28,7 +28,17 @@ def build(source_dir: Path, profile_path: Path, output: Path):
     meta = dict(profile['metadata'])
     meta['source_files'] = [{'name':p.name, 'sha256':digest(p.read_bytes())} for p in paths]
     mode = profile.get('output_type', 'icdpack')
-    if mode == 'nhi_cm_app':
+    if mode == 'nhi_legacy_app':
+        from .nhi_legacy import import_legacy
+        if len(paths) != 1: raise PackageError('One explicit NHI 2014 ODS required')
+        with tempfile.TemporaryDirectory() as td:
+            db_path = Path(td)/'content.sqlite'; db = new_database(db_path)
+            try:
+                report = {'projection':import_legacy(db,paths[0],profile,meta)}
+                fill_search(db)
+            finally: db.close()
+            result = write_package(db_path,meta,output)
+    elif mode == 'nhi_cm_app':
         from .nhi_cm_pack import import_nhi_cm_app
         if len(paths) != 1: raise PackageError('One explicit NHI source required')
         with tempfile.TemporaryDirectory() as td:

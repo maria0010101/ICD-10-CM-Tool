@@ -57,3 +57,7 @@
 - FR043/046：管理介面分辨附加中譯／獨立版，無相容base時不允許錯用overlay；GUI預設獨立NHI CM與用途提示，11種profiles。
 
 最新結果與未測範圍見[0.2.1報告](RELEASE_0.2.1.md)。
+
+## 0.2.3追蹤
+
+FR032/040/041→10個新profiles、nhi_legacy.py與audit_nhi_legacy.py；FR033/035→原始交錯列、未知USE manifest能力1.2及UI標示、缺譯不補；FR045/046→預設拒絕公式，僅來源設定指定輔助欄inert保存、雙端validator阻擋billability推定。對應T31～T34，結果見[0.2.3](RELEASE_0.2.3.md)。

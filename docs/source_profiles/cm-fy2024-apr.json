@@ -1,0 +1,31 @@
+{
+  "label": "CM App 英文 FY2024 · 2024-04-01",
+  "metadata": {
+    "classification": "ICD-10-CM",
+    "edition": "FY2024",
+    "release_id": "2024-04-01",
+    "effective_from": "2024-04-01",
+    "effective_to": "2024-09-30",
+    "source_organization": "CMS; CDC/NCHS",
+    "source_urls": [
+      "https://www.cms.gov/medicare/coding-billing/icd-10-codes",
+      "https://www.cms.gov/files/zip/2024-code-tables-tabular-and-index-updated-02/01/2024.zip",
+      "https://www.cms.gov/files/zip/2024-code-descriptions-tabular-order-updated-02/01/2024.zip"
+    ],
+    "created_at": "2026-10-30T00:00:00Z",
+    "is_sample": false,
+    "package_id": "icd10cm-us-fy2024-apr-en",
+    "package_version": "1.0.0",
+    "kind": "icd10cm_en",
+    "jurisdiction": "US",
+    "language": "en"
+  },
+  "inputs": [
+    "cms/FY 2024/FY24-CMS-1785-F-ICD-10-Table-Index.zip",
+    "cms/FY 2024/FY24-CMS-1785-F-Code-Descriptions.zip"
+  ],
+  "input_sha256": {
+    "cms/FY 2024/FY24-CMS-1785-F-ICD-10-Table-Index.zip": "ce8d31737ef33e8b2de31810dfda7eb755d4180dee47c5db9139f69a0094f62a",
+    "cms/FY 2024/FY24-CMS-1785-F-Code-Descriptions.zip": "4b30a68a011edb4aaa5ad3747971ef26f3be09eb925821d78b0d4584be977e3e"
+  }
+}

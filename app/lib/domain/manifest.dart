@@ -63,6 +63,7 @@ class PackManifest {
       'translation_revision',
       'mapping_policy',
       'compatible_base_package_ids',
+      'code_status_policy',
     ];
     const other = ['is_sample', 'source_urls', 'source_files', 'row_counts'];
     if (m.keys.any((k) => ![...strings, ...optional, ...other].contains(k))) {
@@ -80,7 +81,9 @@ class PackManifest {
     }
     if (m['schema_version'] != '1.0.0' ||
         m['required_app_schema_min'] !=
-            (m['classification'] == 'ICD-10-PCS' ? '1.1.0' : '1.0.0')) {
+            (m['code_status_policy'] == 'not_provided'
+                ? '1.2.0'
+                : (m['classification'] == 'ICD-10-PCS' ? '1.1.0' : '1.0.0'))) {
       throw PackException('不相容 schema，請升級 App；原資料未更動');
     }
     if (![
@@ -163,6 +166,10 @@ class PackManifest {
         ((m['compatible_base_package_ids'] as List? ?? []).isEmpty ||
             optional.take(3).any((k) => !m.containsKey(k)))) {
       throw PackException('中譯包必須宣告版別與 base 相容清單');
+    }
+    if (m.containsKey('code_status_policy') &&
+        m['code_status_policy'] != 'not_provided') {
+      throw PackException('來源代碼狀態政策錯誤');
     }
     if (m['is_sample'] == true &&
         !(m['source_organization'] as String).contains('SAMPLE')) {

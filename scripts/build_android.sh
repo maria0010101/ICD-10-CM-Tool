@@ -5,7 +5,7 @@ build_app=${1:-"$repo/app"}
 mkdir -p "$repo/dist"
 version=$(sed -n 's/^version: \([0-9.]*\).*/\1/p' "$repo/app/pubspec.yaml")
 [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit 1
-apk_name="icd-offline-$version-android-arm64-demo.apk"
+apk_name="icd-offline-$version-android-arm64.apk"
 apk_output="$repo/dist/$apk_name"
 if [[ -e "$apk_output" ]]; then
   printf 'Existing APK preserved; choose a new version before rebuilding.\n' >&2

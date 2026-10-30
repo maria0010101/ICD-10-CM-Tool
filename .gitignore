@@ -16,3 +16,9 @@ evidence/android-device.txt
 
 # User-provided official sources remain local; never redistribute in backups.
 /2027 ICD-10-CM files/
+
+# 0.2.3 local full-source inspections/device environment; publish only count audits.
+evidence/release-0.2.3/toolchain.txt
+evidence/release-0.2.3/source-inventory.json
+evidence/release-0.2.3/*-inspection.json
+evidence/release-0.2.3/local-*

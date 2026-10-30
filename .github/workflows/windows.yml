@@ -72,8 +72,8 @@ jobs:
           if-no-files-found: error
           retention-days: 30
           path: |
-            dist/*windows-x64-demo.zip
-            dist/*windows-x64-demo.zip.sha256
+            dist/*windows-x64.zip
+            dist/*windows-x64.zip.sha256
             evidence/linux-probe.json
             evidence/pcs-native.json
             evidence/nhi-cm-native.json

@@ -60,3 +60,7 @@
 ## 0.2.1 NHI CM獨立版
 
 相同官方2023／1150827 ODS的ICD-10-CM分頁，96,802同源中英／USE及其他欄位，原始碼展示不改。新增combined包僅聲明對自身NHI版本exact_edition；原使用者overlay保存原SHA且仍unresolved。前綴導覽不是美國Chapter／Block，沒有原檔未提供的Index或Tabular註記；逐筆稽核與原檔保全見release-0.2.1 evidence，完整資料留本機。
+
+## 0.2.3補充來源
+
+新增FY2023 Apr、FY2024 Apr、FY2025 Oct／Apr CM與PCS；20個所需ZIP與CMS官網對應檔SHA256完全一致。來源URL及hash鎖定於docs/source_profiles各JSON，核對紀錄在evidence/release-0.2.3/cms-release-verification.json。健保署2014 CM修訂1131212／PCS修訂1120509分立包，以官方2014版頁與使用者原檔hash記錄，不宣稱跨年度相容。2725個PCS輔助公式僅保留inert原文；不求值／不作資料依據。原檔與完整產出只留本機；使用者資料不上傳。

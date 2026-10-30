@@ -23,8 +23,10 @@ def profile_purpose(path):
         profile = json.loads(Path(path).read_text(encoding='utf-8'))
         mode = profile.get('output_type', 'icdpack')
         if profile['metadata']['kind'].endswith('_zh_tw'):
-            return '附加中譯包：不能作為獨立查詢版本；跨版未確認時只供參考。要獨立中文查詢請選「CM 健保署2023同版中英獨立版」。'
-        if mode in ('nhi_cm_app','nhi_pcs_app'):
+            return '附加中譯包：不能作為獨立查詢版本；跨版未確認時只供參考。要獨立中文查詢請選健保署同版中英獨立版。'
+        if mode == 'nhi_legacy_app':
+            return '健保署2014獨立中英包：原文分列配對；未提供USE／可申報狀態，不推定。僅查該版，修正說明另存。'
+        if mode in ('nhi_cm_app','nhi_pcs_app','nhi_legacy_app'):
             return '獨立中英App資料包：可單獨啟用，只查健保署該版本。未含美國官方完整Index／Tabular註記，不是FY2027中譯。'
         if mode in ('icdpack','pcs_app'):
             return '獨立App資料包：.icdpack，可選定該版查詢；譯名與版本相容性另行核對。'
@@ -40,7 +42,7 @@ def main():
         import ctypes
         ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('tw.offline.icd.builder')
     root = tk.Tk()
-    root.title('ICD 離線資料包製作工具 · 0.2.1')
+    root.title('ICD 離線資料包製作工具 · 0.2.3')
     root.geometry('900x720')
     root.minsize(650, 540)
     icon = ROOT / 'branding' / 'app_icon.ico'
@@ -112,7 +114,7 @@ def main():
         if tabs.select() != str(build): return 'icdpack'
         try:
             mode = json.loads(Path(profile.get()).read_text(encoding='utf-8')).get('output_type', 'icdpack')
-            return 'icdpack' if mode in ('pcs_app', 'nhi_pcs_app', 'nhi_cm_app') else mode
+            return 'icdpack' if mode in ('pcs_app', 'nhi_pcs_app', 'nhi_cm_app', 'nhi_legacy_app') else mode
         except (OSError, ValueError):
             return 'icdpack'
 

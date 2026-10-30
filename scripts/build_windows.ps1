@@ -9,7 +9,7 @@ if ($VersionLine -notmatch '^version:\s*([0-9]+\.[0-9]+\.[0-9]+)') { throw 'Cann
 $Version = $Matches[1]
 $Dist = Join-Path $Repo 'dist'
 New-Item -ItemType Directory -Force $Dist | Out-Null
-$Zip = Join-Path $Dist "icd-offline-$Version-windows-x64-demo.zip"
+$Zip = Join-Path $Dist "icd-offline-$Version-windows-x64.zip"
 if (Test-Path $Zip) { throw "Existing release preserved: $Zip" }
 # Find only the official installed Visual Studio redistributable, never System32.
 if (!$VCRuntimeDir) {

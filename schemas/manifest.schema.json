@@ -218,6 +218,12 @@
       "items": {
         "type": "string"
       }
+    },
+    "code_status_policy": {
+      "type": "string",
+      "enum": [
+        "not_provided"
+      ]
     }
   }
 }

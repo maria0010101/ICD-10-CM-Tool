@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "tw.offline.icd" "\0"
-            VALUE "FileDescription", "icd_dictionary" "\0"
+            VALUE "FileDescription", "ICD Offline" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "icd_dictionary" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2026 tw.offline.icd. All rights reserved." "\0"
             VALUE "OriginalFilename", "icd_dictionary.exe" "\0"
-            VALUE "ProductName", "icd_dictionary" "\0"
+            VALUE "ProductName", "ICD Offline" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

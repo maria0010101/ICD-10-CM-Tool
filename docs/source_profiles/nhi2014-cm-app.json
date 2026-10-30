@@ -1,0 +1,70 @@
+{
+  "label": "CM 健保署2014同版中英獨立版 · 1131212（未提供USE）",
+  "metadata": {
+    "package_id": "icd10cm-tw-nhi2014-1131212-bilingual",
+    "package_version": "1.0.0",
+    "kind": "icd10cm_combined",
+    "classification": "ICD-10-CM",
+    "jurisdiction": "TW",
+    "edition": "NHI-2014-CM",
+    "release_id": "1131212",
+    "effective_from": "2016-01-01",
+    "effective_to": "2024-12-31",
+    "language": "en+zh-TW",
+    "source_organization": "衛生福利部中央健康保險署",
+    "source_urls": [
+      "https://www.nhi.gov.tw/ch/lp-3839-1.html",
+      "https://www.nhi.gov.tw/ch/cp-6051-aeadf-3050-1.html"
+    ],
+    "created_at": "2026-10-30T00:00:00Z",
+    "is_sample": false,
+    "translation_edition": "NHI-2014",
+    "translation_revision": "1131212",
+    "mapping_policy": "exact_edition",
+    "compatible_base_package_ids": [
+      "icd10cm-tw-nhi2014-1131212-bilingual"
+    ],
+    "code_status_policy": "not_provided"
+  },
+  "inputs": [
+    "健保署/1.1 中文版ICD-10-CM(113.12.12更新).ods"
+  ],
+  "input_sha256": {
+    "健保署/1.1 中文版ICD-10-CM(113.12.12更新).ods": "efb49fbf19c154b6083d214fcdc686753431d445fa805719d0c7b73d4dd870db"
+  },
+  "output_type": "nhi_legacy_app",
+  "legacy_layout": {
+    "sheets": [
+      "Chapter_1",
+      "Chapter_2",
+      "Chapter_3",
+      "Chapter_4",
+      "Chapter_5",
+      "Chapter_6",
+      "Chapter_7",
+      "Chapter_8",
+      "Chapter_9",
+      "Chapter_10",
+      "Chapter_11",
+      "Chapter_12",
+      "Chapter_13",
+      "Chapter_14",
+      "Chapter_15",
+      "Chapter_16",
+      "Chapter_17",
+      "Chapter_18",
+      "Chapter_19-1",
+      "19-2",
+      "Chapter_19-2",
+      "Chapter_20",
+      "Chapter_21"
+    ],
+    "reference_sheets": [
+      "修正說明"
+    ],
+    "inert_formula_columns": {},
+    "missing_translation_codes": [
+      "T50.B96"
+    ]
+  }
+}

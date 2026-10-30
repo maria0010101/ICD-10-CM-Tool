@@ -12,6 +12,11 @@ import '../data/package_picker.dart';
 import '../data/repository.dart';
 import '../domain/manifest.dart';
 
+String codeStateLabel(Map<String, Object?> row, PackManifest manifest) =>
+    manifest.json['code_status_policy'] == 'not_provided'
+    ? '來源未提供可申報狀態'
+    : row['state'] as String;
+
 int paneCount(double width) => width >= 1180
     ? 3
     : width >= 720
@@ -353,7 +358,7 @@ class _DictionaryHomeState extends State<DictionaryHome> {
                               if ((r['title_zh_tw'] as String? ?? '')
                                   .isNotEmpty)
                                 r['title_zh_tw'],
-                              '${r['state']} · ${c.store.manifest(c.active!).edition}',
+                              '${codeStateLabel(r, c.store.manifest(c.active!))} · ${c.store.manifest(c.active!).edition}',
                             ].join('\n'),
                     ),
                     isThreeLine:
@@ -500,7 +505,7 @@ class _DictionaryHomeState extends State<DictionaryHome> {
         Wrap(
           spacing: 8,
           children: [
-            Chip(label: Text(d['state'] as String)),
+            Chip(label: Text(codeStateLabel(d, m))),
             Chip(label: Text(m.classification)),
             Chip(label: Text(m.edition)),
             if (m.sample)
@@ -535,7 +540,7 @@ class _DictionaryHomeState extends State<DictionaryHome> {
             ],
           ),
         Text(
-          '有效期間：${d['valid_from']} – ${d['valid_to']}\n${d['billable'] == 1 ? '來源列為完整碼；仍須依規則確認' : '非完整可申報碼／需要更多字元'}',
+          '有效期間：${d['valid_from']} – ${d['valid_to']}\n${m.json['code_status_policy'] == 'not_provided' ? '來源未提供USE／可申報狀態，請另依該版規則確認' : (d['billable'] == 1 ? '來源列為完整碼；仍須依規則確認' : '非完整可申報碼／需要更多字元')}',
         ),
         Wrap(
           children: [
@@ -860,8 +865,8 @@ class _DictionaryHomeState extends State<DictionaryHome> {
       OutlinedButton(
         onPressed: () => showLicensePage(
           context: context,
-          applicationName: 'ICD Offline · Demo',
-          applicationVersion: '0.2.0',
+          applicationName: 'ICD Offline',
+          applicationVersion: '0.2.3',
         ),
         child: const Text('開放原始碼授權'),
       ),

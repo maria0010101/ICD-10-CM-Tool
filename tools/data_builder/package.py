@@ -55,7 +55,7 @@ def check_manifest(m):
         raise PackageError('invalid effective date interval')
     family = 'icd10pcs_' if m['classification'] == 'ICD-10-PCS' else 'icd10cm_'
     if not m['kind'].startswith(family): raise PackageError('Classification/kind mismatch')
-    expected_min = '1.1.0' if family == 'icd10pcs_' else '1.0.0'
+    expected_min = '1.2.0' if m.get('code_status_policy') == 'not_provided' else ('1.1.0' if family == 'icd10pcs_' else '1.0.0')
     if m['schema_version'] != '1.0.0' or m['required_app_schema_min'] != expected_min:
         raise PackageError('Unsupported schema: upgrade App/builder')
     if m['kind'].endswith('_zh_tw') and not m.get('compatible_base_package_ids'):
@@ -84,6 +84,8 @@ def validate_db(path: Path, m: dict):
             count = db.execute(f'SELECT count(*) FROM {table}').fetchone()[0]
             if count != m['row_counts'][table]:
                 raise PackageError('Row count: '+table)
+        if m.get('code_status_policy') == 'not_provided' and db.execute('SELECT count(*) FROM code_nodes WHERE billable!=0').fetchone()[0]:
+            raise PackageError('Source does not provide billability; cannot claim billable codes')
         # Both hierarchies must be acyclic, regardless of otherwise-valid foreign keys.
         for table in ('code_nodes','index_entries'):
             parents = dict(db.execute(f'SELECT id,parent_id FROM {table}'))
@@ -191,7 +193,7 @@ def write_package(db_path: Path, metadata: dict, output: Path):
     db.commit()
     db.execute('VACUUM')
     db.close()
-    m.update(format='icdpack',schema_version='1.0.0',required_app_schema_min='1.1.0' if m['classification']=='ICD-10-PCS' else '1.0.0',content_filename='content.sqlite',content_sha256=digest(db_path.read_bytes()))
+    m.update(format='icdpack',schema_version='1.0.0',required_app_schema_min='1.2.0' if m.get('code_status_policy')=='not_provided' else ('1.1.0' if m['classification']=='ICD-10-PCS' else '1.0.0'),content_filename='content.sqlite',content_sha256=digest(db_path.read_bytes()))
     check_manifest(m)
     validate_db(db_path,m)
     raw = json_bytes(m)

@@ -35,7 +35,7 @@ jobs:
         shell: pwsh
         run: |
           $Root = Join-Path $env:RUNNER_TEMP 'icd-builder-native-test'
-          python scripts/package_builder.py --output dist/icd-data-builder-0.2.1-windows-x64-portable.zip --unpacked $Root
+          python scripts/package_builder.py --output dist/icd-data-builder-0.2.3-windows-x64-portable.zip --unpacked $Root
           if ($LASTEXITCODE -ne 0) { throw 'Builder packaging failed' }
           "BUILDER_TEST_ROOT=$Root" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
       - name: Verify bundled interpreter, ETL tests and real Tk GUI construction
@@ -52,17 +52,17 @@ jobs:
             & ./runtime/python.exe -E -s -X utf8 -c "import json,sys,sqlite3,platform; print(json.dumps(dict(python=sys.version,sqlite=sqlite3.sqlite_version,platform=platform.platform(),windows_native=True)))" | Set-Content "$Evidence/builder-windows-runtime.json"
             if ($LASTEXITCODE -ne 0) { throw 'Bundled runtime check failed' }
           } finally { Pop-Location }
-          $Zip = Get-Item dist/icd-data-builder-0.2.1-windows-x64-portable.zip
+          $Zip = Get-Item dist/icd-data-builder-0.2.3-windows-x64-portable.zip
           "$((Get-FileHash $Zip -Algorithm SHA256).Hash.ToLowerInvariant())  $($Zip.Name)" | Set-Content -Encoding ascii "$($Zip.FullName).sha256"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: data-builder-windows-x64-0.2.1
+          name: data-builder-windows-x64-0.2.3
           retention-days: 30
           if-no-files-found: error
           path: |
-            dist/icd-data-builder-0.2.1-windows-x64-portable.zip
-            dist/icd-data-builder-0.2.1-windows-x64-portable.zip.sha256
+            dist/icd-data-builder-0.2.3-windows-x64-portable.zip
+            dist/icd-data-builder-0.2.3-windows-x64-portable.zip.sha256
             evidence/builder-windows-tests.log
             evidence/builder-windows-gui.json
             evidence/builder-windows-runtime.json

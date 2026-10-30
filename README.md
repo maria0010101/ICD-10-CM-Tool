@@ -1,10 +1,12 @@
-# ICD-10-CM / PCS Offline Dictionary · 0.2.1 Demo
+# ICD-10-CM / PCS Offline Dictionary · 0.2.3
 
-已實作 Flutter/Dart 離線 App、Python 3.13 builder/validator、標準 `.icdpack` 與自動化測試。**尚未通過完整跨 Windows/Android 驗收，不可用於臨床編碼或申報。**
+已實作 Flutter/Dart 離線 App、Python 3.13 builder/validator、標準 `.icdpack` 與自動化測試。經使用者回報疾病分類人員初步確認資料內容可用，0.2.3移除程式名稱Demo；未測Gate及來源資料範圍仍明確列示。
 
 App、資料包、`user.sqlite` 物理分離；App 不含字典、Python runtime、雲端 API 或自動下載。相同原包直接匯入，不重封、不按平台轉換。
 
 ## 交付與驗收
+
+* **0.2.3：新增FY2023～FY2025與健保署2014來源設定（共21種），App／製作工具同步升版，程式名稱移除Demo。** [操作與驗收](docs/RELEASE_0.2.3.md)；成品與本機資料包在`manual-test-0.2.3/`。
 
 * **0.2.2：依分類人員回饋調整缺譯提示、notes浮動視窗及各尺寸導覽。** [操作與驗收](docs/RELEASE_0.2.2.md)，資料格式與既有包不變。
 * **0.2.1：新增健保署CM同版中英獨立包，修正分類樹／Index展開的isolate閉包錯誤。** [操作與驗收](docs/RELEASE_0.2.1.md)，新版成品與NHI CM包在 `manual-test-0.2.1/`；舊附加中譯包不變。

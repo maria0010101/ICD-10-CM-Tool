@@ -1,0 +1,35 @@
+{
+  "label": "PCS App 英文 FY2024 · 2024-04-01",
+  "metadata": {
+    "classification": "ICD-10-PCS",
+    "edition": "FY2024",
+    "release_id": "2024-04-01",
+    "effective_from": "2024-04-01",
+    "effective_to": "2024-09-30",
+    "source_organization": "CMS",
+    "source_urls": [
+      "https://www.cms.gov/medicare/coding-billing/icd-10-codes",
+      "https://www.cms.gov/files/zip/2024-icd-10-pcs-code-tables-and-index-updated-12/19/2023.zip",
+      "https://www.cms.gov/files/zip/2024-icd-10-pcs-codes-file-updated-12/19/2023.zip",
+      "https://www.cms.gov/files/zip/2024-icd-10-pcs-order-file-long-and-abbreviated-titles-updated-12/19/2023.zip"
+    ],
+    "created_at": "2026-10-30T00:00:00Z",
+    "is_sample": false,
+    "package_id": "icd10pcs-us-fy2024-apr-en",
+    "package_version": "1.0.0",
+    "kind": "icd10pcs_en",
+    "language": "en",
+    "jurisdiction": "US"
+  },
+  "inputs": [
+    "cms/FY 2024/Zip File 2 2024 Code Tables and Index.zip",
+    "cms/FY 2024/Zip File 3 2024 ICD-10-PCS Codes File.zip",
+    "cms/FY 2024/Zip File 4 2024 ICD-10-PCS Order File (Long and Abbreviated Titles).zip"
+  ],
+  "input_sha256": {
+    "cms/FY 2024/Zip File 2 2024 Code Tables and Index.zip": "8bd99d6673580d6b737c0925be38c52ec8d4f3f345b4c23b9e457426203a6800",
+    "cms/FY 2024/Zip File 3 2024 ICD-10-PCS Codes File.zip": "bbd524cb62387eb381d0279fcca02dcb69baf3e61f23be64f3d9a951d82b66ec",
+    "cms/FY 2024/Zip File 4 2024 ICD-10-PCS Order File (Long and Abbreviated Titles).zip": "2b311e4fa3ac59ffe7b020cf0e05000ec035d1cfdf6a9ec7664eb74b82190253"
+  },
+  "output_type": "pcs_app"
+}

@@ -1,0 +1,16 @@
+{
+  "profile_sha256": "702e9decb5d47e76f620ccb88a89d71c29b760c1e3cea81eb1ce7752d65ea076",
+  "projection": {
+    "bilingual_rows": 2,
+    "code_status_policy": "not_provided",
+    "formula_policy": "auxiliary formulas preserved as inert text; never evaluated or used as data",
+    "reference_rows": 2,
+    "source_sheets": 1
+  },
+  "source_files": [
+    {
+      "name": "SAMPLE-NOT-FOR-CLINICAL-CODING.ods",
+      "sha256": "b2fa0097d0799b9ec9ffb2416e58d66e0b66af02e7971ffd7a518eec0dfc18f6"
+    }
+  ]
+}
