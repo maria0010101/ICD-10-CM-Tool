@@ -77,5 +77,6 @@ jobs:
             evidence/linux-probe.json
             evidence/pcs-native.json
             evidence/nhi-cm-native.json
+            evidence/nhi2014-native.json
             evidence/tree-expanded.png
             evidence/windows-bundle-launch.json

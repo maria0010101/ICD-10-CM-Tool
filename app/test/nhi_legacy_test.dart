@@ -64,6 +64,12 @@ void main() {
             repo.close();
           }
         }
+        expect(
+          snapshots,
+          jsonDecode(
+            await File('../samples/sample-nhi2014-probe.json').readAsString(),
+          ),
+        );
         await File('../evidence/nhi2014-native.json').writeAsString(
           jsonEncode({
             'os': Platform.operatingSystemVersion,
