@@ -1,170 +1,98 @@
-# ICD-10-CM / PCS Offline Dictionary · 0.2.4
+# ICD Offline · 0.2.4
 
-已實作 Flutter/Dart 離線 App、Python 3.13 builder/validator、標準 `.icdpack` 與自動化測試。經使用者回報疾病分類人員初步確認資料內容可用，0.2.3移除程式名稱Demo；未測Gate及來源資料範圍仍明確列示。
+**Windows／Android 完全離線的 ICD-10-CM／PCS 查詢工具。** 支援官方英文索引、健保署同版中英對照、分類樹與註記查閱；App、字典資料包及收藏／個人註解分開保存。
 
-App、資料包、`user.sqlite` 物理分離；App 不含字典、Python runtime、雲端 API 或自動下載。相同原包直接匯入，不重封、不按平台轉換。
+經疾病分類人員測試，使用者已回報內容正確、功能可初步使用。這不是所有平台與安全／效能驗收均已完成的宣告；實際測試範圍與限制見下方。
 
-## 交付與驗收
+## 下載與選擇檔案
 
-* **0.2.4：CM英文Index導引、來源階層排序與完整分頁，修正smarticd10對照差異。** [搜尋邏輯分析](docs/SEARCH_SMARTICD10_ANALYSIS.md)／[驗收](docs/RELEASE_0.2.4.md)。既有資料包與0.2.3轉檔工具不必更新。
+前往 **[Release v0.2.4](https://github.com/maria0010101/ICD-10-CM-Tool/releases/tag/v0.2.4)**，下載需要的檔案：
 
-* **0.2.3：新增FY2023～FY2025與健保署2014來源設定（共21種），App／製作工具同步升版，程式名稱移除Demo。** [操作與驗收](docs/RELEASE_0.2.3.md)；成品與本機資料包在`manual-test-0.2.3/`。
+| 檔案 | 用途 | 適用對象 |
+|---|---|---|
+| `icd-offline-0.2.4-windows-x64.zip` | Windows x64 免安裝 App | Windows 使用者 |
+| `icd-offline-0.2.4-android-arm64.apk` | Android ARM64 App，Android 7.0／API 24以上 | 手機／平板使用者 |
+| `icd-data-builder-0.2.3-windows-x64-portable.zip` | Windows 離線資料包製作工具，21種來源設定 | 需自行從官方原檔製作資料包的人 |
+| `INSTALL_0.2.4.md` | 繁體中文安裝、升級與首次匯入說明 | 所有使用者 |
+| `SHA256SUMS.txt` | 以上三個程式成品與安裝說明的檢查碼 | 下載後核對完整性 |
 
-* **0.2.2：依分類人員回饋調整缺譯提示、notes浮動視窗及各尺寸導覽。** [操作與驗收](docs/RELEASE_0.2.2.md)，資料格式與既有包不變。
-* **0.2.1：新增健保署CM同版中英獨立包，修正分類樹／Index展開的isolate閉包錯誤。** [操作與驗收](docs/RELEASE_0.2.1.md)，新版成品與NHI CM包在 `manual-test-0.2.1/`；舊附加中譯包不變。
+**App 0.2.4 與製作工具 0.2.3 相容，工具不需為此次搜尋調整而升版。** GitHub自動附加的 Source code 壓縮檔是原始碼，不是可直接安裝的 App。儲存庫目前為私有，Release 也需具有儲存庫存取權限。
 
-* **0.2.0：修正Android大型NHI包匯入OOM，新增PCS獨立查詢／七軸／健保署2023同版中文搜尋。** [操作與驗收](docs/RELEASE_0.2.0.md)，成品放 `manual-test-0.2.0/`；舊CM包不用重製，PCS新包需新版App。
+### 第一次安裝
 
-* 原始碼私有備份：[maria0010101/ICD-10-CM-Tool](https://github.com/maria0010101/ICD-10-CM-Tool)。不包含官方完整資料、使用者資料、venv 或 SDK。
-* 本機手動測試交付目錄：`manual-test-0.1.1/`；內有新版圖示 APK、Windows App ZIP、Windows 獨立資料庫工具 ZIP、合成 samples、SHA256 與繁體中文操作說明（產物不混入 Git 原始碼）。
-* [0.1.1 發行與 Windows CI 證據](docs/RELEASE_0.1.1.md)／[0.1.0 歷史 Gate 報告](docs/ACCEPTANCE.md)／[原始證據](evidence/)
-* [架構與工具鏈](docs/ARCHITECTURE.md)／[需求追蹤](docs/TRACEABILITY.md)
-* [已知限制](docs/KNOWN_LIMITATIONS.md)／[來源與版本](SOURCE_PROVENANCE.md)／[授權](LICENSES.md)
-* Android APK：`dist/icd-offline-0.1.0-android-arm64-demo.apk`（以驗收報告與 SHA256 清單確認是否實際產生）
-* 完整原始碼 ZIP：`dist/icd-offline-0.1.0-source-demo.zip`（不含官方完整資料、SDK、venv）；雜湊在 `dist/SHA256SUMS.txt`。
-* Android 補驗：一次重試安裝成功，`.debug` 整合測試1/1通過；sample／正式英文兩包各50查詢與Linux一致。補驗後原始碼：`dist/icd-offline-0.1.0-source-android-verified.zip`。Release實機及Windows Gate仍未通過。
-* Windows 由 GitHub Actions 的 Windows x64／Visual Studio 建置；結果、執行環境與限制見 0.1.1 報告。Hosted runner 不等同乾淨工作站驗收。
+1. Windows：將 ZIP **完整解壓**到可寫入的資料夾，再執行 `icd_dictionary.exe`。不要只取 EXE，或在 ZIP 內直接執行；不需安裝 Flutter／Python。
+2. Android：在系統允許此來源安裝後，開啟 ARM64 APK 安裝；App 不需登入，也不會下載字典或連線查詢。
+3. 準備 `.icdpack`，由 App 的「匯入 .icdpack」或右上「資料管理」選取，完成版本／來源預覽與驗證後啟用。
+4. 選擇正確的 CM／PCS、資料版別與生效批次，再開始查詢。
 
-原本的開發規格 README 已原封保存為 [README.spec-original.md](README.spec-original.md)；規範文件 AGENTS/SRS/DATA_PACKAGE_SPEC/TEST_PLAN 保留。
+**程式不內附完整官方字典。** 已有 `.icdpack` 可直接使用；沒有資料包時，先用製作工具從官方原檔建立。相同檔案可原封不動匯入 Windows 和 Android，不需平台轉換。
 
-## 可執行功能
+### 升級與備份
 
-* 完整碼正規化（有無小數點、大小寫、全形）、英文 FTS5 AND/OR／前綴、中文 NFKC unigram/bigram 索引。
-* Chapter→Block→Category→Subcategory 懶載入；Index 主詞／子詞、see/seeAlso/subcat/manif/seecat、Neoplasm／Drugs 表格欄位與 External Cause Index。
-* 本碼與上層 notes 按來源／順序呈現，保留原文、原始 XML、7th character 與 placeholder；不從 leaf 推論 billable。
-* 手機單欄列表→詳情頁、平板雙欄、寬桌面三欄／可拖動欄寬；明暗模式、文字放大、Ctrl+L/F、方向鍵、Enter、Esc。
-* 手動檔案選取→安全 ZIP→staging→SHA256→schema allowlist→SQLite integrity／FK／FTS／n-gram→預覽→原子發布→啟用，保留多版本與上一版。
-* 收藏／本機註解／可關閉搜尋紀錄、個人 JSON 匯出匯入；與官方資料完全分開。
-* 版間新增、移除、描述、狀態與 notes 差異；官方拆分／合併 lineage **尚未完成**，不作語義等價保證。
+- **Windows**：關閉 App，備份舊目錄的整份 `portable-data/`；將新版解壓到新目錄，再複製原有 `portable-data/` 至新版目錄。保留原目錄，確認資料正常後再自行整理。
+- **Android**：直接覆蓋安裝新版；**不要解除安裝或清除資料**。目前 APK 沿用前版簽章及 application ID，versionCode 為2007。
+- App 0.2.4 **不改既有資料包格式，不需重新製作或重新匯入**。資料管理另提供收藏／註解 JSON 匯出與匯入；這不等同字典資料包備份。
 
-## 一、安裝開發依賴
+[完整操作與資料製作指南](docs/USER_GUIDE.md) · [開發、測試與建置](docs/DEVELOPMENT.md)
 
-已驗證工具鏈：Flutter **3.47.5**、Dart **3.13.4**、Python **3.13.18**。直接及間接依賴鎖在 `app/pubspec.lock`、`tools/data_builder/requirements.lock`。
+## 0.2.4 的搜尋方式
 
-Windows PowerShell（先自行安裝 Python 3.13／Flutter；建 Windows 另需 Visual Studio C++ workload）：
+英文 CM 資料包有官方 Index 時，預設啟用「索引導引」：
 
-```powershell
-py -3.13 -m venv .venv313
-.\.venv313\Scripts\python -m pip install --require-hashes -r tools/data_builder/requirements-windows.lock
-.\.venv313\Scripts\python -m pytest tools/data_builder/tests -q
-cd app
-flutter pub get --enforce-lockfile
-flutter analyze
-flutter test
-```
+- **輸入單詞**：提供主詞前綴建議，點主詞展開該分支；Enter 送出完整路徑查詢。
+- **輸入多詞**：以詞首 AND／OR 搜尋原始 Index 路徑，保留上層脈絡，依官方來源順序呈現，不再讓 Tabular 或全文相關度擠掉 Index。
+- **完整結果**：每批100筆，顯示已載入／總節點數，按「載入更多」繼續；不會因不同修飾詞指向同碼就刪除節點。
+- **查代碼**：完整碼如 `I50.9`／`I509` 與代碼前綴 `I5` 保留代碼查詢；點 Index 的目標碼可到 Tabular 核對。
+- **原本的全文模式**：關閉「索引導引」或選 Tabular。中文、沒有 Index 的 NHI 包及 PCS 維持各自查詢語義。
 
-Linux：
+對照範例：FY2025／2025-04-01 包輸入 `Diabetes, diabetic`，449個節點的**階層深度與目標碼順序**已逐筆與 smarticd10 觀察結果核對一致。App 仍保留數字1／2與官方 Note，不為強行一致改寫官方資料；不宣稱任意查詢或所有年度與第三方網站完全相同。
 
-```bash
-python3.13 -m venv .venv313
-.venv313/bin/python -m pip install --require-hashes -r tools/data_builder/requirements.lock
-.venv313/bin/python -m pytest tools/data_builder/tests -q
-cd app && flutter pub get --enforce-lockfile && flutter analyze && flutter test
-```
+[搜尋邏輯分析與明確差異](docs/SEARCH_SMARTICD10_ANALYSIS.md)
 
-**本機 Flutter 3.47.5 的 analyzer 在中文路徑出現 LSP JSON 截斷**，已保留初始失敗 log；可使用 ASCII 暫存副本（不改 SDK）：
+## 其他功能
 
-```bash
-scripts/prepare_ascii_build.sh /tmp/icd-work-build
-cd /tmp/icd-work-build/app
-flutter analyze
-flutter test
-```
+- CM／PCS 分開選版；精確碼、英文 FTS5 AND／OR／前綴、合格同版中文搜尋。
+- 官方來源提供的分類樹、Index、cross-reference、Neoplasm／Drugs 表格及 PCS 七軸查閱。
+- 詳情中的「本層與繼承notes」位於個人註解右側，按下才開啟浮動視窗，保留來源及順序；缺少合格中譯時省略中譯列。
+- 手機單欄、平板雙欄、寬 Windows 三欄；平板與 Windows 無底部導覽，資料管理統一在右上角。支援文字放大、明暗模式及鍵盤操作。
+- 多資料版本並存、驗證後啟用與回復上一版；收藏、個人註解及可關閉的查詢歷史獨立儲存。
+- App 無登入、雲端 API、遙測或背景下載；資料更新由使用者自行取得及匯入。
 
-不要同時在同一 build directory 執行 Flutter test/pub/build，避免 generated plugin registrant 競爭。原始碼修改後重新同步；產物與 evidence 複製回原專案。
+## 資料包與來源設定
 
-## 二、直接執行 App／匯入 sample
+製作工具0.2.3內建 **21種設定**，包括 App 資料包、附加中譯及僅供稽核的來源資料表；不是21份已附送的字典。
 
-```bash
-cd app
-flutter run -d windows  # 在 Windows 主機
-flutter run -d <android-device-id>
-```
+| 來源 | App包支援範圍 |
+|---|---|
+| 美國 CM | FY2023 Apr、FY2024 Apr、FY2025 Oct／Apr、FY2026 Oct／Apr、FY2027 Oct |
+| 美國 PCS | FY2023 Apr、FY2024 Apr、FY2025 Oct／Apr、FY2026 Apr、FY2027 Oct |
+| 健保署同版中英獨立包 | 2014 CM／PCS、2023 CM／PCS |
 
-第一次啟動沒有字典，點「匯入 .icdpack」，從 `samples/` 選 `sample-demo-v1.icdpack`。它是 **SAMPLE / NOT FOR CLINICAL CODING** 合成資料，不自稱官方字典。v2 用於版本差異／回復，overlay 用於未確認中譯測試。
+- FY與 Oct／Apr 是不同資訊，請核對實際生效日期，不能僅按檔名年份混用。
+- NHI 同版中英獨立包可單獨啟用；舊的 unresolved 附加中譯包不是獨立字典，也不自動視為美國版官方中譯。
+- NHI 原檔未提供的美國 Tabular notes／Index／七軸不會補造；2014原檔未提供USE時，App明示來源未提供可申報狀態，不從是否末層推定。
+- 名稱含「獨立 SQLite／來源資料表」的輸出**不能匯入 App**；請選 App `.icdpack` 設定，不能只更改副檔名。
+- Release 不附完整官方資料或使用者資料；工具中的 `samples/` 僅為明確標示的合成測試內容，不供編碼使用。
 
-App 的正式 Android package ID 為 `tw.offline.icd.icd_dictionary`，debug／integration 為 `.debug`，不共用正式資料；最低 API 24、ARM64。不要以解除安裝／清資料解決測試安裝問題。
+[來源選擇與官方下載入口](docs/USER_GUIDE.md#資料製作與來源選擇) · [21種來源設定](docs/source_profiles/) · [來源追溯](SOURCE_PROVENANCE.md) · [資料包規格](DATA_PACKAGE_SPEC.md)
 
-* Android：app-private support directory，無公共儲存權限要求。
-* Windows：EXE 旁 `portable-data/`；必須先解壓到可寫目錄，不能直接在 ZIP 中執行。
-* `.icdpack` 原檔以 archive SHA256 定址保留，唯讀 `content.sqlite`；只有 `user.sqlite` 可寫。
+## 驗證範圍與限制
 
-## 三、資料製作（Python 僅在 builder 執行）
+0.2.4既有成品驗證：Python58項通過；Linux／Windows Flutter各35項通過、2項未放完整資料的選配測試略過。完整FY2025另測通過；Android實機隔離測試的九組完整查詢快照與Linux一致，並驗證100→200筆載入；Windows hosted runner完成EXE啟動與獨立使用者資料庫檢查，合成包查詢與Linux一致。成品SHA256已核對。
 
-**目前 Builder 0.2.1 共11種設定：新增可單獨啟用的NHI CM同版中英App包，保留既有CM／PCS與來源資料表設定。** 請使用 `manual-test-0.2.1/` 工具；PCS App包必須搭配App0.2.0以上，不可使用舊來源表SQLite改副檔名。詳細步驟見[0.2.1說明](docs/RELEASE_0.2.1.md)，PCS來源細節見[0.2.0說明](docs/RELEASE_0.2.0.md)。
+使用者後續回報疾病分類人員測試內容正確、功能可初步使用；這與上述自動化測試分開記錄。實體平板、乾淨Windows工作站、所有年度全量跨端驗證，以及完整飛航／真實磁碟滿／強制中斷測試仍未全部完成。現有APK沿用開發簽章，未宣稱商店簽署；跨版本拆分／合併 lineage 尚未完成。
 
-**歷史 Builder 0.1.2 新增本批官方原檔的 7 種來源設定、ODS 直接串流匯入，以及獨立 PCS／健保署全分頁 SQLite。** 詳見 [官方轉檔操作說明](docs/OFFICIAL_IMPORT_0.1.2.md)／[實測報告](docs/OFFICIAL_IMPORT_0.1.2_RESULTS.md)。新工具與實際資料在 `manual-test-0.1.2/`；舊 App 0.1.1 與舊產物保留，無需重建 APK。
+[0.2.4實測報告](docs/RELEASE_0.2.4.md) · [已知限制](docs/KNOWN_LIMITATIONS.md) · [測試計畫](TEST_PLAN.md)
 
-Windows 無開發環境時，解壓獨立工具 ZIP，雙擊 `ICD-Data-Builder.cmd` 開啟繁體中文 GUI；附私有 Python 3.13.18／Tk／鎖定依賴，不需系統 Python、pip 或網路。`SELF-TEST.cmd` 執行隨附測試；命令列可使用 `ICD-Data-Builder.cmd verify --package path.icdpack`。工具與 App 完全分開，App ZIP／APK 不含 Python。
+## 專案文件
 
-```powershell
-# 如 samples 既有輸出同名，請選新檔名；builder 不覆寫發行檔。
-python -m tools.data_builder sample --output sample-demo-new.icdpack
-python -m tools.data_builder verify --package samples/sample-demo-v1.icdpack
-python -m tools.data_builder validate-source --input official-files/cdc-2027.zip
-python -m tools.data_builder build --source-dir official-files --profile docs/cdc-profile.example.json --output fy2027-new.icdpack
-```
+| 文件 | 內容 |
+|---|---|
+| [使用指南](docs/USER_GUIDE.md) | 安裝、資料製作、匯入、搜尋、備份與常見問題 |
+| [開發指南](docs/DEVELOPMENT.md) | 鎖定工具鏈、測試、建置與專案結構 |
+| [更新紀錄](CHANGELOG.md) | 0.2.4及歷史版本摘要 |
+| [SRS](SRS.md)／[需求追蹤](docs/TRACEABILITY.md) | 需求與實作對照 |
+| [架構](docs/ARCHITECTURE.md)／[資料包規格](DATA_PACKAGE_SPEC.md) | 技術及相容性契約 |
+| [來源](SOURCE_PROVENANCE.md)／[授權](LICENSES.md) | 官方來源紀錄與第三方元件授權 |
 
-`validate-source` 檢查 archive／原檔 hash／XML DTD，完整語義與列數驗證由 `build`／`verify`／`audit` 執行。CLI 遇錯 exit 1，輸出具體原因。輸出含 manifest、標準 SQLite、checksums；檔頭固定，可重現（相同原檔、profile、builder、SQLite 版本）。
-
-### CDC/CMS 官方英文
-
-從 [CDC 官方 FY2027 下載目錄](https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/ICD10CM/2027/) 取得 `icd10cm-table-and-index-2027.zip` 與 `icd10cm-code-descriptions-2027.zip`，另存為 profile 指定的兩個本機名稱，或修改 inputs。CMS 的 ICD-10-PCS 不是本 App 的 CM 資料來源。
-
-Adapter 解析 Tabular XML、四種 Index/Table XML、order TXT，補足官方 order 中的七字元完整碼；完整 order snapshot 不再重複套用 addenda。未知 XML tag、錯年度、缺少必要檔案會阻擋；未載入的輔助檔雜湊會記錄在報告，不宣稱其已套用。
-
-```powershell
-python -m tools.data_builder.audit --package fy2027-new.icdpack --input official-files/cdc-2027.zip --input official-files/cdc-descriptions-2027.zip
-```
-
-實際 FY2027 原檔 hash、計數、描述差異及 notes 稽核在 `evidence/cdc-*.json`。完整下載／轉換包保留 `.local-source/`，未包含在 APK 或程式交付 ZIP。
-
-### 台灣健保署官方中譯
-
-[健保署政府開放資料集（2023 中文 CM／PCS）](https://data.gov.tw/dataset/177507)；依需求選 CM overlay 或新版 PCS 同版雙語 App profile，記錄實際修訂批次、URL、SHA256。也可從健保署官網取得 XLSX。
-
-1. 複製 `docs/nhi-profile.example.json`，填實際 header／sheet、版別及修訂日期；CSV 必須 UTF-8，XLSX 公式拒絕。ODS 已支援串流讀取，須明確指定 `ICD-10-CM` 分頁；本批可直接選內建來源設定。
-2. `inputs` 列出原檔，`translation.columns` 明確指定 code／title_zh_tw 欄位。所有來源欄位原值保留於 translation.notes JSON，以供追溯。
-3. `mapping_policy` 預設 `unresolved`，不進入合格中譯搜尋。不得只因同一 code 就改為 exact_edition。
-4. 有明確驗證／審核紀錄才指定 `exact_edition` 或 `reviewed_cross_release`，以及唯一 base package ID；跨版始終顯示警示。
-5. 使用相同 `build --profile` CLI 製作 overlay；在 App 匯入並選定適用英文版。不同 base 切換時自動解除不相容 overlay，不刪檔。
-
-本機已以官方 2023 CSV 實際測試 parser，但對 FY2027 的 mapping 仍未確認。`effective_to=9999-12-31` 是未宣告期限的本機契約值，**不是官方保證有效至該年**。不提供假造的官方中譯相容性。
-
-## 四、安全、測試與打包
-
-* ZIP 僅三檔、≤256 MiB、總展開≤512 MiB、比例≤200；拒絕重複／路徑穿越／symlink／加密／未知格式，streaming 限制實際解壓大小與 CRC。
-* XML 禁止 DTD／外部實體／網路；XLSX 不執行公式。SQLite 唯讀、trusted_schema=OFF、schema allowlist，FTS write-command 僅在驗證副本執行。
-* SHA256 是完整性而非官方簽章。來源仍需獨立核對。
-* 匯入先查可用空間，切換用 SQLite FULL synchronous transaction；任何驗證／複製失敗不更動現行指標。
-
-```powershell
-powershell -File scripts/test.ps1
-powershell -File scripts/build_android.ps1
-powershell -File scripts/build_windows.ps1 -VCRuntimeDir 'C:\licensed-redist\Microsoft.VC143.CRT'
-Get-FileHash -Algorithm SHA256 samples/sample-demo-v1.icdpack
-```
-
-Windows 腳本可由 Visual Studio 安裝目錄自動尋找合法的 app-local Microsoft CRT，也可明確指定路徑；不拷貝系統 DLL。完整 Release bundle（exe、SQLite／Flutter DLL、data）才可打 portable ZIP。必須再於乾淨 Windows 工作站實際啟動。
-
-可在 GitHub Actions 選 `Windows portable build`／`Offline database builder for Windows` 執行 `workflow_dispatch` 重建；Flutter 及 Python runtime 版本固定，Python archive 與依賴皆核對 SHA256。Actions artifacts 保留 30 天；本機交付資料夾另保存下載副本。
-
-Android build 預設 demo debug signing，不是正式發布憑證。正式發布前另配置簽署、通過飛航模式及實機 Gate，不能把「Built APK」當作「實機成功」。
-
-實機 integration 指令與 define 檔產生方式見 `scripts/prepare_device_test.py`。使用 `.debug`，加 `--no-uninstall`；若手機拒絕安裝，停止並處理正常系統授權，不重試清資料。
-
-### 一次安裝＋自動同包比對（已實際通過）
-
-先準備ASCII build copy、Linux官方probe與integration defines，再於使用者正常允許安裝時執行：
-
-```bash
-python3 scripts/run_android_integration.py --device <device-id> --build-dir /tmp/icd-work-build/app --official .local-source/cdc-fy2027.icdpack
-```
-
-runner只呼叫一次Flutter安裝流程，不解除安裝／清資料／改設定；debug程式啟動後，透過自身UID傳入原包並再次比對SHA。成功後保存device report及完整query snapshot。原始`android-integration.log`是首次被拒的歷史紀錄；此次成功證據在`android-integration-retry.log`。
-
-封裝新的原始碼／證據ZIP（已有輸出不覆寫）：
-
-```bash
-python3 scripts/package_source.py --output dist/icd-offline-0.1.0-source-new-run.zip
-```
+搜尋排序不是診斷判定或申報建議；請依適用版本的 Index、Tabular 與原始規則核對。
