@@ -1,0 +1,38 @@
+Resolving dependencies...
+Downloading packages...
+  cli_util 0.4.2 (0.6.0 available)
+  cross_file 0.3.5+5 (0.4.0 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_math 2.4.0 (2.4.4 available)
+Got dependencies!
+6 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading /tmp/icd-build-024/app/test/guided_search_test.dart
+00:00 +0: Index precedes Tabular, retains official order, repeated codes, and all pages
+00:00 +1: commas/case/order normalize; prefix and exact-word/AND/OR semantics remain explicit
+00:00 +1 -1: commas/case/order normalize; prefix and exact-word/AND/OR semantics remain explicit [E]
+  Expected: <4>
+    Actual: <3>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  test/guided_search_test.dart 88:5                   main.<fn>
+  
+00:00 +1 -1: live single term suggests main headings; branch can show all children; codes stay exact
+00:00 +1 -2: live single term suggests main headings; branch can show all children; codes stay exact [E]
+  Expected: non-empty
+    Actual: []
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  test/guided_search_test.dart 131:5                  main.<fn>
+  
+00:00 +1 -2: Some tests failed.
+
+Failing tests:
+  /tmp/icd-build-024/app/test/guided_search_test.dart: commas/case/order normalize; prefix and exact-word/AND/OR semantics remain explicit
+  /tmp/icd-build-024/app/test/guided_search_test.dart: live single term suggests main headings; branch can show all children; codes stay exact
+
+EXIT=1

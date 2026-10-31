@@ -1,0 +1,8 @@
+{
+  "same_original_sha256": "55a7b7660f153836b0b39b040c4dbf3fda6b5726d1ef303ec2e2829a7be392d1",
+  "queries": 9,
+  "snapshots_match_linux": true,
+  "loaded_ui_rows": 200,
+  "ui_total": 449,
+  "os": "UKQ1.240624.001 release-keys"
+}

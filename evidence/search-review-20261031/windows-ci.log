@@ -1,0 +1,485 @@
+windows-x64	Set up job	﻿2026-10-31T10:00:22.0742030Z Current runner version: '2.338.2'
+windows-x64	Set up job	2026-10-31T10:00:22.0846189Z ##[group]Runner Image Provisioner
+windows-x64	Set up job	2026-10-31T10:00:22.0847962Z Hosted Compute Agent
+windows-x64	Set up job	2026-10-31T10:00:22.0848883Z Version: 20261021.618
+windows-x64	Set up job	2026-10-31T10:00:22.0849847Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+windows-x64	Set up job	2026-10-31T10:00:22.0851041Z Build Date: 2026-10-21T00:45:21Z
+windows-x64	Set up job	2026-10-31T10:00:22.0852262Z Worker ID: {3eda35df-ca13-4acc-bd43-51769d8ac298}
+windows-x64	Set up job	2026-10-31T10:00:22.0853486Z Region: westus
+windows-x64	Set up job	2026-10-31T10:00:22.0854395Z Cloud: Azure
+windows-x64	Set up job	2026-10-31T10:00:22.0855312Z ##[endgroup]
+windows-x64	Set up job	2026-10-31T10:00:22.0857836Z ##[group]Operating System
+windows-x64	Set up job	2026-10-31T10:00:22.0858965Z Microsoft Windows Server 2025
+windows-x64	Set up job	2026-10-31T10:00:22.0859983Z 10.0.26100
+windows-x64	Set up job	2026-10-31T10:00:22.0860880Z Datacenter
+windows-x64	Set up job	2026-10-31T10:00:22.0861688Z ##[endgroup]
+windows-x64	Set up job	2026-10-31T10:00:22.0862516Z ##[group]Runner Image
+windows-x64	Set up job	2026-10-31T10:00:22.0863553Z Image: windows-2025-vs2026
+windows-x64	Set up job	2026-10-31T10:00:22.0864493Z Version: 20261021.278.1
+windows-x64	Set up job	2026-10-31T10:00:22.0866462Z Included Software: https://github.com/actions/runner-images/blob/win25-vs2026/20261021.278/images/windows/Windows2025-VS2026-Readme.md
+windows-x64	Set up job	2026-10-31T10:00:22.0870600Z Image Release: https://github.com/actions/runner-images/releases/tag/win25-vs2026%2F20261021.278
+windows-x64	Set up job	2026-10-31T10:00:22.0872413Z ##[endgroup]
+windows-x64	Set up job	2026-10-31T10:00:22.0874329Z ##[group]GITHUB_TOKEN Permissions
+windows-x64	Set up job	2026-10-31T10:00:22.0877149Z Contents: read
+windows-x64	Set up job	2026-10-31T10:00:22.0878559Z Metadata: read
+windows-x64	Set up job	2026-10-31T10:00:22.0879469Z ##[endgroup]
+windows-x64	Set up job	2026-10-31T10:00:22.0882740Z Secret source: Actions
+windows-x64	Set up job	2026-10-31T10:00:22.0884264Z Cache mode: write
+windows-x64	Set up job	2026-10-31T10:00:22.0885603Z Prepare workflow directory
+windows-x64	Set up job	2026-10-31T10:00:22.1438999Z Prepare all required actions
+windows-x64	Set up job	2026-10-31T10:00:22.1516493Z Getting action download info
+windows-x64	Set up job	2026-10-31T10:00:22.5439289Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+windows-x64	Set up job	2026-10-31T10:00:22.7145764Z Download action repository 'subosito/flutter-action@v2' (SHA:1a449444c387b1966244ae4d4f8c696479add0b2)
+windows-x64	Set up job	2026-10-31T10:00:22.9728970Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+windows-x64	Set up job	2026-10-31T10:00:23.4583498Z Getting action download info
+windows-x64	Set up job	2026-10-31T10:00:23.5850481Z Download action repository 'actions/cache@v5' (SHA:caa296126883cff596d87d8935842f9db880ef25)
+windows-x64	Set up job	2026-10-31T10:00:23.9128663Z Complete job name: windows-x64
+windows-x64	Run actions/checkout@v4	﻿2026-10-31T10:00:24.1423090Z ##[group]Run actions/checkout@v4
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.1425384Z with:
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.1425941Z   persist-credentials: false
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.1426641Z   repository: maria0010101/ICD-10-CM-Tool
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.1435355Z   token: ***
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.1435932Z   ssh-strict: true
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.1436506Z   ssh-user: git
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.1437048Z   clean: true
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.1437625Z   sparse-checkout-cone-mode: true
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.1438349Z   fetch-depth: 1
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.1438888Z   fetch-tags: false
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.1439443Z   show-progress: true
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.1439965Z   lfs: false
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.1440510Z   submodules: false
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.1441054Z   set-safe-directory: true
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.1441685Z   allow-unsafe-pr-checkout: false
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.1442688Z ##[endgroup]
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.3706918Z Syncing repository: maria0010101/ICD-10-CM-Tool
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.3716199Z ##[group]Getting Git version info
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:24.3719120Z Working directory is 'D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool'
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:27.9409904Z [command]"C:\Program Files\Git\bin\git.exe" version
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:27.9428583Z git version 2.56.0.windows.2
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1012516Z ##[endgroup]
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1019842Z Temporarily overriding HOME='D:\a\_temp\323886b9-07e2-49a8-b2e3-82c852bf7c49' before making global git config changes
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1021208Z Adding repository directory to the temporary git global config as a safe directory
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1022555Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1179157Z Deleting the contents of 'D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool'
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1181252Z ##[group]Initializing the repository
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1182129Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1183245Z Initialized empty Git repository in D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/.git/
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1185543Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/maria0010101/ICD-10-CM-Tool
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1187666Z ##[endgroup]
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1188475Z ##[group]Disabling automatic garbage collection
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1189296Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1190983Z ##[endgroup]
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1191760Z ##[group]Setting up auth
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1192577Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1195056Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1198008Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.1200932Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.2857588Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:31.3475868Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:32.1950078Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:32.2456823Z ##[endgroup]
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:32.2480204Z ##[group]Fetching the repository
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:32.2502686Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8713b9125a6a0888509ef0f961389bc92c814842:refs/remotes/origin/main
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:34.7805925Z From https://github.com/maria0010101/ICD-10-CM-Tool
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:34.7824748Z  * [new ref]         8713b9125a6a0888509ef0f961389bc92c814842 -> origin/main
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:34.7865902Z ##[endgroup]
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:34.7867954Z ##[group]Determining the checkout info
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:34.7875312Z ##[endgroup]
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:34.7885447Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:34.8469205Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:34.9121514Z ##[group]Checking out the ref
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:34.9143353Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B main refs/remotes/origin/main
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:35.1528906Z Switched to a new branch 'main'
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:35.1560208Z branch 'main' set up to track 'origin/main'.
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:35.1692897Z ##[endgroup]
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:35.2219465Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:35.2665540Z 8713b9125a6a0888509ef0f961389bc92c814842
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:35.2731439Z ##[group]Removing auth
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:35.2747535Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:35.3244264Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:36.2159128Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:36.3611832Z http.https://github.com/.extraheader
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:36.3703162Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:36.4300776Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:38.1337778Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:38.1904128Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+windows-x64	Run actions/checkout@v4	2026-10-31T10:00:39.0487164Z ##[endgroup]
+windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	﻿2026-10-31T10:00:39.0943407Z ##[group]Run $Archive = Join-Path $env:RUNNER_TEMP 'cpython-3.13.18-windows-x64.tar.gz'
+windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-31T10:00:39.0944339Z [36;1m$Archive = Join-Path $env:RUNNER_TEMP 'cpython-3.13.18-windows-x64.tar.gz'[0m
+windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-31T10:00:39.0944939Z [36;1m$Target = Join-Path $env:RUNNER_TEMP 'icd-python313'[0m
+windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-31T10:00:39.0946066Z [36;1mInvoke-WebRequest -Uri 'https://github.com/astral-sh/python-build-standalone/releases/download/20261026/cpython-3.13.18%2B20261026-x86_64-pc-windows-msvc-install_only_stripped.tar.gz' -OutFile $Archive[0m
+windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-31T10:00:39.0947922Z [36;1mif ((Get-FileHash $Archive -Algorithm SHA256).Hash.ToLowerInvariant() -ne '7369f7a35f261222a6ac8b3a87c1c88eeebee8af945d85346202591a64038dd3') { throw 'Python runtime SHA256 mismatch' }[0m
+windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-31T10:00:39.0948969Z [36;1mNew-Item -ItemType Directory -Force $Target | Out-Null[0m
+windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-31T10:00:39.0949357Z [36;1mtar -xzf $Archive -C $Target[0m
+windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-31T10:00:39.0949963Z [36;1mif ($LASTEXITCODE -ne 0) { throw 'Python runtime extraction failed' }[0m
+windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-31T10:00:39.0950514Z [36;1m$PythonDir = Join-Path $Target 'python'[0m
+windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-31T10:00:39.0950987Z [36;1m$PythonDir | Out-File -FilePath $env:GITHUB_PATH -Append -Encoding utf8[0m
+windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-31T10:00:39.0951492Z [36;1m& (Join-Path $PythonDir 'python.exe') --version[0m
+windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-31T10:00:39.2957503Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-31T10:00:39.2958228Z ##[endgroup]
+windows-x64	Pinned standalone Python 3.13.18 (security-release runtime)	2026-10-31T10:00:42.4044851Z Python 3.13.18
+windows-x64	Run subosito/flutter-action@v2	﻿2026-10-31T10:00:42.5169452Z ##[group]Run subosito/flutter-action@v2
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.5169873Z with:
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.5170067Z   flutter-version: 3.47.5
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.5170283Z   channel: stable
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.5170463Z   cache: true
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.5170638Z   architecture: X64
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.5170840Z   pub-cache-path: default
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.5171063Z   dry-run: false
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.5171302Z   git-source: https://github.com/flutter/flutter.git
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.5171598Z ##[endgroup]
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.5243471Z ##[start-action display=Make yq tool available on Windows runners;id=__subosito_flutter-action.__run]
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.5270823Z ##[end-action id=__subosito_flutter-action.__run;outcome=skipped;conclusion=skipped;duration_ms=0]
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.5273808Z ##[start-action display=Make setup script executable;id=__subosito_flutter-action.__run_2]
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.5452657Z ##[group]Run chmod +x "$GITHUB_ACTION_PATH/setup.sh"
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.5453096Z [36;1mchmod +x "$GITHUB_ACTION_PATH/setup.sh"[0m
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.5472720Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.5473247Z ##[endgroup]
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.7759355Z ##[end-action id=__subosito_flutter-action.__run_2;outcome=success;conclusion=success;duration_ms=248]
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.7763408Z ##[start-action display=Set action inputs;id=__subosito_flutter-action.flutter-action]
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.7976394Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh -p \
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.7976948Z [36;1m$GITHUB_ACTION_PATH/setup.sh -p \[0m
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.7977493Z [36;1m  -n '3.47.5' \[0m
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.7977728Z [36;1m  -f '' \[0m
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.7977928Z [36;1m  -a 'X64' \[0m
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.7978134Z [36;1m  -k '' \[0m
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.7978325Z [36;1m  -c '' \[0m
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.7978513Z [36;1m  -l '' \[0m
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.7978715Z [36;1m  -d 'default' \[0m
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.7979026Z [36;1m  -g 'https://github.com/flutter/flutter.git' \[0m
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.7979375Z [36;1m  stable[0m
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.7997296Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:42.7997737Z ##[endgroup]
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:46.9184128Z ##[end-action id=__subosito_flutter-action.flutter-action;outcome=success;conclusion=success;duration_ms=4141]
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:46.9189390Z ##[start-action display=Cache Flutter;id=__subosito_flutter-action.cache-flutter]
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:46.9421590Z ##[group]Run actions/cache@v5
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:46.9422002Z with:
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:46.9422379Z   path: C:\hostedtoolcache\windows\flutter\stable-3.47.5-x64
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:46.9423713Z   key: flutter-windows-stable-3.47.5-x64-6a19cca56475dbfba1478ee68d7bd0c2ef891da1
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:46.9424463Z   enableCrossOsArchive: false
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:46.9424702Z   fail-on-cache-miss: false
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:46.9424926Z   lookup-only: false
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:46.9425116Z   save-always: false
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:46.9425302Z ##[endgroup]
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:47.6190461Z Cache hit for: flutter-windows-stable-3.47.5-x64-6a19cca56475dbfba1478ee68d7bd0c2ef891da1
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:48.9204761Z Received 29360128 of 1927017449 (1.5%), 28.0 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:49.9268255Z Received 134217728 of 1927017449 (7.0%), 63.7 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:51.0804595Z Received 268435456 of 1927017449 (13.9%), 80.9 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:52.2890490Z Received 402653184 of 1927017449 (20.9%), 87.9 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:53.5856094Z Received 536870912 of 1927017449 (27.9%), 90.5 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:54.7919953Z Received 671088640 of 1927017449 (34.8%), 93.3 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:56.0337959Z Received 805306368 of 1927017449 (41.8%), 94.6 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:57.0369498Z Received 935329792 of 1927017449 (48.5%), 97.8 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:58.0372880Z Received 1010827264 of 1927017449 (52.5%), 95.3 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:00:59.0432188Z Received 1107296256 of 1927017449 (57.5%), 94.9 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:01:00.0506265Z Received 1203765248 of 1927017449 (62.5%), 94.6 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:01:01.0614131Z Received 1300234240 of 1927017449 (67.5%), 94.3 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:01:02.0619894Z Received 1384120320 of 1927017449 (71.8%), 93.3 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:01:03.0727307Z Received 1480589312 of 1927017449 (76.8%), 93.2 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:01:04.2255305Z Received 1610612736 of 1927017449 (83.6%), 94.2 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:01:05.4303267Z Received 1744830464 of 1927017449 (90.5%), 95.1 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:01:06.4234247Z Received 1870659584 of 1927017449 (97.1%), 96.4 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:01:07.1992918Z Received 1927017449 of 1927017449 (100.0%), 95.3 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:01:07.1999016Z Cache Size: ~1838 MB (1927017449 B)
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:01:07.2151279Z [command]"C:\Program Files\Git\usr\bin\tar.exe" -xf D:/a/_temp/f58c5b7d-9b91-4334-96cb-7f474a842ad2/cache.tzst -P -C D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool --force-local --use-compress-program "zstd -d"
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:01:59.5376393Z Cache restored successfully
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:01:59.7324727Z Cache restored from key: flutter-windows-stable-3.47.5-x64-6a19cca56475dbfba1478ee68d7bd0c2ef891da1
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:01:59.7550546Z ##[end-action id=__subosito_flutter-action.cache-flutter;outcome=success;conclusion=success;duration_ms=72834]
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:01:59.7554289Z ##[start-action display=Cache pub dependencies;id=__subosito_flutter-action.cache-pub]
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:00.0736590Z ##[group]Run actions/cache@v5
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:00.0736958Z with:
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:00.0737314Z   path: C:\Users\runneradmin\AppData\Local\Pub\Cache
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:00.0738419Z   key: flutter-pub-windows-stable-3.47.5-x64-6a19cca56475dbfba1478ee68d7bd0c2ef891da1-3a5f7e24598f33fb5ff956a7a6656222ecc437de1331fcc1c31a563f6e59bf73
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:00.0739711Z   enableCrossOsArchive: false
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:00.0740096Z   fail-on-cache-miss: false
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:00.0740420Z   lookup-only: false
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:00.0740719Z   save-always: false
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:00.0741010Z ##[endgroup]
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:00.9219918Z Cache hit for: flutter-pub-windows-stable-3.47.5-x64-6a19cca56475dbfba1478ee68d7bd0c2ef891da1-3a5f7e24598f33fb5ff956a7a6656222ecc437de1331fcc1c31a563f6e59bf73
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:01.8810084Z Received 32620478 of 32620478 (100.0%), 33.5 MBs/sec
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:01.8833396Z Cache Size: ~31 MB (32620478 B)
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:01.8847458Z [command]"C:\Program Files\Git\usr\bin\tar.exe" -xf D:/a/_temp/3d1421e8-6cd6-4b71-b2e8-2dc7bd712d25/cache.tzst -P -C D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool --force-local --use-compress-program "zstd -d"
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:26.8225435Z Cache restored successfully
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:26.8378758Z Cache restored from key: flutter-pub-windows-stable-3.47.5-x64-6a19cca56475dbfba1478ee68d7bd0c2ef891da1-3a5f7e24598f33fb5ff956a7a6656222ecc437de1331fcc1c31a563f6e59bf73
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:26.8518546Z ##[end-action id=__subosito_flutter-action.cache-pub;outcome=success;conclusion=success;duration_ms=27095]
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:26.8522636Z ##[start-action display=Run setup script;id=__subosito_flutter-action.__run_3]
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:26.8703420Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh \
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:26.8703925Z [36;1m$GITHUB_ACTION_PATH/setup.sh \[0m
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:26.8704324Z [36;1m  -n '3.47.5' \[0m
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:26.8704691Z [36;1m  -a 'x64' \[0m
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:26.8705710Z [36;1m  -c 'C:\hostedtoolcache\windows\flutter\stable-3.47.5-x64' \[0m
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:26.8706341Z [36;1m  -d 'C:\Users\runneradmin\AppData\Local\Pub\Cache' \[0m
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:26.8706804Z [36;1m  stable[0m
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:26.8730209Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:26.8730889Z ##[endgroup]
+windows-x64	Run subosito/flutter-action@v2	2026-10-31T10:02:34.3981424Z ##[end-action id=__subosito_flutter-action.__run_3;outcome=success;conclusion=success;duration_ms=7545]
+windows-x64	Locked builder dependencies and Python tests	﻿2026-10-31T10:02:34.4276170Z ##[group]Run python -m pip install --require-hashes -r tools/data_builder/requirements-windows.lock
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:34.4277694Z [36;1mpython -m pip install --require-hashes -r tools/data_builder/requirements-windows.lock[0m
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:34.4284284Z [36;1mif ($LASTEXITCODE -ne 0) { throw 'Python dependency install failed' }[0m
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:34.4285309Z [36;1mpython -m pytest tools/data_builder/tests -q[0m
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:34.4288209Z [36;1mif ($LASTEXITCODE -ne 0) { throw 'Python tests failed' }[0m
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:34.9673665Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:34.9674433Z env:
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:34.9675435Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.47.5-x64/flutter
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:34.9679018Z   PUB_CACHE: C:\Users\runneradmin\AppData\Local\Pub\Cache
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:34.9679751Z ##[endgroup]
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:40.1182249Z Collecting attrs==26.1.0 (from -r tools/data_builder/requirements-windows.lock (line 3))
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:40.1831655Z   Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:40.2547208Z Collecting colorama==0.4.6 (from -r tools/data_builder/requirements-windows.lock (line 9))
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:40.2673976Z   Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:40.3120698Z Collecting et-xmlfile==2.0.0 (from -r tools/data_builder/requirements-windows.lock (line 15))
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:40.3262952Z   Downloading et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:40.3707304Z Collecting iniconfig==2.3.1 (from -r tools/data_builder/requirements-windows.lock (line 19))
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:40.3831088Z   Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:40.4449366Z Collecting jsonschema==4.26.0 (from -r tools/data_builder/requirements-windows.lock (line 23))
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:40.4579500Z   Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:40.5222859Z Collecting jsonschema-specifications==2025.9.1 (from -r tools/data_builder/requirements-windows.lock (line 27))
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:40.5353547Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:40.8591869Z Collecting lxml==6.0.4 (from -r tools/data_builder/requirements-windows.lock (line 31))
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:40.8739482Z   Downloading lxml-6.0.4-cp313-cp313-win_amd64.whl (4.0 MB)
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:41.2190680Z      ---------------------------------------- 4.0/4.0 MB 12.0 MB/s  0:00:00
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:41.2586676Z Collecting openpyxl==3.1.5 (from -r tools/data_builder/requirements-windows.lock (line 167))
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:41.2718093Z   Downloading openpyxl-3.1.5-py2.py3-none-any.whl (250 kB)
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:41.3252376Z Collecting packaging==26.3 (from -r tools/data_builder/requirements-windows.lock (line 171))
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:41.3380466Z   Downloading packaging-26.3-py3-none-any.whl (129 kB)
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:41.3922204Z Collecting pluggy==1.7.0 (from -r tools/data_builder/requirements-windows.lock (line 175))
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:41.4043388Z   Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:41.4569421Z Collecting pygments==2.21.0 (from -r tools/data_builder/requirements-windows.lock (line 179))
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:41.4697051Z   Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:41.5299181Z      ---------------------------------------- 1.3/1.3 MB 19.5 MB/s  0:00:00
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:41.5794061Z Collecting pytest==9.0.2 (from -r tools/data_builder/requirements-windows.lock (line 183))
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:41.5910977Z   Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:41.6881334Z Collecting referencing==0.37.0 (from -r tools/data_builder/requirements-windows.lock (line 187))
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:41.7031484Z   Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:42.0326000Z Collecting rpds-py==2026.9.1 (from -r tools/data_builder/requirements-windows.lock (line 193))
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:42.0461686Z   Downloading rpds_py-2026.9.1-cp313-cp313-win_amd64.whl (222 kB)
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:42.2128567Z Installing collected packages: rpds-py, pygments, pluggy, packaging, lxml, iniconfig, et-xmlfile, colorama, attrs, referencing, pytest, openpyxl, jsonschema-specifications, jsonschema
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:43.2791245Z   WARNING: The script pygmentize.exe is installed in 'D:\a\_temp\icd-python313\python\Scripts' which is not on PATH.
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:43.2793287Z   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:44.1930511Z   WARNING: The scripts py.test.exe and pytest.exe are installed in 'D:\a\_temp\icd-python313\python\Scripts' which is not on PATH.
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:44.1932560Z   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:44.7338433Z   WARNING: The script jsonschema.exe is installed in 'D:\a\_temp\icd-python313\python\Scripts' which is not on PATH.
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:44.7340975Z   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:44.7395582Z 
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:02:44.7419773Z Successfully installed attrs-26.1.0 colorama-0.4.6 et-xmlfile-2.0.0 iniconfig-2.3.1 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 lxml-6.0.4 openpyxl-3.1.5 packaging-26.3 pluggy-1.7.0 pygments-2.21.0 pytest-9.0.2 referencing-0.37.0 rpds-py-2026.9.1
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:03:06.9775378Z ..........................................................               [100%]
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:03:06.9777362Z ============================== warnings summary ===============================
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:03:06.9786966Z tools/data_builder/tests/test_package.py::test_unsafe_zip_names[content.sqlite]
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:03:06.9788798Z   D:\a\_temp\icd-python313\python\Lib\zipfile\__init__.py:1686: UserWarning: Duplicate name: 'content.sqlite'
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:03:06.9790833Z     return self._open_to_write(zinfo, force_zip64=force_zip64)
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:03:06.9792137Z 
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:03:06.9792743Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+windows-x64	Locked builder dependencies and Python tests	2026-10-31T10:03:06.9793760Z 58 passed, 1 warning in 21.64s
+windows-x64	Analyze, native tests, release build and app-local CRT	﻿2026-10-31T10:03:07.3823379Z ##[group]Run $Version = (Select-String '^version:\s*([0-9.]+)' app/pubspec.yaml).Matches[0].Groups[1].Value
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:07.3824872Z [36;1m$Version = (Select-String '^version:\s*([0-9.]+)' app/pubspec.yaml).Matches[0].Groups[1].Value[0m
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:07.3826049Z [36;1m"APP_VERSION=$Version" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8[0m
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:07.3826668Z [36;1m& ./scripts/build_windows.ps1[0m
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:07.3945603Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:07.3946299Z env:
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:07.3946889Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.47.5-x64/flutter
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:07.3947744Z   PUB_CACHE: C:\Users\runneradmin\AppData\Local\Pub\Cache
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:07.3948303Z ##[endgroup]
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:11.1777937Z Resolving dependencies...
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:11.2669043Z Downloading packages...
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:11.4719455Z   cli_util 0.4.2 (0.6.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:11.4720499Z   cross_file 0.3.5+5 (0.4.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:11.4721435Z   cupertino_icons 1.0.9 (2.0.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:11.4722305Z   material_color_utilities 0.13.0 (0.13.1 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:11.4723108Z   test_api 0.7.12 (0.7.15 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:11.4723809Z   vector_math 2.4.0 (2.4.4 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:11.4724633Z Got dependencies!
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:11.4725397Z 6 packages have newer versions incompatible with dependency constraints.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:11.4726903Z Try `flutter pub outdated` for more information.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:12.9781095Z Resolving dependencies...
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:13.0689083Z Downloading packages...
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:13.2273247Z   cli_util 0.4.2 (0.6.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:13.2274245Z   cross_file 0.3.5+5 (0.4.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:13.2275047Z   cupertino_icons 1.0.9 (2.0.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:13.2275890Z   material_color_utilities 0.13.0 (0.13.1 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:13.2276696Z   test_api 0.7.12 (0.7.15 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:13.2277397Z   vector_math 2.4.0 (2.4.4 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:13.2278032Z Got dependencies!
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:13.2278827Z 6 packages have newer versions incompatible with dependency constraints.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:13.2279851Z Try `flutter pub outdated` for more information.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:26.5089059Z Analyzing app...                                                
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:26.5133232Z No issues found! (ran in 11.7s)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:27.7121065Z Resolving dependencies...
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:27.8059072Z Downloading packages...
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:27.9754954Z   cli_util 0.4.2 (0.6.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:27.9755936Z   cross_file 0.3.5+5 (0.4.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:27.9756763Z   cupertino_icons 1.0.9 (2.0.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:27.9757524Z   material_color_utilities 0.13.0 (0.13.1 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:27.9758243Z   test_api 0.7.12 (0.7.15 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:27.9758911Z   vector_math 2.4.0 (2.4.4 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:27.9759559Z Got dependencies!
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:27.9760363Z 6 packages have newer versions incompatible with dependency constraints.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:27.9761408Z Try `flutter pub outdated` for more information.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:33.2141124Z 
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:47.7687445Z ##[group]✅ Passing tests
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:47.7693361Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/cross_probe_test.dart: 50-query native snapshot + 1000-query warm benchmark
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:47.7694525Z ##[endgroup]
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:47.7697495Z ##[group]⏭️ Skipped tests
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:47.7702316Z ⏭️ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/cross_probe_test.dart: official English release native snapshot and 1000 warm queries (skipped)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:48.9103280Z ⏭️ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/guided_official_test.dart: FY2025 actual official pack: same website order and complete paginated forest (skipped)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:50.7695439Z ##[endgroup]
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:50.7696916Z ##[group]✅ Passing tests
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:50.7699209Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/guided_search_test.dart: Index precedes Tabular, retains official order, repeated codes, and all pages
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:51.0121423Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/guided_search_test.dart: commas/case/order normalize; prefix and exact-word/AND/OR semantics remain explicit
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:51.2512093Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/guided_search_test.dart: live single term suggests main headings; branch can show all children; codes stay exact
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:58.1514024Z ##[endgroup]
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:58.1515970Z ##[group]✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 390.0
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:58.1517153Z GUIDED_UI submit start
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:58.1517939Z GUIDED_UI submit returned
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:58.1518800Z GUIDED_UI search done
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:58.1519381Z GUIDED_UI scroll done
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:58.1519867Z GUIDED_UI more tapped
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:58.1520367Z GUIDED_UI more done
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:58.1520868Z GUIDED_UI browse done
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:03:58.1525012Z ##[endgroup]
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:01.2802940Z ##[group]✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 800.0
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:01.2805815Z GUIDED_UI submit start
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:01.2903579Z GUIDED_UI submit returned
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:01.2904783Z GUIDED_UI search done
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:01.2905320Z GUIDED_UI scroll done
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:01.2905807Z GUIDED_UI more tapped
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:01.2906286Z GUIDED_UI more done
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:01.2906764Z GUIDED_UI browse done
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:01.2907620Z ##[endgroup]
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:04.5888198Z ##[group]✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 1440.0
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:04.5894875Z GUIDED_UI submit start
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:04.5898115Z GUIDED_UI submit returned
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:04.5907493Z GUIDED_UI search done
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:04.5916728Z GUIDED_UI scroll done
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:04.5938193Z GUIDED_UI more tapped
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:04.5938781Z GUIDED_UI more done
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:04.5939261Z GUIDED_UI browse done
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:04.5940093Z ##[endgroup]
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:06.9748937Z ##[group]✅ Passing tests
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:06.9750534Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/nhi_cm_test.dart: NHI CM standalone: independent activation, FTS, Chinese and lineage
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:08.7508356Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/nhi_cm_test.dart: overlay is labelled and cannot activate without a base
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:10.4644680Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/nhi_legacy_test.dart: NHI 2014: same-edition rows, missing Chinese, unknown status, 50 queries
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:12.8713077Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/pcs_test.dart: PCS shared package: code, FTS, seven axes, Index and family isolation
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:15.0589832Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/pcs_test.dart: PCS selector remains available when that family has no package
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:16.4776479Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/repository_test.dart: normalization AND OR prefixes cannot inject FTS SQL
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:16.9062126Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/repository_test.dart: same bytes readonly queries and inherited notes/index/lineage
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:17.5486963Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/repository_test.dart: atomic rollback survives interrupted staging/disk full/publish and isolates user data
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:17.8982509Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/repository_test.dart: version diff reports changed description, never silently merges translation
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:18.2580065Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/repository_test.dart: malicious ZIP/DB/schema are rejected without changing active data
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:18.7016186Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/repository_test.dart: overlay cannot silently turn an unresolved translation into official compatible content
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:18.8388322Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/repository_test.dart: duplicate JSON keys cannot differ across validators
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:19.2540319Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/repository_test.dart: tampered installed file cannot activate, old pointer retained
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:22.9870975Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/review_ui_test.dart: review navigation 390.0 TargetPlatform.android
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:24.1400704Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/review_ui_test.dart: review navigation 800.0 TargetPlatform.android
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:24.9899738Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/review_ui_test.dart: review navigation 1440.0 TargetPlatform.windows
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:25.9481019Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/review_ui_test.dart: review navigation 650.0 TargetPlatform.windows
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:26.6581479Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/review_ui_test.dart: notes dialog and optional translation: sample-demo-v1
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:27.2608175Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/review_ui_test.dart: notes dialog and optional translation: sample-nhi-cm-v1
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:27.9064409Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/review_ui_test.dart: notes dialog and optional translation: sample-pcs-v1
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:30.8107354Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/tree_regression_test.dart: native hierarchy and Index expand inside narrow desktop pane
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:31.7930204Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/widget_test.dart: adaptive breakpoints
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:33.3512296Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/widget_test.dart: empty import flow 390.0px and text scaling
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:33.7104301Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/widget_test.dart: empty import flow 800.0px and text scaling
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:34.0282901Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/widget_test.dart: empty import flow 1440.0px and text scaling
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:35.3482659Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/widget_test.dart: populated search/detail 390.0px at 1.6x text scale
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:36.1587014Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/widget_test.dart: populated search/detail 800.0px at 1.6x text scale
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:36.9509420Z ✅ D:/a/ICD-10-CM-Tool/ICD-10-CM-Tool/app/test/widget_test.dart: populated search/detail 1440.0px at 1.6x text scale
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:36.9844144Z ##[endgroup]
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:36.9847092Z 
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:36.9854189Z 🎉 35 tests passed, 2 skipped.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:38.1566650Z Resolving dependencies...
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:38.2763042Z Downloading packages...
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:38.4739733Z   cli_util 0.4.2 (0.6.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:38.4740674Z   cross_file 0.3.5+5 (0.4.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:38.4741380Z   cupertino_icons 1.0.9 (2.0.0 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:38.4742148Z   material_color_utilities 0.13.0 (0.13.1 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:38.4743157Z   test_api 0.7.12 (0.7.15 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:38.4743835Z   vector_math 2.4.0 (2.4.4 available)
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:38.4744437Z Got dependencies!
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:38.4745338Z 6 packages have newer versions incompatible with dependency constraints.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:04:38.4746297Z Try `flutter pub outdated` for more information.
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:06:29.0378042Z Building Windows application...                                   110.1s
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:06:29.0405415Z √ Built build\windows\x64\runner\Release\icd_dictionary.exe
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:06:30.9206154Z Built actual portable ZIP: D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool\dist\icd-offline-0.2.4-windows-x64.zip
+windows-x64	Analyze, native tests, release build and app-local CRT	2026-10-31T10:06:30.9212671Z Unzip on a clean Windows x64 workstation and manually test; build success is not runtime acceptance.
+windows-x64	Launch bundled executable on the hosted Windows runner	﻿2026-10-31T10:06:30.9647059Z ##[group]Run $Bundle = Resolve-Path app/build/windows/x64/runner/Release
+windows-x64	Launch bundled executable on the hosted Windows runner	2026-10-31T10:06:30.9648056Z [36;1m$Bundle = Resolve-Path app/build/windows/x64/runner/Release[0m
+windows-x64	Launch bundled executable on the hosted Windows runner	2026-10-31T10:06:30.9649334Z [36;1m$Process = Start-Process -FilePath (Join-Path $Bundle 'icd_dictionary.exe') -WorkingDirectory $Bundle -PassThru[0m
+windows-x64	Launch bundled executable on the hosted Windows runner	2026-10-31T10:06:30.9650404Z [36;1mtry {[0m
+windows-x64	Launch bundled executable on the hosted Windows runner	2026-10-31T10:06:30.9650786Z [36;1m  Start-Sleep -Seconds 8[0m
+windows-x64	Launch bundled executable on the hosted Windows runner	2026-10-31T10:06:30.9651566Z [36;1m  if ($Process.HasExited) { throw "Bundled app exited early: $($Process.ExitCode)" }[0m
+windows-x64	Launch bundled executable on the hosted Windows runner	2026-10-31T10:06:30.9652533Z [36;1m  $State = Join-Path $Bundle 'portable-data/user.sqlite'[0m
+windows-x64	Launch bundled executable on the hosted Windows runner	2026-10-31T10:06:30.9653443Z [36;1m  if (!(Test-Path $State)) { throw 'App failed to create its separate user database' }[0m
+windows-x64	Launch bundled executable on the hosted Windows runner	2026-10-31T10:06:30.9656622Z [36;1m  $Check = python -c "import json,sqlite3,pathlib,sys; c=sqlite3.connect(pathlib.Path(sys.argv[1]).resolve().as_uri()+'?mode=ro',uri=True); tables=[r[0] for r in c.execute('SELECT name FROM sqlite_master WHERE type=char(116,97,98,108,101)')]; assert {'installed_packages','favorites','personal_notes','preferences'} <= set(tables); assert c.execute('PRAGMA integrity_check').fetchone()[0]=='ok'; print(json.dumps(dict(tables=tables))); c.close()" $State[0m
+windows-x64	Launch bundled executable on the hosted Windows runner	2026-10-31T10:06:30.9660290Z [36;1m  if ($LASTEXITCODE -ne 0) { throw 'App-local SQLite startup validation failed' }[0m
+windows-x64	Launch bundled executable on the hosted Windows runner	2026-10-31T10:06:30.9662991Z [36;1m  @{ process_alive=$true; app_user_sqlite_verified=$true; app_user_tables=($Check | ConvertFrom-Json).tables; environment='GitHub hosted Windows runner, not a clean workstation'; timestamp=(Get-Date).ToUniversalTime().ToString('o'); commit=$env:GITHUB_SHA } | ConvertTo-Json | Set-Content evidence/windows-bundle-launch.json[0m
+windows-x64	Launch bundled executable on the hosted Windows runner	2026-10-31T10:06:30.9665732Z [36;1m} finally { Stop-Process -Id $Process.Id -ErrorAction SilentlyContinue }[0m
+windows-x64	Launch bundled executable on the hosted Windows runner	2026-10-31T10:06:30.9754549Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+windows-x64	Launch bundled executable on the hosted Windows runner	2026-10-31T10:06:30.9754992Z env:
+windows-x64	Launch bundled executable on the hosted Windows runner	2026-10-31T10:06:30.9755376Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.47.5-x64/flutter
+windows-x64	Launch bundled executable on the hosted Windows runner	2026-10-31T10:06:30.9755915Z   PUB_CACHE: C:\Users\runneradmin\AppData\Local\Pub\Cache
+windows-x64	Launch bundled executable on the hosted Windows runner	2026-10-31T10:06:30.9756282Z   APP_VERSION: 0.2.4
+windows-x64	Launch bundled executable on the hosted Windows runner	2026-10-31T10:06:30.9756514Z ##[endgroup]
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	﻿2026-10-31T10:06:39.7766605Z ##[group]Run actions/upload-artifact@v4
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:39.7766990Z with:
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:39.7767219Z   name: windows-x64-portable-0.2.4
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:39.7767522Z   if-no-files-found: error
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:39.7767776Z   retention-days: 30
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:39.7768964Z   path: dist/*windows-x64.zip
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	dist/*windows-x64.zip.sha256
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	evidence/linux-probe.json
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	evidence/pcs-native.json
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	evidence/nhi-cm-native.json
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	evidence/nhi2014-native.json
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	evidence/guided-native.json
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	evidence/tree-expanded.png
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	evidence/windows-bundle-launch.json
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:39.7770204Z   compression-level: 6
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:39.7770464Z   overwrite: false
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:39.7770693Z   include-hidden-files: false
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:39.7770936Z env:
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:39.7771259Z   FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.47.5-x64/flutter
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:39.7771760Z   PUB_CACHE: C:\Users\runneradmin\AppData\Local\Pub\Cache
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:39.7772107Z   APP_VERSION: 0.2.4
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:39.7772334Z ##[endgroup]
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:40.0149909Z (node:8948) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:40.0151749Z (Use `node --trace-deprecation ...` to show where the warning was created)
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:40.0340348Z Multiple search paths detected. Calculating the least common ancestor of all paths
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:40.0347253Z The least common ancestor is D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool. This will be the root directory of the artifact
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:40.0348508Z With the provided path, there will be 9 files uploaded
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:40.0353402Z Artifact name is valid!
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:40.0355000Z Root directory input is valid!
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:40.4459090Z Beginning upload of artifact content to blob storage
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:40.8050128Z (node:8948) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:41.9551527Z Uploaded bytes 8388608
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:42.1866110Z Uploaded bytes 15237531
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:42.2604719Z Finished uploading artifact content to blob storage!
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:42.2606972Z SHA256 digest of uploaded artifact zip is f357ca8da5dfad8bdc2391fc689cd0991d6139333eaddf551f466a365bbf496b
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:42.2610949Z Finalizing artifact upload
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:42.7658366Z Artifact windows-x64-portable-0.2.4.zip successfully finalized. Artifact ID 13038648862
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:42.7660671Z Artifact windows-x64-portable-0.2.4 has been successfully uploaded! Final size is 15237531 bytes. Artifact ID is 13038648862
+windows-x64	Preserve portable ZIP and native FTS5 query evidence	2026-10-31T10:06:42.7673585Z Artifact download URL: https://github.com/maria0010101/ICD-10-CM-Tool/actions/runs/41190945188/artifacts/13038648862
+windows-x64	Post Run subosito/flutter-action@v2	﻿2026-10-31T10:06:42.8455465Z Post job cleanup.
+windows-x64	Post Run subosito/flutter-action@v2	2026-10-31T10:06:42.8460699Z ##[start-action display=Cache pub dependencies;id=__9d0dde09-8b63-418a-8fd6-34aad392a358.cache-pub]
+windows-x64	Post Run subosito/flutter-action@v2	2026-10-31T10:06:43.2503650Z Post job cleanup.
+windows-x64	Post Run subosito/flutter-action@v2	2026-10-31T10:06:43.4406432Z Cache hit occurred on the primary key flutter-pub-windows-stable-3.47.5-x64-6a19cca56475dbfba1478ee68d7bd0c2ef891da1-3a5f7e24598f33fb5ff956a7a6656222ecc437de1331fcc1c31a563f6e59bf73, not saving cache.
+windows-x64	Post Run subosito/flutter-action@v2	2026-10-31T10:06:43.4519043Z ##[end-action id=__9d0dde09-8b63-418a-8fd6-34aad392a358.cache-pub;outcome=success;conclusion=success;duration_ms=605]
+windows-x64	Post Run subosito/flutter-action@v2	2026-10-31T10:06:43.4523468Z ##[start-action display=Cache Flutter;id=__9d0dde09-8b63-418a-8fd6-34aad392a358.cache-flutter]
+windows-x64	Post Run subosito/flutter-action@v2	2026-10-31T10:06:43.4708903Z Post job cleanup.
+windows-x64	Post Run subosito/flutter-action@v2	2026-10-31T10:06:43.6694324Z Cache hit occurred on the primary key flutter-windows-stable-3.47.5-x64-6a19cca56475dbfba1478ee68d7bd0c2ef891da1, not saving cache.
+windows-x64	Post Run subosito/flutter-action@v2	2026-10-31T10:06:43.6814680Z ##[end-action id=__9d0dde09-8b63-418a-8fd6-34aad392a358.cache-flutter;outcome=success;conclusion=success;duration_ms=228]
+windows-x64	Post Run actions/checkout@v4	﻿2026-10-31T10:06:43.7097853Z Post job cleanup.
+windows-x64	Post Run actions/checkout@v4	2026-10-31T10:06:43.9744177Z [command]"C:\Program Files\Git\bin\git.exe" version
+windows-x64	Post Run actions/checkout@v4	2026-10-31T10:06:44.0161658Z git version 2.56.0.windows.2
+windows-x64	Post Run actions/checkout@v4	2026-10-31T10:06:44.0275168Z Temporarily overriding HOME='D:\a\_temp\2bc8e66d-148f-4566-af59-854c4c709156' before making global git config changes
+windows-x64	Post Run actions/checkout@v4	2026-10-31T10:06:44.0311359Z Adding repository directory to the temporary git global config as a safe directory
+windows-x64	Post Run actions/checkout@v4	2026-10-31T10:06:44.0328242Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\ICD-10-CM-Tool\ICD-10-CM-Tool
+windows-x64	Post Run actions/checkout@v4	2026-10-31T10:06:44.1017533Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+windows-x64	Post Run actions/checkout@v4	2026-10-31T10:06:44.1506863Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+windows-x64	Post Run actions/checkout@v4	2026-10-31T10:06:44.9010590Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+windows-x64	Post Run actions/checkout@v4	2026-10-31T10:06:44.9439674Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+windows-x64	Post Run actions/checkout@v4	2026-10-31T10:06:45.5793969Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+windows-x64	Post Run actions/checkout@v4	2026-10-31T10:06:45.6201710Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+windows-x64	Complete job	﻿2026-10-31T10:06:46.3070054Z Cleaning up orphan processes
+windows-x64	Complete job	2026-10-31T10:06:46.4235360Z Terminate orphan process: pid (3964) (vctip)
+windows-x64	Complete job	2026-10-31T10:06:46.4506099Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

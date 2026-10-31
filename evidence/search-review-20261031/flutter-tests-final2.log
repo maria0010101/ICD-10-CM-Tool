@@ -1,0 +1,159 @@
+Resolving dependencies...
+Downloading packages...
+  cli_util 0.4.2 (0.6.0 available)
+  cross_file 0.3.5+5 (0.4.0 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_math 2.4.0 (2.4.4 available)
+Got dependencies!
+6 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading /tmp/icd-build-024/app/test/guided_ui_test.dart
+00:00 +0: /tmp/icd-build-024/app/test/guided_official_test.dart: FY2025 actual official pack: same website order and complete paginated forest
+00:00 +0 ~1: /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 390.0
+00:00 +1 ~1: /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 390.0
+00:00 +2 ~1: /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 390.0
+00:00 +3 ~1: /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 390.0
+00:00 +4 ~1: /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 390.0
+GUIDED_UI submit start
+GUIDED_UI submit returned
+GUIDED_UI search done
+00:01 +5 ~1: /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 390.0
+00:01 +6 ~1: /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 390.0
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TextWidgetFinder:<Found 2 widgets with text "Diabetes, diabetic (SAMPLE)": [
+            Text("Diabetes, diabetic (SAMPLE)", dependencies: [DefaultSelectionStyle,
+DefaultTextStyle, MediaQuery]),
+            Text("Diabetes, diabetic (SAMPLE)", overflow: ellipsis, maxLines: 2, dependencies:
+[DefaultSelectionStyle, DefaultTextStyle, MediaQuery]),
+          ]>
+   Which: is too many
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///tmp/icd-build-024/app/test/guided_ui_test.dart:70:9)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///tmp/icd-build-024/app/test/guided_ui_test.dart line 70
+The test description was:
+  guided list and real paginated SQLite UI at 390.0
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:01 +6 ~1 -1: /tmp/icd-build-024/app/test/tree_regression_test.dart: native hierarchy and Index expand inside narrow desktop pane
+00:01 +6 ~1 -1: /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 390.0 [E]
+  Test failed. See exception logs above.
+  The test description was: guided list and real paginated SQLite UI at 390.0
+  
+00:02 +7 ~1 -1: /tmp/icd-build-024/app/test/tree_regression_test.dart: native hierarchy and Index expand inside narrow desktop pane
+00:02 +7 ~1 -1: /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 800.0
+GUIDED_UI submit start
+GUIDED_UI submit returned
+GUIDED_UI search done
+00:02 +8 ~1 -1: /tmp/icd-build-024/app/test/review_ui_test.dart: review navigation 390.0 TargetPlatform.android
+00:02 +8 ~1 -1: /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 800.0
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TextWidgetFinder:<Found 2 widgets with text "Diabetes, diabetic (SAMPLE)": [
+            Text("Diabetes, diabetic (SAMPLE)", dependencies: [DefaultSelectionStyle,
+DefaultTextStyle, MediaQuery]),
+            Text("Diabetes, diabetic (SAMPLE)", overflow: ellipsis, maxLines: 2, dependencies:
+[DefaultSelectionStyle, DefaultTextStyle, MediaQuery]),
+          ]>
+   Which: is too many
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///tmp/icd-build-024/app/test/guided_ui_test.dart:70:9)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///tmp/icd-build-024/app/test/guided_ui_test.dart line 70
+The test description was:
+  guided list and real paginated SQLite UI at 800.0
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +8 ~1 -2: /tmp/icd-build-024/app/test/review_ui_test.dart: review navigation 390.0 TargetPlatform.android
+00:02 +8 ~1 -2: /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 800.0 [E]
+  Test failed. See exception logs above.
+  The test description was: guided list and real paginated SQLite UI at 800.0
+  
+00:02 +8 ~1 -2: /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 1440.0
+GUIDED_UI submit start
+GUIDED_UI submit returned
+GUIDED_UI search done
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TextWidgetFinder:<Found 2 widgets with text "Diabetes, diabetic (SAMPLE)": [
+            Text("Diabetes, diabetic (SAMPLE)", dependencies: [DefaultSelectionStyle,
+DefaultTextStyle, MediaQuery]),
+            Text("Diabetes, diabetic (SAMPLE)", overflow: ellipsis, maxLines: 2, dependencies:
+[DefaultSelectionStyle, DefaultTextStyle, MediaQuery]),
+          ]>
+   Which: is too many
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///tmp/icd-build-024/app/test/guided_ui_test.dart:70:9)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///tmp/icd-build-024/app/test/guided_ui_test.dart line 70
+The test description was:
+  guided list and real paginated SQLite UI at 1440.0
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +8 ~1 -3: /tmp/icd-build-024/app/test/review_ui_test.dart: review navigation 390.0 TargetPlatform.android
+00:02 +8 ~1 -3: /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 1440.0 [E]
+  Test failed. See exception logs above.
+  The test description was: guided list and real paginated SQLite UI at 1440.0
+  
+00:02 +9 ~1 -3: /tmp/icd-build-024/app/test/review_ui_test.dart: review navigation 390.0 TargetPlatform.android
+00:03 +10 ~1 -3: /tmp/icd-build-024/app/test/review_ui_test.dart: review navigation 390.0 TargetPlatform.android
+00:03 +11 ~1 -3: /tmp/icd-build-024/app/test/review_ui_test.dart: review navigation 390.0 TargetPlatform.android
+00:03 +12 ~1 -3: /tmp/icd-build-024/app/test/review_ui_test.dart: review navigation 390.0 TargetPlatform.android
+00:03 +13 ~1 -3: /tmp/icd-build-024/app/test/review_ui_test.dart: review navigation 390.0 TargetPlatform.android
+00:03 +14 ~1 -3: /tmp/icd-build-024/app/test/review_ui_test.dart: review navigation 390.0 TargetPlatform.android
+00:03 +15 ~1 -3: /tmp/icd-build-024/app/test/widget_test.dart: populated search/detail 800.0px at 1.6x text scale
+00:03 +16 ~1 -3: /tmp/icd-build-024/app/test/widget_test.dart: populated search/detail 800.0px at 1.6x text scale
+00:03 +17 ~1 -3: /tmp/icd-build-024/app/test/widget_test.dart: populated search/detail 800.0px at 1.6x text scale
+00:03 +18 ~1 -3: /tmp/icd-build-024/app/test/pcs_test.dart: PCS shared package: code, FTS, seven axes, Index and family isolation
+00:03 +19 ~1 -3: /tmp/icd-build-024/app/test/pcs_test.dart: PCS shared package: code, FTS, seven axes, Index and family isolation
+00:03 +20 ~1 -3: /tmp/icd-build-024/app/test/review_ui_test.dart: review navigation 800.0 TargetPlatform.android
+00:04 +21 ~1 -3: /tmp/icd-build-024/app/test/review_ui_test.dart: review navigation 800.0 TargetPlatform.android
+00:04 +22 ~1 -3: /tmp/icd-build-024/app/test/pcs_test.dart: PCS selector remains available when that family has no package
+00:04 +23 ~1 -3: /tmp/icd-build-024/app/test/pcs_test.dart: PCS selector remains available when that family has no package
+00:05 +24 ~1 -3: /tmp/icd-build-024/app/test/pcs_test.dart: PCS selector remains available when that family has no package
+00:05 +25 ~1 -3: /tmp/icd-build-024/app/test/pcs_test.dart: PCS selector remains available when that family has no package
+00:05 +26 ~1 -3: /tmp/icd-build-024/app/test/pcs_test.dart: PCS selector remains available when that family has no package
+00:05 +27 ~1 -3: /tmp/icd-build-024/app/test/cross_probe_test.dart: 50-query native snapshot + 1000-query warm benchmark
+00:06 +28 ~1 -3: /tmp/icd-build-024/app/test/cross_probe_test.dart: 50-query native snapshot + 1000-query warm benchmark
+00:06 +29 ~1 -3: /tmp/icd-build-024/app/test/cross_probe_test.dart: 50-query native snapshot + 1000-query warm benchmark
+00:06 +30 ~1 -3: /tmp/icd-build-024/app/test/nhi_cm_test.dart: overlay is labelled and cannot activate without a base
+00:06 +30 ~2 -3: /tmp/icd-build-024/app/test/nhi_cm_test.dart: overlay is labelled and cannot activate without a base
+00:06 +31 ~2 -3: /tmp/icd-build-024/app/test/nhi_cm_test.dart: overlay is labelled and cannot activate without a base
+00:07 +32 ~2 -3: Some tests failed.
+
+Failing tests:
+  /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 1440.0
+  /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 390.0
+  /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 800.0
+
+EXIT=1

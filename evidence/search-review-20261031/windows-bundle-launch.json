@@ -1,0 +1,15 @@
+{
+  "commit": "8713b9125a6a0888509ef0f961389bc92c814842",
+  "process_alive": true,
+  "app_user_sqlite_verified": true,
+  "environment": "GitHub hosted Windows runner, not a clean workstation",
+  "timestamp": "2026-10-31T10:06:39.5876941Z",
+  "app_user_tables": [
+    "preferences",
+    "installed_packages",
+    "import_log",
+    "favorites",
+    "personal_notes",
+    "search_history"
+  ]
+}

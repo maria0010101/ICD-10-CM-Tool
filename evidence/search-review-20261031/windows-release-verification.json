@@ -1,0 +1,32 @@
+{
+  "version": "0.2.4",
+  "source_commit": "8713b9125a6a0888509ef0f961389bc92c814842",
+  "workflow_url": "https://github.com/maria0010101/ICD-10-CM-Tool/actions/runs/41190945188",
+  "sha256": "acc0a7f9e4b57d3ed5985fe43adf0398d20a134e8874c79c4e8b4f1867ce583e",
+  "size_bytes": 15230843,
+  "zip_crc_valid": true,
+  "amd64_exe": true,
+  "product_name_verified": true,
+  "version_verified": true,
+  "crt_present": true,
+  "sqlite_dll_present": true,
+  "all_icon_payloads_embedded": true,
+  "no_official_or_user_databases_embedded": true,
+  "synthetic_query_snapshots_match_linux": true,
+  "synthetic_pack_sha256": "b54a0e4e0fc7c4d893ffaee9bb4b17f17419ab803c921caf67f5242a34aba02f",
+  "hosted_launch": {
+    "commit": "8713b9125a6a0888509ef0f961389bc92c814842",
+    "process_alive": true,
+    "app_user_sqlite_verified": true,
+    "environment": "GitHub hosted Windows runner, not a clean workstation",
+    "timestamp": "2026-10-31T10:06:39.5876941Z",
+    "app_user_tables": [
+      "preferences",
+      "installed_packages",
+      "import_log",
+      "favorites",
+      "personal_notes",
+      "search_history"
+    ]
+  }
+}

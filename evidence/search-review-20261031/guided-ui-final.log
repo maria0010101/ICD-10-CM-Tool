@@ -1,0 +1,42 @@
+Resolving dependencies...
+Downloading packages...
+  cli_util 0.4.2 (0.6.0 available)
+  cross_file 0.3.5+5 (0.4.0 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_math 2.4.0 (2.4.4 available)
+Got dependencies!
+6 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading /tmp/icd-build-024/app/test/guided_ui_test.dart
+00:00 +0: guided list and real paginated SQLite UI at 390.0
+GUIDED_UI submit start
+GUIDED_UI submit returned
+GUIDED_UI search done
+unhandled error during finalization of test:
+/tmp/icd-build-024/app/test/guided_ui_test.dart
+TestDeviceException(Shell subprocess terminated by ^C (SIGINT, -2).)
+#0      FlutterTesterTestDevice.finished (package:flutter_tools/src/test/flutter_tester_device.dart:256:5)
+<asynchronous suspension>
+#1      FlutterTesterTestDevice.kill (package:flutter_tools/src/test/flutter_tester_device.dart:238:5)
+<asynchronous suspension>
+#2      FlutterPlatform._startTest.<anonymous closure> (package:flutter_tools/src/test/flutter_platform.dart:689:9)
+<asynchronous suspension>
+#3      FlutterPlatform._startTest.finalize (package:flutter_tools/src/test/flutter_platform.dart:591:11)
+<asynchronous suspension>
+#4      FlutterPlatform._startTest (package:flutter_tools/src/test/flutter_platform.dart:762:7)
+<asynchronous suspension>
+
+01:37 +0: guided list and real paginated SQLite UI at 390.0 - did not complete [E]
+01:37 +0: guided list and real paginated SQLite UI at 800.0 - did not complete [E]
+01:37 +0: guided list and real paginated SQLite UI at 1440.0 - did not complete [E]
+01:37 +0: Some tests failed.
+
+Failing tests:
+  /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 1440.0 (did not complete)
+  /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 390.0 (did not complete)
+  /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 800.0 (did not complete)
+No tests were found.
+
+EXIT=79

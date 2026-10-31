@@ -1,0 +1,22 @@
+{
+  "sha256": "55a7b7660f153836b0b39b040c4dbf3fda6b5726d1ef303ec2e2829a7be392d1",
+  "edition": "FY2025",
+  "release_id": "2025-04-01",
+  "first_page_p95_ms": 8.041,
+  "os": "Linux 7.3.0-4-cachyos #1 SMP PREEMPT_DYNAMIC Fri, 23 Oct 2026 15:59:50 +0000",
+  "queries": {
+    "Diabetes, diabetic": 449,
+    "diabetes diabetic": 449,
+    "diabetic diabetes": 449,
+    "diabetes kidney": 24,
+    "kidney diabetes": 24,
+    "diab neph": 34,
+    "betes": 0,
+    "diabetes type 1": 91,
+    "diabetes type 2": 87
+  },
+  "all_449_depth_and_target_positions_equal": true,
+  "sequence_fingerprint": "9bcd0573dea2776affe23cffd27afb806e0d8869239e21bde9209dd78cef898a",
+  "original_package_unchanged": true,
+  "scope": "Linux native repository; not a UI frame-time benchmark"
+}

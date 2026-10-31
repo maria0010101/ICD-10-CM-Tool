@@ -1,0 +1,79 @@
+{
+  "site": "https://smarticd10.health.belgium.be/default.php",
+  "observed_date": "2026-10-31",
+  "version": "2025",
+  "category": "Diseases and Injuries",
+  "queries": [
+    {
+      "query": "Diabetes, diabetic",
+      "rows": 449,
+      "url": "https://smarticd10.health.belgium.be/search.php?Version=2025&Type=D&Text=Diabetes%2C+diabetic"
+    },
+    {
+      "query": "diabetes diabetic",
+      "rows": 449,
+      "url": "https://smarticd10.health.belgium.be/search.php?Version=2025&Type=D&Text=diabetes+diabetic"
+    },
+    {
+      "query": "diabetic diabetes",
+      "rows": 449,
+      "url": "https://smarticd10.health.belgium.be/search.php?Version=2025&Type=D&Text=diabetic+diabetes"
+    },
+    {
+      "query": "diabetes kidney",
+      "rows": 24,
+      "url": "https://smarticd10.health.belgium.be/search.php?Version=2025&Type=D&Text=diabetes+kidney"
+    },
+    {
+      "query": "kidney diabetes",
+      "rows": 24,
+      "url": "https://smarticd10.health.belgium.be/search.php?Version=2025&Type=D&Text=kidney+diabetes"
+    },
+    {
+      "query": "diab neph",
+      "rows": 34,
+      "url": "https://smarticd10.health.belgium.be/search.php?Version=2025&Type=D&Text=diab+neph"
+    },
+    {
+      "query": "betes",
+      "rows": 0,
+      "url": "https://smarticd10.health.belgium.be/search.php?Version=2025&Type=D&Text=betes"
+    },
+    {
+      "query": "heart failure",
+      "rows": 157,
+      "url": "https://smarticd10.health.belgium.be/search.php?Version=2025&Type=D&Text=heart+failure"
+    },
+    {
+      "query": "diabetes type 1",
+      "rows": 230,
+      "url": "https://smarticd10.health.belgium.be/search.php?Version=2025&Type=D&Text=diabetes+type+1"
+    },
+    {
+      "query": "E11.9",
+      "rows": 0,
+      "url": "https://smarticd10.health.belgium.be/search.php?Version=2025&Type=D&Text=E11.9"
+    }
+  ],
+  "numeric_tests": [
+    {
+      "query": "diabetes type",
+      "rows": 230,
+      "type1_code_links": 70,
+      "type2_code_links": 66
+    },
+    {
+      "query": "diabetes type 1",
+      "rows": 230,
+      "type1_code_links": 70,
+      "type2_code_links": 66
+    },
+    {
+      "query": "diabetes type 2",
+      "rows": 230,
+      "type1_code_links": 70,
+      "type2_code_links": 66
+    }
+  ],
+  "notes": "Observable behavior, not access to PHP backend. Full third-party responses kept only in .local-source; not distributed."
+}

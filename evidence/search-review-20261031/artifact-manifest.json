@@ -1,0 +1,16 @@
+[
+  {
+    "file": "icd-offline-0.2.4-android-arm64.apk",
+    "size_bytes": 21808048,
+    "sha256": "0377114ff4fd30e5406d15d02951fe8867bc70d45a996008d074fd5ef14e7a7b",
+    "version": "0.2.4",
+    "source_commit": "8713b9125a6a0888509ef0f961389bc92c814842"
+  },
+  {
+    "file": "icd-offline-0.2.4-windows-x64.zip",
+    "size_bytes": 15230843,
+    "sha256": "acc0a7f9e4b57d3ed5985fe43adf0398d20a134e8874c79c4e8b4f1867ce583e",
+    "version": "0.2.4",
+    "source_commit": "8713b9125a6a0888509ef0f961389bc92c814842"
+  }
+]

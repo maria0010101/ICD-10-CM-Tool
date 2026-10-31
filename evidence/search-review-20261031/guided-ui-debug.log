@@ -1,0 +1,125 @@
+Resolving dependencies...
+Downloading packages...
+  cli_util 0.4.2 (0.6.0 available)
+  cross_file 0.3.5+5 (0.4.0 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_math 2.4.0 (2.4.4 available)
+Got dependencies!
+6 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading /tmp/icd-build-024/app/test/guided_ui_test.dart
+00:00 +0: guided list and real paginated SQLite UI at 390.0
+GUIDED_UI submit start
+GUIDED_UI submit returned
+GUIDED_UI search done
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: No element
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:694:25)
+#1      WidgetController.element (package:flutter_test/src/controller.dart:888:30)
+#2      WidgetController.dragUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2489:38)
+<asynchronous suspension>
+#3      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#4      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2439:7)
+<asynchronous suspension>
+#5      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///tmp/icd-build-024/app/test/guided_ui_test.dart:76:9)
+<asynchronous suspension>
+#7      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#8      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  guided list and real paginated SQLite UI at 390.0
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +0 -1: guided list and real paginated SQLite UI at 390.0 [E]
+  Test failed. See exception logs above.
+  The test description was: guided list and real paginated SQLite UI at 390.0
+  
+00:02 +0 -1: guided list and real paginated SQLite UI at 800.0
+GUIDED_UI submit start
+GUIDED_UI submit returned
+GUIDED_UI search done
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: No element
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:694:25)
+#1      WidgetController.element (package:flutter_test/src/controller.dart:888:30)
+#2      WidgetController.dragUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2489:38)
+<asynchronous suspension>
+#3      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#4      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2439:7)
+<asynchronous suspension>
+#5      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///tmp/icd-build-024/app/test/guided_ui_test.dart:76:9)
+<asynchronous suspension>
+#7      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#8      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  guided list and real paginated SQLite UI at 800.0
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:03 +0 -2: guided list and real paginated SQLite UI at 800.0 [E]
+  Test failed. See exception logs above.
+  The test description was: guided list and real paginated SQLite UI at 800.0
+  
+00:03 +0 -2: guided list and real paginated SQLite UI at 1440.0
+GUIDED_UI submit start
+GUIDED_UI submit returned
+GUIDED_UI search done
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: No element
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:694:25)
+#1      WidgetController.element (package:flutter_test/src/controller.dart:888:30)
+#2      WidgetController.dragUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2489:38)
+<asynchronous suspension>
+#3      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#4      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2439:7)
+<asynchronous suspension>
+#5      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///tmp/icd-build-024/app/test/guided_ui_test.dart:76:9)
+<asynchronous suspension>
+#7      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#8      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  guided list and real paginated SQLite UI at 1440.0
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:04 +0 -3: guided list and real paginated SQLite UI at 1440.0 [E]
+  Test failed. See exception logs above.
+  The test description was: guided list and real paginated SQLite UI at 1440.0
+  
+00:04 +0 -3: Some tests failed.
+
+Failing tests:
+  /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 1440.0
+  /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 390.0
+  /tmp/icd-build-024/app/test/guided_ui_test.dart: guided list and real paginated SQLite UI at 800.0
+
+EXIT=1

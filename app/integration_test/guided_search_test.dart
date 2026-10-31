@@ -53,6 +53,8 @@ void main() {
         final hash = await store.publish(
           await store.prepare(File('${inputs.path}/official.icdpack')),
         );
+        // ignore: avoid_print
+        print('ICD024_IMPORTED');
         expect(hash, expected['sha256']);
         final repo = DictionaryRepository(
           store.contentPath(hash),
@@ -62,18 +64,24 @@ void main() {
         try {
           probe = guidedProbe(repo);
           expect(probe, expected['snapshots']);
+          // ignore: avoid_print
+          print('ICD024_PROBE_MATCHED');
         } finally {
           repo.close();
         }
         await c.choose(hash);
+        // ignore: avoid_print
+        print('ICD024_ACTIVATED');
         await tester.pumpWidget(DictionaryApp(controller: c));
         await tester.pumpAndSettle();
         await tester.enterText(
           find.byType(TextField).first,
           'Diabetes, diabetic',
         );
-        await tester.testTextInput.receiveAction(TextInputAction.search);
-        await c.lastSearch!;
+        await tester.runAsync(
+          () => tester.testTextInput.receiveAction(TextInputAction.search),
+        );
+        await tester.runAsync(() => c.lastSearch!);
         await tester.pumpAndSettle();
         expect(c.resultTotal, 449);
         expect(c.results.length, 100);
@@ -106,8 +114,10 @@ void main() {
           alignment: 0.5,
         );
         await tester.pumpAndSettle();
-        await tester.tap(find.byKey(const ValueKey('search-load-more')));
-        await c.lastMore!;
+        await tester.runAsync(
+          () => tester.tap(find.byKey(const ValueKey('search-load-more'))),
+        );
+        await tester.runAsync(() => c.lastMore!);
         await tester.pumpAndSettle();
         expect(c.results.length, 200);
         expect(c.results.map((r) => r['id']).toSet().length, 200);
