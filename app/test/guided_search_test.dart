@@ -120,6 +120,10 @@ void main() {
     final c = repo.searchPage('E11.9');
     expect(c.mode, 'code');
     expect(c.rows.single['code'], 'E11.9');
+    final partial = repo.searchPage('I5', suggestions: true);
+    expect(partial.mode, 'code-prefix');
+    expect(partial.rows.single['code'], 'I50.9');
+    expect(repo.searchPage('I5', prefix: false).rows, isEmpty);
     expect(
       repo.searchPage('Diabetes diabetic', guided: false).rows.first['code'],
       'E10.21',

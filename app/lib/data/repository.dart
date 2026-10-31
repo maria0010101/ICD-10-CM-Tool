@@ -214,6 +214,17 @@ class DictionaryRepository {
         ).where((r) => exactIds.contains(r['id'])).toList();
         return SearchPage(found, found.length, 0, 'code');
       }
+      if (guided &&
+          !manifest.isPcs &&
+          RegExp(r'^[A-Z][0-9][A-Z0-9]{0,5}$').hasMatch(normalizeCode(input))) {
+        final found = search(
+          input,
+          scope: 'tabular',
+          prefix: prefix,
+          limit: limit,
+        );
+        return SearchPage(found, found.length, 0, 'code-prefix');
+      }
     }
     if (!canGuide) {
       final found = search(
