@@ -61,3 +61,7 @@
 ## 0.2.3追蹤
 
 FR032/040/041→10個新profiles、nhi_legacy.py與audit_nhi_legacy.py；FR033/035→原始交錯列、未知USE manifest能力1.2及UI標示、缺譯不補；FR045/046→預設拒絕公式，僅來源設定指定輔助欄inert保存、雙端validator阻擋billability推定。對應T31～T34，結果見[0.2.3](RELEASE_0.2.3.md)。
+
+## 0.2.4追蹤
+
+FR002/010/011/013→repository.searchPage的FTS候選／遞迴context／原始順序、主詞建議／分支及精確碼回退；FR020→controller generation分頁防舊查詢覆蓋、可點目標碼及已載入／總數；T35～T37→guided_search_test、guided_ui_test、guided_official_test及Android integration。第三方資料不作來源，schema及既有包不改；詳[分析](SEARCH_SMARTICD10_ANALYSIS.md)。

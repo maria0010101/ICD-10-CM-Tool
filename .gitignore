@@ -22,3 +22,8 @@ evidence/release-0.2.3/toolchain.txt
 evidence/release-0.2.3/source-inventory.json
 evidence/release-0.2.3/*-inspection.json
 evidence/release-0.2.3/local-*
+
+# User-built full official packs and private website comparison captures.
+/官方資料/
+evidence/search-review-20261031/local-*
+evidence/release-0.2.4/local-*

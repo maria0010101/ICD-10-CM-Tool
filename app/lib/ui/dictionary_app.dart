@@ -255,9 +255,10 @@ class _DictionaryHomeState extends State<DictionaryHome> {
             ),
           ),
           onChanged: c.queueSearch,
+          textInputAction: TextInputAction.search,
           onSubmitted: (_) => guard(() async {
-            await c.search();
-            if (c.results.isNotEmpty) {
+            await c.search(submitted: true);
+            if (!c.resultMode.startsWith('index') && c.results.isNotEmpty) {
               await open(c.results[c.selected]);
             }
           }),
@@ -300,6 +301,16 @@ class _DictionaryHomeState extends State<DictionaryHome> {
                 },
               ),
             ),
+            if (c.classification == 'ICD-10-CM')
+              FilterChip(
+                label: const Text('索引導引'),
+                tooltip: '英文先查官方Index，依原始階層排序；關閉後使用全文相關度。無Index的資料包仍查代碼表。',
+                selected: c.guided,
+                onSelected: (v) {
+                  c.guided = v;
+                  guard(c.search);
+                },
+              ),
             FilterChip(
               label: Text(c.any ? 'OR 任一詞' : 'AND 全部詞'),
               selected: c.any,
@@ -327,7 +338,9 @@ class _DictionaryHomeState extends State<DictionaryHome> {
         child: Align(
           alignment: Alignment.centerLeft,
           child: Text(
-            '${c.results.length} 筆（最多 100 筆）· 排序不代表診斷確立',
+            c.resultMode.startsWith('index')
+                ? '已載入 ${c.results.length}／${c.resultTotal} 筆 · ${c.resultMode == 'index-suggestions' ? '主詞前綴，點選以展開' : '官方Index順序（含上層脈絡）'} · 排序不代表診斷確立'
+                : '${c.results.length} 筆（最多 100 筆）· 排序不代表診斷確立',
             style: Theme.of(context).textTheme.labelSmall,
           ),
         ),
@@ -336,11 +349,34 @@ class _DictionaryHomeState extends State<DictionaryHome> {
         child: c.results.isEmpty
             ? const Center(child: Text('無結果；請調整查詢或來源'))
             : ListView.builder(
-                itemCount: c.results.length,
+                key: const ValueKey('search-results'),
+                itemCount: c.results.length + (c.hasMore ? 1 : 0),
                 itemBuilder: (context, i) {
+                  if (i == c.results.length) {
+                    return Padding(
+                      padding: const EdgeInsets.all(12),
+                      child: OutlinedButton(
+                        key: const ValueKey('search-load-more'),
+                        onPressed: c.loadingMore
+                            ? null
+                            : () => guard(c.loadMore),
+                        child: Text(
+                          c.loadingMore
+                              ? '載入中…'
+                              : '載入更多（${c.results.length}／${c.resultTotal}）',
+                        ),
+                      ),
+                    );
+                  }
                   final r = c.results[i], code = r['code'] as String?;
-                  return ListTile(
+                  final guidedIndex =
+                      code == null && r.containsKey('index_depth');
+                  final depth = (r['index_depth'] as int? ?? 0).clamp(0, 6);
+                  final tile = ListTile(
                     selected: i == c.selected,
+                    contentPadding: guidedIndex
+                        ? EdgeInsets.only(left: 12.0 + depth * 12, right: 12)
+                        : null,
                     leading: Icon(
                       code == null
                           ? Icons.account_tree_outlined
@@ -348,31 +384,72 @@ class _DictionaryHomeState extends State<DictionaryHome> {
                     ),
                     title: Text(
                       code == null
-                          ? r['term_path'] as String
+                          ? (guidedIndex
+                                    ? r['sub_term'] ?? r['main_term']
+                                    : r['term_path'])
+                                as String
                           : '$code  ${r['title_en']}',
                     ),
-                    subtitle: Text(
-                      code == null
-                          ? '${r['entry_type']} → ${r['target_code'] ?? 'cross reference'}'
-                          : [
-                              if ((r['title_zh_tw'] as String? ?? '')
-                                  .isNotEmpty)
-                                r['title_zh_tw'],
-                              '${codeStateLabel(r, c.store.manifest(c.active!))} · ${c.store.manifest(c.active!).edition}',
-                            ].join('\n'),
-                    ),
+                    subtitle: guidedIndex
+                        ? Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              if (depth > 0)
+                                Text(
+                                  r['term_path'] as String,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              Text(
+                                '${r['entry_type']} → ${r['target_code'] ?? '修飾詞／交叉參照'}',
+                              ),
+                            ],
+                          )
+                        : Text(
+                            code == null
+                                ? '${r['entry_type']} → ${r['target_code'] ?? '修飾詞／交叉參照'}'
+                                : [
+                                    if ((r['title_zh_tw'] as String? ?? '')
+                                        .isNotEmpty)
+                                      r['title_zh_tw'],
+                                    '${codeStateLabel(r, c.store.manifest(c.active!))} · ${c.store.manifest(c.active!).edition}',
+                                  ].join('\n'),
+                          ),
                     isThreeLine:
                         code != null &&
                         (r['title_zh_tw'] as String? ?? '').isNotEmpty,
+                    trailing: guidedIndex && r['target_code'] != null
+                        ? TextButton(
+                            onPressed: () => guard(() async {
+                              final targets = await c.resolveTarget(
+                                r['target_code'] as String,
+                              );
+                              if (targets.isEmpty) {
+                                await open(r);
+                              } else {
+                                await open(targets.single);
+                              }
+                            }),
+                            child: Text(r['target_code'] as String),
+                          )
+                        : null,
                     onTap: () {
                       c.selected = i;
                       c.store.recordSearch(
                         c.store.manifest(c.active!).id,
                         c.query,
                       );
-                      open(r);
+                      if (r['index_suggestion'] == 1) {
+                        input.text = r['main_term'] as String;
+                        guard(() => c.browseIndex(r));
+                      } else {
+                        open(r);
+                      }
                     },
                   );
+                  return guidedIndex
+                      ? Tooltip(message: r['term_path'] as String, child: tile)
+                      : tile;
                 },
               ),
       ),
@@ -866,7 +943,7 @@ class _DictionaryHomeState extends State<DictionaryHome> {
         onPressed: () => showLicensePage(
           context: context,
           applicationName: 'ICD Offline',
-          applicationVersion: '0.2.3',
+          applicationVersion: '0.2.4',
         ),
         child: const Text('開放原始碼授權'),
       ),
@@ -1037,7 +1114,13 @@ class _DictionaryHomeState extends State<DictionaryHome> {
       },
       const SingleActivator(LogicalKeyboardKey.enter): () {
         if (c.results.isNotEmpty) {
-          open(c.results[c.selected]);
+          final row = c.results[c.selected];
+          if (row['index_suggestion'] == 1) {
+            input.text = row['main_term'] as String;
+            guard(() => c.browseIndex(row));
+          } else {
+            open(row);
+          }
         }
       },
     },

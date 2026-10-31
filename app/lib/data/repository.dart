@@ -28,6 +28,14 @@ String? ftsExpression(String input, {bool any = false, bool prefix = true}) {
 
 typedef DataRow = Map<String, Object?>;
 
+class SearchPage {
+  final List<DataRow> rows;
+  final int total, offset;
+  final String mode;
+  const SearchPage(this.rows, this.total, this.offset, this.mode);
+  bool get hasMore => mode.startsWith('index') && offset + rows.length < total;
+}
+
 class DictionaryRepository {
   final Database db;
   final PackManifest manifest;
@@ -160,6 +168,113 @@ class DictionaryRepository {
           };
         })
         .toList();
+  }
+
+  /// Index-guided UI search. The original relevance API remains available.
+  /// Reads existing official FTS + parent relations; never rewrites an icdpack.
+  SearchPage searchPage(
+    String input, {
+    String scope = 'all',
+    bool guided = true,
+    bool suggestions = false,
+    bool any = false,
+    bool prefix = true,
+    int? branch,
+    int limit = 100,
+    int offset = 0,
+  }) {
+    if (input.runes.length > 200) throw PackException('查詢最多 200 字');
+    if (limit < 1 || limit > 500 || offset < 0) {
+      throw PackException('搜尋分頁範圍錯誤');
+    }
+    input = input.trim();
+    final expression = ftsExpression(input, any: any, prefix: prefix);
+    final indexScope = scope != 'tabular';
+    final canGuide =
+        guided &&
+        !manifest.isPcs &&
+        indexScope &&
+        !RegExp(r'[\u3400-\u9fff]').hasMatch(input) &&
+        (branch != null || expression != null) &&
+        rows(
+          'SELECT 1 FROM index_entries ${scope == 'all' ? '' : 'WHERE entry_type=?'} LIMIT 1',
+          [if (scope != 'all') scope],
+        ).isNotEmpty;
+    // Exact code lookup is never replaced by a lexical Index search.
+    if (scope == 'all' || scope == 'tabular') {
+      final exact = rows('SELECT id FROM code_nodes WHERE code_normalized=?', [
+        normalizeCode(input),
+      ]);
+      if (guided && input.isNotEmpty && exact.isNotEmpty) {
+        final exactIds = exact.map((r) => r['id']).toSet();
+        final found = search(
+          input,
+          scope: 'tabular',
+          limit: limit,
+        ).where((r) => exactIds.contains(r['id'])).toList();
+        return SearchPage(found, found.length, 0, 'code');
+      }
+    }
+    if (!canGuide) {
+      final found = search(
+        input,
+        scope: scope,
+        any: any,
+        prefix: prefix,
+        limit: limit,
+      );
+      return SearchPage(found, found.length, 0, 'relevance');
+    }
+    final types = scope == 'all'
+        ? const ['alphabetic', 'neoplasm', 'drugs', 'external']
+        : [scope];
+    final placeholders = List.filled(types.length, '?').join(',');
+    final typeOrder =
+        "CASE e.entry_type WHEN 'alphabetic' THEN 0 WHEN 'neoplasm' THEN 1 WHEN 'drugs' THEN 2 ELSE 3 END";
+    if (suggestions &&
+        prefix &&
+        branch == null &&
+        !input.contains(RegExp(r'\s'))) {
+      final where =
+          'parent_id IS NULL AND entry_type IN ($placeholders) AND substr(lower(main_term),1,length(?))=?';
+      final parameters = [...types, normalizeText(input), normalizeText(input)];
+      final count =
+          rows(
+                'SELECT count(*) AS n FROM index_entries WHERE $where',
+                parameters,
+              ).single['n']
+              as int;
+      final found = rows(
+        'SELECT e.*,0 AS index_depth,1 AS index_suggestion FROM index_entries e WHERE $where ORDER BY $typeOrder,e.display_order,e.id LIMIT ? OFFSET ?',
+        [...parameters, limit, offset],
+      );
+      return SearchPage(found, count, offset, 'index-suggestions');
+    }
+    // UNION deduplicates scaffolding by node id, not target code. Distinct
+    // modifiers may intentionally point to the same code and must stay visible.
+    final seed = branch != null
+        ? 'SELECT id FROM index_entries WHERE id=? AND entry_type IN ($placeholders)'
+        : 'SELECT e.id FROM index_search_fts f JOIN index_entries e ON e.id=f.rowid WHERE index_search_fts MATCH ? AND e.entry_type IN ($placeholders)';
+    final parameters = [branch ?? expression!, ...types];
+    final context = branch != null
+        ? 'SELECT e.id,e.parent_id FROM index_entries e JOIN matched m ON m.id=e.id UNION ALL SELECT e.id,e.parent_id FROM index_entries e JOIN context c ON e.parent_id=c.id'
+        : 'SELECT e.id,e.parent_id FROM index_entries e JOIN matched m ON m.id=e.id UNION SELECT p.id,p.parent_id FROM index_entries p JOIN context c ON p.id=c.parent_id';
+    final cte =
+        'WITH RECURSIVE matched(id) AS ($seed),context(id,parent_id) AS ($context)';
+    // A branch is rendered relative to its selected root. A search includes
+    // every required ancestor, retaining the original complete official path.
+    final roots = branch != null ? 'c.id=?' : 'c.parent_id IS NULL';
+    final tree =
+        '$cte,tree(id,depth) AS (SELECT c.id,0 FROM context c WHERE $roots UNION ALL SELECT c.id,t.depth+1 FROM context c JOIN tree t ON c.parent_id=t.id WHERE t.depth<100)';
+    final args = [...parameters, ?branch];
+    final count =
+        rows('$cte SELECT count(*) AS n FROM context', parameters).single['n']
+            as int;
+    final found = rows(
+      '$tree SELECT e.*,t.depth AS index_depth,CASE WHEN m.id IS NULL THEN 1 ELSE 0 END AS context_only FROM tree t JOIN index_entries e ON e.id=t.id LEFT JOIN matched m ON m.id=e.id ORDER BY $typeOrder,e.display_order,e.id LIMIT ? OFFSET ?',
+      [...args, limit, offset],
+    );
+    return SearchPage(found, count, offset, 'index-context');
   }
 
   List<DataRow> children(int? parent, {int? limit, int offset = 0}) => rows(

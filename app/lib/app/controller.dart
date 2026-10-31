@@ -30,6 +30,11 @@ class DictionaryController extends ChangeNotifier {
   String query = '', scope = 'all';
   String? lastError;
   bool any = false, prefix = true, searching = false;
+  bool guided = true, loadingMore = false, hasMore = false;
+  bool _suggestions = false;
+  int? _indexBranch;
+  int resultTotal = 0;
+  String resultMode = 'relevance';
   int selected = 0;
   int _generation = 0;
   Timer? _timer;
@@ -97,10 +102,15 @@ class DictionaryController extends ChangeNotifier {
     _generation++;
     detail = null;
     results = [];
+    resultTotal = 0;
+    resultMode = 'relevance';
     roots = [];
     scopes = ['all', 'tabular'];
     lastError = null;
     searching = false;
+    loadingMore = false;
+    hasMore = false;
+    _indexBranch = null;
     if (active != null) {
       final data = await read((r) => (r.children(null), r.availableScopes()));
       roots = data.$1;
@@ -115,37 +125,101 @@ class DictionaryController extends ChangeNotifier {
 
   void queueSearch(String value) {
     query = value;
+    _indexBranch = null;
+    _suggestions = true;
     _generation++;
     _timer?.cancel();
     _timer = Timer(const Duration(milliseconds: 180), search);
   }
 
-  Future<void> search() async {
+  Future<void> search({bool submitted = false, bool keepBranch = false}) async {
+    _timer?.cancel();
+    if (submitted) _suggestions = false;
+    if (!keepBranch) _indexBranch = null;
     if (active == null) {
       return;
     }
     final generation = ++_generation;
     final input = query, source = scope, or = any, pre = prefix;
+    final guide = guided, suggest = _suggestions, branch = _indexBranch;
+    loadingMore = false;
+    hasMore = false;
     searching = true;
     lastError = null;
     notifyListeners();
     try {
       final found = await read(
-        (r) => r.search(input, scope: source, any: or, prefix: pre),
+        (r) => r.searchPage(
+          input,
+          scope: source,
+          guided: guide,
+          suggestions: suggest,
+          branch: branch,
+          any: or,
+          prefix: pre,
+        ),
       );
       if (generation != _generation) {
         return;
       }
-      results = found;
+      results = found.rows;
+      resultTotal = found.total;
+      resultMode = found.mode;
+      hasMore = found.hasMore;
       selected = 0;
     } catch (e) {
       if (generation == _generation) {
         lastError = '$e';
         results = [];
+        resultTotal = 0;
       }
     } finally {
       if (generation == _generation) {
         searching = false;
+        notifyListeners();
+      }
+    }
+  }
+
+  Future<void> browseIndex(DataRow row) async {
+    _timer?.cancel();
+    _suggestions = false;
+    _indexBranch = row['id'] as int;
+    query = row['main_term'] as String;
+    await search(keepBranch: true);
+  }
+
+  Future<void> loadMore() async {
+    if (!hasMore || loadingMore || searching) return;
+    final generation = _generation;
+    final input = query, source = scope, or = any, pre = prefix;
+    final guide = guided, suggest = _suggestions, branch = _indexBranch;
+    final offset = results.length;
+    loadingMore = true;
+    lastError = null;
+    notifyListeners();
+    try {
+      final page = await read(
+        (r) => r.searchPage(
+          input,
+          scope: source,
+          guided: guide,
+          suggestions: suggest,
+          branch: branch,
+          any: or,
+          prefix: pre,
+          offset: offset,
+        ),
+      );
+      if (generation != _generation) return;
+      results = [...results, ...page.rows];
+      resultTotal = page.total;
+      hasMore = page.hasMore;
+    } catch (e) {
+      if (generation == _generation) lastError = '$e';
+    } finally {
+      if (generation == _generation) {
+        loadingMore = false;
         notifyListeners();
       }
     }
